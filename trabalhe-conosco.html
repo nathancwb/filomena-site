@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Trabalhe na Filomena Propaganda - Vagas para profissionais de marketing e comunicação.">
+    <title>Trabalhe Conosco | Filomena Propaganda</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner container">
+            <a href="index.html" class="logo">Filomena<span class="logo__dot"></span></a>
+
+            <nav class="nav">
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="index.html#sobre" class="nav__link">Sobre</a></li>
+                    <li><a href="servicos.html" class="nav__link">Serviços</a></li>
+                    <li><a href="portfolio.html" class="nav__link">Portfólio</a></li>
+                    <li><a href="index.html#cases" class="nav__link">Cases</a></li>
+                    <li><a href="index.html#contato" class="nav__link">Contato</a></li>
+                </ul>
+
+                <div class="nav__actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <path
+                                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+                            </path>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <span class="section__tag fade-in">Carreiras</span>
+                <h1 class="page-hero__title fade-in">Trabalhe Conosco</h1>
+                <p class="page-hero__description fade-in">
+                    Quer fazer parte de uma equipe criativa e inovadora? Seu lugar é aqui!
+                </p>
+            </div>
+        </section>
+
+        <!-- About Culture -->
+        <section class="section">
+            <div class="container">
+                <div class="about__grid">
+                    <div class="about__image fade-in">
+                        <img src="assets/images/team.png" alt="Equipe Filomena">
+                    </div>
+                    <div class="about__content">
+                        <h2 class="section__title fade-in">Por que trabalhar na Filomena?</h2>
+                        <p class="about__text fade-in">
+                            Somos uma agência que valoriza pessoas. Acreditamos que um ambiente
+                            de trabalho saudável e colaborativo é essencial para criar as melhores
+                            soluções.
+                        </p>
+                        <div class="values" style="grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+                            <div class="value fade-in" style="padding: var(--space-lg);">
+                                <h3 class="value__title" style="font-size: var(--text-base);">Ambiente colaborativo</h3>
+                            </div>
+                            <div class="value fade-in" style="padding: var(--space-lg);">
+                                <h3 class="value__title" style="font-size: var(--text-base);">Projetos desafiadores</h3>
+                            </div>
+                            <div class="value fade-in" style="padding: var(--space-lg);">
+                                <h3 class="value__title" style="font-size: var(--text-base);">Desenvolvimento
+                                    profissional</h3>
+                            </div>
+                            <div class="value fade-in" style="padding: var(--space-lg);">
+                                <h3 class="value__title" style="font-size: var(--text-base);">Equipe apaixonada</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form -->
+        <section class="section section--alt">
+            <div class="container" style="max-width: 600px;">
+                <div class="section__header section__header--center">
+                    <h2 class="section__title fade-in">Envie seu currículo</h2>
+                    <p class="section__description fade-in">
+                        Mesmo sem vagas abertas, buscamos sempre novos talentos.
+                    </p>
+                </div>
+
+                <form class="contact__form fade-in" style="margin-top: var(--space-2xl);">
+                    <div class="form-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone/WhatsApp</label>
+                        <input type="tel" id="telefone" name="telefone">
+                    </div>
+                    <div class="form-group">
+                        <label for="area">Área de interesse</label>
+                        <select id="area" name="area"
+                            style="width: 100%; padding: 14px 18px; font-family: inherit; font-size: var(--text-base); color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 12px;">
+                            <option value="">Selecione uma área</option>
+                            <option value="criacao">Criação e Design</option>
+                            <option value="atendimento">Atendimento</option>
+                            <option value="midia">Mídia</option>
+                            <option value="social">Social Media</option>
+                            <option value="video">Produção Audiovisual</option>
+                            <option value="dev">Desenvolvimento Web</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="portfolio">Link do portfólio ou LinkedIn</label>
+                        <input type="url" id="portfolio" name="portfolio">
+                    </div>
+                    <div class="form-group">
+                        <label for="sobre">Conte um pouco sobre você</label>
+                        <textarea id="sobre" name="sobre" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full">Enviar candidatura</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="index.html" class="logo">Filomena<span class="logo__dot"></span></a>
+                    <p>Comunicação criativa que conecta.</p>
+                </div>
+                <div>
+                    <h4 class="footer__title">Navegação</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="portfolio.html">Portfólio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Contato</h4>
+                    <ul class="footer__links">
+                        <li>(16) 3415-4110</li>
+                        <li>contato@filomenapropaganda.com.br</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Endereço</h4>
+                    <p>Rua Dom Pedro II, 1978<br>São Carlos - SP</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2024 Filomena Propaganda</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/551634154110" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
