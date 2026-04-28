@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog da Filomena Propaganda - Insights, tendências e estratégias de marketing e comunicação.">
+    <title>Blog | Filomena Propaganda</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+            margin-top: var(--space-4xl);
+        }
+        @media (max-width: 968px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 576px) { .blog-grid { grid-template-columns: 1fr; } }
+
+        .blog-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all var(--transition);
+        }
+        .blog-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .blog-card__img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: var(--bg-alt);
+        }
+        .blog-card__body { padding: var(--space-xl); }
+        .blog-card__tag {
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: var(--space-sm);
+            display: block;
+        }
+        .blog-card__title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.3;
+        }
+        .blog-card__excerpt {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            margin-bottom: var(--space-lg);
+            line-height: 1.6;
+        }
+        .blog-card__link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo-filomena.png" alt="Filomena Propaganda & Marketing" class="logo__img">
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="index.html#sobre" class="nav__link">Sobre</a></li>
+                    <li><a href="servicos.html" class="nav__link">Serviços</a></li>
+                    <li><a href="portfolio.html" class="nav__link">Portfólio</a></li>
+                    <li><a href="index.html#cases" class="nav__link">Cases</a></li>
+                    <li><a href="index.html#contato" class="nav__link">Contato</a></li>
+                </ul>
+
+                <div class="nav__actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <span class="section__tag fade-in">Conteúdo</span>
+                <h1 class="page-hero__title fade-in">Blog</h1>
+                <p class="page-hero__description fade-in">
+                    Insights, tendências e estratégias para marcas que querem crescer de verdade.
+                </p>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="blog-grid">
+                    <article class="blog-card fade-in">
+                        <img src="assets/images/fachada-filomena.png" alt="Branding" class="blog-card__img">
+                        <div class="blog-card__body">
+                            <span class="blog-card__tag">Branding</span>
+                            <h2 class="blog-card__title">O que é branding e por que sua empresa precisa disso agora</h2>
+                            <p class="blog-card__excerpt">Muito além de um logotipo bonito, branding é a soma de tudo que a sua marca comunica ao mundo. Entenda como construir uma identidade forte.</p>
+                            <a href="#" class="blog-card__link">
+                                Ler artigo
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card fade-in">
+                        <img src="assets/images/hero-megafone.png" alt="Marketing Digital" class="blog-card__img" style="object-fit: contain; padding: 1rem; background: var(--bg-alt);">
+                        <div class="blog-card__body">
+                            <span class="blog-card__tag">Marketing Digital</span>
+                            <h2 class="blog-card__title">Google Ads vs Meta Ads: qual a melhor opção para o seu negócio?</h2>
+                            <p class="blog-card__excerpt">Cada plataforma tem seu público e objetivo. Antes de investir, entenda as diferenças e saiba onde colocar seu orçamento de mídia paga.</p>
+                            <a href="#" class="blog-card__link">
+                                Ler artigo
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card fade-in">
+                        <div class="blog-card__img" style="background: var(--accent); display: flex; align-items: center; justify-content: center;">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"></path></svg>
+                        </div>
+                        <div class="blog-card__body">
+                            <span class="blog-card__tag">Audiovisual</span>
+                            <h2 class="blog-card__title">Por que o vídeo é o formato mais poderoso nas redes sociais em 2025</h2>
+                            <p class="blog-card__excerpt">Reels, Shorts e TikToks dominam os feeds. Saiba como produzir conteúdo audiovisual que gera engajamento real e impulsiona vendas.</p>
+                            <a href="#" class="blog-card__link">
+                                Ler artigo
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card fade-in">
+                        <div class="blog-card__img" style="background: var(--secondary); display: flex; align-items: center; justify-content: center;">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        </div>
+                        <div class="blog-card__body">
+                            <span class="blog-card__tag">Métricas</span>
+                            <h2 class="blog-card__title">Quais métricas realmente importam para avaliar uma campanha?</h2>
+                            <p class="blog-card__excerpt">Curtidas e seguidores não pagam boletos. Descubra os indicadores que mostram se sua estratégia está realmente gerando resultado.</p>
+                            <a href="#" class="blog-card__link">
+                                Ler artigo
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card fade-in">
+                        <div class="blog-card__img" style="background: var(--accent-dark); display: flex; align-items: center; justify-content: center;">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <div class="blog-card__body">
+                            <span class="blog-card__tag">Cultura</span>
+                            <h2 class="blog-card__title">#teamfilomena: como construímos uma equipe apaixonada pelo que faz</h2>
+                            <p class="blog-card__excerpt">Pessoas motivadas entregam trabalho excepcional. Conheça os valores e a cultura que guiam cada projeto da Filomena.</p>
+                            <a href="#" class="blog-card__link">
+                                Ler artigo
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card fade-in">
+                        <div class="blog-card__img" style="background: #1a1a2e; display: flex; align-items: center; justify-content: center;">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div class="blog-card__body">
+                            <span class="blog-card__tag">Tecnologia</span>
+                            <h2 class="blog-card__title">IA no marketing: oportunidade ou ameaça para as agências criativas?</h2>
+                            <p class="blog-card__excerpt">A inteligência artificial chegou para ficar. Veja como usamos IA como aliada da criatividade humana, sem perder a essência do que fazemos.</p>
+                            <a href="#" class="blog-card__link">
+                                Ler artigo
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="index.html" class="logo logo--footer">
+                        <img src="assets/images/logo-filomena.png" alt="Filomena Propaganda & Marketing" class="logo__img">
+                    </a>
+                    <p>Comunicação criativa que conecta.</p>
+                    <span class="footer__tagline">#teamfilomena</span>
+                </div>
+                <div>
+                    <h4 class="footer__title">Navegação</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#sobre">Sobre</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="portfolio.html">Portfólio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Serviços</h4>
+                    <ul class="footer__links">
+                        <li><a href="servicos.html#branding">Branding</a></li>
+                        <li><a href="servicos.html#marketing">Marketing Digital</a></li>
+                        <li><a href="servicos.html#audiovisual">Audiovisual</a></li>
+                        <li><a href="servicos.html#midia">Mídia</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Trabalhe Conosco</h4>
+                    <p style="margin-bottom: var(--space-md);">Quer fazer parte do time?</p>
+                    <a href="trabalhe-conosco.html" class="btn btn--outline" style="border-color: var(--gray-600); color: var(--white);">Enviar currículo</a>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>© 2025 Filomena Propaganda. Todos os direitos reservados.</p>
+                <p>São Carlos - SP</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?l=pt_BR&phone=551634154110" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
