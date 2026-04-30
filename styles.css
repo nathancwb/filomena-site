@@ -2343,6 +2343,7 @@ ul {
     overflow: hidden;
     padding: 0;
     position: relative;
+    display: flex;
 }
 
 [data-theme="dark"] .clients-strip {
@@ -2382,7 +2383,7 @@ ul {
     align-items: center;
     gap: 0;
     width: max-content;
-    animation: clients-scroll 28s linear infinite;
+    animation: clients-scroll 35s linear infinite;
 }
 
 .clients-strip__track:hover {
@@ -2398,11 +2399,12 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px 44px;
+    padding: 30px 60px; /* Increased padding */
     border-right: 1px solid var(--gray-200);
     flex-shrink: 0;
     transition: background 0.2s;
-    height: 100px;
+    height: 140px; /* Increased height */
+    width: 250px; /* Fixed width to prevent layout shifts */
 }
 
 [data-theme="dark"] .clients-strip__item {
@@ -2417,120 +2419,62 @@ ul {
     background: var(--gray-800);
 }
 
-/* Logotipos tipográficos */
-.client-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    white-space: nowrap;
-    line-height: 1;
-    color: var(--gray-500);
-    transition: color 0.2s;
-    user-select: none;
-}
-
-.clients-strip__item:hover .client-logo {
-    color: var(--purple);
-}
-
-.client-logo small {
-    font-size: 0.55em;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    margin-top: 2px;
-    display: block;
-}
-
-/* Estilos individuais de cada marca */
-.client-logo--bni {
-    font-size: 1.6rem;
-    font-family: Georgia, serif;
-    font-style: italic;
-    letter-spacing: 0.08em;
-}
-
-.client-logo--alpha {
-    font-size: 1rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-}
-
-.client-logo--artfinal {
-    font-size: 0.85rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-.client-logo--fukuhara {
-    font-size: 1.1rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    font-style: italic;
-}
-
-.client-logo--grampola {
-    font-size: 1rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-}
-
-.client-logo--masotti {
-    font-size: 1.1rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.client-logo--jogoreal {
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .clients-strip__track {
-        animation: none;
-    }
-}
-
 /* Logo images no carrossel */
 .client-logo-img {
-    height: 56px;
     width: auto;
-    max-width: 180px;
+    height: auto;
+    max-width: 100%;
+    max-height: 80px; /* Base max height */
     object-fit: contain;
     filter: grayscale(100%) opacity(0.65);
-    transition: filter 0.3s ease;
+    transition: filter 0.3s ease, transform 0.3s ease;
     display: block;
 }
 
 .clients-strip__item:hover .client-logo-img {
     filter: grayscale(0%) opacity(1);
+    transform: scale(1.05); /* Slight pop on hover */
 }
 
-/* BNI é quadrada — limitar width */
+/* Tamanhos Específicos para cada logo (ajuste fino) */
+
+/* BNI - Quadrada e pequena no original */
 .clients-strip__item:has([alt="BNI"]) .client-logo-img,
 .clients-strip__item:has([alt=""]:first-of-type) .client-logo-img {
-    height: 62px;
-    max-width: 62px;
+    max-height: 90px;
+    max-width: 140px;
 }
 
-/* Jogo Real é quadrada */
-.clients-strip__item:has([alt="Jogo Real"]) .client-logo-img {
-    height: 68px;
-    max-width: 68px;
+/* Alpha - Horizontal, precisa ser maior */
+.clients-strip__item:has([alt="Alpha Engenharia"]) .client-logo-img,
+.clients-strip__item:has([alt=""]:nth-of-type(2)) .client-logo-img {
+    max-height: 60px;
+    max-width: 180px;
 }
 
-/* Grampola: logo clara — fundo escuro para contrastar */
+/* Art Final - Proporção mista */
+.clients-strip__item:has([alt="Art Final Marmoraria"]) .client-logo-img,
+.clients-strip__item:has([alt=""]:nth-of-type(3)) .client-logo-img {
+    max-height: 85px;
+    max-width: 160px;
+}
+
+/* Fukuhara - Texto, precisa ser legível */
+.clients-strip__item:has([alt="Fukuhara Studio Digital"]) .client-logo-img,
+.clients-strip__item:has([alt=""]:nth-of-type(4)) .client-logo-img {
+    max-height: 70px;
+    max-width: 180px;
+}
+
+/* Grampola - Fundo escuro fix e logo clara */
 .clients-strip__item--dark {
     background: #1a1a2e;
-    padding: 24px 44px;
 }
 
 .clients-strip__item--dark .client-logo-img {
-    filter: grayscale(0%) opacity(0.85);
-    height: 44px;
+    filter: grayscale(0%) opacity(0.9); /* More visible on dark */
+    max-height: 65px;
+    max-width: 170px;
 }
 
 .clients-strip__item--dark:hover .client-logo-img {
@@ -2539,4 +2483,24 @@ ul {
 
 [data-theme="dark"] .clients-strip__item--dark {
     background: #0f0f1a;
+}
+
+/* Masotti - Já é grande, controlar */
+.clients-strip__item:has([alt="Masotti Móveis"]) .client-logo-img,
+.clients-strip__item:has([alt=""]:nth-of-type(6)) .client-logo-img {
+    max-height: 90px; /* Increased from new logo size */
+    max-width: 160px;
+}
+
+/* Jogo Real - Quadrada/Redonda */
+.clients-strip__item:has([alt="Jogo Real"]) .client-logo-img,
+.clients-strip__item:has([alt=""]:nth-of-type(7)) .client-logo-img {
+    max-height: 100px; /* Make it significantly larger */
+    max-width: 150px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .clients-strip__track {
+        animation: none;
+    }
 }
