@@ -2492,3 +2492,27 @@ ul {
         animation: none;
     }
 }
+
+/* Logo images no carrossel */
+.client-logo-img {
+    height: 40px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.55);
+    transition: filter 0.3s ease;
+    display: block;
+}
+
+.clients-strip__item:hover .client-logo-img {
+    filter: grayscale(0%) opacity(1);
+}
+
+/* Grampola tem fundo escuro, usa fundo neutro */
+.clients-strip__item--dark {
+    background: #f5f5f5;
+}
+
+[data-theme="dark"] .clients-strip__item--dark {
+    background: #e8e8e8;
+}
