@@ -2332,3 +2332,163 @@ ul {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================
+   CLIENTS STRIP – Carrossel infinito de logos
+   ============================================ */
+.clients-strip {
+    background: var(--white);
+    border-top: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+
+[data-theme="dark"] .clients-strip {
+    background: var(--gray-900);
+    border-color: var(--gray-800);
+}
+
+/* Fade nas bordas */
+.clients-strip::before,
+.clients-strip::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+.clients-strip::before {
+    left: 0;
+    background: linear-gradient(to right, var(--white), transparent);
+}
+.clients-strip::after {
+    right: 0;
+    background: linear-gradient(to left, var(--white), transparent);
+}
+
+[data-theme="dark"] .clients-strip::before {
+    background: linear-gradient(to right, var(--gray-900), transparent);
+}
+[data-theme="dark"] .clients-strip::after {
+    background: linear-gradient(to left, var(--gray-900), transparent);
+}
+
+.clients-strip__track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: max-content;
+    animation: clients-scroll 28s linear infinite;
+}
+
+.clients-strip__track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes clients-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.clients-strip__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 48px;
+    border-right: 1px solid var(--gray-200);
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+
+[data-theme="dark"] .clients-strip__item {
+    border-color: var(--gray-800);
+}
+
+.clients-strip__item:hover {
+    background: var(--gray-50);
+}
+
+[data-theme="dark"] .clients-strip__item:hover {
+    background: var(--gray-800);
+}
+
+/* Logotipos tipográficos */
+.client-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    line-height: 1;
+    color: var(--gray-500);
+    transition: color 0.2s;
+    user-select: none;
+}
+
+.clients-strip__item:hover .client-logo {
+    color: var(--purple);
+}
+
+.client-logo small {
+    font-size: 0.55em;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    margin-top: 2px;
+    display: block;
+}
+
+/* Estilos individuais de cada marca */
+.client-logo--bni {
+    font-size: 1.6rem;
+    font-family: Georgia, serif;
+    font-style: italic;
+    letter-spacing: 0.08em;
+}
+
+.client-logo--alpha {
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.client-logo--artfinal {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.client-logo--fukuhara {
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.client-logo--grampola {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.client-logo--masotti {
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.client-logo--jogoreal {
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .clients-strip__track {
+        animation: none;
+    }
+}
