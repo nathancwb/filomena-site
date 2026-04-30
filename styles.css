@@ -2438,64 +2438,46 @@ ul {
 
 /* Tamanhos Específicos para cada logo (ajuste fino) */
 
-/* BNI - Quadrada e pequena no original */
-.clients-strip__item:has([alt="BNI"]) .client-logo-img,
-.clients-strip__item:has([alt=""]:first-of-type) .client-logo-img {
+/* BNI - Quadrada */
+.item-bni .client-logo-img {
     max-height: 90px;
     max-width: 140px;
 }
 
-/* Alpha - Horizontal, precisa ser maior */
-.clients-strip__item:has([alt="Alpha Engenharia"]) .client-logo-img,
-.clients-strip__item:has([alt=""]:nth-of-type(2)) .client-logo-img {
+/* Alpha - Horizontal */
+.item-alpha .client-logo-img {
     max-height: 60px;
     max-width: 180px;
 }
 
 /* Art Final - Proporção mista */
-.clients-strip__item:has([alt="Art Final Marmoraria"]) .client-logo-img,
-.clients-strip__item:has([alt=""]:nth-of-type(3)) .client-logo-img {
+.item-artfinal .client-logo-img {
     max-height: 85px;
     max-width: 160px;
 }
 
-/* Fukuhara - Texto, precisa ser legível */
-.clients-strip__item:has([alt="Fukuhara Studio Digital"]) .client-logo-img,
-.clients-strip__item:has([alt=""]:nth-of-type(4)) .client-logo-img {
+/* Fukuhara - Texto, aumentada a legibilidade */
+.item-fukuhara .client-logo-img {
+    max-height: 100px; /* Aumentado */
+    max-width: 220px; /* Aumentado */
+}
+
+/* Grampola */
+.item-grampola .client-logo-img {
     max-height: 70px;
-    max-width: 180px;
+    max-width: 200px;
+    filter: grayscale(100%) opacity(0.85); /* um pouco mais de contraste */
 }
 
-/* Grampola - Fundo escuro fix e logo clara */
-.clients-strip__item--dark {
-    background: #1a1a2e;
-}
-
-.clients-strip__item--dark .client-logo-img {
-    filter: grayscale(0%) opacity(0.9); /* More visible on dark */
-    max-height: 65px;
-    max-width: 170px;
-}
-
-.clients-strip__item--dark:hover .client-logo-img {
-    filter: grayscale(0%) opacity(1);
-}
-
-[data-theme="dark"] .clients-strip__item--dark {
-    background: #0f0f1a;
-}
-
-/* Masotti - Já é grande, controlar */
-.clients-strip__item:has([alt="Masotti Móveis"]) .client-logo-img,
-.clients-strip__item:has([alt=""]:nth-of-type(6)) .client-logo-img {
-    max-height: 90px; /* Increased from new logo size */
-    max-width: 160px;
+/* Masotti - Bem maior agora */
+.item-masotti .client-logo-img {
+    max-height: 120px; /* Aumentado */
+    max-width: 210px; /* Aumentado */
 }
 
 /* Jogo Real - Quadrada/Redonda */
-.clients-strip__item:has([alt="Jogo Real"]) .client-logo-img,
-.clients-strip__item:has([alt=""]:nth-of-type(7)) .client-logo-img {
-    max-height: 100px; /* Make it significantly larger */
+.item-jogoreal .client-logo-img {
+    max-height: 100px; 
     max-width: 150px;
 }
 
