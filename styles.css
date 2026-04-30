@@ -2427,8 +2427,13 @@ ul {
     max-height: 80px; /* Base max height */
     object-fit: contain;
     filter: grayscale(100%) opacity(0.65);
+    mix-blend-mode: multiply; /* Remove fundos brancos de JPGs/PDFs no tema claro */
     transition: filter 0.3s ease, transform 0.3s ease;
     display: block;
+}
+
+[data-theme="dark"] .client-logo-img {
+    mix-blend-mode: normal; /* Restaura blend no tema escuro para evitar invisibilidade */
 }
 
 .clients-strip__item:hover .client-logo-img {
