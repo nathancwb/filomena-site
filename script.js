@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll Animations
     initScrollAnimations();
+    
+    // Parallax Effects
+    initParallax();
 
     // Counter Animation
     initCounters();
@@ -80,6 +83,27 @@ function initScrollAnimations() {
     });
 
     elements.forEach(el => observer.observe(el));
+}
+
+// ==========================================
+// PARALLAX ANIMATION
+// ==========================================
+function initParallax() {
+    const parallaxElements = document.querySelectorAll('.parallax-text-bg');
+    if (!parallaxElements.length) return;
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        
+        // Usar requestAnimationFrame para animação ultra-suave
+        window.requestAnimationFrame(() => {
+            parallaxElements.forEach(el => {
+                const speed = parseFloat(el.getAttribute('data-speed')) || 0.2;
+                const xPos = -(scrolled * speed);
+                el.style.transform = `translateY(-50%) translateX(${xPos}px)`;
+            });
+        });
+    }, { passive: true }); // passive: true melhora performance do scroll
 }
 
 // ==========================================

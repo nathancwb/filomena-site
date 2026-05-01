@@ -2218,6 +2218,30 @@ ul {
     transform: translateY(0);
 }
 
+/* Parallax Text Background */
+.parallax-text-bg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) translateX(0);
+    font-family: var(--font-heading);
+    font-size: 20vw;
+    font-weight: 800;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(106, 34, 99, 0.08); /* Filomena purple, subtle */
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    text-transform: uppercase;
+    will-change: transform;
+}
+
+[data-theme="dark"] .parallax-text-bg {
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.04);
+}
+
 /* Stagger */
 .fade-in:nth-child(2) {
     transition-delay: 0.1s;
