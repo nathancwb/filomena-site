@@ -2224,12 +2224,12 @@ ul {
     top: 50%;
     left: 0;
     transform: translateY(-50%) translateX(0);
-    font-family: var(--font-heading);
+    font-family: var(--font-heading), sans-serif;
     font-size: 20vw;
     font-weight: 800;
     line-height: 1;
     color: transparent;
-    -webkit-text-stroke: 2px rgba(106, 34, 99, 0.08); /* Filomena purple, subtle */
+    -webkit-text-stroke: 2px rgba(106, 34, 99, 0.4); /* Opacidade aumentada para 40% (roxa) */
     white-space: nowrap;
     z-index: 0;
     pointer-events: none;
@@ -2239,7 +2239,7 @@ ul {
 }
 
 [data-theme="dark"] .parallax-text-bg {
-    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.04);
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
 }
 
 /* Stagger */
