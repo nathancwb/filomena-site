@@ -1,3 +1,25 @@
+
+@font-face {
+    font-family: "OliviarSans";
+    src: url("assets/fonts/OliviarSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OliviarSans";
+    src: url("assets/fonts/OliviarSans-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OliviarSans";
+    src: url("assets/fonts/OliviarSans-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+}
+
 /* ===============================================
    FILOMENA PROPAGANDA - DESIGN MINIMALISTA
    Clean, Creative, Modern
@@ -2629,8 +2651,8 @@ ul {
 
 /* Typography Overrides for Premium Aesthetic */
 :root {
-    --font-heading: "Unbounded", sans-serif;
-    --font-body: "Manrope", sans-serif;
+    --font-heading: "OliviarSans", sans-serif;
+    --font-body: "OliviarSans", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -2671,3 +2693,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+
+/* Background "Por que somos unicos" */
+.bg-sobre {
+    position: relative;
+    background-image: url("assets/images/sobre-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.bg-sobre::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--bg);
+    opacity: 0.85; /* Overlay to ensure text readability */
+    z-index: 0;
+}
+
+/* Ensure text is above overlay */
+.bg-sobre > * {
+    position: relative;
+    z-index: 2;
+}

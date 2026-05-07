@@ -1,0 +1,10 @@
+Backup das fontes anteriores usadas no site (Google Fonts):
+
+HTML Head (Links importados):
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Unbounded:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+CSS Variables:
+:root {
+    --font-heading: "Unbounded", sans-serif;
+    --font-body: "Manrope", sans-serif;
+}
