@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <div class="noise-overlay"></div>
     <!-- Header -->
     <header class="header">
         <div class="header__inner container">
@@ -76,28 +77,28 @@
         </section>
 
         <!-- Form Section -->
-        <section class="section section--alt">
+        <section class="section">
             <div class="container" style="max-width: 800px; margin: 0 auto;">
-                <form class="contact__form fade-in">
+                <form class="contact__form fade-in glass-premium" style="padding: var(--space-2xl);">
                     <div class="form-group">
-                        <label for="nome">Nome completo</label>
-                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+                        <label for="nome" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Nome completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
                     </div>
                     <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
                         <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" placeholder="Seu melhor e-mail">
+                            <label for="email" style="font-family: var(--font-heading); letter-spacing: -0.02em;">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
                         </div>
                         <div class="form-group">
-                            <label for="telefone">Telefone</label>
-                            <input type="tel" id="telefone" name="telefone" placeholder="(  ) _____-____">
+                            <label for="telefone" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(  ) _____-____" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="mensagem">Vamos conversar sobre a sua marca?</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos um pouco sobre o que você precisa..."></textarea>
+                        <label for="mensagem" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Vamos conversar sobre a sua marca?</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos um pouco sobre o que você precisa..." style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);"></textarea>
                     </div>
-                    <button type="submit" class="btn btn--primary btn--full" style="margin-top: var(--space-lg);">Enviar mensagem →</button>
+                    <button type="submit" class="btn btn--primary btn--full" style="margin-top: var(--space-lg); font-family: var(--font-heading);">Enviar mensagem →</button>
                 </form>
             </div>
         </section>
@@ -110,39 +111,39 @@
                     <h2 class="section__title fade-in">Processos, prazos e entregas</h2>
                 </div>
                 
-                <div class="faq-grid fade-in">
-                    <div class="faq-item">
-                        <h4 class="faq-item__question">Como funciona o processo de criação?</h4>
-                        <p class="faq-item__answer">A partir de diagnóstico, estratégia e execução com método próprio.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h4 class="faq-item__question">Qual é o prazo médio de entrega?</h4>
-                        <p class="faq-item__answer">Varia conforme o projeto, sempre alinhado antes de iniciar.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h4 class="faq-item__question">Como definem a estratégia da minha marca?</h4>
-                        <p class="faq-item__answer">Com análise de mercado, posicionamento e objetivos do negócio.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h4 class="faq-item__question">A Filomena atua com clientes de todo o Brasil?</h4>
-                        <p class="faq-item__answer">Sim, atendemos marcas em todo o país.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h4 class="faq-item__question">Posso contratar apenas um serviço pontual?</h4>
-                        <p class="faq-item__answer">Sim, trabalhamos com projetos pontuais e planos contínuos.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h4 class="faq-item__question">Como funciona o tráfego pago?</h4>
-                        <p class="faq-item__answer">Criamos a estratégia, configuramos campanhas e otimizamos com base em dados.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h4 class="faq-item__question">Quanto custa um projeto de branding?</h4>
-                        <p class="faq-item__answer">O valor varia conforme escopo e necessidades da marca.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h4 class="faq-item__question">O que diferencia vocês de outras agências?</h4>
-                        <p class="faq-item__answer">Método estruturado, foco em resultado e visão estratégica de marca.</p>
-                    </div>
+                <div class="faq-grid fade-in bento-grid" style="grid-template-columns: 1fr;">
+                    <details class="faq-item glass-premium bento-large" style="padding: var(--space-lg); cursor: pointer;">
+                        <summary class="faq-item__question" style="margin: 0; outline: none;">Como funciona o processo de criação?</summary>
+                        <p class="faq-item__answer" style="margin-top: var(--space-md);">A partir de diagnóstico, estratégia e execução com método próprio.</p>
+                    </details>
+                    <details class="faq-item glass-premium bento-large" style="padding: var(--space-lg); cursor: pointer;">
+                        <summary class="faq-item__question" style="margin: 0; outline: none;">Qual é o prazo médio de entrega?</summary>
+                        <p class="faq-item__answer" style="margin-top: var(--space-md);">Varia conforme o projeto, sempre alinhado antes de iniciar.</p>
+                    </details>
+                    <details class="faq-item glass-premium bento-large" style="padding: var(--space-lg); cursor: pointer;">
+                        <summary class="faq-item__question" style="margin: 0; outline: none;">Como definem a estratégia da minha marca?</summary>
+                        <p class="faq-item__answer" style="margin-top: var(--space-md);">Com análise de mercado, posicionamento e objetivos do negócio.</p>
+                    </details>
+                    <details class="faq-item glass-premium bento-large" style="padding: var(--space-lg); cursor: pointer;">
+                        <summary class="faq-item__question" style="margin: 0; outline: none;">A Filomena atua com clientes de todo o Brasil?</summary>
+                        <p class="faq-item__answer" style="margin-top: var(--space-md);">Sim, atendemos marcas em todo o país.</p>
+                    </details>
+                    <details class="faq-item glass-premium bento-large" style="padding: var(--space-lg); cursor: pointer;">
+                        <summary class="faq-item__question" style="margin: 0; outline: none;">Posso contratar apenas um serviço pontual?</summary>
+                        <p class="faq-item__answer" style="margin-top: var(--space-md);">Sim, trabalhamos com projetos pontuais e planos contínuos.</p>
+                    </details>
+                    <details class="faq-item glass-premium bento-large" style="padding: var(--space-lg); cursor: pointer;">
+                        <summary class="faq-item__question" style="margin: 0; outline: none;">Como funciona o tráfego pago?</summary>
+                        <p class="faq-item__answer" style="margin-top: var(--space-md);">Criamos a estratégia, configuramos campanhas e otimizamos com base em dados.</p>
+                    </details>
+                    <details class="faq-item glass-premium bento-large" style="padding: var(--space-lg); cursor: pointer;">
+                        <summary class="faq-item__question" style="margin: 0; outline: none;">Quanto custa um projeto de branding?</summary>
+                        <p class="faq-item__answer" style="margin-top: var(--space-md);">O valor varia conforme escopo e necessidades da marca.</p>
+                    </details>
+                    <details class="faq-item glass-premium bento-large" style="padding: var(--space-lg); cursor: pointer;">
+                        <summary class="faq-item__question" style="margin: 0; outline: none;">O que diferencia vocês de outras agências?</summary>
+                        <p class="faq-item__answer" style="margin-top: var(--space-md);">Método estruturado, foco em resultado e visão estratégica de marca.</p>
+                    </details>
                 </div>
             </div>
         </section>

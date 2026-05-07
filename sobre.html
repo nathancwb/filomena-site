@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <div class="noise-overlay"></div>
     <!-- Header -->
     <header class="header">
         <div class="header__inner container">
@@ -101,36 +102,51 @@
                     </div>
                 </div>
 
-                <!-- Missão, Visão e Valores -->
-                <div class="values" style="margin-top: var(--space-4xl);">
-                    <div class="value fade-in">
-                        <div class="value__icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <!-- Missão, Visão e Valores (Bento Grid) -->
+                <div class="bento-grid fade-in">
+                    <!-- Manifesto -->
+                    <div class="bento-item bento-large glass-premium" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: rgba(0,0,0,0.2); border: none;">
+                        <span class="section__tag">Nossa Bússola</span>
+                        <h2 class="section__title" style="margin-bottom: 0;">A Cultura Filomena</h2>
+                    </div>
+                    
+                    <!-- Missão -->
+                    <div class="bento-item bento-medium" style="background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg) 100%);">
+                        <div class="value__icon" style="margin-bottom: 1.5rem; color: var(--accent);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                             </svg>
                         </div>
-                        <h3 class="value__title">Missão</h3>
+                        <h3 class="value__title" style="font-size: 1.5rem; margin-bottom: 1rem;">Missão</h3>
                         <p class="value__text">Oferecer as melhores soluções integradas de comunicação e mídia para empresas que entendam a importância do marketing.</p>
                     </div>
-                    <div class="value fade-in">
-                        <div class="value__icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                    <!-- Visão -->
+                    <div class="bento-item bento-small glass-premium">
+                        <div class="value__icon" style="margin-bottom: 1.5rem; color: var(--primary);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                             </svg>
                         </div>
-                        <h3 class="value__title">Visão</h3>
-                        <p class="value__text">Ser uma agência de comunicação ágil, acessível e criativa, referência na solução de problemas no interior de SP.</p>
+                        <h3 class="value__title" style="font-size: 1.5rem; margin-bottom: 1rem;">Visão</h3>
+                        <p class="value__text">Ser uma agência ágil, acessível e criativa, referência na solução de problemas no interior de SP.</p>
                     </div>
-                    <div class="value fade-in">
-                        <div class="value__icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                            </svg>
+
+                    <!-- Valores -->
+                    <div class="bento-item bento-large" style="background: var(--bg-alt); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+                        <div style="flex: 1; min-width: 300px;">
+                            <h3 class="value__title" style="font-size: 1.5rem; margin-bottom: 1rem;">Valores Inegociáveis</h3>
+                            <p class="value__text">Integridade, transparência, foco em resultados reais e paixão pelo que fazemos todos os dias. Não criamos peças bonitas que não vendem; criamos comunicação que performa.</p>
                         </div>
-                        <h3 class="value__title">Valores</h3>
-                        <p class="value__text">Integridade, transparência, foco em resultados reais e paixão pelo que fazemos todos os dias.</p>
+                        <div style="flex: 1; min-width: 300px; text-align: right;">
+                            <div style="display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-end;">
+                                <span class="badge" style="background: var(--accent); color: white;">Transparência</span>
+                                <span class="badge" style="background: var(--primary); color: white;">Resultado Real</span>
+                                <span class="badge" style="background: var(--text); color: var(--bg);">Paixão</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
