@@ -542,42 +542,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// --- Flying Bird Scroll Animation ---
-document.addEventListener("DOMContentLoaded", () => {
-    const bird = document.createElement("img");
-    bird.src = "assets/images/bird-logo.png"; // Placeholder
-    bird.className = "flying-bird";
-    document.body.appendChild(bird);
 
-    let currentX = -300;
-    let targetX = -300;
-    let currentY = 0;
-    let targetY = 0;
-    let currentRot = 0;
-    let targetRot = 0;
-
-    window.addEventListener("scroll", () => {
-        const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-        
-        // Move from left (-300px) to right (width + 300px)
-        targetX = -300 + (scrollPercent * (window.innerWidth + 600));
-        
-        // Fly up and down using sine wave
-        targetY = Math.sin(scrollPercent * Math.PI * 6) * 120;
-        
-        // Tilt depending on movement
-        targetRot = Math.cos(scrollPercent * Math.PI * 6) * 20;
-    });
-
-    // Smooth animation loop
-    function animateBird() {
-        currentX += (targetX - currentX) * 0.05;
-        currentY += (targetY - currentY) * 0.05;
-        currentRot += (targetRot - currentRot) * 0.05;
-        
-        bird.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentRot}deg)`;
-        requestAnimationFrame(animateBird);
-    }
-    
-    animateBird();
-});
