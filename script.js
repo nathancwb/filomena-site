@@ -545,12 +545,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
 // --- Flying Bird Video Scroll Animation ---
 document.addEventListener("DOMContentLoaded", () => {
     const birdVideo = document.createElement("video");
     birdVideo.src = "assets/videos/passaro_voando.mp4";
     birdVideo.className = "flying-bird-video";
-    birdVideo.autoplay = true;
     birdVideo.loop = true;
     birdVideo.muted = true;
     birdVideo.playsInline = true;
@@ -563,22 +563,31 @@ document.addEventListener("DOMContentLoaded", () => {
     let targetY = 0;
     let currentRot = 0;
     let targetRot = 0;
+    
+    let isScrolling;
 
     window.addEventListener("scroll", () => {
         const docHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
         const scrollPercent = window.scrollY / (docHeight - window.innerHeight);
         
-        // Move from left to right based on scroll
         targetX = -300 + (scrollPercent * (window.innerWidth + 600));
-        
-        // Fly up and down using sine wave
         targetY = Math.sin(scrollPercent * Math.PI * 6) * 120;
-        
-        // Tilt depending on movement
         targetRot = Math.cos(scrollPercent * Math.PI * 6) * 15;
+        
+        // Play video when scrolling
+        if (birdVideo.paused) {
+            birdVideo.play();
+        }
+        
+        // Clear the timeout to pause
+        window.clearTimeout(isScrolling);
+        
+        // Set a timeout to pause the video after scrolling stops
+        isScrolling = setTimeout(function() {
+            birdVideo.pause();
+        }, 150);
     });
 
-    // Smooth animation loop
     function animateBird() {
         currentX += (targetX - currentX) * 0.05;
         currentY += (targetY - currentY) * 0.05;
