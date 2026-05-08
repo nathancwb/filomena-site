@@ -2102,23 +2102,24 @@ ul {
 }
 
 @media (max-width: 600px) {
-    /* Carrossel no mobile */
+    /* Carrossel no mobile com peek do próximo card */
     .instagram-embeds {
         display: flex;
         flex-direction: row;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        gap: var(--space-md);
+        gap: 12px;
         padding-bottom: var(--space-sm);
-        scrollbar-width: none; /* Firefox */
+        padding-right: 40px; /* Peek do próximo card */
+        scrollbar-width: none;
     }
     .instagram-embeds::-webkit-scrollbar {
-        display: none; /* Chrome/Safari */
+        display: none;
     }
     .instagram-embeds .instagram-media {
-        flex: 0 0 85vw !important;
-        max-width: 85vw !important;
+        flex: 0 0 78vw !important;
+        max-width: 78vw !important;
         scroll-snap-align: start;
     }
 }
