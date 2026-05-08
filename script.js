@@ -599,6 +599,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentRot = 0, targetRot = 0;
     let isScrolling;
     let lastScrollY = window.scrollY;
+    let firstScroll = true;
 
     window.addEventListener("scroll", () => {
         const html = document.documentElement;
@@ -609,18 +610,27 @@ document.addEventListener("DOMContentLoaded", () => {
         targetY = Math.sin(scrollPercent * Math.PI * 4) * 80;
         targetRot = Math.cos(scrollPercent * Math.PI * 4) * 15;
 
+        // Na primeira rolagem, snapa direto sem delay
+        if (firstScroll) {
+            currentX = targetX;
+            currentY = targetY;
+            currentRot = targetRot;
+            firstScroll = false;
+        }
+
         // Reproduz o video em qualquer direção de scroll
         if (birdVideo.paused) birdVideo.play();
         lastScrollY = window.scrollY;
 
+        // Só pausa após 500ms sem scroll (evita parar entre mudanças rápidas de direção)
         window.clearTimeout(isScrolling);
-        isScrolling = setTimeout(() => birdVideo.pause(), 150);
+        isScrolling = setTimeout(() => birdVideo.pause(), 500);
     });
 
     function animatePosition() {
-        currentX += (targetX - currentX) * 0.05;
-        currentY += (targetY - currentY) * 0.05;
-        currentRot += (targetRot - currentRot) * 0.05;
+        currentX += (targetX - currentX) * 0.08;
+        currentY += (targetY - currentY) * 0.08;
+        currentRot += (targetRot - currentRot) * 0.08;
         canvas.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentRot}deg)`;
         requestAnimationFrame(animatePosition);
     }
