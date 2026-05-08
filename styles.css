@@ -2102,8 +2102,24 @@ ul {
 }
 
 @media (max-width: 600px) {
+    /* Carrossel no mobile */
     .instagram-embeds {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: var(--space-md);
+        padding-bottom: var(--space-sm);
+        scrollbar-width: none; /* Firefox */
+    }
+    .instagram-embeds::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+    .instagram-embeds .instagram-media {
+        flex: 0 0 85vw !important;
+        max-width: 85vw !important;
+        scroll-snap-align: start;
     }
 }
 
@@ -2701,8 +2717,14 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     background-image: url("assets/images/sobre-bg.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-attachment: scroll;
+}
+
+@media (max-width: 768px) {
+    .bg-sobre {
+        background-position: 65% center; /* Centraliza na pessoa no mobile */
+    }
 }
 
 .bg-sobre::before {
@@ -2741,4 +2763,11 @@ h1, h2, h3, h4, h5, h6 {
 .services-grid {
     position: relative;
     z-index: 100;
+}
+
+/* Passaro invisivel no mobile */
+@media (max-width: 768px) {
+    .flying-bird-canvas {
+        display: none !important;
+    }
 }
