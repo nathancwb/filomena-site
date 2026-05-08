@@ -110,6 +110,15 @@
             align-items: start;
         }
 
+        @keyframes statsAppear {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .stats-stack {
+            animation: statsAppear 0.7s ease 0.25s both;
+        }
+
         .historia-title {
             font-size: clamp(2rem, 4vw, 3.2rem);
             font-weight: 900;
@@ -482,7 +491,7 @@
                         </p>
                     </div>
 
-                    <div class="stats-stack fade-in">
+                    <div class="stats-stack">
                         <div class="stat-card stat-card--center">
                             <span class="stat-number">+250</span>
                             <span class="stat-label">Marcas atendidas</span>
