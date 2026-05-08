@@ -551,13 +551,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!window.location.pathname.endsWith("index.html") && window.location.pathname !== "/" && !window.location.pathname.endsWith("/")) return;
 
     // Hidden video (source frames)
+
+    // Loop manual: quando o video termina, volta para 0.5s (pula o inicio)
+    birdVideo.addEventListener("ended", () => {
+        birdVideo.currentTime = 0.5;
+        if (!birdVideo.paused) birdVideo.play();
+    });
+
     const birdVideo = document.createElement("video");
     birdVideo.src = "assets/videos/passaro_voando.mp4";
-    birdVideo.loop = true;
+    birdVideo.loop = false; // Controlamos o loop manualmente para pular o inicio
     birdVideo.muted = true;
     birdVideo.playsInline = true;
     birdVideo.crossOrigin = "anonymous";
     birdVideo.style.display = "none";
+    birdVideo.currentTime = 0.5; // Pula os primeiros 0.5s do video
     document.body.appendChild(birdVideo);
 
     // Visible canvas (transparent output)
