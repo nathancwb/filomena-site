@@ -564,10 +564,11 @@ document.addEventListener("DOMContentLoaded", () => {
         birdVideo.currentTime = 0.5;
     });
 
-    // 3. Loop manual: ao terminar, volta para 0.5s (pula o inicio)
-    birdVideo.addEventListener("ended", () => {
-        birdVideo.currentTime = 0.5;
-        birdVideo.play();
+    // 3. Loop sem travada: volta para 0.5s ANTES do video terminar (sem esperar o ended)
+    birdVideo.addEventListener("timeupdate", () => {
+        if (birdVideo.duration && birdVideo.currentTime >= birdVideo.duration - 0.15) {
+            birdVideo.currentTime = 0.5;
+        }
     });
 
     // 4. Visible canvas (transparent output)
