@@ -548,7 +548,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- Flying Bird Video Scroll Animation ---
 document.addEventListener("DOMContentLoaded", () => {
     const birdVideo = document.createElement("video");
-    birdVideo.src = "assets/videos/bird-flying.mp4";
+    birdVideo.src = "assets/videos/passaro_voando.mp4";
     birdVideo.className = "flying-bird-video";
     birdVideo.autoplay = true;
     birdVideo.loop = true;
