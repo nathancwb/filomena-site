@@ -2514,8 +2514,8 @@ ul {
     max-height: 80px; /* Base max height */
     object-fit: contain;
     filter: grayscale(100%) opacity(0.65);
-    mix-blend-mode: multiply; /* Fundo branco invisivel */
-    opacity: 0.8;
+    mix-blend-mode: screen; /* Fundo preto invisivel */
+    opacity: 1;
     transition: filter 0.3s ease, transform 0.3s ease;
     display: block;
 }
@@ -2730,8 +2730,8 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: none;
     transform: translate(-100vw, 0);
     will-change: transform;
-    mix-blend-mode: multiply; /* Fundo branco invisivel */
-    opacity: 0.8;
+    mix-blend-mode: screen; /* Fundo preto invisivel */
+    opacity: 1;
 }
 
 
