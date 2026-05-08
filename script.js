@@ -550,31 +550,33 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener("DOMContentLoaded", () => {
     if (!window.location.pathname.endsWith("index.html") && window.location.pathname !== "/" && !window.location.pathname.endsWith("/")) return;
 
-    // Hidden video (source frames)
-
-    // Loop manual: quando o video termina, volta para 0.5s (pula o inicio)
-    birdVideo.addEventListener("ended", () => {
-        birdVideo.currentTime = 0.5;
-        if (!birdVideo.paused) birdVideo.play();
-    });
-
+    // 1. Hidden video (source frames)
     const birdVideo = document.createElement("video");
     birdVideo.src = "assets/videos/passaro_voando.mp4";
-    birdVideo.loop = false; // Controlamos o loop manualmente para pular o inicio
     birdVideo.muted = true;
     birdVideo.playsInline = true;
     birdVideo.crossOrigin = "anonymous";
     birdVideo.style.display = "none";
-    birdVideo.currentTime = 0.5; // Pula os primeiros 0.5s do video
     document.body.appendChild(birdVideo);
 
-    // Visible canvas (transparent output)
+    // 2. Pula os primeiros 0.5s quando o video carrega
+    birdVideo.addEventListener("loadedmetadata", () => {
+        birdVideo.currentTime = 0.5;
+    });
+
+    // 3. Loop manual: ao terminar, volta para 0.5s (pula o inicio)
+    birdVideo.addEventListener("ended", () => {
+        birdVideo.currentTime = 0.5;
+        birdVideo.play();
+    });
+
+    // 4. Visible canvas (transparent output)
     const canvas = document.createElement("canvas");
     canvas.className = "flying-bird-canvas";
     document.body.appendChild(canvas);
     const ctx = canvas.getContext("2d", { willReadFrequently: true });
 
-    // Set canvas size once video metadata loads
+    // 5. Define tamanho do canvas quando os metadados carregam
     birdVideo.addEventListener("loadedmetadata", () => {
         canvas.width = birdVideo.videoWidth;
         canvas.height = birdVideo.videoHeight;
@@ -582,7 +584,7 @@ document.addEventListener("DOMContentLoaded", () => {
         canvas.style.height = "auto";
     });
 
-    // Chroma key: remove near-black pixels from each frame
+    // 6. Chroma key: remove pixels brancos (fundo do video) a cada frame
     function renderFrame() {
         if (!birdVideo.paused && !birdVideo.ended && canvas.width > 0) {
             ctx.drawImage(birdVideo, 0, 0, canvas.width, canvas.height);
@@ -590,9 +592,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = imageData.data;
             for (let i = 0; i < data.length; i += 4) {
                 const r = data[i], g = data[i + 1], b = data[i + 2];
-                // Remove pixels brancos/claros (fundo do video do Grok eh branco)
                 if (r > 200 && g > 200 && b > 200) {
-                    data[i + 3] = 0; // fully transparent
+                    data[i + 3] = 0;
                 }
             }
             ctx.putImageData(imageData, 0, 0);
@@ -601,7 +602,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     renderFrame();
 
-    // Scroll-based position animation
+    // 7. Animação de posição baseada no scroll
     let currentX = -300, targetX = -300;
     let currentY = 0, targetY = 0;
     let currentRot = 0, targetRot = 0;
@@ -626,11 +627,9 @@ document.addEventListener("DOMContentLoaded", () => {
             firstScroll = false;
         }
 
-        // Reproduz o video em qualquer direção de scroll
         if (birdVideo.paused) birdVideo.play();
         lastScrollY = window.scrollY;
 
-        // Só pausa após 500ms sem scroll (evita parar entre mudanças rápidas de direção)
         window.clearTimeout(isScrolling);
         isScrolling = setTimeout(() => birdVideo.pause(), 500);
     });
