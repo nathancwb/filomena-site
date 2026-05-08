@@ -2719,8 +2719,8 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
 }
 
-/* Flying Bird Wrapper — isolates blend mode */
-.flying-bird-wrapper {
+/* Flying Bird Canvas — transparência real via chroma key */
+.flying-bird-canvas {
     position: fixed;
     top: 50%;
     left: 0;
@@ -2730,15 +2730,6 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: none;
     transform: translate(-100vw, 0);
     will-change: transform;
-    background: black;
-    mix-blend-mode: screen; /* Remove o fundo preto, mantém o passaro colorido */
-    border-radius: 4px;
-}
-
-.flying-bird-video {
-    display: block;
-    width: 100%;
-    height: auto;
 }
 
 /* Z-Index fixes — imagens e cards ficam acima do passaro */

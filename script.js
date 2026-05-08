@@ -546,68 +546,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// --- Flying Bird Video Scroll Animation ---
+// --- Flying Bird Video Scroll Animation (Canvas Chroma Key) ---
 document.addEventListener("DOMContentLoaded", () => {
     if (!window.location.pathname.endsWith("index.html") && window.location.pathname !== "/" && !window.location.pathname.endsWith("/")) return;
 
-    // Create wrapper (handles blend mode + positioning)
-    const birdWrapper = document.createElement("div");
-    birdWrapper.className = "flying-bird-wrapper";
-
+    // Hidden video (source frames)
     const birdVideo = document.createElement("video");
     birdVideo.src = "assets/videos/passaro_voando.mp4";
-    birdVideo.className = "flying-bird-video";
     birdVideo.loop = true;
     birdVideo.muted = true;
     birdVideo.playsInline = true;
+    birdVideo.crossOrigin = "anonymous";
+    birdVideo.style.display = "none";
+    document.body.appendChild(birdVideo);
 
-    birdWrapper.appendChild(birdVideo);
-    document.body.appendChild(birdWrapper);
+    // Visible canvas (transparent output)
+    const canvas = document.createElement("canvas");
+    canvas.className = "flying-bird-canvas";
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext("2d", { willReadFrequently: true });
 
-    let currentX = -300;
-    let targetX = -300;
-    let currentY = 0;
-    let targetY = 0;
-    let currentRot = 0;
-    let targetRot = 0;
+    // Set canvas size once video metadata loads
+    birdVideo.addEventListener("loadedmetadata", () => {
+        canvas.width = birdVideo.videoWidth;
+        canvas.height = birdVideo.videoHeight;
+        canvas.style.width = "250px";
+        canvas.style.height = "auto";
+    });
 
+    // Chroma key: remove near-black pixels from each frame
+    function renderFrame() {
+        if (!birdVideo.paused && !birdVideo.ended && canvas.width > 0) {
+            ctx.drawImage(birdVideo, 0, 0, canvas.width, canvas.height);
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i], g = data[i + 1], b = data[i + 2];
+                // Remove pixels that are near-black (the background)
+                if (r < 60 && g < 60 && b < 60) {
+                    data[i + 3] = 0; // fully transparent
+                }
+            }
+            ctx.putImageData(imageData, 0, 0);
+        }
+        requestAnimationFrame(renderFrame);
+    }
+    renderFrame();
+
+    // Scroll-based position animation
+    let currentX = -300, targetX = -300;
+    let currentY = 0, targetY = 0;
+    let currentRot = 0, targetRot = 0;
     let isScrolling;
     let lastScrollY = window.scrollY;
 
     window.addEventListener("scroll", () => {
-        const body = document.body;
         const html = document.documentElement;
-        const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+        const docHeight = Math.max(document.body.scrollHeight, html.scrollHeight, html.offsetHeight);
         const scrollPercent = window.scrollY / (docHeight - window.innerHeight);
 
         targetX = -100 + (scrollPercent * (window.innerWidth + 200));
         targetY = Math.sin(scrollPercent * Math.PI * 4) * 80;
         targetRot = Math.cos(scrollPercent * Math.PI * 4) * 15;
 
-        // Só toca o video quando está descendo
+        // Só reproduz o video descendo
         if (window.scrollY > lastScrollY) {
             if (birdVideo.paused) birdVideo.play();
         } else {
             if (!birdVideo.paused) birdVideo.pause();
         }
-
         lastScrollY = window.scrollY;
 
         window.clearTimeout(isScrolling);
-        isScrolling = setTimeout(() => {
-            birdVideo.pause();
-        }, 150);
+        isScrolling = setTimeout(() => birdVideo.pause(), 150);
     });
 
-    function animateBird() {
+    function animatePosition() {
         currentX += (targetX - currentX) * 0.05;
         currentY += (targetY - currentY) * 0.05;
         currentRot += (targetRot - currentRot) * 0.05;
-
-        // Move o wrapper inteiro (não o video) para manter o blend mode correto
-        birdWrapper.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentRot}deg)`;
-        requestAnimationFrame(animateBird);
+        canvas.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentRot}deg)`;
+        requestAnimationFrame(animatePosition);
     }
-
-    animateBird();
+    animatePosition();
 });
