@@ -1646,7 +1646,7 @@ ul {
 .project-modal {
     position: fixed;
     inset: 0;
-    z-index: 9999;
+    z-index: 0;
     display: none;
     align-items: center;
     justify-content: center;
@@ -2514,7 +2514,8 @@ ul {
     max-height: 80px; /* Base max height */
     object-fit: contain;
     filter: grayscale(100%) opacity(0.65);
-    mix-blend-mode: screen; /* Remove fundo preto */ /* Remove fundos brancos de JPGs/PDFs no tema claro */
+    mix-blend-mode: multiply; /* Fundo branco invisivel */
+    opacity: 0.8;
     transition: filter 0.3s ease, transform 0.3s ease;
     display: block;
 }
@@ -2673,7 +2674,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 0;
     opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noiseFilter\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.65\" numOctaves=\"3\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\" filter=\"url(%23noiseFilter)\"/%3E%3C/svg%3E");
 }
@@ -2725,9 +2726,17 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 250px;
     height: auto;
-    z-index: 9999;
+    z-index: 0;
     pointer-events: none;
     transform: translate(-100vw, 0);
     will-change: transform;
-    mix-blend-mode: screen; /* Remove fundo preto */ /* Faz o fundo branco sumir */
+    mix-blend-mode: multiply; /* Fundo branco invisivel */
+    opacity: 0.8;
+}
+
+
+/* Z-Index fixes for flying bird */
+.portfolio-grid-home__item, .service, .client-logo-img {
+    position: relative;
+    z-index: 5;
 }

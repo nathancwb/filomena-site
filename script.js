@@ -548,6 +548,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- Flying Bird Video Scroll Animation ---
 document.addEventListener("DOMContentLoaded", () => {
+    // Only run bird on Home Page
+    if (!window.location.pathname.endsWith("index.html") && window.location.pathname !== "/" && !window.location.pathname.endsWith("/")) return;
     const birdVideo = document.createElement("video");
     birdVideo.src = "assets/videos/passaro_voando.mp4";
     birdVideo.className = "flying-bird-video";
@@ -565,22 +567,31 @@ document.addEventListener("DOMContentLoaded", () => {
     let targetRot = 0;
     
     let isScrolling;
+    let facingRight = true;
+    let lastScrollY = window.scrollY;
 
-window.addEventListener("scroll", () => {
-        // Calculate total scrollable height safely
+    window.addEventListener("scroll", () => {
         const body = document.body;
         const html = document.documentElement;
         const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
         const scrollPercent = window.scrollY / (docHeight - window.innerHeight);
         
-        // Passaro voa mais devagar, do canto esquerdo ate o direito cobrindo 100% do scroll
         targetX = -100 + (scrollPercent * (window.innerWidth + 200));
-        
-        // Voa para cima e para baixo suavemente
         targetY = Math.sin(scrollPercent * Math.PI * 4) * 80;
         
-        // Inclina levemente dependendo do movimento
-        targetRot = Math.cos(scrollPercent * Math.PI * 4) * 10;
+        // Determina a direcao
+        if (window.scrollY > lastScrollY) {
+            facingRight = true;
+        } else if (window.scrollY < lastScrollY) {
+            facingRight = false;
+        }
+        lastScrollY = window.scrollY;
+        
+        if (facingRight) {
+            targetRot = Math.cos(scrollPercent * Math.PI * 4) * 15;
+        } else {
+            targetRot = -(Math.cos(scrollPercent * Math.PI * 4) * 15);
+        }
         
         if (birdVideo.paused) {
             birdVideo.play();
@@ -597,7 +608,9 @@ window.addEventListener("scroll", () => {
         currentY += (targetY - currentY) * 0.05;
         currentRot += (targetRot - currentRot) * 0.05;
         
-        birdVideo.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentRot}deg)`;
+        const scaleX = facingRight ? 1 : -1;
+        
+        birdVideo.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentRot}deg) scaleX(${scaleX})`;
         requestAnimationFrame(animateBird);
     }
     
