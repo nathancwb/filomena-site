@@ -7,11 +7,378 @@
     <meta name="description"
         content="Conheça a história da Filomena Gestão de Marcas — agência de publicidade criada em 2013 em São Carlos-SP, com mais de 250 marcas atendidas em todo o Brasil.">
     <title>Sobre Nós | Filomena Gestão de Marcas</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* =========================================
+           SOBRE PAGE — PREMIUM REDESIGN
+        ========================================= */
+
+        /* --- Por que Filomena? (Hero section roxa) --- */
+        .sobre-hero {
+            background: #3a0f38;
+            color: white;
+            padding: 7rem 0 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sobre-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 70% 50%, rgba(106,34,99,0.6) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .sobre-hero__inner {
+            display: grid;
+            grid-template-columns: 1fr 480px;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sobre-hero__tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.55);
+            margin-bottom: 1.5rem;
+        }
+
+        .sobre-hero__title {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 900;
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 2rem;
+        }
+
+        .sobre-hero__text {
+            font-size: 1.1rem;
+            line-height: 1.85;
+            color: rgba(255,255,255,0.78);
+            margin-bottom: 1.25rem;
+        }
+
+        .sobre-hero__text strong {
+            color: white;
+            font-weight: 700;
+        }
+
+        .sobre-hero__logo-side {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sobre-hero__logo-side img {
+            width: 100%;
+            max-width: 400px;
+            opacity: 0.9;
+            filter: brightness(0) invert(1);
+        }
+
+        /* --- Nossa História + Stats --- */
+        .historia-section {
+            padding: 7rem 0;
+        }
+
+        .historia-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .historia-title {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 900;
+            margin-bottom: 1.75rem;
+            line-height: 1.1;
+        }
+
+        .historia-text {
+            font-size: 1.1rem;
+            line-height: 1.85;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        /* Stats cards */
+        .stats-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: var(--primary);
+            color: white;
+            border-radius: 16px;
+            padding: 2rem 2.25rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.07);
+        }
+
+        .stat-card--center {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            font-style: italic;
+            opacity: 0.88;
+            margin-top: 0.35rem;
+            display: block;
+        }
+
+        .stat-card--brasil {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .stat-card--brasil .stat-label {
+            font-size: 1.05rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 1.35;
+        }
+
+        /* Brazil silhouette */
+        .brasil-icon {
+            width: 72px;
+            height: 72px;
+            flex-shrink: 0;
+            opacity: 0.4;
+        }
+
+        /* --- Cultura Filomena — Premium redesign --- */
+        .cultura-section {
+            background: #3a0f38;
+            padding: 7rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cultura-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 100%, rgba(106,34,99,0.5) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .cultura-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cultura-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .cultura-title {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 900;
+            color: white;
+        }
+
+        .cultura-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cultura-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .cultura-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-4px);
+        }
+
+        .cultura-card__number {
+            font-size: 4.5rem;
+            font-weight: 900;
+            font-style: italic;
+            color: rgba(255,255,255,0.12);
+            line-height: 1;
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        .cultura-card__title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cultura-card__text {
+            font-size: 0.95rem;
+            line-height: 1.75;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .cultura-card__tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .cultura-tag-pill {
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.85);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        /* --- Cases de Sucesso --- */
+        .cases-section {
+            padding: 7rem 0;
+        }
+
+        .cases-header {
+            margin-bottom: 3.5rem;
+        }
+
+        .cases-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .cases-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .case-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .case-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .case-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .case-item__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.75rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .case-item:hover .case-item__overlay {
+            opacity: 1;
+        }
+
+        /* Always visible labels at bottom */
+        .case-item__label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.25rem 1.5rem 1.25rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
+        }
+
+        .case-item__name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+        }
+
+        .case-item__tag {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.65);
+            margin-top: 0.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .sobre-hero__inner { grid-template-columns: 1fr; }
+            .sobre-hero__logo-side { display: none; }
+            .historia-grid { grid-template-columns: 1fr; }
+            .cultura-cards { grid-template-columns: 1fr; }
+            .cases-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +390,6 @@
             <a href="/" class="logo">
                 <img src="assets/images/logo-main.png" alt="Filomena Propaganda & Marketing" class="logo__img">
             </a>
-
             <nav class="nav">
                 <ul class="nav__list" id="nav-menu">
                     <li><a href="/" class="nav__link">Home</a></li>
@@ -34,7 +400,6 @@
                     <li><a href="trabalhe-conosco" class="nav__link">Trabalhe Conosco</a></li>
                     <li><a href="contato" class="nav__link">Contato</a></li>
                 </ul>
-
                 <div class="nav__actions">
                     <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
                         <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -46,9 +411,7 @@
                         </svg>
                     </button>
                     <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <span></span><span></span><span></span>
                     </button>
                 </div>
             </nav>
@@ -57,78 +420,66 @@
 
     <main>
 
-        <!-- Page Hero -->
-        <section class="page-hero">
-            <div class="container" style="position: relative; z-index: 1;">
-                <span class="section__tag fade-in">Sobre Nós</span>
-                <h1 class="page-hero__title fade-in">Conheça a Filomena</h1>
-                <p class="page-hero__description fade-in">
-                    Uma agência feita de pessoas reais para marcas que buscam conexão verdadeira.
-                </p>
-            </div>
-        </section>
-
-        <!-- Por que "Filomena"? — Fundo roxo escuro como no PDF -->
-        <section class="section" style="background: #3d0f3b; color: white; padding: var(--space-3xl) 0;">
+        <!-- =========================================
+             HERO — Por que "Filomena"?
+        ========================================= -->
+        <section class="sobre-hero">
             <div class="container">
-                <div class="about__grid about__grid--reverse">
-                    <div class="about__content" style="color: white;">
-                        <h2 class="section__title fade-in" style="color: white; font-size: clamp(2rem, 5vw, 3.5rem);">
-                            Por que "Filomena"?
-                        </h2>
-                        <p class="about__text fade-in" style="color: rgba(255,255,255,0.9); font-size: 1.1rem; line-height: 1.85; margin-bottom: 1.5rem;">
+                <div class="sobre-hero__inner">
+                    <div class="sobre-hero__content fade-in">
+                        <span class="sobre-hero__tag">Nossa História</span>
+                        <h1 class="sobre-hero__title">Por que<br>"Filomena"?</h1>
+                        <p class="sobre-hero__text">
                             O nome foi inspirado na personagem da mitologia grega. Filomena foi aprisionada e teve sua
                             língua cortada para não se comunicar. Na prisão ela teceu um tapete para contar o que havia
                             acontecido e onde estava. O tapete chegou até sua família, que a libertou do cativeiro.
                         </p>
-                        <p class="about__text fade-in" style="color: rgba(255,255,255,0.9); font-size: 1.1rem; line-height: 1.85;">
+                        <p class="sobre-hero__text">
                             Apesar disso, ela continuou sendo perseguida e, para ser livre, pediu ajuda aos deuses que a
                             transforou em um pássaro rouxinol. Esse é o desafio diário da equipe da Filomena Propaganda:
-                            <strong style="color: white;">uma comunicação que se recria frente ao dinamismo dos meios, principalmente o digital.</strong>
+                            <strong>uma comunicação que se recria frente ao dinamismo dos meios, principalmente o digital.</strong>
                         </p>
                     </div>
-                    <div class="about__image fade-in" style="display: flex; align-items: center; justify-content: center;">
-                        <img src="assets/images/Filomena_logotipo.png" alt="Filomena Gestão de Marcas"
-                            style="max-width: 380px; width: 100%; filter: brightness(0) invert(1); opacity: 0.92;">
+                    <div class="sobre-hero__logo-side fade-in">
+                        <img src="assets/images/logo-filomena.png" alt="Filomena Gestão de Marcas">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Nossa História + Stats -->
-        <section class="section">
+        <!-- =========================================
+             NOSSA HISTÓRIA + STATS
+        ========================================= -->
+        <section class="historia-section">
             <div class="container">
-                <div class="about__grid">
-                    <div class="about__content">
-                        <h2 class="section__title fade-in" style="font-size: clamp(2rem, 4vw, 3rem);">
-                            Nossa história até aqui
-                        </h2>
-                        <p class="about__text fade-in" style="font-size: 1.1rem; line-height: 1.85; margin-bottom: 1.5rem;">
+                <div class="historia-grid">
+                    <div class="fade-in">
+                        <h2 class="historia-title">Nossa história<br>até aqui</h2>
+                        <p class="historia-text">
                             A Filomena Gestão de Marcas é uma agência de publicidade criada em julho de 2013 e hoje tem no
                             portfólio a marca de ter atendido mais de 250 marcas dos setores da indústria, varejo e serviço.
                         </p>
-                        <p class="about__text fade-in" style="font-size: 1.1rem; line-height: 1.85;">
+                        <p class="historia-text">
                             A agência está localizada em São Carlos e atende clientes em todo território nacional.
                         </p>
                     </div>
 
-                    <!-- Stats — igual ao PDF -->
-                    <div class="fade-in" style="display: flex; flex-direction: column; gap: 1rem; min-width: 260px;">
-                        <div style="background: var(--primary); color: white; border-radius: 12px; padding: 2rem 2.5rem; text-align: center;">
-                            <div style="font-size: 3.5rem; font-weight: 900; font-style: italic; line-height: 1;">+250</div>
-                            <div style="font-size: 1rem; font-style: italic; margin-top: 0.4rem; opacity: 0.9;">Marcas atendidas</div>
+                    <div class="stats-stack fade-in">
+                        <div class="stat-card stat-card--center">
+                            <span class="stat-number">+250</span>
+                            <span class="stat-label">Marcas atendidas</span>
                         </div>
-                        <div style="background: var(--primary); color: white; border-radius: 12px; padding: 2rem 2.5rem; text-align: center;">
-                            <div style="font-size: 3.5rem; font-weight: 900; font-style: italic; line-height: 1;">13</div>
-                            <div style="font-size: 1rem; font-style: italic; margin-top: 0.4rem; opacity: 0.9;">Anos voando alto</div>
+                        <div class="stat-card stat-card--center">
+                            <span class="stat-number">13</span>
+                            <span class="stat-label">Anos voando alto</span>
                         </div>
-                        <div style="background: var(--primary); color: white; border-radius: 12px; padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;">
+                        <div class="stat-card stat-card--brasil">
                             <div>
-                                <div style="font-style: italic; font-size: 1.05rem; line-height: 1.4;">Clientes em<br>todo o Brasil</div>
+                                <span class="stat-label">Clientes em<br>todo o Brasil</span>
                             </div>
-                            <!-- Silhueta do Brasil simplificada -->
-                            <svg viewBox="0 0 60 70" width="60" height="70" fill="rgba(255,255,255,0.35)">
-                                <path d="M10 5 Q15 2 25 3 Q35 2 45 8 Q52 14 50 25 Q55 30 52 40 Q48 52 40 60 Q32 68 25 65 Q18 68 12 60 Q5 50 8 38 Q3 28 8 18 Z"/>
+                            <svg class="brasil-icon" viewBox="0 0 80 100" fill="white">
+                                <path d="M14 6 Q22 2 38 4 Q52 3 62 10 Q72 18 70 32 Q76 40 72 55 Q66 72 54 82 Q42 92 32 88 Q22 92 14 82 Q4 70 8 54 Q2 40 6 26 Q8 14 14 6Z"/>
+                                <path d="M30 45 Q38 40 50 44 Q58 50 52 58 Q44 65 34 60 Q26 54 30 45Z" fill="rgba(255,255,255,0.4)"/>
                             </svg>
                         </div>
                     </div>
@@ -136,68 +487,96 @@
             </div>
         </section>
 
-        <!-- Missão, Visão e Valores -->
-        <section class="section section--alt">
+        <!-- =========================================
+             A CULTURA FILOMENA — Premium redesign
+        ========================================= -->
+        <section class="cultura-section">
             <div class="container">
-                <div class="section__header section__header--center" style="margin-bottom: var(--space-2xl);">
-                    <span class="section__tag fade-in">Nossa Bússola</span>
-                    <h2 class="section__title fade-in">A Cultura Filomena</h2>
+                <div class="cultura-header fade-in">
+                    <span class="cultura-tag">Nossa Bússola</span>
+                    <h2 class="cultura-title">A Cultura Filomena</h2>
                 </div>
 
-                <div class="bento-grid fade-in">
-                    <!-- Missão -->
-                    <div class="bento-item bento-medium" style="background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg) 100%);">
-                        <div class="value__icon" style="margin-bottom: 1.5rem; color: var(--accent);">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="value__title" style="font-size: 1.5rem; margin-bottom: 1rem;">Missão</h3>
-                        <p class="value__text">Oferecer as melhores soluções integradas de comunicação e mídia para empresas que entendam a importância do marketing.</p>
+                <div class="cultura-cards">
+                    <div class="cultura-card fade-in">
+                        <span class="cultura-card__number">01</span>
+                        <h3 class="cultura-card__title">Missão</h3>
+                        <p class="cultura-card__text">
+                            Oferecer as melhores soluções integradas de comunicação e mídia para empresas que entendam a importância do marketing.
+                        </p>
                     </div>
 
-                    <!-- Visão -->
-                    <div class="bento-item bento-small glass-premium">
-                        <div class="value__icon" style="margin-bottom: 1.5rem; color: var(--primary);">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="value__title" style="font-size: 1.5rem; margin-bottom: 1rem;">Visão</h3>
-                        <p class="value__text">Ser uma agência ágil, acessível e criativa, referência na solução de problemas no interior de SP.</p>
+                    <div class="cultura-card fade-in">
+                        <span class="cultura-card__number">02</span>
+                        <h3 class="cultura-card__title">Visão</h3>
+                        <p class="cultura-card__text">
+                            Ser uma agência ágil, acessível e criativa, referência na solução de problemas no interior de SP.
+                        </p>
                     </div>
 
-                    <!-- Valores -->
-                    <div class="bento-item bento-large" style="background: var(--bg-alt); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
-                        <div style="flex: 1; min-width: 280px;">
-                            <h3 class="value__title" style="font-size: 1.5rem; margin-bottom: 1rem;">Valores Inegociáveis</h3>
-                            <p class="value__text">Integridade, transparência, foco em resultados reais e paixão pelo que fazemos todos os dias. Não criamos peças bonitas que não vendem; criamos comunicação que performa.</p>
-                        </div>
-                        <div style="flex: 1; min-width: 280px; text-align: right;">
-                            <div style="display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-end;">
-                                <span class="badge" style="background: var(--accent); color: white; padding: 0.5rem 1.25rem; border-radius: 999px; font-size: 0.9rem;">Transparência</span>
-                                <span class="badge" style="background: var(--primary); color: white; padding: 0.5rem 1.25rem; border-radius: 999px; font-size: 0.9rem;">Resultado Real</span>
-                                <span class="badge" style="background: var(--text); color: var(--bg); padding: 0.5rem 1.25rem; border-radius: 999px; font-size: 0.9rem;">Paixão</span>
-                            </div>
+                    <div class="cultura-card fade-in">
+                        <span class="cultura-card__number">03</span>
+                        <h3 class="cultura-card__title">Valores</h3>
+                        <p class="cultura-card__text">
+                            Não criamos peças bonitas que não vendem. Criamos comunicação que performa com integridade e foco em resultado real.
+                        </p>
+                        <div class="cultura-card__tags">
+                            <span class="cultura-tag-pill">Transparência</span>
+                            <span class="cultura-tag-pill">Resultado</span>
+                            <span class="cultura-tag-pill">Paixão</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Cases de Sucesso -->
-        <section class="section">
+        <!-- =========================================
+             CASES DE SUCESSO — com imagens reais
+        ========================================= -->
+        <section class="cases-section">
             <div class="container">
-                <div class="section__header fade-in">
-                    <h2 class="section__title" style="font-size: clamp(2rem, 5vw, 3.5rem);">Cases de sucesso</h2>
-                    <p class="section__description" style="font-size: 1.15rem; margin-top: 1rem; max-width: 680px;">
-                        Trabalhamos com marcas de diferentes portes e segmentos, entregando desde branding até campanhas
-                        completas e presença digital estratégica.
+                <div class="cases-header fade-in">
+                    <h2 class="cases-title">Cases de sucesso</h2>
+                    <p class="cases-desc">
+                        Trabalhamos com marcas de diferentes portes e segmentos, entregando desde branding até campanhas completas e presença digital estratégica.
                     </p>
                 </div>
-                <div style="text-align: left; margin-top: var(--space-xl);">
+
+                <div class="cases-grid fade-in">
+                    <a href="portfolio" class="case-item">
+                        <img src="assets/images/mockup-grife.png" alt="Grife da Boutique da Carne Siltomac">
+                        <div class="case-item__label">
+                            <div class="case-item__tag">Branding</div>
+                            <div class="case-item__name">Grife da <strong>Boutique da Carne Siltomac</strong></div>
+                        </div>
+                    </a>
+
+                    <a href="portfolio" class="case-item">
+                        <img src="assets/images/portfolio-masotti.png" alt="Campanha Masotti Móveis">
+                        <div class="case-item__label">
+                            <div class="case-item__tag">Campanha</div>
+                            <div class="case-item__name">Campanha dos 30 anos da <strong>Móveis Masotti</strong></div>
+                        </div>
+                    </a>
+
+                    <a href="portfolio" class="case-item">
+                        <img src="assets/images/outdoor-dubelato-full.png" alt="Dubelato Gelateria">
+                        <div class="case-item__label">
+                            <div class="case-item__tag">Marketing</div>
+                            <div class="case-item__name">Lançamento da <strong>Dubelato Gelateria</strong> em São Carlos</div>
+                        </div>
+                    </a>
+
+                    <a href="portfolio" class="case-item">
+                        <img src="assets/images/mockup-mba-usp.png" alt="MBA IA e Big Data USP">
+                        <div class="case-item__label">
+                            <div class="case-item__tag">Comunicação</div>
+                            <div class="case-item__name"><strong>MBA IA e Big Data — USP</strong></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
                     <a href="portfolio" class="btn btn--primary">Ver todos os cases</a>
                 </div>
             </div>
@@ -216,7 +595,6 @@
                     <p>Comunicação criativa que conecta.</p>
                     <span class="footer__tagline">#teamfilomena</span>
                 </div>
-
                 <div>
                     <h4 class="footer__title">Navegação</h4>
                     <ul class="footer__links">
@@ -229,7 +607,6 @@
                         <li><a href="contato">Contato</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h4 class="footer__title">Serviços</h4>
                     <ul class="footer__links">
@@ -239,15 +616,12 @@
                         <li><a href="servicos#midia">Mídia</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h4 class="footer__title">Trabalhe Conosco</h4>
                     <p style="margin-bottom: var(--space-md);">Quer fazer parte do time?</p>
-                    <a href="trabalhe-conosco" class="btn btn--outline"
-                        style="border-color: var(--gray-600); color: var(--white);">Enviar currículo</a>
+                    <a href="trabalhe-conosco" class="btn btn--outline" style="border-color: var(--gray-600); color: var(--white);">Enviar currículo</a>
                 </div>
             </div>
-
             <div class="footer__bottom">
                 <p>© 2025 Filomena Propaganda. Todos os direitos reservados.</p>
                 <p>São Carlos - SP</p>
@@ -255,10 +629,9 @@
         </div>
     </footer>
 
-    <!-- WhatsApp -->
     <a href="https://api.whatsapp.com/send?l=pt_BR&phone=551634154110" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
     </a>
 
