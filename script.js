@@ -566,23 +566,27 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let isScrolling;
 
-    window.addEventListener("scroll", () => {
-        const docHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+window.addEventListener("scroll", () => {
+        // Calculate total scrollable height safely
+        const body = document.body;
+        const html = document.documentElement;
+        const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
         const scrollPercent = window.scrollY / (docHeight - window.innerHeight);
         
-        targetX = -300 + (scrollPercent * (window.innerWidth + 600));
-        targetY = Math.sin(scrollPercent * Math.PI * 6) * 120;
-        targetRot = Math.cos(scrollPercent * Math.PI * 6) * 15;
+        // Passaro voa mais devagar, do canto esquerdo ate o direito cobrindo 100% do scroll
+        targetX = -100 + (scrollPercent * (window.innerWidth + 200));
         
-        // Play video when scrolling
+        // Voa para cima e para baixo suavemente
+        targetY = Math.sin(scrollPercent * Math.PI * 4) * 80;
+        
+        // Inclina levemente dependendo do movimento
+        targetRot = Math.cos(scrollPercent * Math.PI * 4) * 10;
+        
         if (birdVideo.paused) {
             birdVideo.play();
         }
         
-        // Clear the timeout to pause
         window.clearTimeout(isScrolling);
-        
-        // Set a timeout to pause the video after scrolling stops
         isScrolling = setTimeout(function() {
             birdVideo.pause();
         }, 150);
