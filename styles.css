@@ -2513,17 +2513,20 @@ ul {
     max-width: 100%;
     max-height: 80px;
     object-fit: contain;
-    filter: grayscale(100%) opacity(0.55);
+    filter: grayscale(100%) opacity(0.65);
+    mix-blend-mode: multiply; /* Remove fundo branco das logos */
     transition: filter 0.3s ease, transform 0.3s ease;
     display: block;
 }
 
 [data-theme="dark"] .client-logo-img {
     filter: grayscale(100%) opacity(0.7) invert(1);
+    mix-blend-mode: normal;
 }
 
 .clients-strip__item:hover .client-logo-img {
     filter: grayscale(0%) opacity(1);
+    mix-blend-mode: normal; /* No hover mostra a cor real sem blend */
     transform: scale(1.1);
 }
 
