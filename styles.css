@@ -2723,7 +2723,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
     .bg-sobre {
-        background-position: 65% center; /* Centraliza na pessoa no mobile */
+        background-position: 30% center; /* Foca na Priscila que esta na esquerda da imagem */
     }
 }
 
