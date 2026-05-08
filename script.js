@@ -582,8 +582,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = imageData.data;
             for (let i = 0; i < data.length; i += 4) {
                 const r = data[i], g = data[i + 1], b = data[i + 2];
-                // Remove pixels that are near-black (the background)
-                if (r < 60 && g < 60 && b < 60) {
+                // Remove pixels brancos/claros (fundo do video do Grok eh branco)
+                if (r > 200 && g > 200 && b > 200) {
                     data[i + 3] = 0; // fully transparent
                 }
             }
@@ -609,12 +609,8 @@ document.addEventListener("DOMContentLoaded", () => {
         targetY = Math.sin(scrollPercent * Math.PI * 4) * 80;
         targetRot = Math.cos(scrollPercent * Math.PI * 4) * 15;
 
-        // Só reproduz o video descendo
-        if (window.scrollY > lastScrollY) {
-            if (birdVideo.paused) birdVideo.play();
-        } else {
-            if (!birdVideo.paused) birdVideo.pause();
-        }
+        // Reproduz o video em qualquer direção de scroll
+        if (birdVideo.paused) birdVideo.play();
         lastScrollY = window.scrollY;
 
         window.clearTimeout(isScrolling);
