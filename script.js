@@ -549,14 +549,20 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- Flying Bird Video Scroll Animation ---
 document.addEventListener("DOMContentLoaded", () => {
     if (!window.location.pathname.endsWith("index.html") && window.location.pathname !== "/" && !window.location.pathname.endsWith("/")) return;
+
+    // Create wrapper (handles blend mode + positioning)
+    const birdWrapper = document.createElement("div");
+    birdWrapper.className = "flying-bird-wrapper";
+
     const birdVideo = document.createElement("video");
     birdVideo.src = "assets/videos/passaro_voando.mp4";
     birdVideo.className = "flying-bird-video";
     birdVideo.loop = true;
     birdVideo.muted = true;
     birdVideo.playsInline = true;
-    
-    document.body.appendChild(birdVideo);
+
+    birdWrapper.appendChild(birdVideo);
+    document.body.appendChild(birdWrapper);
 
     let currentX = -300;
     let targetX = -300;
@@ -564,7 +570,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let targetY = 0;
     let currentRot = 0;
     let targetRot = 0;
-    
+
     let isScrolling;
     let lastScrollY = window.scrollY;
 
@@ -573,25 +579,22 @@ document.addEventListener("DOMContentLoaded", () => {
         const html = document.documentElement;
         const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
         const scrollPercent = window.scrollY / (docHeight - window.innerHeight);
-        
+
         targetX = -100 + (scrollPercent * (window.innerWidth + 200));
         targetY = Math.sin(scrollPercent * Math.PI * 4) * 80;
         targetRot = Math.cos(scrollPercent * Math.PI * 4) * 15;
-        
-        // Verifica se esta descendo ou subindo
+
+        // Só toca o video quando está descendo
         if (window.scrollY > lastScrollY) {
-            // Descendo
             if (birdVideo.paused) birdVideo.play();
         } else {
-            // Subindo
             if (!birdVideo.paused) birdVideo.pause();
         }
-        
+
         lastScrollY = window.scrollY;
-        
-        // Pausa quando o scroll termina totalmente
+
         window.clearTimeout(isScrolling);
-        isScrolling = setTimeout(function() {
+        isScrolling = setTimeout(() => {
             birdVideo.pause();
         }, 150);
     });
@@ -600,11 +603,11 @@ document.addEventListener("DOMContentLoaded", () => {
         currentX += (targetX - currentX) * 0.05;
         currentY += (targetY - currentY) * 0.05;
         currentRot += (targetRot - currentRot) * 0.05;
-        
-        // Sem efeito de espelho
-        birdVideo.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentRot}deg)`;
+
+        // Move o wrapper inteiro (não o video) para manter o blend mode correto
+        birdWrapper.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentRot}deg)`;
         requestAnimationFrame(animateBird);
     }
-    
+
     animateBird();
 });
