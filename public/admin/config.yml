@@ -2,8 +2,6 @@ backend:
   name: github
   repo: nathancwb/filomena-site
   branch: main
-  auth_type: pkce
-  app_id: Ov23libp9sqo1eUKWP7B
 
 media_folder: "public/assets/images/uploads"
 public_folder: "/assets/images/uploads"
