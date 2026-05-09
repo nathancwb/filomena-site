@@ -34,6 +34,7 @@ collections:
       - {label: "Título do Projeto", name: "title", widget: "string"}
       - {label: "Cliente", name: "client", widget: "string"}
       - {label: "Categoria (Ex: Branding, Campanha)", name: "category", widget: "string"}
+      - {label: "ID do Behance (Apenas números)", name: "behance_id", widget: "string"}
       - {label: "Imagem Principal", name: "thumbnail", widget: "image"}
       - {label: "Destaque na Home?", name: "featured", widget: "boolean", default: false}
       - {label: "Descrição Completa", name: "body", widget: "markdown"}

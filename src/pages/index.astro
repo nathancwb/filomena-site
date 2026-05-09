@@ -1,3 +1,8 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+const featuredProjects = (await getCollection('portfolio')).filter(p => p.data.featured);
+const homePage = await getEntry('pages', 'home');
+---
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -31,12 +36,12 @@
             <nav class="nav">
                 <ul class="nav__list" id="nav-menu">
                     <li><a href="/" class="nav__link active">Home</a></li>
-                    <li><a href="sobre" class="nav__link">Sobre</a></li>
-                    <li><a href="servicos" class="nav__link">Serviços</a></li>
-                    <li><a href="portfolio" class="nav__link">Portfólio</a></li>
-                    <li><a href="blog" class="nav__link">Blog</a></li>
-                    <li><a href="trabalhe-conosco" class="nav__link">Trabalhe Conosco</a></li>
-                    <li><a href="contato" class="nav__link">Contato</a></li>
+                    <li><a href="/sobre" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato" class="nav__link">Contato</a></li>
                 </ul>
 
                 <div class="nav__actions">
@@ -70,16 +75,14 @@
                 <div class="hero__content">
                     <div class="hero__text">
                         <span class="hero__tag fade-in">Agência de Comunicação</span>
-                        <h1 class="hero__title fade-in">
-                            Histórias que <span>conectam</span> marcas a pessoas.
+                        <h1 class="hero__title fade-in" set:html={homePage?.data?.hero_title || "Histórias que <span>conectam</span> marcas a pessoas."}>
                         </h1>
                         <p class="hero__description fade-in">
-                            Transformamos ideias em comunicação estratégica.
-                            Há mais de 10 anos criando campanhas que geram resultados reais.
+                            {homePage?.data?.hero_subtitle || "Transformamos ideias em comunicação estratégica. Há mais de 10 anos criando campanhas que geram resultados reais."}
                         </p>
                         <div class="hero__buttons fade-in">
                             <a href="#contato" class="btn btn--primary">Fale Conosco</a>
-                            <a href="portfolio" class="btn btn--outline">Ver Trabalhos</a>
+                            <a href="/portfolio" class="btn btn--outline">Ver Trabalhos</a>
                         </div>
                     </div>
                     <div class="hero__image fade-in">
@@ -225,41 +228,15 @@
                 </div>
 
                 <div class="portfolio-grid-home fade-in">
-                    <!-- Masotti -->
-                    <a href="portfolio" class="portfolio-grid-home__item portfolio-grid-home__item--tall">
-                        <img src="/assets/images/portfolio-masotti.jpg" alt="Masotti Móveis – Outdoor 30 anos">
-                        <div class="portfolio-grid-home__overlay">
-                            <span class="portfolio-grid-home__client">Masotti Móveis</span>
-                            <span class="portfolio-grid-home__type">Outdoor / Campanha</span>
-                        </div>
-                    </a>
-
-                    <!-- Grampola -->
-                    <a href="portfolio" class="portfolio-grid-home__item">
-                        <img src="/assets/images/mockup-grampola.png" alt="Grampola – Social Media">
-                        <div class="portfolio-grid-home__overlay">
-                            <span class="portfolio-grid-home__client">Grampola</span>
-                            <span class="portfolio-grid-home__type">Social Media</span>
-                        </div>
-                    </a>
-
-                    <!-- Dubelato Outdoor -->
-                    <a href="portfolio" class="portfolio-grid-home__item">
-                        <img src="/assets/images/outdoor-dubelato.png" alt="Dubelato – Outdoor">
-                        <div class="portfolio-grid-home__overlay">
-                            <span class="portfolio-grid-home__client">Dubelato</span>
-                            <span class="portfolio-grid-home__type">Outdoor / Mídia</span>
-                        </div>
-                    </a>
-
-                    <!-- Dubelato Mockup -->
-                    <a href="portfolio" class="portfolio-grid-home__item portfolio-grid-home__item--wide">
-                        <img src="/assets/images/mockup-dubelato.png" alt="Dubelato – Identidade Visual">
-                        <div class="portfolio-grid-home__overlay">
-                            <span class="portfolio-grid-home__client">Dubelato Gelateria</span>
-                            <span class="portfolio-grid-home__type">Identidade Visual</span>
-                        </div>
-                    </a>
+                    {featuredProjects.map((project, index) => (
+                        <a href="/portfolio" class={`portfolio-grid-home__item ${index === 0 ? 'portfolio-grid-home__item--tall' : (index === 3 ? 'portfolio-grid-home__item--wide' : '')}`}>
+                            <img src={project.data.thumbnail} alt={project.data.client}>
+                            <div class="portfolio-grid-home__overlay">
+                                <span class="portfolio-grid-home__client">{project.data.client}</span>
+                                <span class="portfolio-grid-home__type">{project.data.category}</span>
+                            </div>
+                        </a>
+                    ))}
                 </div>
 
                 <div style="text-align: center; margin-top: var(--space-2xl);">

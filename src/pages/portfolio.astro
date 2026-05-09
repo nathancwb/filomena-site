@@ -1,3 +1,7 @@
+---
+import { getCollection } from 'astro:content';
+const projects = await getCollection('portfolio');
+---
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -75,68 +79,17 @@
         <section class="section">
             <div class="container">
                 <div class="portfolio__grid">
-                    <!-- Masotti -->
-                    <div class="portfolio-card fade-in" data-project="229414411"
-                        data-title="Masotti | Identidade Visual">
-                        <img src="/assets/images/mockup-masotti.png" alt="Masotti">
-                        <div class="portfolio-card__overlay">
-                            <span class="portfolio-card__tag">Identidade Visual</span>
-                            <h3 class="portfolio-card__title">Masotti</h3>
-                            <span class="portfolio-card__cta">Clique para ver</span>
+                    {projects.map(project => (
+                        <div class="portfolio-card fade-in" data-project={project.data.behance_id}
+                            data-title={project.data.title}>
+                            <img src={project.data.thumbnail} alt={project.data.client}>
+                            <div class="portfolio-card__overlay">
+                                <span class="portfolio-card__tag">{project.data.category}</span>
+                                <h3 class="portfolio-card__title">{project.data.client}</h3>
+                                <span class="portfolio-card__cta">Clique para ver</span>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Grampola -->
-                    <div class="portfolio-card fade-in" data-project="183008207"
-                        data-title="Grampola | Peças Automotivas">
-                        <img src="/assets/images/mockup-grampola.png" alt="Grampola">
-                        <div class="portfolio-card__overlay">
-                            <span class="portfolio-card__tag">Social Media</span>
-                            <h3 class="portfolio-card__title">Grampola</h3>
-                            <span class="portfolio-card__cta">Clique para ver</span>
-                        </div>
-                    </div>
-
-                    <!-- Dubelato -->
-                    <div class="portfolio-card fade-in" data-project="215059863" data-title="Dubelato | Campanha">
-                        <img src="/assets/images/mockup-dubelato.png" alt="Dubelato">
-                        <div class="portfolio-card__overlay">
-                            <span class="portfolio-card__tag">Campanha Publicitária</span>
-                            <h3 class="portfolio-card__title">Dubelato</h3>
-                            <span class="portfolio-card__cta">Clique para ver</span>
-                        </div>
-                    </div>
-
-                    <!-- Outdoor Dubelato -->
-                    <div class="portfolio-card fade-in" data-project="215059863" data-title="Dubelato | Outdoor">
-                        <img src="/assets/images/outdoor-dubelato.png" alt="Outdoor Dubelato">
-                        <div class="portfolio-card__overlay">
-                            <span class="portfolio-card__tag">Mídia Outdoor</span>
-                            <h3 class="portfolio-card__title">Dubelato</h3>
-                            <span class="portfolio-card__cta">Clique para ver</span>
-                        </div>
-                    </div>
-
-                    <!-- People Leap -->
-                    <div class="portfolio-card fade-in" data-project="236474581"
-                        data-title="People Leap | Branding">
-                        <img src="/assets/images/mockup-peopleleap.png" alt="People Leap">
-                        <div class="portfolio-card__overlay">
-                            <span class="portfolio-card__tag">Branding</span>
-                            <h3 class="portfolio-card__title">People Leap</h3>
-                            <span class="portfolio-card__cta">Clique para ver</span>
-                        </div>
-                    </div>
-
-                    <!-- Vital Mais -->
-                    <div class="portfolio-card fade-in" data-project="125781613" data-title="Vital Mais | Identidade Visual">
-                        <img src="/assets/images/mockup-vital.png" alt="Vital Mais">
-                        <div class="portfolio-card__overlay">
-                            <span class="portfolio-card__tag">Identidade Visual</span>
-                            <h3 class="portfolio-card__title">Vital Mais</h3>
-                            <span class="portfolio-card__cta">Clique para ver</span>
-                        </div>
-                    </div>
+                    ))}
                 </div>
 
                 <div style="text-align: center; margin-top: var(--space-2xl);">

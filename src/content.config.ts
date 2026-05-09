@@ -19,6 +19,7 @@ const portfolioCollection = defineCollection({
     title: z.string(),
     client: z.string(),
     category: z.string(),
+    behance_id: z.string(),
     thumbnail: z.string().optional(),
     featured: z.boolean().default(false)
   })

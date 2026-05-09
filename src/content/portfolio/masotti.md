@@ -1,8 +1,8 @@
 ---
-title: "Masotti Móveis"
+title: "Masotti | Identidade Visual"
 client: "Masotti"
-category: "Outdoor / Campanha"
-thumbnail: "/assets/images/portfolio-masotti.jpg"
+category: "Identidade Visual"
+behance_id: "229414411"
+thumbnail: "/assets/images/mockup-masotti.png"
 featured: true
 ---
-Campanha de 30 anos para a Masotti Móveis, focada em outdoors e mídias externas.

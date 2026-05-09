@@ -1,3 +1,7 @@
+---
+import { getEntry } from 'astro:content';
+const sobrePage = await getEntry('pages', 'sobre');
+---
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -495,11 +499,11 @@
 
                     <div class="stats-stack">
                         <div class="stat-card stat-card--center">
-                            <span class="stat-number">+250</span>
+                            <span class="stat-number">{sobrePage.data.stats_marcas || '+250'}</span>
                             <span class="stat-label">Marcas atendidas</span>
                         </div>
                         <div class="stat-card stat-card--center">
-                            <span class="stat-number">13</span>
+                            <span class="stat-number">{sobrePage.data.stats_anos || '13'}</span>
                             <span class="stat-label">Anos voando alto</span>
                         </div>
                         <div class="stat-card stat-card--brasil">
@@ -531,7 +535,7 @@
                         <span class="cultura-card__number">01</span>
                         <h3 class="cultura-card__title">Missão</h3>
                         <p class="cultura-card__text">
-                            Oferecer as melhores soluções integradas de comunicação e mídia para empresas que entendam a importância do marketing.
+                            {sobrePage.data.cultura_missao || 'Oferecer as melhores soluções integradas de comunicação e mídia para empresas que entendam a importância do marketing.'}
                         </p>
                     </div>
 
@@ -539,7 +543,7 @@
                         <span class="cultura-card__number">02</span>
                         <h3 class="cultura-card__title">Visão</h3>
                         <p class="cultura-card__text">
-                            Ser uma agência ágil, acessível e criativa, referência na solução de problemas no interior de SP.
+                            {sobrePage.data.cultura_visao || 'Ser uma agência ágil, acessível e criativa, referência na solução de problemas no interior de SP.'}
                         </p>
                     </div>
 
@@ -547,7 +551,7 @@
                         <span class="cultura-card__number">03</span>
                         <h3 class="cultura-card__title">Valores</h3>
                         <p class="cultura-card__text">
-                            Não criamos peças bonitas que não vendem. Criamos comunicação que performa com integridade e foco em resultado real.
+                            {sobrePage.data.cultura_valores || 'Não criamos peças bonitas que não vendem. Criamos comunicação que performa com integridade e foco em resultado real.'}
                         </p>
                         <div class="cultura-card__tags">
                             <span class="cultura-tag-pill">Transparência</span>
