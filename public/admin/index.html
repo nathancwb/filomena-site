@@ -13,36 +13,7 @@
           localStorage.removeItem(key);
         }
       });
-    </script>
     <!-- Script principal do Sveltia CMS -->
     <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
-
-    <!-- Bloqueador do botão da Netlify -->
-    <script>
-      // Este script esconde o botão padrão do GitHub que leva para a Netlify e intercepta qualquer clique nele.
-      const observer = new MutationObserver(() => {
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(btn => {
-          if (btn.innerText.match(/github/i) && !btn.innerText.match(/token/i)) {
-            btn.style.display = 'none'; // Some com o botão da Netlify
-          }
-        });
-      });
-      observer.observe(document.body, { childList: true, subtree: true });
-
-      // Trava de segurança caso o usuário ainda consiga clicar em algo que leve pra Netlify
-      document.addEventListener('click', function(e) {
-        let el = e.target;
-        while(el && el !== document.body) {
-          if (el.tagName === 'BUTTON' && el.innerText.match(/github/i) && !el.innerText.match(/token/i)) {
-            e.preventDefault();
-            e.stopPropagation();
-            alert('Acesso bloqueado pelo código: Por favor, use apenas a opção "Entrar com um token" abaixo.');
-            return false;
-          }
-          el = el.parentElement;
-        }
-      }, true);
-    </script>
   </body>
 </html>
