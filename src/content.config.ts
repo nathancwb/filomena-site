@@ -1,7 +1,8 @@
 import { z, defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const blogCollection = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
   schema: z.object({
     title: z.string(),
     author: z.string().default('Equipe Filomena'),
@@ -13,7 +14,7 @@ const blogCollection = defineCollection({
 });
 
 const portfolioCollection = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: "**/*.md", base: "./src/content/portfolio" }),
   schema: z.object({
     title: z.string(),
     client: z.string(),
@@ -24,7 +25,7 @@ const portfolioCollection = defineCollection({
 });
 
 const pagesCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: "**/*.json", base: "./src/content/pages" }),
   schema: z.record(z.any()) // Flexible schema for different JSON files
 });
 
