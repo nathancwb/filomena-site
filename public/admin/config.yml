@@ -4,8 +4,8 @@ backend:
   branch: main
   base_url: https://filomena-site.vercel.app/api
 
-media_folder: "public/assets/images/uploads"
-public_folder: "/assets/images/uploads"
+media_folder: "public/assets/images"
+public_folder: "/assets/images"
 
 site_url: https://filomena-site.vercel.app
 display_url: https://filomena-site.vercel.app
