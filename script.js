@@ -564,12 +564,8 @@ document.addEventListener("DOMContentLoaded", () => {
         birdVideo.currentTime = 0.5;
     });
 
-    // 3. Loop sem travada: volta para 0.5s ANTES do video terminar (sem esperar o ended)
-    birdVideo.addEventListener("timeupdate", () => {
-        if (birdVideo.duration && birdVideo.currentTime >= birdVideo.duration - 0.15) {
-            birdVideo.currentTime = 0.5;
-        }
-    });
+    // 3. Loop: verificado dentro do rAF (60fps, muito mais preciso que timeupdate a 250ms)
+    //    Removemos o timeupdate para evitar race condition
 
     // 4. Visible canvas (transparent output)
     const canvas = document.createElement("canvas");
@@ -585,23 +581,43 @@ document.addEventListener("DOMContentLoaded", () => {
         canvas.style.height = "auto";
     });
 
-    // 6. Chroma key: remove pixels brancos (fundo do video) a cada frame
+    // 6. Chroma key com cache do último frame válido para evitar flash durante seek
+    let lastValidImageData = null;
+    let isSeeking = false;
+
+    birdVideo.addEventListener("seeking", () => { isSeeking = true; });
+    birdVideo.addEventListener("seeked",  () => { isSeeking = false; });
+
     function renderFrame() {
+        // Loop preciso: verifica dentro do rAF em vez de depender do timeupdate (250ms)
+        if (!isSeeking && birdVideo.duration && birdVideo.currentTime >= birdVideo.duration - 0.12) {
+            isSeeking = true; // bloqueia nova checagem até o seek concluir
+            birdVideo.currentTime = 0.5;
+        }
+
         if (!birdVideo.paused && !birdVideo.ended && canvas.width > 0) {
-            ctx.drawImage(birdVideo, 0, 0, canvas.width, canvas.height);
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            const data = imageData.data;
-            for (let i = 0; i < data.length; i += 4) {
-                const r = data[i], g = data[i + 1], b = data[i + 2];
-                if (r > 200 && g > 200 && b > 200) {
-                    data[i + 3] = 0;
+            if (!isSeeking) {
+                // Frame normal: aplica chroma key e cacheia
+                ctx.drawImage(birdVideo, 0, 0, canvas.width, canvas.height);
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const data = imageData.data;
+                for (let i = 0; i < data.length; i += 4) {
+                    const r = data[i], g = data[i + 1], b = data[i + 2];
+                    if (r > 200 && g > 200 && b > 200) {
+                        data[i + 3] = 0;
+                    }
                 }
+                ctx.putImageData(imageData, 0, 0);
+                lastValidImageData = imageData; // salva último frame bom
+            } else if (lastValidImageData) {
+                // Durante o seek: exibe o último frame válido em vez de branco
+                ctx.putImageData(lastValidImageData, 0, 0);
             }
-            ctx.putImageData(imageData, 0, 0);
         }
         requestAnimationFrame(renderFrame);
     }
     renderFrame();
+
 
     // 7. Animação de posição baseada no scroll
     let currentX = -300, targetX = -300;
