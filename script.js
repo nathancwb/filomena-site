@@ -598,7 +598,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!birdVideo.paused && !birdVideo.ended && canvas.width > 0) {
             if (!isSeeking) {
                 // Frame normal: aplica chroma key e cacheia
-                ctx.drawImage(birdVideo, 0, 0, canvas.width, canvas.height);
+                // Pássaro está no canto inferior-esquerdo do vídeo 544x544:
+                // ~40% vazio em cima, ~45% vazio à direita
+                // Crop: pula os primeiros 180px do topo e usa 320x320 que captura o pássaro
+                const sx = 0, sy = 180, sw = 330, sh = 340;
+                ctx.drawImage(birdVideo, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
                 const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
                 const data = imageData.data;
                 for (let i = 0; i < data.length; i += 4) {
