@@ -1,0 +1,36 @@
+backend:
+  name: github
+  repo: nathancwb/filomena-site
+  branch: main
+
+media_folder: "public/assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+site_url: https://filomena-site.vercel.app
+display_url: https://filomena-site.vercel.app
+
+collections:
+  - name: "blog"
+    label: "Artigos do Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Autor", name: "author", widget: "string", default: "Equipe Filomena"}
+      - {label: "Data de Publicação", name: "date", widget: "datetime"}
+      - {label: "Categoria", name: "category", widget: "string"}
+      - {label: "Imagem de Capa", name: "thumbnail", widget: "image"}
+      - {label: "Resumo (para os cards)", name: "description", widget: "text"}
+      - {label: "Corpo do Artigo", name: "body", widget: "markdown"}
+  
+  - name: "pages"
+    label: "Textos de Páginas"
+    files:
+      - label: "Página Sobre (Estatísticas)"
+        name: "sobre"
+        file: "src/content/pages/sobre.json"
+        fields:
+          - {label: "Número de Marcas", name: "marcas", widget: "string", default: "+250"}
+          - {label: "Anos de Mercado", name: "anos", widget: "string", default: "13"}
+          - {label: "Alcance", name: "alcance", widget: "string", default: "Nacional"}
