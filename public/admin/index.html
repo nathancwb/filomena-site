@@ -6,7 +6,15 @@
     <title>Painel de Edição - Filomena</title>
   </head>
   <body>
-    <!-- Script principal do Sveltia CMS (Compatível com Decap, mas não exige setup de OAuth no GitHub) -->
+    <!-- Limpa qualquer resquício do Netlify Identity salvo no navegador -->
+    <script>
+      Object.keys(localStorage).forEach(key => {
+        if (key.includes('netlify') || key.includes('gotrue')) {
+          localStorage.removeItem(key);
+        }
+      });
+    </script>
+    <!-- Script principal do Sveltia CMS -->
     <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
   </body>
 </html>
