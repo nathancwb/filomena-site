@@ -1,3 +1,7 @@
+---
+import { getCollection } from 'astro:content';
+const posts = await getCollection('blog');
+---
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -129,91 +133,20 @@
         <section class="section">
             <div class="container">
                 <div class="blog-grid">
-                    <article class="blog-card fade-in">
-                        <img src="/assets/images/fachada-filomena.png" alt="Branding" class="blog-card__img">
-                        <div class="blog-card__body">
-                            <span class="blog-card__tag">Branding</span>
-                            <h2 class="blog-card__title">O que é branding e por que sua empresa precisa disso agora</h2>
-                            <p class="blog-card__excerpt">Muito além de um logotipo bonito, branding é a soma de tudo que a sua marca comunica ao mundo. Entenda como construir uma identidade forte.</p>
-                            <a href="post" class="blog-card__link">
-                                Ler artigo
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card fade-in">
-                        <img src="/assets/images/hero-megafone.png" alt="Marketing Digital" class="blog-card__img" style="object-fit: contain; padding: 1rem; background: var(--bg-alt);">
-                        <div class="blog-card__body">
-                            <span class="blog-card__tag">Marketing Digital</span>
-                            <h2 class="blog-card__title">Google Ads vs Meta Ads: qual a melhor opção para o seu negócio?</h2>
-                            <p class="blog-card__excerpt">Cada plataforma tem seu público e objetivo. Antes de investir, entenda as diferenças e saiba onde colocar seu orçamento de mídia paga.</p>
-                            <a href="post" class="blog-card__link">
-                                Ler artigo
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card fade-in">
-                        <div class="blog-card__img" style="background: var(--accent); display: flex; align-items: center; justify-content: center;">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"></path></svg>
-                        </div>
-                        <div class="blog-card__body">
-                            <span class="blog-card__tag">Audiovisual</span>
-                            <h2 class="blog-card__title">Por que o vídeo é o formato mais poderoso nas redes sociais em 2025</h2>
-                            <p class="blog-card__excerpt">Reels, Shorts e TikToks dominam os feeds. Saiba como produzir conteúdo audiovisual que gera engajamento real e impulsiona vendas.</p>
-                            <a href="post" class="blog-card__link">
-                                Ler artigo
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card fade-in">
-                        <div class="blog-card__img" style="background: var(--secondary); display: flex; align-items: center; justify-content: center;">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                        </div>
-                        <div class="blog-card__body">
-                            <span class="blog-card__tag">Métricas</span>
-                            <h2 class="blog-card__title">Quais métricas realmente importam para avaliar uma campanha?</h2>
-                            <p class="blog-card__excerpt">Curtidas e seguidores não pagam boletos. Descubra os indicadores que mostram se sua estratégia está realmente gerando resultado.</p>
-                            <a href="post" class="blog-card__link">
-                                Ler artigo
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card fade-in">
-                        <div class="blog-card__img" style="background: var(--accent-dark); display: flex; align-items: center; justify-content: center;">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        </div>
-                        <div class="blog-card__body">
-                            <span class="blog-card__tag">Cultura</span>
-                            <h2 class="blog-card__title">#teamfilomena: como construímos uma equipe apaixonada pelo que faz</h2>
-                            <p class="blog-card__excerpt">Pessoas motivadas entregam trabalho excepcional. Conheça os valores e a cultura que guiam cada projeto da Filomena.</p>
-                            <a href="post" class="blog-card__link">
-                                Ler artigo
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card fade-in">
-                        <div class="blog-card__img" style="background: #1a1a2e; display: flex; align-items: center; justify-content: center;">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <div class="blog-card__body">
-                            <span class="blog-card__tag">Tecnologia</span>
-                            <h2 class="blog-card__title">IA no marketing: oportunidade ou ameaça para as agências criativas?</h2>
-                            <p class="blog-card__excerpt">A inteligência artificial chegou para ficar. Veja como usamos IA como aliada da criatividade humana, sem perder a essência do que fazemos.</p>
-                            <a href="post" class="blog-card__link">
-                                Ler artigo
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                            </a>
-                        </div>
-                    </article>
+                    {posts.map(post => (
+                        <article class="blog-card fade-in">
+                            <img src={post.data.thumbnail || "/assets/images/fachada-filomena.png"} alt={post.data.category} class="blog-card__img" style="object-fit: cover;">
+                            <div class="blog-card__body">
+                                <span class="blog-card__tag">{post.data.category}</span>
+                                <h2 class="blog-card__title">{post.data.title}</h2>
+                                <p class="blog-card__excerpt">{post.data.description}</p>
+                                <a href={`/blog/${post.id}`} class="blog-card__link">
+                                    Ler artigo
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                                </a>
+                            </div>
+                        </article>
+                    ))}
                 </div>
             </div>
         </section>
