@@ -12,16 +12,24 @@ const blogCollection = defineCollection({
   })
 });
 
+const portfolioCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    client: z.string(),
+    category: z.string(),
+    thumbnail: z.string().optional(),
+    featured: z.boolean().default(false)
+  })
+});
+
 const pagesCollection = defineCollection({
   type: 'data',
-  schema: z.object({
-    marcas: z.string(),
-    anos: z.string(),
-    alcance: z.string()
-  })
+  schema: z.record(z.any()) // Flexible schema for different JSON files
 });
 
 export const collections = {
   'blog': blogCollection,
+  'portfolio': portfolioCollection,
   'pages': pagesCollection
 };

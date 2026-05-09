@@ -24,14 +24,45 @@ collections:
       - {label: "Imagem de Capa", name: "thumbnail", widget: "image"}
       - {label: "Resumo (para os cards)", name: "description", widget: "text"}
       - {label: "Corpo do Artigo", name: "body", widget: "markdown"}
+
+  - name: "portfolio"
+    label: "Projetos do Portfólio"
+    folder: "src/content/portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Título do Projeto", name: "title", widget: "string"}
+      - {label: "Cliente", name: "client", widget: "string"}
+      - {label: "Categoria (Ex: Branding, Campanha)", name: "category", widget: "string"}
+      - {label: "Imagem Principal", name: "thumbnail", widget: "image"}
+      - {label: "Destaque na Home?", name: "featured", widget: "boolean", default: false}
+      - {label: "Descrição Completa", name: "body", widget: "markdown"}
   
   - name: "pages"
     label: "Textos de Páginas"
     files:
-      - label: "Página Sobre (Estatísticas)"
+      - label: "Página Inicial (Home)"
+        name: "home"
+        file: "src/content/pages/home.json"
+        fields:
+          - {label: "Título do Topo", name: "hero_title", widget: "string", default: "Comunicação criativa que conecta marcas a pessoas."}
+          - {label: "Subtítulo do Topo", name: "hero_subtitle", widget: "text"}
+          - {label: "Texto Resumo (Sobre Nós)", name: "about_text", widget: "text"}
+
+      - label: "Página Sobre (Métricas)"
         name: "sobre"
         file: "src/content/pages/sobre.json"
         fields:
           - {label: "Número de Marcas", name: "marcas", widget: "string", default: "+250"}
           - {label: "Anos de Mercado", name: "anos", widget: "string", default: "13"}
           - {label: "Alcance", name: "alcance", widget: "string", default: "Nacional"}
+
+      - label: "Contatos e Rodapé"
+        name: "settings"
+        file: "src/content/pages/settings.json"
+        fields:
+          - {label: "E-mail de Contato", name: "email", widget: "string", default: "contato@filomenapropaganda.com.br"}
+          - {label: "WhatsApp", name: "whatsapp", widget: "string"}
+          - {label: "Endereço Físico", name: "address", widget: "string", default: "São Carlos - SP"}
+          - {label: "Link do Instagram", name: "instagram", widget: "string"}
+          - {label: "Link do LinkedIn", name: "linkedin", widget: "string"}
