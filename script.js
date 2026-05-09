@@ -623,25 +623,57 @@ document.addEventListener("DOMContentLoaded", () => {
     renderFrame();
 
 
-    // 7. Animação de posição baseada no scroll
-    let currentX = -300, targetX = -300;
-    let currentY = 0, targetY = 0;
+    // 7. Animação de posição baseada no scroll e Pássaro Pousado
+    const perchedBird = document.createElement("img");
+    perchedBird.src = "assets/images/bird-perched.png";
+    perchedBird.className = "perched-bird-img";
+    perchedBird.style.position = "fixed";
+    perchedBird.style.bottom = "10%";
+    perchedBird.style.left = "5%";
+    perchedBird.style.width = "180px";
+    perchedBird.style.zIndex = "999";
+    perchedBird.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+    perchedBird.style.opacity = "1";
+    perchedBird.style.pointerEvents = "none";
+    document.body.appendChild(perchedBird);
+
+    // Initial position for flying bird (starts exactly where the perched bird is)
+    let currentX = 50, targetX = 50; 
+    let currentY = window.innerHeight * 0.8, targetY = window.innerHeight * 0.8;
     let currentRot = 0, targetRot = 0;
     let isScrolling;
-    let lastScrollY = window.scrollY;
     let firstScroll = true;
+
+    // Start flying canvas hidden
+    canvas.style.opacity = "0";
+    canvas.style.transition = "opacity 0.2s ease";
 
     window.addEventListener("scroll", () => {
         const html = document.documentElement;
         const docHeight = Math.max(document.body.scrollHeight, html.scrollHeight, html.offsetHeight);
         const scrollPercent = window.scrollY / (docHeight - window.innerHeight);
 
-        targetX = -100 + (scrollPercent * (window.innerWidth + 200));
-        targetY = Math.sin(scrollPercent * Math.PI * 4) * 80;
-        targetRot = Math.cos(scrollPercent * Math.PI * 4) * 15;
+        if (window.scrollY < 50) {
+            // At the very top: show perched bird, hide flying canvas
+            perchedBird.style.opacity = "1";
+            perchedBird.style.transform = "scale(1)";
+            canvas.style.opacity = "0";
+            targetX = 50; 
+            targetY = 0; 
+        } else {
+            // Scrolling down: hide perched bird, show flying canvas and start flying
+            perchedBird.style.opacity = "0";
+            perchedBird.style.transform = "scale(0.8)";
+            canvas.style.opacity = "1";
+            
+            // Fly path logic
+            targetX = 50 + (scrollPercent * (window.innerWidth + 200));
+            targetY = Math.sin(scrollPercent * Math.PI * 4) * 80 - (scrollPercent * 200); // Also fly upwards gradually
+            targetRot = Math.cos(scrollPercent * Math.PI * 4) * 15;
+        }
 
-        // Na primeira rolagem, snapa direto sem delay
-        if (firstScroll) {
+        // Na primeira rolagem, snapa direto sem delay para não teleportar
+        if (firstScroll && window.scrollY >= 50) {
             currentX = targetX;
             currentY = targetY;
             currentRot = targetRot;
