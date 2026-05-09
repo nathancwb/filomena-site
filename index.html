@@ -498,7 +498,7 @@
                     <p class="section__description fade-in">Acompanhe nosso dia a dia e trabalhos nas redes sociais</p>
                 </div>
 
-                <div class="instagram-embeds fade-in">
+                <div class="instagram-embeds">
                     <blockquote class="instagram-media" data-instgrm-captioned
                         data-instgrm-permalink="https://www.instagram.com/p/DQFc00sDWcm/" data-instgrm-version="14">
                     </blockquote>
@@ -512,7 +512,19 @@
                         data-instgrm-permalink="https://www.instagram.com/p/DSkDNQRAalA/" data-instgrm-version="14">
                     </blockquote>
                 </div>
-                <script async src="//www.instagram.com/embed.js"></script>
+                <script>
+                    (function() {
+                        var script = document.createElement('script');
+                        script.src = 'https://www.instagram.com/embed.js';
+                        script.async = true;
+                        script.onload = function() {
+                            if (window.instgrm) {
+                                window.instgrm.Embeds.process();
+                            }
+                        };
+                        document.body.appendChild(script);
+                    })();
+                </script>
 
                 <div style="text-align: center; margin-top: var(--space-2xl);">
                     <a href="https://www.instagram.com/filomenapropaganda/" target="_blank"
