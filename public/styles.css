@@ -427,7 +427,7 @@ ul {
 .btn--primary:hover {
     background: var(--accent-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(106, 34, 99, 0.35);
+    box-shadow: 0 8px 24px rgba(89, 38, 109, 0.35);
 }
 
 .btn--outline {
@@ -774,7 +774,7 @@ ul {
 .service-card-h:hover {
     border-color: var(--accent);
     transform: translateX(10px);
-    box-shadow: 0 10px 40px rgba(106, 34, 99, 0.15);
+    box-shadow: 0 10px 40px rgba(89, 38, 109, 0.15);
 }
 
 .service-card-h__left {
@@ -896,7 +896,7 @@ ul {
 .service-card:hover {
     transform: translateY(-8px);
     border-color: var(--accent);
-    box-shadow: 0 20px 40px rgba(106, 34, 99, 0.15);
+    box-shadow: 0 20px 40px rgba(89, 38, 109, 0.15);
 }
 
 .service-card__icon {
@@ -1585,7 +1585,7 @@ ul {
     margin-top: var(--space-md);
     padding: 8px 16px;
     background: var(--secondary);
-    color: var(--accent-dark);
+    color: var(--white);
     border-radius: 20px;
     font-size: var(--text-sm);
     font-weight: 600;
@@ -1792,7 +1792,7 @@ ul {
     font-family: var(--font-heading);
     font-size: var(--text-3xl);
     font-weight: 700;
-    color: var(--secondary);
+    color: var(--secondary-light);
     display: block;
     line-height: 1;
 }
@@ -2103,7 +2103,7 @@ ul {
 .instagram-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(106, 34, 99, 0.7);
+    background: rgba(89, 38, 109, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2265,7 +2265,7 @@ ul {
     font-weight: 800;
     line-height: 1;
     color: transparent;
-    -webkit-text-stroke: 2px rgba(106, 34, 99, 0.25); /* Reajustado para ficar sutil mas visível */
+    -webkit-text-stroke: 2px rgba(89, 38, 109, 0.25); /* Reajustado para ficar sutil mas visível */
     white-space: nowrap;
     z-index: 0;
     pointer-events: none;
@@ -2352,7 +2352,7 @@ ul {
 .portfolio-grid-home__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(106, 34, 99, 0.88) 0%, transparent 55%);
+    background: linear-gradient(to top, rgba(89, 38, 109, 0.88) 0%, transparent 55%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
