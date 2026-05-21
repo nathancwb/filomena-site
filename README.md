@@ -1,43 +1,144 @@
-# Astro Starter Kit: Minimal
+# Filomena Propaganda & Marketing — Site Institucional
 
-```sh
-npm create astro@latest -- --template minimal
+Site institucional da **Filomena Propaganda & Marketing**, construído com Astro e gerenciado via CMS headless (Decap CMS). Hospedado na Vercel com deploy automático a partir da branch `main`.
+
+---
+
+## Stack
+
+| Camada | Tecnologia |
+|---|---|
+| Framework | [Astro](https://astro.build) v6 |
+| CMS | [Decap CMS](https://decapcms.org) (antigo Netlify CMS) |
+| Hospedagem | [Vercel](https://vercel.com) |
+| Autenticação CMS | GitHub OAuth via API própria (`/api`) |
+| Estilização | CSS puro com variáveis customizadas |
+| Fontes | Space Grotesk, Inter, OliviarSans (local) |
+
+---
+
+## Estrutura do Projeto
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
+filomena-site/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── pages/               # Páginas do site (Astro)
+│   │   ├── index.astro      # Home
+│   │   ├── sobre.astro      # Sobre a agência
+│   │   ├── servicos.astro   # Serviços oferecidos
+│   │   ├── portfolio.astro  # Portfólio de projetos
+│   │   ├── contato.astro    # Página de contato
+│   │   ├── blog.astro       # Listagem do blog
+│   │   ├── trabalhe-conosco.astro
+│   │   └── blog/[id].astro  # Post individual do blog
+│   └── content/             # Conteúdo gerenciado pelo CMS
+│       ├── blog/            # Artigos em Markdown
+│       ├── portfolio/       # Projetos em Markdown
+│       └── pages/           # Conteúdo de páginas em JSON
+├── public/
+│   ├── assets/
+│   │   ├── images/          # Imagens do site
+│   │   └── fonts/           # Fontes locais (OliviarSans)
+│   ├── styles.css           # Estilos globais
+│   └── admin/               # Interface do Decap CMS
+│       ├── index.html
+│       └── config.yml       # Configuração das coleções do CMS
+├── api/                     # Endpoints serverless (autenticação OAuth)
+├── content.config.ts        # Schema das coleções de conteúdo
+├── astro.config.mjs
+└── vercel.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Páginas
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Rota | Descrição |
+|---|---|
+| `/` | Home — hero, serviços em destaque, cases, clientes, Instagram |
+| `/sobre` | História da agência, equipe, valores |
+| `/servicos` | Catálogo completo de serviços com scroll navegável |
+| `/portfolio` | Galeria de projetos com integração ao Behance |
+| `/blog` | Listagem de artigos com categorias |
+| `/blog/[id]` | Post individual do blog |
+| `/contato` | Formulário de contato e informações |
+| `/trabalhe-conosco` | Página de vagas e candidatura |
+| `/admin` | Interface de administração do CMS (acesso restrito) |
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## CMS — Decap CMS
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+O conteúdo é editado via `/admin`, que abre a interface do Decap CMS. As edições são commitadas diretamente no GitHub na branch `main`, disparando um novo deploy automático na Vercel.
 
-## 👀 Want to learn more?
+### Coleções disponíveis no CMS
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Blog** — artigos com título, autor, data, categoria, imagem de capa e corpo em Markdown
+- **Portfólio** — projetos com cliente, categoria, ID do Behance e imagem de capa
+- **Páginas** — conteúdo editável de seções específicas (JSON)
+
+### Autenticação
+
+O login no CMS usa OAuth do GitHub. A autenticação passa pelo endpoint serverless em `/api`, que precisa das seguintes variáveis de ambiente configuradas na Vercel:
+
+```
+OAUTH_CLIENT_ID=     # GitHub OAuth App Client ID
+OAUTH_CLIENT_SECRET= # GitHub OAuth App Client Secret
+```
+
+---
+
+## Identidade Visual
+
+### Paleta de Cores
+
+| Variável CSS | Hex | Uso |
+|---|---|---|
+| `--accent` | `#59266d` | Roxo principal — header, botões, destaques |
+| `--accent-dark` | `#45105e` | Roxo escuro — fundo premium (cases, footer) |
+| `--accent-light` | `#9047ba` | Roxo médio — gradientes, hovers |
+| `--secondary` | `#a157bc` | Lilás suave — elementos secundários |
+| `--secondary-light` | `#d08fff` | Lilás claro — números em destaque, glow |
+| `--secondary-dark` | `#463960` | Roxo acinzentado — complementos |
+
+### Tipografia
+
+- **Títulos:** Space Grotesk (Google Fonts)
+- **Corpo:** Inter (Google Fonts)
+- **Marca:** OliviarSans (fonte local, arquivos em `public/assets/fonts/`)
+
+---
+
+## Desenvolvimento Local
+
+```bash
+# Instalar dependências
+npm install
+
+# Rodar servidor de desenvolvimento
+npm run dev
+
+# Build de produção
+npm run build
+
+# Preview do build
+npm run preview
+```
+
+Requer **Node.js >= 22.12.0**.
+
+---
+
+## Deploy
+
+O deploy é automático via Vercel. Qualquer push na branch `main` dispara um novo build.
+
+- **Build command:** `npm run build`
+- **Output directory:** `dist`
+- **Framework preset:** Astro
+
+---
+
+## Repositório
+
+`nathancwb/filomena-site` — acesso necessário para editar conteúdo pelo CMS.
