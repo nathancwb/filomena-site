@@ -10,88 +10,18 @@ const homePage = await getEntry('pages', 'home');
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filomena Propaganda | Agência de Publicidade e Marketing em São Carlos-SP</title>
-    <meta name="description" content="Filomena Propaganda é uma agência de publicidade e marketing em São Carlos-SP. Especialistas em Branding, Tráfego Pago, Campanhas e Conteúdo Estratégico com foco em resultados reais.">
-
-    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Filomena Propaganda | Agência de Publicidade em São Carlos-SP" />
-    <meta property="og:description" content="Comunicação criativa de alta performance. Branding, tráfego pago, mídias e campanhas integradas com foco em resultados reais." />
-    <meta property="og:url" content="https://www.filomenapropaganda.com.br/" />
-    <meta property="og:site_name" content="Filomena Propaganda" />
-    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/apresentacao-comercial.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="pt_BR" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Filomena Propaganda | Agência de Publicidade e Marketing em São Carlos-SP" />
-    <meta name="twitter:description" content="Filomena Propaganda é uma agência de publicidade e marketing em São Carlos-SP. Especialistas em Branding, Tráfego Pago, Campanhas e Conteúdo Estratégico com foco em resultados reais." />
-    <meta name="twitter:image" content="https://www.filomenapropaganda.com.br/assets/images/apresentacao-comercial.png" />
-
-    <!-- GEO Geotagging / Local SEO -->
-    <meta name="geo.region" content="BR-SP" />
-    <meta name="geo.placename" content="São Carlos" />
-    <meta name="geo.position" content="-22.008978;-47.887784" />
-    <meta name="ICBM" content="-22.008978, -47.887784" />
-    <meta name="robots" content="index, follow" />
-
-    <!-- JSON-LD LocalBusiness Structured Data -->
-    <script type="application/ld+json" is:inline>
-    {
-      "@context": "https://schema.org",
-      "@type": "AdvertisingAgency",
-      "name": "Filomena Propaganda",
-      "image": "https://www.filomenapropaganda.com.br/assets/images/apresentacao-comercial.png",
-      "@id": "https://www.filomenapropaganda.com.br",
-      "url": "https://www.filomenapropaganda.com.br",
-      "telephone": "+551634154110",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua Dom Pedro II, 1978",
-        "addressLocality": "São Carlos",
-        "addressRegion": "SP",
-        "postalCode": "13560-235",
-        "addressCountry": "BR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -22.0089776,
-        "longitude": -47.8877838
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
-      "sameAs": [
-        "https://www.instagram.com/filomenapropaganda/",
-        "https://www.facebook.com/filomenapropaganda",
-        "https://www.linkedin.com/company/filomena-propaganda/",
-        "https://www.behance.net/filomenapropaganda"
-      ]
-    }
-    </script>
+    <meta name="description"
+        content="Filomena Propaganda - Agência de publicidade e marketing em São Carlos-SP. Comunicação criativa que conecta marcas a pessoas.">
+    <title>Filomena Propaganda | Comunicação Criativa</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="/styles.css">
-    
-        <!-- Google Search Console verification placeholder -->
-    <!-- <meta name="google-site-verification" content="SEU_TOKEN_AQUI" /> -->
-
 </head>
 
 <body>
@@ -286,8 +216,8 @@ const homePage = await getEntry('pages', 'home');
 
                 <div class="portfolio-grid-home fade-in">
                     {featuredProjects.map((project, index) => (
-                        <a href="/portfolio" class="portfolio-grid-home__item">
-                            <img src={project.data.thumbnail} alt={project.data.client}>
+                        <a href="/portfolio" class={`portfolio-grid-home__item ${index === 0 ? 'portfolio-grid-home__item--tall' : (index === 3 ? 'portfolio-grid-home__item--wide' : '')}`}>
+                            <img src={project.data.thumbnail} alt={project.data.client} loading="lazy" decoding="async">
                             <div class="portfolio-grid-home__overlay">
                                 <span class="portfolio-grid-home__client">{project.data.client}</span>
                                 <span class="portfolio-grid-home__type">{project.data.category}</span>
@@ -587,21 +517,7 @@ const homePage = await getEntry('pages', 'home');
                     </a>
                     <p>Comunicação criativa que conecta.</p>
                     <span class="footer__tagline">#teamfilomena</span>
-                
-                    <div class="footer__socials" style="display: flex; gap: var(--space-xs); margin-top: var(--space-md);">
-                        <a href="https://www.instagram.com/filomenapropaganda/" target="_blank" class="social-btn" aria-label="Instagram">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                        </a>
-                        <a href="https://www.facebook.com/filomenapropaganda" target="_blank" class="social-btn" aria-label="Facebook">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                        </a>
-                        <a href="https://www.linkedin.com/company/filomena-propaganda/" target="_blank" class="social-btn" aria-label="LinkedIn">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        </a>
-                        <a href="https://www.behance.net/filomenapropaganda" target="_blank" class="social-btn" aria-label="Behance">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.949 1.63 2.667 3.25 2.667 1.56 0 2.509-.758 2.905-1.638H24zm-7.02-4h4.045c-.093-1.383-.752-2.132-1.934-2.132-1.221 0-1.934.748-2.111 2.132zM8.691 14.475c0 1.155-.614 1.85-1.912 1.85H3.43v-3.727h3.35c1.284 0 1.911.687 1.911 1.877zM3.43 8.686v3.165H6.5c1.086 0 1.73-.488 1.73-1.548 0-1.064-.644-1.617-1.73-1.617H3.43zM0 6h7.158c1.76 0 3.586 0 4.645 1.288.635.739.984 1.713.984 2.888 0 1.463-.698 2.573-1.985 3.067v.032c1.644.38 2.515 1.577 2.515 3.406 0 2.67-1.969 4.319-5.027 4.319H0V6z"/></svg>
-                        </a>
-                    </div></div>
+                </div>
 
                 <div>
                     <h4 class="footer__title">Navegação</h4>
