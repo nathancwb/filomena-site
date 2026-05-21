@@ -9,16 +9,85 @@ const projects = await getCollection('portfolio');
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio da Filomena Propaganda - Conheça nossos trabalhos.">
-    <title>Portfólio | Filomena Propaganda</title>
+    <title>Nosso Portfólio | Cases de Sucesso | Filomena Propaganda</title>
+    <meta name="description" content="Explore os cases de sucesso e projetos de publicidade, design e tráfego pago desenvolvidos pela Filomena Propaganda para clientes de todo o Brasil.">
 
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Portfólio | Filomena Propaganda" />
+    <meta property="og:description" content="Conheça os projetos criativos e estratégicos criados para marcas e empresas que voam alto." />
+    <meta property="og:url" content="https://www.filomenapropaganda.com.br/portfolio" />
+    <meta property="og:site_name" content="Filomena Propaganda" />
+    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/apresentacao-comercial.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nosso Portfólio | Cases de Sucesso | Filomena Propaganda" />
+    <meta name="twitter:description" content="Explore os cases de sucesso e projetos de publicidade, design e tráfego pago desenvolvidos pela Filomena Propaganda para clientes de todo o Brasil." />
+    <meta name="twitter:image" content="https://www.filomenapropaganda.com.br/assets/images/apresentacao-comercial.png" />
+
+    <!-- GEO Geotagging / Local SEO -->
+    <meta name="geo.region" content="BR-SP" />
+    <meta name="geo.placename" content="São Carlos" />
+    <meta name="geo.position" content="-22.008978;-47.887784" />
+    <meta name="ICBM" content="-22.008978, -47.887784" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- JSON-LD LocalBusiness Structured Data -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "AdvertisingAgency",
+      "name": "Filomena Propaganda",
+      "image": "https://www.filomenapropaganda.com.br/assets/images/apresentacao-comercial.png",
+      "@id": "https://www.filomenapropaganda.com.br",
+      "url": "https://www.filomenapropaganda.com.br",
+      "telephone": "+551634154110",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Dom Pedro II, 1978",
+        "addressLocality": "São Carlos",
+        "addressRegion": "SP",
+        "postalCode": "13560-235",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -22.0089776,
+        "longitude": -47.8877838
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/filomenapropaganda/",
+        "https://www.facebook.com/filomenapropaganda",
+        "https://www.linkedin.com/company/filomena-propaganda/",
+        "https://www.behance.net/filomenapropaganda"
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/styles.css">
+    
 </head>
 
 <body>
@@ -90,8 +159,7 @@ const projects = await getCollection('portfolio');
                 <button class="project-modal__close" id="closeModal">&times;</button>
                 <h3 class="project-modal__title" id="modalTitle"></h3>
                 <iframe id="modalFrame" src="" allowfullscreen></iframe>
-                <a href="#" target="_blank" class="btn btn--primary project-modal__link" id="modalLink" style="display: none;">Abrir no
-                    Behance</a>
+
             </div>
         </div>
 

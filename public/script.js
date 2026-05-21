@@ -203,7 +203,9 @@ function initPortfolioModal() {
             // Configura o modal
             modalTitle.textContent = title;
             modalFrame.src = `https://www.behance.net/embed/project/${projectId}?ilo0=1`;
-            modalLink.href = `https://www.behance.net/gallery/${projectId}`;
+            if (modalLink) {
+                modalLink.href = `https://www.behance.net/gallery/${projectId}`;
+            }
 
             // Abre o modal
             modal.classList.add('active');
