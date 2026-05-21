@@ -55,17 +55,28 @@ filomena-site/
 
 | Rota | Descrição |
 |---|---|
-| `/` | Home — hero, serviços em destaque, cases, clientes, Instagram |
+| `/` | Home — hero, serviços em destaque, cases, clientes, Instagram (otimizada para SEO local) |
 | `/sobre` | História da agência, equipe, valores |
 | `/servicos` | Catálogo completo de serviços com scroll navegável |
-| `/portfolio` | Galeria de projetos com integração ao Behance |
+| `/portfolio` | Galeria de projetos com exibição interativa interna de cases (sem links externos para fora do site) |
 | `/blog` | Listagem de artigos com categorias |
 | `/blog/[id]` | Post individual do blog |
-| `/contato` | Formulário de contato e informações |
+| `/contato` | Página de contato premium — formulário interativo, canais de atendimento, WhatsApp e mapa integrado |
 | `/trabalhe-conosco` | Página de vagas e candidatura |
 | `/admin` | Interface de administração do CMS (acesso restrito) |
 
 ---
+
+---
+
+## SEO & Otimizações Locais
+
+O site foi completamente otimizado para **SEO Técnico e Local**, garantindo máxima relevância nos mecanismos de busca:
+
+- **JSON-LD Structured Data (Schema.org):** Implementação de dados estruturados sob a classe `AdvertisingAgency` (Agência de Publicidade) para rich snippets de pesquisa local.
+- **GEO Geotagging:** Injeção de metatags geográficas oficiais (`geo.region`, `geo.placename`, `geo.position`, `ICBM`) apontando diretamente para as coordenadas reais do escritório físico da agência em São Carlos-SP.
+- **Open Graph & Twitter Cards:** Configuração robusta com imagens de preview e metadados completos para compartilhamento visual premium no WhatsApp, LinkedIn, Facebook, etc.
+- **Core Web Vitals:** Transições e animações da classe `.fade-in` otimizadas para carregamento instantâneo de conteúdo (melhorando a métrica INP/LCP).
 
 ## CMS — Decap CMS
 
