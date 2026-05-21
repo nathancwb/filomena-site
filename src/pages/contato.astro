@@ -66,31 +66,145 @@
 
         <!-- Form Section -->
         <section class="section">
-            <div class="container" style="max-width: 800px; margin: 0 auto;">
-                <form class="contact__form fade-in glass-premium" style="padding: var(--space-2xl);">
-                    <div class="form-group">
-                        <label for="nome" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Nome completo</label>
-                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+            <div class="container">
+                <div class="contact__grid">
+                    <div class="contact__info">
+                        <span class="section__tag fade-in">Canais de Atendimento</span>
+                        <h2 class="section__title fade-in">Queremos ouvir você</h2>
+                        <p class="contact__text fade-in">
+                            Seja para iniciar um novo projeto de branding, alavancar suas vendas com tráfego pago ou criar campanhas integradas de alta performance, nossa equipe está pronta para te atender.
+                        </p>
+
+                        <div class="contact__list fade-in" style="margin-top: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-md);">
+                            <div class="contact__item" style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                                <div class="contact__icon" style="color: var(--secondary); background: rgba(161, 87, 188, 0.1); padding: var(--space-xs); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="contact__item-label" style="font-size: var(--text-xs); color: var(--gray-400); margin: 0;">E-mail</p>
+                                    <a href="mailto:contato@filomenapropaganda.com.br"
+                                        class="contact__item-value" style="color: var(--white); font-weight: 500; text-decoration: none; transition: color var(--transition-fast);">&nbsp;contato@filomenapropaganda.com.br</a>
+                                </div>
+                            </div>
+
+                            <div class="contact__item" style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                                <div class="contact__icon" style="color: var(--secondary); background: rgba(161, 87, 188, 0.1); padding: var(--space-xs); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.08.64.21 1.27.38 1.88a2 2 0 0 1-.45 2.11L8.09 8.66a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.61.17 1.24.3 1.88.38a2 2 0 0 1 1.72 2v2.28z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="contact__item-label" style="font-size: var(--text-xs); color: var(--gray-400); margin: 0;">Telefone</p>
+                                    <a href="tel:+551634154110" class="contact__item-value" style="color: var(--white); font-weight: 500; text-decoration: none;">&nbsp;(16) 3415-4110</a>
+                                </div>
+                            </div>
+
+                            <div class="contact__item" style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                                <div class="contact__icon" style="color: var(--secondary); background: rgba(161, 87, 188, 0.1); padding: var(--space-xs); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="contact__item-label" style="font-size: var(--text-xs); color: var(--gray-400); margin: 0;">Endereço</p>
+                                    <a href="https://www.google.com/maps/place/Filomena+Propaganda+e+Marketing/@-22.0089776,-47.8877838,17z"
+                                        target="_blank" class="contact__item-value" style="color: var(--white); font-weight: 500; text-decoration: none;">&nbsp;Rua Dom Pedro II, 1978<br>&nbsp;Centro - São Carlos - SP</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact__socials fade-in" style="margin-top: var(--space-xl); display: flex; gap: var(--space-sm);">
+                            <a href="https://www.instagram.com/filomenapropaganda/" target="_blank" class="social-btn"
+                                aria-label="Instagram">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/filomenapropaganda" target="_blank" class="social-btn"
+                                aria-label="Facebook">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/company/filomena-propaganda/" target="_blank"
+                                class="social-btn" aria-label="LinkedIn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="https://www.behance.net/filomenapropaganda" target="_blank" class="social-btn"
+                                aria-label="Behance">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.949 1.63 2.667 3.25 2.667 1.56 0 2.509-.758 2.905-1.638H24zm-7.02-4h4.045c-.093-1.383-.752-2.132-1.934-2.132-1.221 0-1.934.748-2.111 2.132zM8.691 14.475c0 1.155-.614 1.85-1.912 1.85H3.43v-3.727h3.35c1.284 0 1.911.687 1.911 1.877zM3.43 8.686v3.165H6.5c1.086 0 1.73-.488 1.73-1.548 0-1.064-.644-1.617-1.73-1.617H3.43zM0 6h7.158c1.76 0 3.586 0 4.645 1.288.635.739.984 1.713.984 2.888 0 1.463-.698 2.573-1.985 3.067v.032c1.644.38 2.515 1.577 2.515 3.406 0 2.67-1.969 4.319-5.027 4.319H0V6z" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Mapa da Localização -->
+                        <div class="contact__map fade-in" style="margin-top: var(--space-xl);">
+                            <p class="contact__map-label" style="font-family: var(--font-heading); margin-bottom: var(--space-sm); font-size: var(--text-sm); font-weight: 600;">📍 Nossa localização</p>
+                            <div class="contact__map-wrapper" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; margin-bottom: var(--space-sm);">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3699.3241421!2d-47.8877838!3d-22.0089776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b877001cdd3ba5%3A0xe8c0c0c0c0c0c0c0!2sR.%20Dom%20Pedro%20II%2C%201978%20-%20Centro%2C%20S%C3%A3o%20Carlos%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1703782800000!5m2!1spt-BR!2sbr"
+                                    width="100%" height="220" style="border:0; display: block;" allowfullscreen=""
+                                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                            <a href="https://www.google.com/maps/dir//Filomena+Propaganda+e+Marketing/@-22.0089776,-47.8877838,17z"
+                                target="_blank" class="btn btn--outline btn--sm contact__map-btn" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: var(--space-xs); font-family: var(--font-heading); font-size: var(--text-xs);">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                Ver rotas no Google Maps
+                            </a>
+                        </div>
                     </div>
-                    <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
-                        <div class="form-group">
+
+                    <form class="contact__form fade-in glass-premium" style="padding: var(--space-2xl); height: fit-content;">
+                        <div class="form-group" style="margin-bottom: var(--space-md);">
+                            <label for="nome" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Nome completo</label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                        </div>
+                        <div class="form-group" style="margin-bottom: var(--space-md);">
                             <label for="email" style="font-family: var(--font-heading); letter-spacing: -0.02em;">E-mail</label>
-                            <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                            <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
                         </div>
-                        <div class="form-group">
-                            <label for="telefone" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Telefone</label>
-                            <input type="tel" id="telefone" name="telefone" placeholder="(  ) _____-____" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                        <div class="form-group" style="margin-bottom: var(--space-md);">
+                            <label for="telefone" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Telefone / WhatsApp</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(  ) _____-____" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="mensagem" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Vamos conversar sobre a sua marca?</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos um pouco sobre o que você precisa..." style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn--primary btn--full" style="margin-top: var(--space-lg); font-family: var(--font-heading);">Enviar mensagem →</button>
-                </form>
+                        <div class="form-group" style="margin-bottom: var(--space-md);">
+                            <label for="mensagem" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Como podemos te ajudar?</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos um pouco sobre a sua marca ou projeto..." required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full" style="margin-top: var(--space-lg); font-family: var(--font-heading);">Enviar mensagem →</button>
+                    </form>
+                </div>
             </div>
         </section>
-
         <!-- FAQ Section -->
         <section class="section">
             <div class="container">
@@ -149,7 +263,21 @@
                     </a>
                     <p>Comunicação criativa que conecta.</p>
                     <span class="footer__tagline">#teamfilomena</span>
-                </div>
+                
+                    <div class="footer__socials" style="display: flex; gap: var(--space-xs); margin-top: var(--space-md);">
+                        <a href="https://www.instagram.com/filomenapropaganda/" target="_blank" class="social-btn" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://www.facebook.com/filomenapropaganda" target="_blank" class="social-btn" aria-label="Facebook">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/filomena-propaganda/" target="_blank" class="social-btn" aria-label="LinkedIn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="https://www.behance.net/filomenapropaganda" target="_blank" class="social-btn" aria-label="Behance">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.949 1.63 2.667 3.25 2.667 1.56 0 2.509-.758 2.905-1.638H24zm-7.02-4h4.045c-.093-1.383-.752-2.132-1.934-2.132-1.221 0-1.934.748-2.111 2.132zM8.691 14.475c0 1.155-.614 1.85-1.912 1.85H3.43v-3.727h3.35c1.284 0 1.911.687 1.911 1.877zM3.43 8.686v3.165H6.5c1.086 0 1.73-.488 1.73-1.548 0-1.064-.644-1.617-1.73-1.617H3.43zM0 6h7.158c1.76 0 3.586 0 4.645 1.288.635.739.984 1.713.984 2.888 0 1.463-.698 2.573-1.985 3.067v.032c1.644.38 2.515 1.577 2.515 3.406 0 2.67-1.969 4.319-5.027 4.319H0V6z"/></svg>
+                        </a>
+                    </div></div>
 
                 <div>
                     <h4 class="footer__title">Navegação</h4>
