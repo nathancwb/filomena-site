@@ -4,4 +4,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://www.filomenapropaganda.com.br/sitemap.xml
+Sitemap: https://www.filomenapropaganda.com.br/sitemap-index.xml
