@@ -138,7 +138,7 @@ const projects = await getCollection('portfolio');
                     {projects.map(project => (
                         <div class="portfolio-card fade-in" data-project={project.data.behance_id}
                             data-title={project.data.title}>
-                            <img src={project.data.thumbnail} alt={project.data.client}>
+                            <img src={project.data.thumbnail} alt={project.data.client} style={project.id === "dubelato-outdoor" ? "object-fit: contain; background: #ffffff; padding: 8px;" : ""}>
                             <div class="portfolio-card__overlay">
                                 <span class="portfolio-card__tag">{project.data.category}</span>
                                 <h3 class="portfolio-card__title">{project.data.client}</h3>
