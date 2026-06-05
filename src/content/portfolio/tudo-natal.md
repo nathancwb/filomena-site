@@ -1,15 +1,18 @@
 ---
-title: "Tudo Natal | Uniformização Corporativa"
+title: "Tudo Natal | Papelaria & Uniformização Corporativa"
 client: "Tudo Natal"
-category: "Identidade Visual & Uniformização"
-thumbnail: "/assets/images/portfolio/tudonatal-uniforme.jpg"
-featured: false
-description: "Desenvolvimento do manual de vestuário e padronização de uniformes sociais para a empresa Tudo Natal, integrando design de moda corporativo com a identidade visual da marca."
+category: "Identidade Visual & Papelaria"
+thumbnail: "/assets/images/portfolio/tudonatal-folder.png"
+featured: true
+description: "Desenvolvimento de pasta institucional, cartões de visita, convites e padronização de uniformes sociais para a Tudo Natal."
 images:
+  - "/assets/images/portfolio/tudonatal-folder.png"
+  - "/assets/images/portfolio/tudonatal-cartao.png"
+  - "/assets/images/portfolio/tudonatal-convite.png"
   - "/assets/images/portfolio/tudonatal-uniforme.jpg"
 stats:
   - label: "Entregáveis"
-    value: "Estudo de Uniformes"
+    value: "Papelaria & Uniformes"
   - label: "Foco"
     value: "Padronização Corporativa"
   - label: "Ano"

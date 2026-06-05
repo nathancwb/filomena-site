@@ -2,12 +2,12 @@
 title: "Latina Eletrodomésticos | Sinalização de Showroom"
 client: "Latina Eletrodomésticos"
 category: "Ambientação & Sinalização"
-thumbnail: "/assets/images/portfolio/latina-totem.jpg"
+thumbnail: "/assets/images/portfolio/latina-frente.png"
 featured: false
 description: "Criação de projetos de comunicação visual ambiental, painéis adesivos de showroom e totens interativos/expositores físicos de PDV para a Latina Eletrodomésticos."
 images:
-  - "/assets/images/portfolio/latina-totem.jpg"
-  - "/assets/images/portfolio/latina-adesivo.jpg"
+  - "/assets/images/portfolio/latina-frente.png"
+  - "/assets/images/portfolio/latina-adesivo.png"
 stats:
   - label: "Foco"
     value: "Ambientação de Lojas"
