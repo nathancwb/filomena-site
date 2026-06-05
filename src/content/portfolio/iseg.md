@@ -2,11 +2,11 @@
 title: "iSeg | Identidade & Sinalização"
 client: "iSeg"
 category: "Identidade Visual & Sinalização"
-thumbnail: "/assets/images/portfolio/iseg-adesivo.jpg"
+thumbnail: "/assets/images/portfolio/iseg-capa.png"
 featured: false
-description: "Desenvolvimento de adesivos corporativos de credenciamento e sinalização externa para representantes e frotas da iSeg Seguros."
+description: "Criação de identidade e posicionamento para a iSeg Corretora de Seguros."
 images:
-  - "/assets/images/portfolio/iseg-adesivo.jpg"
+  - "/assets/images/portfolio/iseg-capa.png"
 stats:
   - label: "Entregáveis"
     value: "Adesivos de Sinalização"
