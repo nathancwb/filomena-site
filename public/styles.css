@@ -2443,12 +2443,12 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px 60px; /* Increased padding */
+    padding: 15px 30px; /* Decreased padding to give logos more space */
     border-right: 1px solid var(--gray-200);
     flex-shrink: 0;
     transition: background 0.2s;
-    height: 140px; /* Increased height */
-    width: 250px; /* Fixed width to prevent layout shifts */
+    height: 140px;
+    width: 280px; /* Increased width to make logos bigger */
 }
 
 .clients-strip__item:hover {
@@ -2460,10 +2460,9 @@ ul {
     width: auto;
     height: auto;
     max-width: 100%;
-    max-height: 80px;
+    max-height: 95px; /* Increased max-height for bigger logos */
     object-fit: contain;
     filter: grayscale(100%) opacity(0.65);
-    mix-blend-mode: multiply; /* Remove fundo branco das logos */
     transition: filter 0.3s ease, transform 0.3s ease;
     display: block;
 }
@@ -2478,58 +2477,105 @@ ul {
 
 /* BNI - Quadrada */
 .item-bni .client-logo-img {
-    max-height: 90px;
+    max-height: 80px;
     max-width: 140px;
-}
-
-/* Alpha - Horizontal */
-.item-alpha .client-logo-img {
-    max-height: 60px;
-    max-width: 180px;
-    transform: scale(1.6);
-}
-.item-alpha:hover .client-logo-img {
-    transform: scale(1.68);
-}
-
-/* Art Final - Proporção mista */
-.item-artfinal .client-logo-img {
-    max-height: 85px;
-    max-width: 160px;
-}
-
-/* Fukuhara - Texto, aumentada a legibilidade */
-.item-fukuhara .client-logo-img {
-    max-height: 100px;
-    max-width: 220px;
-    transform: scale(1.5);
-}
-.item-fukuhara:hover .client-logo-img {
-    transform: scale(1.58);
 }
 
 /* Grampola */
 .item-grampola .client-logo-img {
-    max-height: 70px;
+    max-height: 80px;
     max-width: 200px;
-    filter: grayscale(100%) opacity(0.85);
     transform: scale(2.0); /* Zoom enorme para cortar a margem do PDF */
 }
 .item-grampola:hover .client-logo-img {
-    filter: grayscale(0%) opacity(1);
     transform: scale(2.1);
-}
-
-/* Masotti - Bem maior agora */
-.item-masotti .client-logo-img {
-    max-height: 120px; /* Aumentado */
-    max-width: 210px; /* Aumentado */
 }
 
 /* Jogo Real - Quadrada/Redonda */
 .item-jogoreal .client-logo-img {
-    max-height: 100px; 
+    max-height: 80px;
     max-width: 150px;
+}
+
+/* Masotti */
+.item-masotti .client-logo-img {
+    max-height: 80px;
+    transform: scale(1.6);
+}
+.item-masotti:hover .client-logo-img {
+    transform: scale(1.68);
+}
+
+/* Lupetec */
+.item-lupetec .client-logo-img {
+    max-height: 75px;
+    transform: scale(1.5);
+}
+.item-lupetec:hover .client-logo-img {
+    transform: scale(1.58);
+}
+
+/* Latina */
+.item-latina .client-logo-img {
+    max-height: 75px;
+    transform: scale(1.7);
+}
+.item-latina:hover .client-logo-img {
+    transform: scale(1.78);
+}
+
+/* Neonova */
+.item-neonova .client-logo-img {
+    max-height: 75px;
+    transform: scale(1.6);
+}
+.item-neonova:hover .client-logo-img {
+    transform: scale(1.68);
+}
+
+/* iSeg */
+.item-iseg .client-logo-img {
+    max-height: 75px;
+    transform: scale(1.4);
+}
+.item-iseg:hover .client-logo-img {
+    transform: scale(1.48);
+}
+
+/* Alternativa Resgate */
+.item-alternativa .client-logo-img {
+    max-height: 75px;
+    transform: scale(1.5);
+}
+.item-alternativa:hover .client-logo-img {
+    transform: scale(1.58);
+}
+
+/* Felipe Dellalibera */
+.item-felipe .client-logo-img {
+    max-height: 75px;
+    transform: scale(1.5);
+}
+.item-felipe:hover .client-logo-img {
+    transform: scale(1.58);
+}
+
+/* Siltomac */
+.item-siltomac .client-logo-img {
+    max-height: 75px;
+    transform: scale(1.4);
+}
+.item-siltomac:hover .client-logo-img {
+    transform: scale(1.48);
+}
+
+/* Center */
+.item-center .client-logo-img {
+    max-height: 75px;
+    transform: scale(1.5);
+}
+.item-center:hover .client-logo-img {
+    transform: scale(1.58);
 }
 
 @media (prefers-reduced-motion: reduce) {
