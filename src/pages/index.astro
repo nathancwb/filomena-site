@@ -15,6 +15,75 @@ const homePage = await getEntry('pages', 'home');
         content="Filomena Propaganda - Agência de publicidade e marketing em São Carlos-SP. Comunicação criativa que conecta marcas a pessoas.">
     <title>Filomena Propaganda | Comunicação Criativa</title>
 
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Filomena Propaganda | Comunicação Criativa" />
+    <meta property="og:description" content="Filomena Propaganda - Agência de publicidade e marketing em São Carlos-SP. Comunicação criativa que conecta marcas a pessoas." />
+    <meta property="og:url" content="https://filomena-site.vercel.app/" />
+    <meta property="og:site_name" content="Filomena Propaganda" />
+    <meta property="og:image" content="https://filomena-site.vercel.app/assets/images/apresentacao-comercial.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Filomena Propaganda | Comunicação Criativa" />
+    <meta name="twitter:description" content="Filomena Propaganda - Agência de publicidade e marketing em São Carlos-SP. Comunicação criativa que conecta marcas a pessoas." />
+    <meta name="twitter:image" content="https://filomena-site.vercel.app/assets/images/apresentacao-comercial.png" />
+
+    <!-- GEO Geotagging / Local SEO -->
+    <meta name="geo.region" content="BR-SP" />
+    <meta name="geo.placename" content="São Carlos" />
+    <meta name="geo.position" content="-22.008978;-47.887784" />
+    <meta name="ICBM" content="-22.008978, -47.887784" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- JSON-LD LocalBusiness Structured Data -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "AdvertisingAgency",
+      "name": "Filomena Propaganda",
+      "image": "https://filomena-site.vercel.app/assets/images/apresentacao-comercial.png",
+      "@id": "https://filomena-site.vercel.app",
+      "url": "https://filomena-site.vercel.app",
+      "telephone": "+551634154110",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Dom Pedro II, 1978",
+        "addressLocality": "São Carlos",
+        "addressRegion": "SP",
+        "postalCode": "13560-235",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -22.0089776,
+        "longitude": -47.8877838
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/filomenapropaganda/",
+        "https://www.facebook.com/filomenapropaganda",
+        "https://www.linkedin.com/company/filomena-propaganda/",
+        "https://www.behance.net/filomenapropaganda"
+      ]
+    }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,6 +189,9 @@ const homePage = await getEntry('pages', 'home');
                 <div class="clients-strip__item item-center">
                     <img src="/assets/images/clients/client-center.png" alt="Center" class="client-logo-img">
                 </div>
+                <div class="clients-strip__item item-boali">
+                    <img src="/assets/images/clients/client-boali.svg" alt="Boali" class="client-logo-img">
+                </div>
                 <!-- set 2 (duplicado para loop infinito) -->
                 <div class="clients-strip__item item-bni" aria-hidden="true">
                     <img src="/assets/images/clients/client-bni.png" alt="" class="client-logo-img">
@@ -156,6 +228,9 @@ const homePage = await getEntry('pages', 'home');
                 </div>
                 <div class="clients-strip__item item-center" aria-hidden="true">
                     <img src="/assets/images/clients/client-center.png" alt="" class="client-logo-img">
+                </div>
+                <div class="clients-strip__item item-boali" aria-hidden="true">
+                    <img src="/assets/images/clients/client-boali.svg" alt="" class="client-logo-img">
                 </div>
             </div>
         </div>
@@ -463,6 +538,11 @@ const homePage = await getEntry('pages', 'home');
                     </div>
 
                     <form class="contact__form fade-in">
+                        <!-- Honeypot anti-spam field -->
+                        <div class="hp-field">
+                            <label for="b_website">Website</label>
+                            <input type="text" id="b_website" name="b_website" autocomplete="off" tabindex="-1">
+                        </div>
                         <div class="form-group">
                             <label for="name">Nome</label>
                             <input type="text" id="name" name="name" required>

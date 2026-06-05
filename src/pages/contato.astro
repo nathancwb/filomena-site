@@ -266,6 +266,11 @@ import Footer from '../components/Footer.astro';
                     </div>
 
                     <form class="contact__form fade-in glass-premium" style="padding: var(--space-2xl); height: fit-content;">
+                        <!-- Honeypot anti-spam field -->
+                        <div class="hp-field">
+                            <label for="b_website">Website</label>
+                            <input type="text" id="b_website" name="b_website" autocomplete="off" tabindex="-1">
+                        </div>
                         <div class="form-group" style="margin-bottom: var(--space-md);">
                             <label for="nome" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Nome completo</label>
                             <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">

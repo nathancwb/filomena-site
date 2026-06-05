@@ -130,29 +130,53 @@ function animateCounter(element) {
 // FORM HANDLER
 // ==========================================
 function initForm() {
-    const form = document.querySelector('.contact__form');
+    const forms = document.querySelectorAll('.contact__form');
 
-    form?.addEventListener('submit', (e) => {
-        e.preventDefault();
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-        const btn = form.querySelector('button[type="submit"]');
-        const originalText = btn.textContent;
+            // Honeypot check
+            const honeypot = form.querySelector('input[name="b_website"]');
+            if (honeypot && honeypot.value) {
+                console.warn('Spam detected via honeypot field.');
+                // Simulate success to spam bots to prevent repeated attempts
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.textContent;
+                btn.textContent = 'Enviando...';
+                btn.disabled = true;
+                setTimeout(() => {
+                    btn.textContent = 'Enviado com sucesso!';
+                    btn.style.background = '#22c55e';
+                    setTimeout(() => {
+                        form.reset();
+                        btn.textContent = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                    }, 3000);
+                }, 1000);
+                return;
+            }
 
-        btn.textContent = 'Enviando...';
-        btn.disabled = true;
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
 
-        // Simulate submission
-        setTimeout(() => {
-            btn.textContent = 'Enviado com sucesso!';
-            btn.style.background = '#22c55e';
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
 
+            // Simulate submission
             setTimeout(() => {
-                form.reset();
-                btn.textContent = originalText;
-                btn.style.background = '';
-                btn.disabled = false;
-            }, 3000);
-        }, 1500);
+                btn.textContent = 'Enviado com sucesso!';
+                btn.style.background = '#22c55e';
+
+                setTimeout(() => {
+                    form.reset();
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 3000);
+            }, 1500);
+        });
     });
 }
 

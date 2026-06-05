@@ -34,9 +34,23 @@ collections:
       - {label: "Título do Projeto", name: "title", widget: "string"}
       - {label: "Cliente", name: "client", widget: "string"}
       - {label: "Categoria (Ex: Branding, Campanha)", name: "category", widget: "string"}
-      - {label: "ID do Behance (Apenas números)", name: "behance_id", widget: "string"}
+      - {label: "ID do Behance (Apenas números)", name: "behance_id", widget: "string", required: false}
       - {label: "Imagem Principal", name: "thumbnail", widget: "image"}
       - {label: "Destaque na Home?", name: "featured", widget: "boolean", default: false}
+      - {label: "Descrição Curta (para os cards)", name: "description", widget: "text", required: false}
+      - label: "Galeria de Imagens"
+        name: "images"
+        widget: "list"
+        summary: "{{fields.image}}"
+        field: {label: "Imagem", name: "image", widget: "image"}
+      - {label: "Vídeo do Projeto (Caminho local/URL)", name: "video", widget: "string", required: false}
+      - label: "Estatísticas / Metadados Rápidos"
+        name: "stats"
+        widget: "list"
+        summary: "{{fields.label}}: {{fields.value}}"
+        fields:
+          - {label: "Rótulo", name: "label", widget: "string"}
+          - {label: "Valor", name: "value", widget: "string"}
       - {label: "Descrição Completa", name: "body", widget: "markdown"}
   
   - name: "pages"
