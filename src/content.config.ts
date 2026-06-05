@@ -19,9 +19,13 @@ const portfolioCollection = defineCollection({
     title: z.string(),
     client: z.string(),
     category: z.string(),
-    behance_id: z.string(),
+    behance_id: z.string().optional(),
     thumbnail: z.string().optional(),
-    featured: z.boolean().default(false)
+    featured: z.boolean().default(false),
+    description: z.string().optional(),
+    images: z.array(z.string()).optional(),
+    video: z.string().optional(),
+    stats: z.array(z.object({ label: z.string(), value: z.string() })).optional()
   })
 });
 

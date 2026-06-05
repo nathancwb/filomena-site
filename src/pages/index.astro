@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
+import Footer from '../components/Footer.astro';
 const featuredProjects = (await getCollection('portfolio')).filter(p => p.data.featured);
 const homePage = await getEntry('pages', 'home');
 ---
@@ -83,48 +84,78 @@ const homePage = await getEntry('pages', 'home');
         <div class="clients-strip" aria-label="Nossos clientes">
             <div class="clients-strip__track">
                 <!-- set 1 -->
-                <div class="clients-strip__item item-bni">
-                    <img src="/assets/images/client-bni.webp" alt="BNI" class="client-logo-img">
+                <div class="clients-strip__item">
+                    <img src="/assets/images/clients/client-bni.png" alt="BNI" class="client-logo-img">
                 </div>
-                <div class="clients-strip__item item-alpha">
-                    <img src="/assets/images/client-alpha.png" alt="Alpha Engenharia" class="client-logo-img">
+                <div class="clients-strip__item">
+                    <img src="/assets/images/clients/client-grampola.png" alt="Grampola" class="client-logo-img">
                 </div>
-                <div class="clients-strip__item item-artfinal">
-                    <img src="/assets/images/client-artfinal.png" alt="Art Final Marmoraria" class="client-logo-img">
+                <div class="clients-strip__item">
+                    <img src="/assets/images/clients/client-jogoreal.png" alt="Jogo Real" class="client-logo-img">
                 </div>
-                <div class="clients-strip__item item-fukuhara">
-                    <img src="/assets/images/client-fukuhara.jpg" alt="Fukuhara Studio Digital" class="client-logo-img">
+                <div class="clients-strip__item">
+                    <img src="/assets/images/clients/client-masotti.png" alt="Móveis Masotti" class="client-logo-img">
                 </div>
-                <div class="clients-strip__item item-grampola">
-                    <img src="/assets/images/client-grampola.png" alt="Grampola Peças Automotivas" class="client-logo-img">
+                <div class="clients-strip__item">
+                    <img src="/assets/images/clients/client-lupetec.png" alt="Lupetec" class="client-logo-img">
                 </div>
-                <div class="clients-strip__item item-masotti">
-                    <img src="/assets/images/client-masotti.webp" alt="Móveis Masotti" class="client-logo-img">
+                <div class="clients-strip__item">
+                    <img src="/assets/images/clients/client-latina.png" alt="Latina" class="client-logo-img">
                 </div>
-                <div class="clients-strip__item item-jogoreal">
-                    <img src="/assets/images/client-jogoreal.png" alt="Jogo Real" class="client-logo-img">
+                <div class="clients-strip__item">
+                    <img src="/assets/images/clients/client-neonova.png" alt="Neonova" class="client-logo-img">
+                </div>
+                <div class="clients-strip__item">
+                    <img src="/assets/images/clients/client-iseg.png" alt="iSeg" class="client-logo-img">
+                </div>
+                <div class="clients-strip__item">
+                    <img src="/assets/images/clients/client-alternativa.png" alt="Alternativa Resgate" class="client-logo-img">
+                </div>
+                <div class="clients-strip__item">
+                    <img src="/assets/images/clients/client-felipe.png" alt="Felipe Dellalibera" class="client-logo-img">
+                </div>
+                <div class="clients-strip__item">
+                    <img src="/assets/images/clients/client-siltomac.png" alt="Siltomac" class="client-logo-img">
+                </div>
+                <div class="clients-strip__item">
+                    <img src="/assets/images/clients/client-center.png" alt="Center" class="client-logo-img">
                 </div>
                 <!-- set 2 (duplicado para loop infinito) -->
-                <div class="clients-strip__item item-bni" aria-hidden="true">
-                    <img src="/assets/images/client-bni.webp" alt="" class="client-logo-img">
+                <div class="clients-strip__item" aria-hidden="true">
+                    <img src="/assets/images/clients/client-bni.png" alt="" class="client-logo-img">
                 </div>
-                <div class="clients-strip__item item-alpha" aria-hidden="true">
-                    <img src="/assets/images/client-alpha.png" alt="" class="client-logo-img">
+                <div class="clients-strip__item" aria-hidden="true">
+                    <img src="/assets/images/clients/client-grampola.png" alt="" class="client-logo-img">
                 </div>
-                <div class="clients-strip__item item-artfinal" aria-hidden="true">
-                    <img src="/assets/images/client-artfinal.png" alt="" class="client-logo-img">
+                <div class="clients-strip__item" aria-hidden="true">
+                    <img src="/assets/images/clients/client-jogoreal.png" alt="" class="client-logo-img">
                 </div>
-                <div class="clients-strip__item item-fukuhara" aria-hidden="true">
-                    <img src="/assets/images/client-fukuhara.jpg" alt="" class="client-logo-img">
+                <div class="clients-strip__item" aria-hidden="true">
+                    <img src="/assets/images/clients/client-masotti.png" alt="" class="client-logo-img">
                 </div>
-                <div class="clients-strip__item item-grampola" aria-hidden="true">
-                    <img src="/assets/images/client-grampola.png" alt="" class="client-logo-img">
+                <div class="clients-strip__item" aria-hidden="true">
+                    <img src="/assets/images/clients/client-lupetec.png" alt="" class="client-logo-img">
                 </div>
-                <div class="clients-strip__item item-masotti" aria-hidden="true">
-                    <img src="/assets/images/client-masotti.webp" alt="" class="client-logo-img">
+                <div class="clients-strip__item" aria-hidden="true">
+                    <img src="/assets/images/clients/client-latina.png" alt="" class="client-logo-img">
                 </div>
-                <div class="clients-strip__item item-jogoreal" aria-hidden="true">
-                    <img src="/assets/images/client-jogoreal.png" alt="" class="client-logo-img">
+                <div class="clients-strip__item" aria-hidden="true">
+                    <img src="/assets/images/clients/client-neonova.png" alt="" class="client-logo-img">
+                </div>
+                <div class="clients-strip__item" aria-hidden="true">
+                    <img src="/assets/images/clients/client-iseg.png" alt="" class="client-logo-img">
+                </div>
+                <div class="clients-strip__item" aria-hidden="true">
+                    <img src="/assets/images/clients/client-alternativa.png" alt="" class="client-logo-img">
+                </div>
+                <div class="clients-strip__item" aria-hidden="true">
+                    <img src="/assets/images/clients/client-felipe.png" alt="" class="client-logo-img">
+                </div>
+                <div class="clients-strip__item" aria-hidden="true">
+                    <img src="/assets/images/clients/client-siltomac.png" alt="" class="client-logo-img">
+                </div>
+                <div class="clients-strip__item" aria-hidden="true">
+                    <img src="/assets/images/clients/client-center.png" alt="" class="client-logo-img">
                 </div>
             </div>
         </div>
@@ -216,8 +247,8 @@ const homePage = await getEntry('pages', 'home');
 
                 <div class="portfolio-grid-home fade-in">
                     {featuredProjects.map((project, index) => (
-                        <a href="/portfolio" class={`portfolio-grid-home__item ${index === 0 ? 'portfolio-grid-home__item--tall' : (index === 3 ? 'portfolio-grid-home__item--wide' : '')}`}>
-                            <img src={project.data.thumbnail} alt={project.data.client} loading="lazy" decoding="async" style={project.id === "dubelato-outdoor" ? "object-fit: contain; background: #ffffff; padding: 8px;" : ""}>
+                        <a href={`/portfolio/${project.id}`} class={`portfolio-grid-home__item ${index === 0 ? 'portfolio-grid-home__item--tall' : (index === 3 ? 'portfolio-grid-home__item--wide' : '')}`}>
+                            <img src={project.data.thumbnail} alt={project.data.client} loading="lazy" decoding="async" style={project.id === "dubelato" ? "object-fit: contain; background: #ffffff; padding: 8px;" : ""}>
                             <div class="portfolio-grid-home__overlay">
                                 <span class="portfolio-grid-home__client">{project.data.client}</span>
                                 <span class="portfolio-grid-home__type">{project.data.category}</span>
@@ -507,55 +538,7 @@ const homePage = await getEntry('pages', 'home');
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__brand">
-                    <a href="/" class="logo logo--footer">
-                        <img src="/assets/images/footer-logo.png" alt="Filomena Propaganda & Marketing"
-                            class="logo__img">
-                    </a>
-                    <p>Comunicação criativa que conecta.</p>
-                    <span class="footer__tagline">#teamfilomena</span>
-                </div>
-
-                <div>
-                    <h4 class="footer__title">Navegação</h4>
-                    <ul class="footer__links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="sobre">Sobre nós</a></li>
-                        <li><a href="servicos">Serviços</a></li>
-                        <li><a href="portfolio">Portfólio</a></li>
-                        <li><a href="blog">Blog</a></li>
-                        <li><a href="trabalhe-conosco">Trabalhe Conosco</a></li>
-                        <li><a href="contato">Contato</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="footer__title">Serviços</h4>
-                    <ul class="footer__links">
-                        <li><a href="servicos#branding">Branding</a></li>
-                        <li><a href="servicos#marketing">Marketing Digital</a></li>
-                        <li><a href="servicos#audiovisual">Audiovisual</a></li>
-                        <li><a href="servicos#midia">Mídia</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="footer__title">Trabalhe Conosco</h4>
-                    <p style="margin-bottom: var(--space-md);">Quer fazer parte do time?</p>
-                    <a href="trabalhe-conosco" class="btn btn--outline"
-                        style="border-color: var(--gray-600); color: var(--white);">Enviar currículo</a>
-                </div>
-            </div>
-
-            <div class="footer__bottom">
-                <p>© 2025 Filomena Propaganda. Todos os direitos reservados.</p>
-                <p>São Carlos - SP</p>
-            </div>
-        </div>
-    </footer>
+    <Footer />
 
     <!-- WhatsApp -->
     <a href="https://api.whatsapp.com/send?l=pt_BR&phone=551634154110" class="whatsapp-btn" target="_blank"

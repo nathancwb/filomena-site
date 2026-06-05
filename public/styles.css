@@ -91,7 +91,7 @@
 
     /* Theme */
     --bg: var(--white);
-    --bg-alt: var(--gray-50);
+    --bg-alt: #eeeeef;
     --text: var(--gray-900);
     --text-muted: var(--gray-600);
     --border: var(--gray-200);
