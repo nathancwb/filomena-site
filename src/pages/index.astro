@@ -321,7 +321,7 @@ const homePage = await getEntry('pages', 'home');
                 </div>
 
                 <div class="portfolio-grid-home fade-in">
-                    {featuredProjects.map((project, index) => (
+                    {featuredProjects.slice(0, 4).map((project, index) => (
                         <a href={`/portfolio/${project.id}`} class={`portfolio-grid-home__item ${index === 0 ? 'portfolio-grid-home__item--tall' : (index === 3 ? 'portfolio-grid-home__item--wide' : '')}`}>
                             <img src={project.data.thumbnail} alt={project.data.client} loading="lazy" decoding="async" style={project.id === "dubelato" ? "object-fit: contain; background: #ffffff; padding: 8px;" : ""}>
                             <div class="portfolio-grid-home__overlay">

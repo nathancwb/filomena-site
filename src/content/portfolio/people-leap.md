@@ -2,11 +2,10 @@
 title: "People Leap | Branding & Employer Branding"
 client: "People Leap"
 category: "Branding"
-thumbnail: "/assets/images/mockup-peopleleap.webp"
+thumbnail: "/assets/images/portfolio/peopleleap-convite.jpg"
 featured: true
-description: "Construção de posicionamento de marca, identidade institucional e design de convites e materiais de engajamento para a consultoria de recursos humanos People Leap."
+description: "Posicionamento de marca e design para a People Leap, focada em desenvolvimento humano e RH estratégico."
 images:
-  - "/assets/images/mockup-peopleleap.webp"
   - "/assets/images/portfolio/peopleleap-convite.jpg"
 stats:
   - label: "Segmento"

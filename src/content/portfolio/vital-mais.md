@@ -4,11 +4,9 @@ client: "Vital Mais"
 category: "Identidade Visual"
 thumbnail: "/assets/images/mockup-vital.webp"
 featured: true
-description: "Criação completa de identidade visual, sinalização de ambiente, displays de mesa e vouchers corporativos de atendimento para a clínica de bem-estar Vital Mais."
+description: "Posicionamento completo e comunicação integrada para a marca de planos de saúde Vitalmais, focando em segurança e confiança."
 images:
   - "/assets/images/mockup-vital.webp"
-  - "/assets/images/portfolio/vital-display.jpg"
-  - "/assets/images/portfolio/vital-adesivo.jpg"
   - "/assets/images/portfolio/vital-voucher.jpg"
 stats:
   - label: "Segmento"

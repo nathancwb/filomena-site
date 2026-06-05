@@ -2764,3 +2764,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 1px !important;
     height: 1px !important;
 }
+
+.item-latina img {
+    transform: scale(0.5);
+}
