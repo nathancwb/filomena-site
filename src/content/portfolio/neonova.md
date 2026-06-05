@@ -7,6 +7,7 @@ featured: false
 description: "Estudo corporativo detalhado e manual de aplicação de fardamento/uniformes funcionais para a equipe da Neonova, unindo praticidade e coerência visual de marca."
 images:
   - "/assets/images/portfolio/neonova-uniforme.jpg"
+  - "/assets/images/portfolio/neonova-pasta.png"
 stats:
   - label: "Entregáveis"
     value: "Manual de Uniformização"

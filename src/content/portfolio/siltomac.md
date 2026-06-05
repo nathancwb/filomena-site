@@ -2,13 +2,13 @@
 title: "Siltomac | Boutique de Carnes & Sinalização"
 client: "Siltomac Boutique de Carnes"
 category: "Sinalização & Design de PDV"
-thumbnail: "/assets/images/portfolio/siltomac-freezer.jpg"
+thumbnail: "/assets/images/portfolio/siltomac-geladeira.png"
 featured: true
 description: "Desenvolvimento de comunicação para PDV, envelopamento de freezers industriais e sinalização física de grande formato para a Siltomac Boutique de Carnes."
 images:
-  - "/assets/images/portfolio/siltomac-freezer.jpg"
-  - "/assets/images/portfolio/siltomac-outdoor.jpg"
-  - "/assets/images/portfolio/siltomac-cavalete.jpg"
+  - "/assets/images/portfolio/siltomac-roupa.png"
+  - "/assets/images/portfolio/siltomac-geladeira.png"
+  - "/assets/images/portfolio/siltomac-balcao.png"
 stats:
   - label: "Segmento"
     value: "Boutique de Carnes Premium"

@@ -2,12 +2,12 @@
 title: "Dubelato Gelateria | Mídia Exterior"
 client: "Dubelato Gelateria"
 category: "Campanhas & Mídia Exterior"
-thumbnail: "/assets/images/portfolio/dubelato-geladeira.jpg"
+thumbnail: "/assets/images/outdoor-dubelato.png"
 featured: false
 description: "Identidade visual para os pontos de venda e freezers da Dubelato Gelato."
 images:
-  - "/assets/images/portfolio/dubelato-geladeira.jpg"
-  - "/assets/images/portfolio/dubelato-balcao.jpg"
+  - "/assets/images/outdoor-dubelato.png"
+  - "/assets/images/outdoor-dubelato-full.png"
 stats:
   - label: "Mídia"
     value: "Outdoors Regionais"

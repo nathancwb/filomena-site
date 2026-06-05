@@ -2,15 +2,12 @@
 title: "Boali | Alimentação Saudável & Ambientação"
 client: "Boali Alimentação Saudável"
 category: "Ambientação & PDV"
-thumbnail: "/assets/images/portfolio/boali-balcao.jpg"
+thumbnail: "/assets/images/portfolio/boali-outdoor1.png"
 featured: true
 description: "Criação de projetos de sinalização de ponto de venda, totens corporativos de atendimento, outdoors regionais e displays de mesa promocionais para as franquias Boali."
 images:
-  - "/assets/images/portfolio/boali-balcao.jpg"
-  - "/assets/images/portfolio/boali-totem.jpg"
-  - "/assets/images/portfolio/boali-display.jpg"
-  - "/assets/images/portfolio/boali-outdoor-1.jpg"
-  - "/assets/images/portfolio/boali-outdoor-2.jpg"
+  - "/assets/images/portfolio/boali-outdoor1.png"
+  - "/assets/images/portfolio/boali-outdoor2.png"
 stats:
   - label: "Segmento"
     value: "Franquia de Alimentação Saudável"

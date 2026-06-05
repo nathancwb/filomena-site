@@ -7,6 +7,9 @@ featured: false
 description: "Estratégia completa de Social Media, campanhas integradas de tráfego pago (Google Ads e Meta Ads) e desenvolvimento de totem interativo de sinalização para feiras e eventos corporativos."
 images:
   - "/assets/images/mockup-grampola.png"
+  - "/assets/images/portfolio/grampola-voucher.png"
+  - "/assets/images/portfolio/grampola-evento.jpg"
+  - "/assets/images/portfolio/grampola-display.png"
 video: "/assets/videos/totem-feira-grampola.mp4"
 stats:
   - label: "Google Ads"
