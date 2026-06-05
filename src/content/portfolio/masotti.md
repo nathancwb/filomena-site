@@ -2,13 +2,12 @@
 title: "Móveis Masotti | Identidade Visual"
 client: "Móveis Masotti"
 category: "Identidade Visual"
-thumbnail: "/assets/images/portfolio/masotti-folder.jpg"
+thumbnail: "/assets/images/portfolio-masotti.jpg"
 featured: true
 description: "Desenvolvimento de materiais institucionais, papelaria de alto padrão e pastas corporativas para a tradicional marca de mobiliário Móveis Masotti, unindo tradição e sofisticação."
 images:
-  - "/assets/images/portfolio/masotti-folder.jpg"
-  - "/assets/images/portfolio/masotti-pasta.jpg"
-  - "/assets/images/portfolio/masotti-card.jpg"
+  - "/assets/images/portfolio-masotti.jpg"
+  - "/assets/images/mockup-masotti.png"
 stats:
   - label: "Segmento"
     value: "Mobiliário Premium"
