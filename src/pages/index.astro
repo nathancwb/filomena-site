@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import Footer from '../components/Footer.astro';
+import PhoenixEffect from '../components/PhoenixEffect.astro';
 const featuredProjects = (await getCollection('portfolio')).filter(p => p.data.featured);
 const homePage = await getEntry('pages', 'home');
 ---
@@ -142,8 +143,8 @@ const homePage = await getEntry('pages', 'home');
                             <a href="/portfolio" class="btn btn--outline">Ver Trabalhos</a>
                         </div>
                     </div>
-                    <div class="hero__image fade-in">
-                        <img src="/assets/images/fachada-filomena.png" alt="Fachada Filomena Propaganda">
+                    <div class="hero__image fade-in" style="height: 100%; min-height: 500px; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg);">
+                        <PhoenixEffect />
                     </div>
                 </div>
             </div>
