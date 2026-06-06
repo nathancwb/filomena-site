@@ -1,7 +1,9 @@
 ---
 ---
-<div class="phoenix-container">
-    <canvas id="phoenix-canvas"></canvas>
+<div class="phoenix-container" id="phoenix-wrapper">
+    <div class="phoenix-inner" id="phoenix-inner">
+        <img src="/assets/images/phoenix.png" alt="Fênix Filomena" class="phoenix-image">
+    </div>
 </div>
 
 <style>
@@ -16,146 +18,75 @@
         overflow: hidden;
         border-radius: 24px;
         background: radial-gradient(circle at center, #1a0822 0%, #0a0a0a 100%);
-        box-shadow: 0 20px 40px rgba(89, 38, 109, 0.2);
+        perspective: 1000px; /* Para o efeito 3D */
     }
 
-    #phoenix-canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
+    .phoenix-inner {
+        width: 120%;
+        height: 120%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.1s ease-out;
+        transform-style: preserve-3d;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .phoenix-image {
         width: 100%;
         height: 100%;
-        filter: blur(1px) contrast(1.5);
+        object-fit: cover;
+        transform: translateZ(50px); /* Traz a imagem para frente no espaço 3D */
+        filter: drop-shadow(0 0 30px rgba(144, 71, 186, 0.4));
         mix-blend-mode: screen;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0px) rotateX(0) rotateY(0);
+        }
+        50% {
+            transform: translateY(-15px) rotateX(2deg) rotateY(-2deg);
+        }
+        100% {
+            transform: translateY(0px) rotateX(0) rotateY(0);
+        }
     }
 </style>
 
 <script>
-    class PhoenixParticle {
-        constructor(canvas, ctx, mouse) {
-            this.canvas = canvas;
-            this.ctx = ctx;
-            this.mouse = mouse;
-            this.init();
-        }
-
-        init() {
-            // Wing curves based on math
-            this.t = Math.random() * Math.PI; // Position along the wing
-            this.wingSide = Math.random() > 0.5 ? 1 : -1;
-            
-            // Base shape of a bird
-            const centerX = this.canvas.width / 2;
-            const centerY = this.canvas.height / 2 + 50;
-            
-            const wingSpread = this.canvas.width * 0.35;
-            const wingArch = this.canvas.height * 0.4;
-            
-            // X and Y along the wing curve
-            this.baseX = centerX + (Math.cos(this.t) * wingSpread * this.wingSide);
-            this.baseY = centerY - (Math.sin(this.t) * wingArch) + (Math.cos(this.t * 2) * 40);
-            
-            this.x = this.baseX + (Math.random() * 40 - 20);
-            this.y = this.baseY + (Math.random() * 40 - 20);
-            
-            this.size = Math.random() * 4 + 1;
-            this.life = 1;
-            this.decay = Math.random() * 0.02 + 0.005;
-            
-            // Fire upward movement
-            this.vx = (Math.random() - 0.5) * 1 + (this.wingSide * Math.sin(this.t) * 1.5);
-            this.vy = -Math.random() * 3 - 1;
-            
-            // Purple/Lilac colors based on Filomena brand
-            const colors = ['#59266d', '#9047ba', '#a157bc', '#d28fec', '#ffc1fb'];
-            this.color = colors[Math.floor(Math.random() * colors.length)];
-        }
-
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            this.life -= this.decay;
-            this.size *= 0.96;
-            
-            // Mouse interaction (wind effect)
-            if (this.mouse.x !== null) {
-                const dx = this.mouse.x - this.x;
-                const dy = this.mouse.y - this.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < 150) {
-                    this.vx -= (dx / distance) * 0.5;
-                    this.vy -= (dy / distance) * 0.5;
-                }
-            }
-
-            if (this.life <= 0 || this.size <= 0.2) {
-                this.init();
-            }
-        }
-
-        draw() {
-            this.ctx.beginPath();
-            this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            this.ctx.fillStyle = this.color;
-            this.ctx.globalAlpha = this.life;
-            this.ctx.fill();
-        }
-    }
-
-    function initPhoenix() {
-        const canvas = document.getElementById('phoenix-canvas');
-        if (!canvas) return;
+    function init3DParallax() {
+        const wrapper = document.getElementById('phoenix-wrapper');
+        const inner = document.getElementById('phoenix-inner');
         
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        const mouse = { x: null, y: null };
+        if (!wrapper || !inner) return;
 
-        function resize() {
-            const container = canvas.parentElement;
-            canvas.width = container.clientWidth;
-            canvas.height = container.clientHeight;
-        }
+        wrapper.addEventListener('mousemove', (e) => {
+            const rect = wrapper.getBoundingClientRect();
+            
+            // Calcula a posição do mouse relativa ao centro da div (-1 a 1)
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-        window.addEventListener('resize', resize);
-        resize();
+            // Multiplicador para controlar a intensidade do giro
+            const rotateX = -y * 20; // graus
+            const rotateY = x * 20; // graus
 
-        canvas.addEventListener('mousemove', (e) => {
-            const rect = canvas.getBoundingClientRect();
-            mouse.x = e.clientX - rect.left;
-            mouse.y = e.clientY - rect.top;
+            inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         });
 
-        canvas.addEventListener('mouseleave', () => {
-            mouse.x = null;
-            mouse.y = null;
+        wrapper.addEventListener('mouseleave', () => {
+            // Volta suavemente ao centro quando o mouse sai
+            inner.style.transition = 'transform 0.5s ease-out';
+            inner.style.transform = `rotateX(0deg) rotateY(0deg)`;
+            
+            // Remove a transição depois para o mousemove voltar a ser instantâneo
+            setTimeout(() => {
+                inner.style.transition = 'transform 0.1s ease-out';
+            }, 500);
         });
-
-        // Create particles
-        for (let i = 0; i < 400; i++) {
-            particles.push(new PhoenixParticle(canvas, ctx, mouse));
-        }
-
-        function animate() {
-            // Create trailing flame effect
-            ctx.fillStyle = 'rgba(10, 10, 10, 0.2)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            // Use lighter composite for fire look
-            ctx.globalCompositeOperation = 'lighter';
-            
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            
-            ctx.globalCompositeOperation = 'source-over';
-            requestAnimationFrame(animate);
-        }
-
-        animate();
     }
 
-    // Run on init and after astro page transitions
-    document.addEventListener('DOMContentLoaded', initPhoenix);
-    document.addEventListener('astro:page-load', initPhoenix);
+    document.addEventListener('DOMContentLoaded', init3DParallax);
+    document.addEventListener('astro:page-load', init3DParallax);
 </script>
