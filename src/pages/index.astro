@@ -2,7 +2,6 @@
 import { getCollection, getEntry } from 'astro:content';
 import Footer from '../components/Footer.astro';
 import { ClientRouter } from 'astro:transitions';
-import { Image } from 'astro:assets';
 
 const featuredProjects = (await getCollection('portfolio')).filter(p => p.data.featured);
 const homePage = await getEntry('pages', 'home');
@@ -104,7 +103,7 @@ const homePage = await getEntry('pages', 'home');
     <header class="header">
         <div class="header__inner container">
             <a href="/" class="logo">
-                <Image src="/assets/images/logo-main.png" alt="Filomena Propaganda & Marketing" class="logo__img" width={220} height={50} loading="eager" />
+                <img src="/assets/images/logo-main.png" alt="Filomena Propaganda & Marketing" class="logo__img" width="220" height="50" loading="eager" />
             </a>
 
             <nav class="nav">
@@ -149,21 +148,21 @@ const homePage = await getEntry('pages', 'home');
                     <div class="hero__showcase-container fade-in">
                         <div class="hero__showcase" id="hero-showcase">
                             <div class="showcase-card showcase-card--1" data-depth="0.10">
-                                <Image src="/assets/images/mockup-masotti.webp" alt="Masotti Mobiliário" width={320} height={200} loading="eager" />
+                                <img src="/assets/images/mockup-masotti.webp" alt="Masotti Mobiliário" width="320" height="200" loading="eager" />
                                 <div class="showcase-card__meta">
                                     <span class="client">Masotti</span>
                                     <span class="category">Branding</span>
                                 </div>
                             </div>
                             <div class="showcase-card showcase-card--2" data-depth="0.25">
-                                <Image src="/assets/images/mockup-peopleleap.webp" alt="People Leap" width={380} height={240} loading="eager" />
+                                <img src="/assets/images/mockup-peopleleap.webp" alt="People Leap" width="380" height="240" loading="eager" />
                                 <div class="showcase-card__meta">
                                     <span class="client">People Leap</span>
                                     <span class="category">Posicionamento</span>
                                 </div>
                             </div>
                             <div class="showcase-card showcase-card--3" data-depth="0.40">
-                                <Image src="/assets/images/mockup-vital.webp" alt="Vital Mais" width={300} height={190} loading="eager" />
+                                <img src="/assets/images/mockup-vital.webp" alt="Vital Mais" width="300" height="190" loading="eager" />
                                 <div class="showcase-card__meta">
                                     <span class="client">Vital Mais</span>
                                     <span class="category">Identidade Visual</span>
@@ -171,6 +170,9 @@ const homePage = await getEntry('pages', 'home');
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Clientes – Faixa de logos -->
         <div class="clients-strip" aria-label="Nossos clientes">
