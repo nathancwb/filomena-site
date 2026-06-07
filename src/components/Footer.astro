@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 ---
 <!-- Footer -->
 <footer class="footer">
@@ -6,7 +7,7 @@
         <div class="footer__grid">
             <div class="footer__brand">
                 <a href="/" class="logo logo--footer">
-                    <img src="/assets/images/footer-logo.png" alt="Filomena Propaganda & Marketing" class="logo__img">
+                    <Image src="/assets/images/footer-logo.png" alt="Filomena Propaganda & Marketing" class="logo__img" width={180} height={40} />
                 </a>
                 <p>Comunicação criativa que conecta.</p>
                 <span class="footer__tagline">#teamfilomena</span>

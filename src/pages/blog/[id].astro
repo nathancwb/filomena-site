@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Footer from '../../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -17,6 +18,7 @@ const { Content } = await render(post);
 <html lang="pt-BR">
 
 <head>
+    <ClientRouter />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

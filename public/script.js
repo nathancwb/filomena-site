@@ -3,7 +3,7 @@
  * JavaScript Interatividade
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('astro:page-load', () => {
     // Mobile Menu
     initMobileMenu();
 
@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Parallax Effects
     initParallax();
+
+    // Hero Showcase Parallax
+    initHeroShowcaseParallax();
 
     // Counter Animation
     initCounters();
@@ -256,7 +259,7 @@ function initPortfolioModal() {
 }
 
 // Inicializa o modal se existir na página
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('astro:page-load', () => {
     if (document.getElementById('projectModal')) {
         initPortfolioModal();
     }
@@ -542,9 +545,47 @@ function initServiceDetails() {
 }
 
 // Inicializa detalhes de serviço
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('astro:page-load', () => {
     initServiceDetails();
 });
+
+// ==========================================
+// MOUSE PARALLAX ON HERO SHOWCASE
+// ==========================================
+function initHeroShowcaseParallax() {
+    const showcase = document.getElementById('hero-showcase');
+    const cards = showcase?.querySelectorAll('.showcase-card');
+    if (!showcase || !cards.length) return;
+
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        window.requestAnimationFrame(() => {
+            cards.forEach(card => {
+                const depth = parseFloat(card.getAttribute('data-depth')) || 0.2;
+                const moveX = x * depth * 50; 
+                const moveY = y * depth * 30; 
+                const rotateX = -y * depth * 15; 
+                const rotateY = x * depth * 15; 
+
+                card.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+        });
+    });
+
+    hero.addEventListener('mouseleave', () => {
+        window.requestAnimationFrame(() => {
+            cards.forEach(card => {
+                card.style.transform = 'translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg)';
+            });
+        });
+    });
+}
 
 
 
