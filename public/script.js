@@ -556,8 +556,8 @@ function initHeroShowcaseParallax() {
     const showcase = document.getElementById('hero-showcase');
     if (!showcase) return;
 
-    const inners = showcase.querySelectorAll('.showcase-card__inner');
-    if (!inners.length) return;
+    const cards = showcase.querySelectorAll('.showcase-card');
+    if (!cards.length) return;
 
     const hero = document.querySelector('.hero');
     if (!hero) return;
@@ -568,23 +568,22 @@ function initHeroShowcaseParallax() {
         const y = (e.clientY - rect.top) / rect.height - 0.5;
 
         window.requestAnimationFrame(() => {
-            inners.forEach(inner => {
-                const parent = inner.closest('.showcase-card');
-                const depth = parseFloat(parent.getAttribute('data-depth')) || 0.2;
+            cards.forEach(card => {
+                const depth = parseFloat(card.getAttribute('data-depth')) || 0.2;
                 const moveX = x * depth * 50; 
                 const moveY = y * depth * 30; 
                 const rotateX = -y * depth * 15; 
                 const rotateY = x * depth * 15; 
 
-                inner.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                card.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             });
         });
     });
 
     hero.addEventListener('mouseleave', () => {
         window.requestAnimationFrame(() => {
-            inners.forEach(inner => {
-                inner.style.transform = 'translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg)';
+            cards.forEach(card => {
+                card.style.transform = 'translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg)';
             });
         });
     });
