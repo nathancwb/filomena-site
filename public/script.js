@@ -554,8 +554,10 @@ document.addEventListener('astro:page-load', () => {
 // ==========================================
 function initHeroShowcaseParallax() {
     const showcase = document.getElementById('hero-showcase');
-    const cards = showcase?.querySelectorAll('.showcase-card');
-    if (!showcase || !cards.length) return;
+    if (!showcase) return;
+
+    const inners = showcase.querySelectorAll('.showcase-card__inner');
+    if (!inners.length) return;
 
     const hero = document.querySelector('.hero');
     if (!hero) return;
@@ -566,22 +568,23 @@ function initHeroShowcaseParallax() {
         const y = (e.clientY - rect.top) / rect.height - 0.5;
 
         window.requestAnimationFrame(() => {
-            cards.forEach(card => {
-                const depth = parseFloat(card.getAttribute('data-depth')) || 0.2;
+            inners.forEach(inner => {
+                const parent = inner.closest('.showcase-card');
+                const depth = parseFloat(parent.getAttribute('data-depth')) || 0.2;
                 const moveX = x * depth * 50; 
                 const moveY = y * depth * 30; 
                 const rotateX = -y * depth * 15; 
                 const rotateY = x * depth * 15; 
 
-                card.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                inner.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             });
         });
     });
 
     hero.addEventListener('mouseleave', () => {
         window.requestAnimationFrame(() => {
-            cards.forEach(card => {
-                card.style.transform = 'translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg)';
+            inners.forEach(inner => {
+                inner.style.transform = 'translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg)';
             });
         });
     });
