@@ -600,17 +600,20 @@ function initHeroShowcaseCycle() {
         clearInterval(window.showcaseCycleInterval);
     }
 
-    // Clean initial classes to prevent duplicates
-    cards.forEach(card => {
-        card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-swapping-out');
+    // Set initial position classes
+    cards.forEach((card, idx) => {
+        card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-hidden', 'pos-swapping-out');
+        if (idx === 0) card.classList.add('pos-1');
+        else if (idx === 1) card.classList.add('pos-2');
+        else if (idx === 2) card.classList.add('pos-3');
+        else card.classList.add('pos-hidden');
     });
 
-    // Set initial position classes
-    cards[0].classList.add('pos-1');
-    cards[1].classList.add('pos-2');
-    cards[2].classList.add('pos-3');
-
-    let positions = [1, 2, 3];
+    // Create dynamic positions list
+    let positions = ['pos-1', 'pos-2', 'pos-3'];
+    while (positions.length < cards.length) {
+        positions.push('pos-hidden');
+    }
 
     const intervalId = setInterval(() => {
         // Find the card currently at pos-3 (the frontmost card)
@@ -624,20 +627,20 @@ function initHeroShowcaseCycle() {
             setTimeout(() => {
                 cardPos3.classList.remove('pos-swapping-out');
                 
-                // Shift positions: [1, 2, 3] -> [2, 3, 1]
+                // Shift positions left by 1
                 positions.push(positions.shift());
 
                 cards.forEach((card, idx) => {
-                    card.classList.remove('pos-1', 'pos-2', 'pos-3');
-                    card.classList.add(`pos-${positions[idx]}`);
+                    card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-hidden');
+                    card.classList.add(positions[idx]);
                 });
             }, 400);
         } else {
             // Fallback if class state gets out of sync
             positions.push(positions.shift());
             cards.forEach((card, idx) => {
-                card.classList.remove('pos-1', 'pos-2', 'pos-3');
-                card.classList.add(`pos-${positions[idx]}`);
+                card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-hidden');
+                card.classList.add(positions[idx]);
             });
         }
     }, 4500); // Shift every 4.5 seconds
