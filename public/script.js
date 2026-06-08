@@ -597,7 +597,7 @@ function initHeroShowcaseCycle() {
     if (!showcase) return;
 
     const cards = Array.from(showcase.querySelectorAll('.showcase-card'));
-    if (cards.length < 3) return;
+    if (cards.length < 5) return;
 
     // Clear any existing interval to prevent duplicates
     if (window.showcaseCycleInterval) {
@@ -608,26 +608,28 @@ function initHeroShowcaseCycle() {
     cards[0].classList.add('pos-1');
     cards[1].classList.add('pos-2');
     cards[2].classList.add('pos-3');
+    cards[3].classList.add('pos-4');
+    cards[4].classList.add('pos-5');
 
-    let positions = [1, 2, 3];
+    let positions = [1, 2, 3, 4, 5];
 
     const intervalId = setInterval(() => {
-        // Find the card currently at pos-3
-        const cardPos3 = cards.find(card => card.classList.contains('pos-3'));
+        // Find the card currently at pos-5
+        const cardPos5 = cards.find(card => card.classList.contains('pos-5'));
         
-        if (cardPos3) {
+        if (cardPos5) {
             // Add swapping-out class to drop it behind and move it outward
-            cardPos3.classList.add('pos-swapping-out');
+            cardPos5.classList.add('pos-swapping-out');
             
             // Wait for swap out animation stage to complete (400ms)
             setTimeout(() => {
-                cardPos3.classList.remove('pos-swapping-out');
+                cardPos5.classList.remove('pos-swapping-out');
                 
-                // Shift positions: [1, 2, 3] -> [2, 3, 1] -> [3, 1, 2]
+                // Shift positions: [1, 2, 3, 4, 5] -> [2, 3, 4, 5, 1]
                 positions.push(positions.shift());
 
                 cards.forEach((card, idx) => {
-                    card.classList.remove('pos-1', 'pos-2', 'pos-3');
+                    card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-4', 'pos-5');
                     card.classList.add(`pos-${positions[idx]}`);
                 });
             }, 400);
@@ -635,11 +637,11 @@ function initHeroShowcaseCycle() {
             // Fallback if class state gets out of sync
             positions.push(positions.shift());
             cards.forEach((card, idx) => {
-                card.classList.remove('pos-1', 'pos-2', 'pos-3');
+                card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-4', 'pos-5');
                 card.classList.add(`pos-${positions[idx]}`);
             });
         }
-    }, 4500); // Shift every 4.5 seconds
+    }, 2000); // Shift every 2 seconds
 
     window.showcaseCycleInterval = intervalId;
 }

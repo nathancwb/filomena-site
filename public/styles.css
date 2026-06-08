@@ -2874,26 +2874,44 @@ h1, h2, h3, h4, h5, h6 {
 /* Card Positioning */
 .showcase-card--1, .showcase-card.pos-1 {
     width: 62%;
-    top: 5%;
-    left: 5%;
+    top: 2%;
+    left: 2%;
     z-index: 1;
-    opacity: 0.8;
+    opacity: 0.35;
 }
 
 .showcase-card--2, .showcase-card.pos-2 {
     width: 62%;
-    top: 23%;
-    left: 19%;
+    top: 12%;
+    left: 10%;
     z-index: 2;
-    border-color: rgba(106, 34, 99, 0.3);
-    opacity: 0.95;
+    border-color: rgba(106, 34, 99, 0.1);
+    opacity: 0.55;
 }
 
 .showcase-card--3, .showcase-card.pos-3 {
     width: 62%;
-    top: 41%;
-    left: 33%;
+    top: 22%;
+    left: 18%;
     z-index: 3;
+    border-color: rgba(106, 34, 99, 0.2);
+    opacity: 0.75;
+}
+
+.showcase-card--4, .showcase-card.pos-4 {
+    width: 62%;
+    top: 32%;
+    left: 26%;
+    z-index: 4;
+    border-color: rgba(106, 34, 99, 0.3);
+    opacity: 0.9;
+}
+
+.showcase-card--5, .showcase-card.pos-5 {
+    width: 62%;
+    top: 42%;
+    left: 34%;
+    z-index: 5;
     opacity: 1;
 }
 
@@ -2958,6 +2976,12 @@ h1, h2, h3, h4, h5, h6 {
 .float-anim-3 {
     animation: floatCard3 9s ease-in-out infinite;
 }
+.float-anim-4 {
+    animation: floatCard4 11s ease-in-out infinite;
+}
+.float-anim-5 {
+    animation: floatCard5 7s ease-in-out infinite;
+}
 
 @keyframes floatCard1 {
     0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -2971,6 +2995,14 @@ h1, h2, h3, h4, h5, h6 {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-6px) rotate(0.6deg); }
 }
+@keyframes floatCard4 {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(7px) rotate(-0.5deg); }
+}
+@keyframes floatCard5 {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(0.5deg); }
+}
 
 @media (max-width: 968px) {
     .showcase-card--1, .showcase-card.pos-1 {
@@ -2978,22 +3010,38 @@ h1, h2, h3, h4, h5, h6 {
         top: 2%;
         left: 2%;
         z-index: 1;
-        opacity: 0.8;
+        opacity: 0.35;
     }
     
     .showcase-card--2, .showcase-card.pos-2 {
         width: 58%;
-        top: 26%;
-        left: 20%;
+        top: 14%;
+        left: 11%;
         z-index: 2;
-        opacity: 0.95;
+        opacity: 0.55;
     }
     
     .showcase-card--3, .showcase-card.pos-3 {
         width: 58%;
+        top: 26%;
+        left: 20%;
+        z-index: 3;
+        opacity: 0.75;
+    }
+
+    .showcase-card--4, .showcase-card.pos-4 {
+        width: 58%;
+        top: 38%;
+        left: 29%;
+        z-index: 4;
+        opacity: 0.9;
+    }
+
+    .showcase-card--5, .showcase-card.pos-5 {
+        width: 58%;
         top: 50%;
         left: 38%;
-        z-index: 3;
+        z-index: 5;
         opacity: 1;
     }
 
