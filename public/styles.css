@@ -2839,9 +2839,9 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--bg-alt);
     border: 1px solid var(--border);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease, border-color 0.3s ease, top 1.2s cubic-bezier(0.4, 0, 0.2, 1), left 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
-    will-change: transform;
+    will-change: transform, top, left, opacity;
     aspect-ratio: 1.5;
 }
 
@@ -2872,26 +2872,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Card Positioning */
-.showcase-card--1 {
+.showcase-card--1, .showcase-card.pos-1 {
     width: 62%;
     top: 5%;
     left: 5%;
     z-index: 1;
+    opacity: 0.8;
 }
 
-.showcase-card--2 {
+.showcase-card--2, .showcase-card.pos-2 {
     width: 62%;
-    top: 25%;
-    left: 20%;
+    top: 23%;
+    left: 19%;
     z-index: 2;
     border-color: rgba(106, 34, 99, 0.3);
+    opacity: 0.95;
 }
 
-.showcase-card--3 {
+.showcase-card--3, .showcase-card.pos-3 {
     width: 62%;
-    bottom: 5%;
-    right: 5%;
+    top: 41%;
+    left: 33%;
     z-index: 3;
+    opacity: 1;
+}
+
+.showcase-card.pos-swapping-out {
+    transform: translate3d(40px, 40px, 0) scale(0.95) !important;
+    z-index: 1 !important;
+    opacity: 0.65 !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08) !important;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s ease, box-shadow 0.4s ease !important;
 }
 
 /* Glassmorphic Permanent Badge */
@@ -2962,23 +2973,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 968px) {
-    .showcase-card--1 {
+    .showcase-card--1, .showcase-card.pos-1 {
         width: 58%;
         top: 2%;
         left: 2%;
+        z-index: 1;
+        opacity: 0.8;
     }
     
-    .showcase-card--2 {
+    .showcase-card--2, .showcase-card.pos-2 {
         width: 58%;
-        top: 28%;
+        top: 26%;
         left: 20%;
+        z-index: 2;
+        opacity: 0.95;
     }
     
-    .showcase-card--3 {
+    .showcase-card--3, .showcase-card.pos-3 {
         width: 58%;
-        bottom: 2%;
-        right: 2%;
-        left: auto;
+        top: 50%;
+        left: 38%;
+        z-index: 3;
+        opacity: 1;
+    }
+
+    .showcase-card.pos-swapping-out {
+        transform: translate3d(20px, 20px, 0) scale(0.95) !important;
+        opacity: 0.65 !important;
     }
     
     .hero__showcase-tag {

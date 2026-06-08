@@ -16,6 +16,9 @@ document.addEventListener('astro:page-load', () => {
     // Hero Showcase Parallax
     initHeroShowcaseParallax();
 
+    // Hero Showcase Cycle Animation
+    initHeroShowcaseCycle();
+
     // Counter Animation
     initCounters();
 
@@ -588,6 +591,66 @@ function initHeroShowcaseParallax() {
         });
     });
 }
+
+function initHeroShowcaseCycle() {
+    const showcase = document.getElementById('hero-showcase');
+    if (!showcase) return;
+
+    const cards = Array.from(showcase.querySelectorAll('.showcase-card'));
+    if (cards.length < 3) return;
+
+    // Clear any existing interval to prevent duplicates
+    if (window.showcaseCycleInterval) {
+        clearInterval(window.showcaseCycleInterval);
+    }
+
+    // Set initial position classes
+    cards[0].classList.add('pos-1');
+    cards[1].classList.add('pos-2');
+    cards[2].classList.add('pos-3');
+
+    let positions = [1, 2, 3];
+
+    const intervalId = setInterval(() => {
+        // Find the card currently at pos-3
+        const cardPos3 = cards.find(card => card.classList.contains('pos-3'));
+        
+        if (cardPos3) {
+            // Add swapping-out class to drop it behind and move it outward
+            cardPos3.classList.add('pos-swapping-out');
+            
+            // Wait for swap out animation stage to complete (400ms)
+            setTimeout(() => {
+                cardPos3.classList.remove('pos-swapping-out');
+                
+                // Shift positions: [1, 2, 3] -> [2, 3, 1] -> [3, 1, 2]
+                positions.push(positions.shift());
+
+                cards.forEach((card, idx) => {
+                    card.classList.remove('pos-1', 'pos-2', 'pos-3');
+                    card.classList.add(`pos-${positions[idx]}`);
+                });
+            }, 400);
+        } else {
+            // Fallback if class state gets out of sync
+            positions.push(positions.shift());
+            cards.forEach((card, idx) => {
+                card.classList.remove('pos-1', 'pos-2', 'pos-3');
+                card.classList.add(`pos-${positions[idx]}`);
+            });
+        }
+    }, 4500); // Shift every 4.5 seconds
+
+    window.showcaseCycleInterval = intervalId;
+}
+
+// Clear interval before page changes to prevent memory leaks in SPA routing
+document.addEventListener('astro:before-preparation', () => {
+    if (window.showcaseCycleInterval) {
+        clearInterval(window.showcaseCycleInterval);
+        window.showcaseCycleInterval = null;
+    }
+});
 
 
 

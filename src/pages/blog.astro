@@ -21,7 +21,7 @@ const posts = await getCollection('blog');
     <meta property="og:description" content="Insights, tendências e estratégias de publicidade e marketing para o seu negócio voar alto." />
     <meta property="og:url" content="https://www.filomenapropaganda.com.br/blog" />
     <meta property="og:site_name" content="Filomena Propaganda" />
-    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.png" />
+    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="pt_BR" />
@@ -30,7 +30,7 @@ const posts = await getCollection('blog');
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Blog de Marketing, Publicidade e Branding | Filomena Propaganda" />
     <meta name="twitter:description" content="Insights, tendências, dicas e estratégias de marketing digital, branding, tráfego pago e publicidade para fazer o seu negócio crescer." />
-    <meta name="twitter:image" content="https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.png" />
+    <meta name="twitter:image" content="https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.webp" />
 
     <!-- GEO Geotagging / Local SEO -->
     <meta name="geo.region" content="BR-SP" />
@@ -45,7 +45,7 @@ const posts = await getCollection('blog');
       "@context": "https://schema.org",
       "@type": "AdvertisingAgency",
       "name": "Filomena Propaganda",
-      "image": "https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.png",
+      "image": "https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.webp",
       "@id": "https://www.filomenapropaganda.com.br",
       "url": "https://www.filomenapropaganda.com.br",
       "telephone": "+551634154110",
@@ -158,7 +158,7 @@ const posts = await getCollection('blog');
     <header class="header">
         <div class="header__inner container">
             <a href="/" class="logo">
-                <img src="/assets/images/logo-main.png" alt="Filomena Propaganda & Marketing" class="logo__img">
+                <img src="/assets/images/logo-main.webp" alt="Filomena Propaganda & Marketing" class="logo__img">
             </a>
 
             <nav class="nav">
@@ -199,7 +199,7 @@ const posts = await getCollection('blog');
                 <div class="blog-grid">
                     {posts.map(post => (
                         <article class="blog-card fade-in">
-                            <img src={post.data.thumbnail || "/assets/images/fachada-filomena.png"} alt={post.data.category} class="blog-card__img" style="object-fit: cover;">
+                            <img src={post.data.thumbnail || "/assets/images/fachada-filomena.webp"} alt={post.data.category} class="blog-card__img" style="object-fit: cover;">
                             <div class="blog-card__body">
                                 <span class="blog-card__tag">{post.data.category}</span>
                                 <h2 class="blog-card__title">{post.data.title}</h2>
