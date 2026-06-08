@@ -562,31 +562,27 @@ function initHeroShowcaseParallax() {
     const cards = showcase.querySelectorAll('.showcase-card');
     if (!cards.length) return;
 
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            // Calculate mouse position relative to the center of the hovered card
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-    hero.addEventListener('mousemove', (e) => {
-        const rect = hero.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-
-        window.requestAnimationFrame(() => {
-            cards.forEach(card => {
+            window.requestAnimationFrame(() => {
                 const depth = parseFloat(card.getAttribute('data-depth')) || 0.2;
-                const moveX = x * depth * 50; 
-                const moveY = y * depth * 30; 
-                const rotateX = -y * depth * 15; 
-                const rotateY = x * depth * 15; 
+                const moveX = x * depth * 40; 
+                const moveY = y * depth * 25; 
+                const rotateX = -y * depth * 20; 
+                const rotateY = x * depth * 20; 
 
-                card.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                card.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
             });
         });
-    });
 
-    hero.addEventListener('mouseleave', () => {
-        window.requestAnimationFrame(() => {
-            cards.forEach(card => {
-                card.style.transform = 'translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg)';
+        card.addEventListener('mouseleave', () => {
+            window.requestAnimationFrame(() => {
+                card.style.transform = 'translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) scale(1)';
             });
         });
     });
