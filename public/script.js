@@ -604,41 +604,48 @@ function initHeroShowcaseCycle() {
         clearInterval(window.showcaseCycleInterval);
     }
 
+    // Clean initial classes to prevent duplicates
+    cards.forEach(card => {
+        card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-hidden', 'pos-swapping-out');
+    });
+
     // Set initial position classes
     cards[0].classList.add('pos-1');
     cards[1].classList.add('pos-2');
     cards[2].classList.add('pos-3');
-    cards[3].classList.add('pos-4');
-    cards[4].classList.add('pos-5');
+    cards[3].classList.add('pos-hidden');
+    cards[4].classList.add('pos-hidden');
 
-    let positions = [1, 2, 3, 4, 5];
+    let positions = ['pos-1', 'pos-2', 'pos-3', 'pos-hidden', 'pos-hidden'];
 
     const intervalId = setInterval(() => {
-        // Find the card currently at pos-5
-        const cardPos5 = cards.find(card => card.classList.contains('pos-5'));
+        // Find the card currently at pos-3 (the frontmost card)
+        const cardPos3 = cards.find(card => card.classList.contains('pos-3'));
         
-        if (cardPos5) {
+        if (cardPos3) {
             // Add swapping-out class to drop it behind and move it outward
-            cardPos5.classList.add('pos-swapping-out');
+            cardPos3.classList.add('pos-swapping-out');
             
             // Wait for swap out animation stage to complete (400ms)
             setTimeout(() => {
-                cardPos5.classList.remove('pos-swapping-out');
+                cardPos3.classList.remove('pos-swapping-out');
                 
-                // Shift positions: [1, 2, 3, 4, 5] -> [2, 3, 4, 5, 1]
+                // Shift positions left by 1: 
+                // ['pos-1', 'pos-2', 'pos-3', 'pos-hidden', 'pos-hidden'] 
+                // -> ['pos-2', 'pos-3', 'pos-hidden', 'pos-hidden', 'pos-1']
                 positions.push(positions.shift());
 
                 cards.forEach((card, idx) => {
-                    card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-4', 'pos-5');
-                    card.classList.add(`pos-${positions[idx]}`);
+                    card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-hidden');
+                    card.classList.add(positions[idx]);
                 });
             }, 400);
         } else {
             // Fallback if class state gets out of sync
             positions.push(positions.shift());
             cards.forEach((card, idx) => {
-                card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-4', 'pos-5');
-                card.classList.add(`pos-${positions[idx]}`);
+                card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-hidden');
+                card.classList.add(positions[idx]);
             });
         }
     }, 2000); // Shift every 2 seconds
