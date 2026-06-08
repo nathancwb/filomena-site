@@ -597,7 +597,7 @@ function initHeroShowcaseCycle() {
     if (!showcase) return;
 
     const cards = Array.from(showcase.querySelectorAll('.showcase-card'));
-    if (cards.length < 5) return;
+    if (cards.length < 3) return;
 
     // Clear any existing interval to prevent duplicates
     if (window.showcaseCycleInterval) {
@@ -606,17 +606,15 @@ function initHeroShowcaseCycle() {
 
     // Clean initial classes to prevent duplicates
     cards.forEach(card => {
-        card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-hidden', 'pos-swapping-out');
+        card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-swapping-out');
     });
 
     // Set initial position classes
     cards[0].classList.add('pos-1');
     cards[1].classList.add('pos-2');
     cards[2].classList.add('pos-3');
-    cards[3].classList.add('pos-hidden');
-    cards[4].classList.add('pos-hidden');
 
-    let positions = ['pos-1', 'pos-2', 'pos-3', 'pos-hidden', 'pos-hidden'];
+    let positions = [1, 2, 3];
 
     const intervalId = setInterval(() => {
         // Find the card currently at pos-3 (the frontmost card)
@@ -630,25 +628,23 @@ function initHeroShowcaseCycle() {
             setTimeout(() => {
                 cardPos3.classList.remove('pos-swapping-out');
                 
-                // Shift positions left by 1: 
-                // ['pos-1', 'pos-2', 'pos-3', 'pos-hidden', 'pos-hidden'] 
-                // -> ['pos-2', 'pos-3', 'pos-hidden', 'pos-hidden', 'pos-1']
+                // Shift positions: [1, 2, 3] -> [2, 3, 1]
                 positions.push(positions.shift());
 
                 cards.forEach((card, idx) => {
-                    card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-hidden');
-                    card.classList.add(positions[idx]);
+                    card.classList.remove('pos-1', 'pos-2', 'pos-3');
+                    card.classList.add(`pos-${positions[idx]}`);
                 });
             }, 400);
         } else {
             // Fallback if class state gets out of sync
             positions.push(positions.shift());
             cards.forEach((card, idx) => {
-                card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-hidden');
-                card.classList.add(positions[idx]);
+                card.classList.remove('pos-1', 'pos-2', 'pos-3');
+                card.classList.add(`pos-${positions[idx]}`);
             });
         }
-    }, 2000); // Shift every 2 seconds
+    }, 4500); // Shift every 4.5 seconds
 
     window.showcaseCycleInterval = intervalId;
 }

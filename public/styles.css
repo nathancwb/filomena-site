@@ -2877,7 +2877,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 5%;
     left: 5%;
     z-index: 1;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .showcase-card--2, .showcase-card.pos-2 {
@@ -2885,7 +2885,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 23%;
     left: 19%;
     z-index: 2;
-    border-color: rgba(106, 34, 99, 0.2);
+    border-color: rgba(106, 34, 99, 0.3);
     opacity: 0.95;
 }
 
@@ -2895,17 +2895,6 @@ h1, h2, h3, h4, h5, h6 {
     left: 33%;
     z-index: 3;
     opacity: 1;
-}
-
-.showcase-card--4, .showcase-card--5, .showcase-card.pos-hidden {
-    width: 62%;
-    top: 5%;
-    left: 5%;
-    z-index: 0;
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(0.8) !important;
-    box-shadow: none !important;
 }
 
 .showcase-card.pos-swapping-out {
@@ -3003,7 +2992,7 @@ h1, h2, h3, h4, h5, h6 {
         top: 2%;
         left: 2%;
         z-index: 1;
-        opacity: 0.5;
+        opacity: 0.8;
     }
     
     .showcase-card--2, .showcase-card.pos-2 {
@@ -3020,17 +3009,6 @@ h1, h2, h3, h4, h5, h6 {
         left: 38%;
         z-index: 3;
         opacity: 1;
-    }
-
-    .showcase-card--4, .showcase-card--5, .showcase-card.pos-hidden {
-        width: 58%;
-        top: 2%;
-        left: 2%;
-        z-index: 0;
-        opacity: 0;
-        pointer-events: none;
-        transform: scale(0.8) !important;
-        box-shadow: none !important;
     }
 
     .showcase-card.pos-swapping-out {
