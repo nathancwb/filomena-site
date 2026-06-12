@@ -170,18 +170,33 @@ function initForm() {
             btn.textContent = 'Enviando...';
             btn.disabled = true;
 
-            // Simulate submission
-            setTimeout(() => {
-                btn.textContent = 'Enviado com sucesso!';
-                btn.style.background = '#22c55e';
-
-                setTimeout(() => {
+            // Envio real para o handler PHP no HostGator
+            fetch('/enviar.php', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            })
+                .then(res => res.json().catch(() => ({ ok: res.ok })))
+                .then(data => {
+                    if (!data.ok) throw new Error('falha');
+                    btn.textContent = 'Enviado com sucesso!';
+                    btn.style.background = '#22c55e';
                     form.reset();
-                    btn.textContent = originalText;
-                    btn.style.background = '';
-                    btn.disabled = false;
-                }, 3000);
-            }, 1500);
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                    }, 3000);
+                })
+                .catch(() => {
+                    btn.textContent = 'Erro ao enviar — tente o WhatsApp';
+                    btn.style.background = '#ef4444';
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                    }, 4000);
+                });
         });
     });
 }

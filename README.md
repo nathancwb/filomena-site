@@ -92,6 +92,18 @@ Otimizações aplicadas para reduzir o tempo de carregamento:
 
 > Para otimizar novas imagens adicionadas pelo CMS, rode `sharp` localmente ou considere migrar as imagens para o pipeline `<Image>` do Astro (otimização automática no build).
 
+## Formulário de Contato
+
+O formulário da página `/contato` envia os leads por e-mail via `public/enviar.php`
+(PHP nativo do HostGator). O envio é feito por `fetch` (sem recarregar a página),
+mantendo a animação do botão.
+
+- **Destino dos leads:** definido na variável `$para` em `enviar.php`
+  (padrão: `contato@filomenapropaganda.com.br`).
+- **Proteção anti-spam:** campo honeypot (`b_website`) validado no cliente e no servidor.
+- **Requisito:** só funciona em hospedagem com PHP (HostGator). Em preview local
+  (Node) o envio não roda — teste no servidor de produção.
+
 ## CMS — Decap CMS
 
 O conteúdo é editado via `/admin`, que abre a interface do Sveltia CMS. As edições são commitadas diretamente no GitHub na branch `main`, disparando o GitHub Actions que reconstrói o site e o publica no HostGator.
