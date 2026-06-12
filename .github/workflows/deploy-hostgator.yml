@@ -1,0 +1,46 @@
+name: Deploy para HostGator
+
+# Toda vez que houver push na branch main (inclusive os commits que o
+# painel /admin/CMS faz no GitHub), o site e reconstruido e enviado por
+# FTP para o HostGator. Substitui o deploy automatico que a Vercel fazia.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+# Evita dois deploys simultaneos sobrescrevendo arquivos ao mesmo tempo
+concurrency:
+  group: deploy-hostgator
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Build do site (gera a pasta dist/)
+        run: npm run build
+
+      - name: Enviar dist/ para o HostGator via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          # ===== Configurar em: GitHub > Settings > Secrets and variables > Actions =====
+          server: ${{ secrets.FTP_SERVER }}        # ex: ftp.filomenapropaganda.com.br
+          username: ${{ secrets.FTP_USERNAME }}     # usuario FTP criado no cPanel
+          password: ${{ secrets.FTP_PASSWORD }}     # senha do usuario FTP
+          # protocol: ftps                          # descomente se o HostGator exigir FTPS
+          local-dir: ./dist/                        # o que sobe (saida do build)
+          server-dir: ./public_html/                # destino no HostGator (ajuste se necessario)
+          # Mantem o painel de versao do proprio deploy; nao apaga tudo a cada envio
+          dangerous-clean-slate: false

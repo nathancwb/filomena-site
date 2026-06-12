@@ -15,11 +15,13 @@ const projects = await getCollection('portfolio');
     <title>Nosso Portfólio | Cases de Sucesso | Filomena Propaganda</title>
     <meta name="description" content="Explore os cases de sucesso e projetos de publicidade, design e tráfego pago desenvolvidos pela Filomena Propaganda para clientes de todo o Brasil.">
 
+    <link rel="canonical" href="https://www.filomenapropaganda.com.br/portfolio/" />
+
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Portfólio | Filomena Propaganda" />
     <meta property="og:description" content="Conheça os projetos criativos e estratégicos criados para marcas e empresas que voam alto." />
-    <meta property="og:url" content="https://www.filomenapropaganda.com.br/portfolio" />
+    <meta property="og:url" content="https://www.filomenapropaganda.com.br/portfolio/" />
     <meta property="og:site_name" content="Filomena Propaganda" />
     <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.webp" />
     <meta property="og:image:width" content="1200" />
@@ -105,12 +107,12 @@ const projects = await getCollection('portfolio');
             <nav class="nav">
                 <ul class="nav__list" id="nav-menu">
                     <li><a href="/" class="nav__link">Home</a></li>
-                    <li><a href="sobre" class="nav__link">Sobre</a></li>
-                    <li><a href="servicos" class="nav__link">Serviços</a></li>
-                    <li><a href="portfolio" class="nav__link">Portfólio</a></li>
-                    <li><a href="blog" class="nav__link">Blog</a></li>
-                    <li><a href="trabalhe-conosco" class="nav__link">Trabalhe Conosco</a></li>
-                    <li><a href="contato" class="nav__link">Contato</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
                 </ul>
 
                 <div class="nav__actions">
@@ -139,8 +141,8 @@ const projects = await getCollection('portfolio');
             <div class="container">
                 <div class="portfolio__grid">
                     {projects.map(project => (
-                        <a href={`/portfolio/${project.id}`} class="portfolio-card fade-in">
-                            <img src={project.data.thumbnail} alt={project.data.client} style={project.id === "dubelato" ? "object-fit: contain; background: #ffffff; padding: 8px;" : ""}>
+                        <a href={`/portfolio/${project.id}/`} class="portfolio-card fade-in">
+                            <img loading="lazy" decoding="async" src={project.data.thumbnail} alt={project.data.client} style={project.id === "dubelato" ? "object-fit: contain; background: #ffffff; padding: 8px;" : ""}>
                             <div class="portfolio-card__overlay">
                                 <span class="portfolio-card__tag">{project.data.category}</span>
                                 <h3 class="portfolio-card__title">{project.data.client}</h3>
@@ -160,7 +162,7 @@ const projects = await getCollection('portfolio');
                     style="color: var(--gray-400); margin-bottom: var(--space-2xl);">
                     Entre em contato e vamos criar algo incrível juntos.
                 </p>
-                <a href="index.html#contato" class="btn btn--primary fade-in">Iniciar Projeto</a>
+                <a href="/#contato" class="btn btn--primary fade-in">Iniciar Projeto</a>
             </div>
         </section>
     </main>

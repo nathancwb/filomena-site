@@ -1,0 +1,104 @@
+---
+import Footer from '../components/Footer.astro';
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow" />
+    <title>Página não encontrada | Filomena Propaganda</title>
+    <meta name="description" content="A página que você procura não existe ou foi movida.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .error-page {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 1.5rem;
+        }
+        .error-page__code {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: clamp(5rem, 18vw, 12rem);
+            line-height: 1;
+            color: var(--accent);
+            letter-spacing: -0.04em;
+        }
+        .error-page__title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            font-weight: 700;
+            margin: 1rem 0 0.75rem;
+        }
+        .error-page__text {
+            color: var(--text-muted);
+            max-width: 480px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+        .error-page__actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+    <header class="header">
+        <div class="header__inner container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo-main.webp" alt="Filomena Propaganda & Marketing" class="logo__img" width="220" height="50" loading="eager" />
+            </a>
+            <nav class="nav">
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="/" class="nav__link">Home</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
+                </ul>
+                <div class="nav__actions">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="error-page">
+            <div>
+                <div class="error-page__code">404</div>
+                <h1 class="error-page__title">Página não encontrada</h1>
+                <p class="error-page__text">
+                    O endereço que você acessou não existe ou foi movido. Mas a gente tem muita
+                    coisa boa para te mostrar.
+                </p>
+                <div class="error-page__actions">
+                    <a href="/" class="btn btn--primary">Voltar para a Home</a>
+                    <a href="/contato/" class="btn btn--outline">Falar com a gente</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+    <script src="/script.js" is:inline></script>
+</body>
+
+</html>

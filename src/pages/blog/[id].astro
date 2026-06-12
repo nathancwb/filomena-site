@@ -24,6 +24,17 @@ const { Content } = await render(post);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content={post.data.description}>
     <title>{post.data.title} | Filomena Propaganda</title>
+    <link rel="canonical" href={`https://www.filomenapropaganda.com.br/blog/${post.id}/`} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={`${post.data.title} | Filomena Propaganda`} />
+    <meta property="og:description" content={post.data.description} />
+    <meta property="og:url" content={`https://www.filomenapropaganda.com.br/blog/${post.id}/`} />
+    <meta property="og:image" content={`https://www.filomenapropaganda.com.br${post.data.thumbnail}`} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={`https://www.filomenapropaganda.com.br${post.data.thumbnail}`} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -269,12 +280,12 @@ const { Content } = await render(post);
             <nav class="nav">
                 <ul class="nav__list" id="nav-menu">
                     <li><a href="/" class="nav__link">Home</a></li>
-                    <li><a href="/sobre" class="nav__link">Sobre</a></li>
-                    <li><a href="/servicos" class="nav__link">Serviços</a></li>
-                    <li><a href="/portfolio" class="nav__link">Portfólio</a></li>
-                    <li><a href="/blog" class="nav__link active">Blog</a></li>
-                    <li><a href="/trabalhe-conosco" class="nav__link">Trabalhe Conosco</a></li>
-                    <li><a href="/contato" class="nav__link">Contato</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link active">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
                 </ul>
 
                 <div class="nav__actions">
@@ -305,7 +316,7 @@ const { Content } = await render(post);
             </header>
 
             <div class="post-hero-image container fade-in">
-                {post.data.thumbnail && <img src={post.data.thumbnail} alt={post.data.title}>}
+                {post.data.thumbnail && <img loading="lazy" decoding="async" src={post.data.thumbnail} alt={post.data.title}>}
             </div>
 
             <!-- POST CONTENT -->
@@ -315,7 +326,7 @@ const { Content } = await render(post);
 
             <!-- POST FOOTER / SHARE -->
             <div class="post-footer container fade-in">
-                <a href="/blog" class="back-link">
+                <a href="/blog/" class="back-link">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
                     Voltar para o blog
                 </a>
@@ -337,7 +348,7 @@ const { Content } = await render(post);
             <div class="container">
                 <div class="recommended__header fade-in">
                     <h2 class="recommended__title">Leia também</h2>
-                    <a href="blog" class="btn btn--outline">Ver todos os artigos</a>
+                    <a href="/blog/" class="btn btn--outline">Ver todos os artigos</a>
                 </div>
 
                 <div class="blog-grid">
@@ -349,7 +360,7 @@ const { Content } = await render(post);
                             <span class="blog-card__tag">Audiovisual</span>
                             <h3 class="blog-card__title" style="font-size: 1.25rem;">Por que o vídeo é o formato mais poderoso nas redes</h3>
                             <p class="blog-card__excerpt">Reels, Shorts e TikToks dominam os feeds. Saiba como produzir conteúdo audiovisual que gera engajamento.</p>
-                            <a href="post" class="blog-card__link">
+                            <a href="/blog/" class="blog-card__link">
                                 Ler artigo
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                             </a>
@@ -364,7 +375,7 @@ const { Content } = await render(post);
                             <span class="blog-card__tag">Métricas</span>
                             <h3 class="blog-card__title" style="font-size: 1.25rem;">Quais métricas realmente importam para avaliar uma campanha?</h3>
                             <p class="blog-card__excerpt">Curtidas e seguidores não pagam boletos. Descubra os indicadores que mostram resultados reais.</p>
-                            <a href="post" class="blog-card__link">
+                            <a href="/blog/" class="blog-card__link">
                                 Ler artigo
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                             </a>
@@ -379,7 +390,7 @@ const { Content } = await render(post);
                             <span class="blog-card__tag">Cultura</span>
                             <h3 class="blog-card__title" style="font-size: 1.25rem;">#teamfilomena: como construímos uma equipe apaixonada</h3>
                             <p class="blog-card__excerpt">Pessoas motivadas entregam trabalho excepcional. Conheça os valores que guiam cada projeto nosso.</p>
-                            <a href="post" class="blog-card__link">
+                            <a href="/blog/" class="blog-card__link">
                                 Ler artigo
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                             </a>

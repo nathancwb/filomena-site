@@ -29,6 +29,17 @@ const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content={project.data.description}>
     <title>{project.data.title} | Filomena Propaganda</title>
+    <link rel="canonical" href={`https://www.filomenapropaganda.com.br/portfolio/${project.id}/`} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${project.data.title} | Filomena Propaganda`} />
+    <meta property="og:description" content={project.data.description} />
+    <meta property="og:url" content={`https://www.filomenapropaganda.com.br/portfolio/${project.id}/`} />
+    <meta property="og:image" content={`https://www.filomenapropaganda.com.br${project.data.thumbnail}`} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={`https://www.filomenapropaganda.com.br${project.data.thumbnail}`} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -340,12 +351,12 @@ const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
             <nav class="nav">
                 <ul class="nav__list" id="nav-menu">
                     <li><a href="/" class="nav__link">Home</a></li>
-                    <li><a href="/sobre" class="nav__link">Sobre</a></li>
-                    <li><a href="/servicos" class="nav__link">Serviços</a></li>
-                    <li><a href="/portfolio" class="nav__link active">Portfólio</a></li>
-                    <li><a href="/blog" class="nav__link">Blog</a></li>
-                    <li><a href="/trabalhe-conosco" class="nav__link">Trabalhe Conosco</a></li>
-                    <li><a href="/contato" class="nav__link">Contato</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link active">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
                 </ul>
 
                 <div class="nav__actions">
@@ -361,7 +372,7 @@ const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
         <!-- Case Header -->
         <section class="case-header">
             <div class="container">
-                <a href="/portfolio" class="back-link">
+                <a href="/portfolio/" class="back-link">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
                     Voltar para o Portfólio
                 </a>
@@ -450,7 +461,7 @@ const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
             <section class="next-case-nav">
                 <div class="container">
                     <span class="next-case-nav__label">Ver Próximo Case</span>
-                    <a href={`/portfolio/${nextProject.id}`} class="next-case-nav__link">
+                    <a href={`/portfolio/${nextProject.id}/`} class="next-case-nav__link">
                         {nextProject.data.client}
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                     </a>

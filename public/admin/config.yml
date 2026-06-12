@@ -2,13 +2,15 @@ backend:
   name: github
   repo: nathancwb/filomena-site
   branch: main
+  # Backend de autenticacao OAuth — permanece na Vercel (HostGator compartilhado
+  # nao roda funcoes serverless). Nao alterar sem migrar o /api junto.
   base_url: https://filomena-site.vercel.app/api
 
 media_folder: "public/assets/images"
 public_folder: "/assets/images"
 
-site_url: https://filomena-site.vercel.app
-display_url: https://filomena-site.vercel.app
+site_url: https://www.filomenapropaganda.com.br
+display_url: https://www.filomenapropaganda.com.br
 
 collections:
   - name: "blog"

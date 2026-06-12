@@ -13,11 +13,13 @@ import { ClientRouter } from 'astro:transitions';
     <title>Nossos Serviços | Filomena Propaganda São Carlos-SP</title>
     <meta name="description" content="Soluções completas de publicidade: Branding, Identidade Visual, Tráfego Pago, Campanhas Publicitárias e Gestão de Mídias Sociais em São Carlos-SP.">
 
+    <link rel="canonical" href="https://www.filomenapropaganda.com.br/servicos/" />
+
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Serviços | Filomena Propaganda & Marketing" />
     <meta property="og:description" content="Branding, Tráfego Pago, Campanhas, Identidade Visual e Consultoria Estratégica. Do planejamento ao resultado." />
-    <meta property="og:url" content="https://www.filomenapropaganda.com.br/servicos" />
+    <meta property="og:url" content="https://www.filomenapropaganda.com.br/servicos/" />
     <meta property="og:site_name" content="Filomena Propaganda" />
     <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.webp" />
     <meta property="og:image:width" content="1200" />
@@ -171,12 +173,12 @@ import { ClientRouter } from 'astro:transitions';
             <nav class="nav">
                 <ul class="nav__list" id="nav-menu">
                     <li><a href="/" class="nav__link">Home</a></li>
-                    <li><a href="sobre" class="nav__link">Sobre</a></li>
-                    <li><a href="servicos" class="nav__link">Serviços</a></li>
-                    <li><a href="portfolio" class="nav__link">Portfólio</a></li>
-                    <li><a href="blog" class="nav__link">Blog</a></li>
-                    <li><a href="trabalhe-conosco" class="nav__link">Trabalhe Conosco</a></li>
-                    <li><a href="contato" class="nav__link">Contato</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
                 </ul>
 
                 <div class="nav__actions">
@@ -208,15 +210,15 @@ import { ClientRouter } from 'astro:transitions';
                     <!-- 01 Estratégias de Branding -->
                     <div class="service-row fade-in" id="branding">
                         <div class="service-row__img">
-                            <img src="/assets/images/service-branding.webp" alt="Estratégias de Branding - Case Casa Ferro" style="width:100%;border-radius:16px;object-fit:contain;background:#f5f5f5;padding:20px;">
+                            <img loading="lazy" decoding="async" src="/assets/images/service-branding.webp" alt="Estratégias de Branding - Case Casa Ferro" style="width:100%;border-radius:16px;object-fit:contain;background:#f5f5f5;padding:20px;">
                         </div>
                         <div class="service-row__content">
                             <p class="service-row__num">01 — Branding</p>
                             <h2 class="service-row__title">Estratégias de Branding</h2>
                             <p class="service-row__text">Diagnóstico, posicionamento e construção de comunicação estratégica para marcas que querem crescer.</p>
                             <div class="service-row__actions">
-                                <a href="index.html#contato" class="btn btn--primary">Solicite uma proposta</a>
-                                <a href="index.html#cases" class="btn btn--outline">Veja um case relacionado</a>
+                                <a href="/#contato" class="btn btn--primary">Solicite uma proposta</a>
+                                <a href="/#cases" class="btn btn--outline">Veja um case relacionado</a>
                             </div>
                         </div>
                     </div>
@@ -224,15 +226,15 @@ import { ClientRouter } from 'astro:transitions';
                     <!-- 02 Identidade Visual -->
                     <div class="service-row service-row--reverse fade-in" id="identidade">
                         <div class="service-row__img">
-                            <img src="/assets/images/mockup-masotti.webp" alt="Identidade Visual - Móveis Masotti" style="width:100%;border-radius:16px;object-fit:cover;">
+                            <img loading="lazy" decoding="async" src="/assets/images/mockup-masotti.webp" alt="Identidade Visual - Móveis Masotti" style="width:100%;border-radius:16px;object-fit:cover;">
                         </div>
                         <div class="service-row__content">
                             <p class="service-row__num">02 — Identidade Visual</p>
                             <h2 class="service-row__title">Identidade Visual &amp; Manual de Marca</h2>
                             <p class="service-row__text">Criamos marcas fortes, consistentes e alinhadas ao posicionamento do seu negócio.</p>
                             <div class="service-row__actions">
-                                <a href="index.html#contato" class="btn btn--primary">Solicite uma proposta</a>
-                                <a href="index.html#cases" class="btn btn--outline">Veja um case relacionado</a>
+                                <a href="/#contato" class="btn btn--primary">Solicite uma proposta</a>
+                                <a href="/#cases" class="btn btn--outline">Veja um case relacionado</a>
                             </div>
                         </div>
                     </div>
@@ -240,15 +242,15 @@ import { ClientRouter } from 'astro:transitions';
                     <!-- 03 Planejamento de Comunicação -->
                     <div class="service-row fade-in" id="planejamento">
                         <div class="service-row__img">
-                            <img src="/assets/images/mockup-omni.webp" alt="Planejamento de Comunicação" style="width:100%;border-radius:16px;object-fit:cover;">
+                            <img loading="lazy" decoding="async" src="/assets/images/mockup-omni.webp" alt="Planejamento de Comunicação" style="width:100%;border-radius:16px;object-fit:cover;">
                         </div>
                         <div class="service-row__content">
                             <p class="service-row__num">03 — Planejamento</p>
                             <h2 class="service-row__title">Planejamento de Comunicação</h2>
                             <p class="service-row__text">Estratégia, mídias, calendário, diretrizes e direcionamento para uma comunicação integrada.</p>
                             <div class="service-row__actions">
-                                <a href="index.html#contato" class="btn btn--primary">Solicite uma proposta</a>
-                                <a href="index.html#cases" class="btn btn--outline">Veja um case relacionado</a>
+                                <a href="/#contato" class="btn btn--primary">Solicite uma proposta</a>
+                                <a href="/#cases" class="btn btn--outline">Veja um case relacionado</a>
                             </div>
                         </div>
                     </div>
@@ -256,15 +258,15 @@ import { ClientRouter } from 'astro:transitions';
                     <!-- 04 Tráfego Pago -->
                     <div class="service-row service-row--reverse fade-in" id="marketing">
                         <div class="service-row__img">
-                            <img src="/assets/images/service-trafego.webp" alt="Tráfego Pago para Marcas" style="width:100%;border-radius:16px;object-fit:cover;">
+                            <img loading="lazy" decoding="async" src="/assets/images/service-trafego.webp" alt="Tráfego Pago para Marcas" style="width:100%;border-radius:16px;object-fit:cover;">
                         </div>
                         <div class="service-row__content">
                             <p class="service-row__num">04 — Tráfego Pago</p>
                             <h2 class="service-row__title">Tráfego Pago para Marcas</h2>
                             <p class="service-row__text">Estratégia, segmentação, otimização e performance com foco em conversão.</p>
                             <div class="service-row__actions">
-                                <a href="index.html#contato" class="btn btn--primary">Solicite uma proposta</a>
-                                <a href="index.html#cases" class="btn btn--outline">Veja um case relacionado</a>
+                                <a href="/#contato" class="btn btn--primary">Solicite uma proposta</a>
+                                <a href="/#cases" class="btn btn--outline">Veja um case relacionado</a>
                             </div>
                         </div>
                     </div>
@@ -272,15 +274,15 @@ import { ClientRouter } from 'astro:transitions';
                     <!-- 05 Campanhas Publicitárias -->
                     <div class="service-row fade-in" id="campanhas">
                         <div class="service-row__img">
-                            <img src="/assets/images/outdoor-dubelato-full.webp" alt="Campanhas Publicitárias - Outdoor Dubelato Gelateria" style="width:100%; border-radius:16px; object-fit:contain; background:#ffffff; padding:12px; aspect-ratio:16/9;">
+                            <img loading="lazy" decoding="async" src="/assets/images/outdoor-dubelato-full.webp" alt="Campanhas Publicitárias - Outdoor Dubelato Gelateria" style="width:100%; border-radius:16px; object-fit:contain; background:#ffffff; padding:12px; aspect-ratio:16/9;">
                         </div>
                         <div class="service-row__content">
                             <p class="service-row__num">05 — Publicidade</p>
                             <h2 class="service-row__title">Campanhas Publicitárias (on e off)</h2>
                             <p class="service-row__text">Campanhas completas com conceito criativo, mídia, conteúdo e execução.</p>
                             <div class="service-row__actions">
-                                <a href="index.html#contato" class="btn btn--primary">Solicite uma proposta</a>
-                                <a href="index.html#cases" class="btn btn--outline">Veja um case relacionado</a>
+                                <a href="/#contato" class="btn btn--primary">Solicite uma proposta</a>
+                                <a href="/#cases" class="btn btn--outline">Veja um case relacionado</a>
                             </div>
                         </div>
                     </div>
@@ -288,15 +290,15 @@ import { ClientRouter } from 'astro:transitions';
                     <!-- 06 Consultoria Estratégica -->
                     <div class="service-row service-row--reverse fade-in" id="consultoria">
                         <div class="service-row__img">
-                            <img src="/assets/images/service-consultoria.webp" alt="Consultoria Estratégica" style="width:100%;border-radius:16px;object-fit:cover;">
+                            <img loading="lazy" decoding="async" src="/assets/images/service-consultoria.webp" alt="Consultoria Estratégica" style="width:100%;border-radius:16px;object-fit:cover;">
                         </div>
                         <div class="service-row__content">
                             <p class="service-row__num">06 — Consultoria</p>
                             <h2 class="service-row__title">Consultoria Estratégica</h2>
                             <p class="service-row__text">A visão externa e técnica que o seu negócio precisa para avançar com método e clareza.</p>
                             <div class="service-row__actions">
-                                <a href="index.html#contato" class="btn btn--primary">Solicite uma proposta</a>
-                                <a href="index.html#cases" class="btn btn--outline">Veja um case relacionado</a>
+                                <a href="/#contato" class="btn btn--primary">Solicite uma proposta</a>
+                                <a href="/#cases" class="btn btn--outline">Veja um case relacionado</a>
                             </div>
                         </div>
                     </div>
@@ -304,15 +306,15 @@ import { ClientRouter } from 'astro:transitions';
                     <!-- 07 Conteúdo Orgânico -->
                     <div class="service-row fade-in" id="conteudo">
                         <div class="service-row__img">
-                            <img src="/assets/images/service-conteudo.webp" alt="Conteúdo Orgânico com Estratégia" style="width:100%;border-radius:16px;object-fit:cover;">
+                            <img loading="lazy" decoding="async" src="/assets/images/service-conteudo.webp" alt="Conteúdo Orgânico com Estratégia" style="width:100%;border-radius:16px;object-fit:cover;">
                         </div>
                         <div class="service-row__content">
                             <p class="service-row__num">07 — Social Media</p>
                             <h2 class="service-row__title">Conteúdo Orgânico com Estratégia</h2>
                             <p class="service-row__text">Não é só postar: é construir presença, conexão e posicionamento.</p>
                             <div class="service-row__actions">
-                                <a href="index.html#contato" class="btn btn--primary">Solicite uma proposta</a>
-                                <a href="index.html#cases" class="btn btn--outline">Veja um case relacionado</a>
+                                <a href="/#contato" class="btn btn--primary">Solicite uma proposta</a>
+                                <a href="/#cases" class="btn btn--outline">Veja um case relacionado</a>
                             </div>
                         </div>
                     </div>

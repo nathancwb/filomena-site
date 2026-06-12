@@ -1,6 +1,6 @@
 # Filomena Propaganda & Marketing — Site Institucional
 
-Site institucional da **Filomena Propaganda & Marketing**, construído com Astro e gerenciado via CMS headless (Decap CMS). Hospedado na Vercel com deploy automático a partir da branch `main`.
+Site institucional da **Filomena Propaganda & Marketing**, construído com Astro e gerenciado via CMS headless (Sveltia/Decap CMS). Hospedado na **HostGator** (`filomenapropaganda.com.br`), com build e deploy automáticos via **GitHub Actions** a cada push na branch `main`.
 
 ---
 
@@ -9,9 +9,10 @@ Site institucional da **Filomena Propaganda & Marketing**, construído com Astro
 | Camada | Tecnologia |
 |---|---|
 | Framework | [Astro](https://astro.build) v6 |
-| CMS | [Decap CMS](https://decapcms.org) (antigo Netlify CMS) |
-| Hospedagem | [Vercel](https://vercel.com) |
-| Autenticação CMS | GitHub OAuth via API própria (`/api`) |
+| CMS | [Sveltia CMS](https://github.com/sveltia/sveltia-cms) (compatível com Decap) |
+| Hospedagem | [HostGator](https://www.hostgator.com.br) (Apache/cPanel) |
+| Deploy | [GitHub Actions](.github/workflows/deploy-hostgator.yml) → FTP |
+| Autenticação CMS | GitHub OAuth via função serverless na Vercel (`/api`) |
 | Estilização | CSS puro com variáveis customizadas |
 | Fontes | Space Grotesk, Inter, OliviarSans (local) |
 
@@ -80,7 +81,7 @@ O site foi completamente otimizado para **SEO Técnico e Local**, garantindo má
 
 ## CMS — Decap CMS
 
-O conteúdo é editado via `/admin`, que abre a interface do Decap CMS. As edições são commitadas diretamente no GitHub na branch `main`, disparando um novo deploy automático na Vercel.
+O conteúdo é editado via `/admin`, que abre a interface do Sveltia CMS. As edições são commitadas diretamente no GitHub na branch `main`, disparando o GitHub Actions que reconstrói o site e o publica no HostGator.
 
 ### Coleções disponíveis no CMS
 
@@ -90,12 +91,14 @@ O conteúdo é editado via `/admin`, que abre a interface do Decap CMS. As ediç
 
 ### Autenticação
 
-O login no CMS usa OAuth do GitHub. A autenticação passa pelo endpoint serverless em `/api`, que precisa das seguintes variáveis de ambiente configuradas na Vercel:
+O login no CMS usa OAuth do GitHub. A autenticação passa por uma função serverless em `/api`, que **permanece hospedada na Vercel** (a hospedagem compartilhada do HostGator não roda Node.js serverless). As seguintes variáveis de ambiente precisam estar configuradas no projeto da Vercel:
 
 ```
-OAUTH_CLIENT_ID=     # GitHub OAuth App Client ID
-OAUTH_CLIENT_SECRET= # GitHub OAuth App Client Secret
+OAUTH_GITHUB_CLIENT_ID=     # GitHub OAuth App Client ID
+OAUTH_GITHUB_CLIENT_SECRET= # GitHub OAuth App Client Secret
 ```
+
+> A *Authorization callback URL* do GitHub OAuth App deve continuar apontando para `https://filomena-site.vercel.app/api/callback`. O painel `/admin` é servido pelo HostGator, mas delega só o login para a Vercel (ver `base_url` em `public/admin/config.yml`).
 
 ---
 
@@ -140,13 +143,36 @@ Requer **Node.js >= 22.12.0**.
 
 ---
 
-## Deploy
+## Deploy (HostGator)
 
-O deploy é automático via Vercel. Qualquer push na branch `main` dispara um novo build.
+O site é estático: o build gera a pasta `dist/`, que é publicada na raiz do HostGator (`public_html`). A publicação é **automática** via GitHub Actions (`.github/workflows/deploy-hostgator.yml`): todo push na `main` reconstrói e envia por FTP.
 
 - **Build command:** `npm run build`
 - **Output directory:** `dist`
-- **Framework preset:** Astro
+- **Node:** >= 22.12.0
+
+### Configuração inicial (uma vez)
+
+1. **Secrets do GitHub** — em *Settings → Secrets and variables → Actions*, criar:
+   - `FTP_SERVER` — ex.: `ftp.filomenapropaganda.com.br`
+   - `FTP_USERNAME` — usuário FTP criado no cPanel do HostGator
+   - `FTP_PASSWORD` — senha desse usuário FTP
+2. **DNS** — apontar `filomenapropaganda.com.br` para o HostGator (nameservers ou registro A com o IP do servidor, informado no e-mail/painel do HostGator). Incluir o registro de `www`.
+3. **SSL** — no cPanel, ativar o *AutoSSL* (Let's Encrypt) para `filomenapropaganda.com.br` e `www`.
+4. **Primeiro deploy** — rodar o workflow manualmente (*Actions → Deploy para HostGator → Run workflow*) ou fazer um push na `main`.
+
+### O que o `.htaccess` faz (incluído no build)
+
+Como o HostGator é Apache (e não a Vercel), o arquivo `public/.htaccess` recria o que a Vercel fazia automaticamente:
+
+- Redirecionamento canônico para **HTTPS + www**
+- Compressão **gzip** (HTML/CSS/JS) e **cache** de assets
+- **Headers de segurança** (antes no `vercel.json`)
+- Página de erro **404** personalizada
+
+### Publicação manual (alternativa)
+
+Caso precise subir sem o GitHub Actions: rode `npm run build` e envie o **conteúdo** de `dist/` (incluindo o `.htaccess`) para `public_html` via Gerenciador de Arquivos do cPanel ou FTP.
 
 ---
 
