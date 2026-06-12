@@ -79,6 +79,19 @@ O site foi completamente otimizado para **SEO Técnico e Local**, garantindo má
 - **Open Graph & Twitter Cards:** Configuração robusta com imagens de preview e metadados completos para compartilhamento visual premium no WhatsApp, LinkedIn, Facebook, etc.
 - **Core Web Vitals:** Transições e animações da classe `.fade-in` otimizadas para carregamento instantâneo de conteúdo (melhorando a métrica INP/LCP).
 
+## Performance
+
+Otimizações aplicadas para reduzir o tempo de carregamento:
+
+- **Fontes auto-hospedadas:** as fontes do Google (Inter e Space Grotesk) foram removidas — eram baixadas de forma render-blocking em toda página, mas **não eram usadas** (todo o site renderiza em OliviarSans via override de CSS). Elimina 2 requisições externas bloqueantes.
+- **Fonte em WOFF2:** OliviarSans convertida de TTF/OTF para WOFF2 (**208 KB → 71 KB**, ~66% menor), com `font-display: swap` e `preload` da variação principal.
+- **Imagens otimizadas:** recomprimidas e redimensionadas com `sharp` (**~5,1 MB → 3,2 MB**). Logos de clientes que estavam em 4636 px foram reduzidos para tamanhos de exibição reais. 14 PNGs duplicados (não usados) foram removidos.
+- **`loading="lazy"`** em imagens abaixo da dobra; `loading="eager"` preservado no logo e nas imagens do hero.
+- **CSS e JS minificados** no build (`scripts/optimize-dist.mjs` via esbuild): CSS ~60 KB → ~42 KB, JS ~23 KB → ~13 KB.
+- **Compressão gzip + cache de navegador** configurados no `.htaccess` (ver seção Deploy).
+
+> Para otimizar novas imagens adicionadas pelo CMS, rode `sharp` localmente ou considere migrar as imagens para o pipeline `<Image>` do Astro (otimização automática no build).
+
 ## CMS — Decap CMS
 
 O conteúdo é editado via `/admin`, que abre a interface do Sveltia CMS. As edições são commitadas diretamente no GitHub na branch `main`, disparando o GitHub Actions que reconstrói o site e o publica no HostGator.
