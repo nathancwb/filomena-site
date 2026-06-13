@@ -170,15 +170,15 @@ function initForm() {
             btn.textContent = 'Enviando...';
             btn.disabled = true;
 
-            // Envio real para o handler PHP no HostGator
-            fetch('/enviar.php', {
+            // Envio via Web3Forms (funciona em qualquer hospedagem)
+            fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 body: new FormData(form),
                 headers: { 'Accept': 'application/json' }
             })
-                .then(res => res.json().catch(() => ({ ok: res.ok })))
+                .then(res => res.json().catch(() => ({ success: res.ok })))
                 .then(data => {
-                    if (!data.ok) throw new Error('falha');
+                    if (!(data.success || data.ok)) throw new Error('falha');
                     btn.textContent = 'Enviado com sucesso!';
                     btn.style.background = '#22c55e';
                     form.reset();

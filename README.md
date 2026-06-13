@@ -1,6 +1,6 @@
 # Filomena Propaganda & Marketing — Site Institucional
 
-Site institucional da **Filomena Propaganda & Marketing**, construído com Astro e gerenciado via CMS headless (Sveltia/Decap CMS). Hospedado na **HostGator** (`filomenapropaganda.com.br`), com build e deploy automáticos via **GitHub Actions** a cada push na branch `main`.
+Site institucional da **Filomena Propaganda & Marketing**, construído com Astro e gerenciado via CMS headless (Sveltia/Decap CMS). Hospedado na **Vercel** (`filomenapropaganda.com.br`), com deploy automático a cada push na branch `main`.
 
 ---
 
@@ -10,11 +10,11 @@ Site institucional da **Filomena Propaganda & Marketing**, construído com Astro
 |---|---|
 | Framework | [Astro](https://astro.build) v6 |
 | CMS | [Sveltia CMS](https://github.com/sveltia/sveltia-cms) (compatível com Decap) |
-| Hospedagem | [HostGator](https://www.hostgator.com.br) (Apache/cPanel) |
-| Deploy | [GitHub Actions](.github/workflows/deploy-hostgator.yml) → FTP |
+| Hospedagem | [Vercel](https://vercel.com) (deploy automático da `main`) |
+| Formulário | [Web3Forms](https://web3forms.com) (envio por e-mail, sem backend) |
 | Autenticação CMS | GitHub OAuth via função serverless na Vercel (`/api`) |
 | Estilização | CSS puro com variáveis customizadas |
-| Fontes | Space Grotesk, Inter, OliviarSans (local) |
+| Fontes | OliviarSans (local, WOFF2) |
 
 ---
 
@@ -94,19 +94,20 @@ Otimizações aplicadas para reduzir o tempo de carregamento:
 
 ## Formulário de Contato
 
-O formulário da página `/contato` envia os leads por e-mail via `public/enviar.php`
-(PHP nativo do HostGator). O envio é feito por `fetch` (sem recarregar a página),
-mantendo a animação do botão.
+O formulário da página `/contato` envia os leads por e-mail via **Web3Forms**
+(`https://api.web3forms.com/submit`), sem backend — funciona em qualquer
+hospedagem (Vercel, HostGator, etc.). O envio é feito por `fetch`, mantendo a
+animação do botão.
 
-- **Destino dos leads:** definido na variável `$para` em `enviar.php`
-  (padrão: `contato@filomenapropaganda.com.br`).
-- **Proteção anti-spam:** campo honeypot (`b_website`) validado no cliente e no servidor.
-- **Requisito:** só funciona em hospedagem com PHP (HostGator). Em preview local
-  (Node) o envio não roda — teste no servidor de produção.
+- **Configuração:** crie uma conta grátis em [web3forms.com](https://web3forms.com)
+  com o e-mail `contato@filomenapropaganda.com.br`, copie a *Access Key* e cole
+  no campo `access_key` do formulário em `src/pages/contato.astro`.
+- **Destino dos leads:** o e-mail cadastrado no Web3Forms.
+- **Proteção anti-spam:** campo honeypot (`b_website`) validado no cliente.
 
 ## CMS — Decap CMS
 
-O conteúdo é editado via `/admin`, que abre a interface do Sveltia CMS. As edições são commitadas diretamente no GitHub na branch `main`, disparando o GitHub Actions que reconstrói o site e o publica no HostGator.
+O conteúdo é editado via `/admin`, que abre a interface do Sveltia CMS. As edições são commitadas diretamente no GitHub na branch `main`, disparando um novo deploy automático na Vercel.
 
 ### Coleções disponíveis no CMS
 
@@ -168,36 +169,23 @@ Requer **Node.js >= 22.12.0**.
 
 ---
 
-## Deploy (HostGator)
+## Deploy (Vercel)
 
-O site é estático: o build gera a pasta `dist/`, que é publicada na raiz do HostGator (`public_html`). A publicação é **automática** via GitHub Actions (`.github/workflows/deploy-hostgator.yml`): todo push na `main` reconstrói e envia por FTP.
+O deploy é **automático**: todo push na branch `main` dispara um novo build e publicação na Vercel.
 
-- **Build command:** `npm run build`
+- **Build command:** `npm run build` (roda `astro build` + minificação via `scripts/optimize-dist.mjs`)
 - **Output directory:** `dist`
 - **Node:** >= 22.12.0
 
-### Configuração inicial (uma vez)
+### Alternativa: HostGator (não usado atualmente)
 
-1. **Secrets do GitHub** — em *Settings → Secrets and variables → Actions*, criar:
-   - `FTP_SERVER` — ex.: `ftp.filomenapropaganda.com.br`
-   - `FTP_USERNAME` — usuário FTP criado no cPanel do HostGator
-   - `FTP_PASSWORD` — senha desse usuário FTP
-2. **DNS** — apontar `filomenapropaganda.com.br` para o HostGator (nameservers ou registro A com o IP do servidor, informado no e-mail/painel do HostGator). Incluir o registro de `www`.
-3. **SSL** — no cPanel, ativar o *AutoSSL* (Let's Encrypt) para `filomenapropaganda.com.br` e `www`.
-4. **Primeiro deploy** — rodar o workflow manualmente (*Actions → Deploy para HostGator → Run workflow*) ou fazer um push na `main`.
+O projeto também está preparado para hospedagem Apache, caso um dia migre:
 
-### O que o `.htaccess` faz (incluído no build)
+- `public/.htaccess` — HTTPS+www, gzip, cache, headers de segurança e 404.
+- `.github/workflows/deploy-hostgator.yml` — deploy por FTP (somente manual, via
+  *Actions → Run workflow*; requer os secrets `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`).
 
-Como o HostGator é Apache (e não a Vercel), o arquivo `public/.htaccess` recria o que a Vercel fazia automaticamente:
-
-- Redirecionamento canônico para **HTTPS + www**
-- Compressão **gzip** (HTML/CSS/JS) e **cache** de assets
-- **Headers de segurança** (antes no `vercel.json`)
-- Página de erro **404** personalizada
-
-### Publicação manual (alternativa)
-
-Caso precise subir sem o GitHub Actions: rode `npm run build` e envie o **conteúdo** de `dist/` (incluindo o `.htaccess`) para `public_html` via Gerenciador de Arquivos do cPanel ou FTP.
+> Na Vercel o `.htaccess` é ignorado — os headers vêm do `vercel.json`.
 
 ---
 

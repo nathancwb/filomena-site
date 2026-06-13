@@ -1,11 +1,10 @@
 name: Deploy para HostGator
 
-# Toda vez que houver push na branch main (inclusive os commits que o
-# painel /admin/CMS faz no GitHub), o site e reconstruido e enviado por
-# FTP para o HostGator. Substitui o deploy automatico que a Vercel fazia.
+# O site e publicado pela Vercel (deploy automatico a partir da main).
+# Este workflow fica como opcao MANUAL caso um dia migre para o HostGator:
+# rode em Actions > Deploy para HostGator > Run workflow (precisa dos
+# secrets FTP_SERVER / FTP_USERNAME / FTP_PASSWORD).
 on:
-  push:
-    branches: [main]
   workflow_dispatch: {}
 
 # Evita dois deploys simultaneos sobrescrevendo arquivos ao mesmo tempo
