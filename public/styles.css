@@ -1887,6 +1887,7 @@ ul {
 
 .contact__item-value {
     font-weight: 500;
+    color: var(--text);
 }
 
 .contact__socials {

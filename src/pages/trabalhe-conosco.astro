@@ -269,7 +269,17 @@ import { ClientRouter } from 'astro:transitions';
                     </p>
                 </div>
 
-                <form class="contact__form jobs-form fade-in" style="margin-top: var(--space-3xl);">
+                <div id="jobs-success" style="display:none; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); border-radius: 12px; padding: var(--space-xl); text-align: center; margin-top: var(--space-3xl);">
+                    <p style="color: #22c55e; font-weight: 600; font-size: var(--text-lg); margin: 0;">Candidatura enviada! 🎉</p>
+                    <p style="color: var(--text-muted); margin-top: var(--space-sm);">Recebemos seu contato e retornaremos em breve.</p>
+                </div>
+                <div id="jobs-error" style="display:none; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); border-radius: 12px; padding: var(--space-xl); text-align: center; margin-top: var(--space-3xl);">
+                    <p style="color: #ef4444; font-weight: 600; margin: 0;">Erro ao enviar. Tente novamente ou envie por e-mail.</p>
+                </div>
+                <form id="jobs-form" class="contact__form jobs-form fade-in" style="margin-top: var(--space-3xl);" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="c685ced6-cdf1-4deb-92d6-162a2f110e0e">
+                    <input type="hidden" name="subject" value="Nova candidatura pelo site Filomena">
+                    <input type="hidden" name="from_name" value="Site Filomena Propaganda">
                     <!-- Honeypot anti-spam field -->
                     <div class="hp-field">
                         <label for="b_website">Website</label>
@@ -327,6 +337,39 @@ import { ClientRouter } from 'astro:transitions';
     </a>
 
     <script src="/script.js" is:inline></script>
+    <script is:inline>
+    (function() {
+        var form = document.getElementById('jobs-form');
+        if (!form) return;
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (document.getElementById('b_website').value) return;
+            var btn = form.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = 'Enviando...';
+            var data = new FormData(form);
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: data
+            }).then(function(r) { return r.json(); }).then(function(json) {
+                if (json.success) {
+                    form.style.display = 'none';
+                    document.getElementById('jobs-success').style.display = 'block';
+                    document.getElementById('jobs-error').style.display = 'none';
+                } else {
+                    document.getElementById('jobs-error').style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'Enviar candidatura →';
+                }
+            }).catch(function() {
+                document.getElementById('jobs-error').style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Enviar candidatura →';
+            });
+        });
+    })();
+    </script>
 </body>
 
 </html>
