@@ -592,7 +592,10 @@ const homePage = await getEntry('pages', 'home');
                         </div>
                     </div>
 
-                    <form class="contact__form fade-in">
+                    <form class="contact__form fade-in" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="c685ced6-cdf1-4deb-92d6-162a2f110e0e">
+                        <input type="hidden" name="subject" value="Novo contato pelo site Filomena (Página Inicial)">
+                        <input type="hidden" name="from_name" value="Site Filomena Propaganda">
                         <!-- Honeypot anti-spam field -->
                         <div class="hp-field">
                             <label for="b_website">Website</label>
