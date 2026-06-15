@@ -265,7 +265,7 @@ import { ClientRouter } from 'astro:transitions';
                         </div>
                     </div>
 
-                    <form class="contact__form fade-in glass-premium" style="padding: var(--space-2xl); height: fit-content;">
+                    <form id="contact-form" class="contact__form fade-in glass-premium" action="https://api.web3forms.com/submit" method="POST" style="padding: var(--space-2xl); height: fit-content;">
                         <!-- Web3Forms: cole sua access key (gratis em https://web3forms.com) -->
                         <input type="hidden" name="access_key" value="SUA_CHAVE_WEB3FORMS_AQUI">
                         <input type="hidden" name="subject" value="Novo contato pelo site Filomena">
@@ -292,6 +292,7 @@ import { ClientRouter } from 'astro:transitions';
                             <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos um pouco sobre a sua marca ou projeto..." required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);"></textarea>
                         </div>
                         <button type="submit" class="btn btn--primary btn--full" style="margin-top: var(--space-lg); font-family: var(--font-heading);">Enviar mensagem →</button>
+                        <p id="form-status" role="status" aria-live="polite" style="display: none; margin-top: var(--space-md); padding: var(--space-sm) var(--space-md); border-radius: 8px; font-size: var(--text-sm); text-align: center;"></p>
                     </form>
                 </div>
             </div>
@@ -336,6 +337,12 @@ import { ClientRouter } from 'astro:transitions';
                     <details class="faq-item glass-premium bento-large" style="padding: var(--space-md); cursor: pointer;">
                         <summary class="faq-item__question" style="margin: 0; outline: none;">O que diferencia vocês de outras agências?</summary>
                         <p class="faq-item__answer" style="margin-top: var(--space-md);">Nós não criamos apenas arte visual. Nosso maior diferencial é a visão de negócios acoplada à nossa entrega criativa. Quando você contrata a Filomena, adquire um braço estratégico genuinamente focado em fazer a sua empresa crescer, com atendimento próximo e um método autoral.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <!-- Footer -->
     <Footer />
 
@@ -349,6 +356,74 @@ import { ClientRouter } from 'astro:transitions';
     </a>
 
     <script src="/script.js" is:inline></script>
+
+    <!-- Envio do formulário via Web3Forms (AJAX, sem recarregar a página) -->
+    <script is:inline>
+      (function () {
+        const form = document.getElementById('contact-form');
+        if (!form) return;
+        const status = document.getElementById('form-status');
+        const button = form.querySelector('button[type="submit"]');
+        const buttonLabel = button ? button.innerHTML : '';
+        const whatsappUrl = 'https://api.whatsapp.com/send?l=pt_BR&phone=551634154110';
+
+        function showStatus(message, isError) {
+          if (!status) return;
+          status.innerHTML = message;
+          status.style.display = 'block';
+          status.style.background = isError ? 'rgba(229, 57, 53, 0.12)' : 'rgba(67, 160, 71, 0.12)';
+          status.style.color = isError ? '#ff8a80' : '#9fe0a4';
+          status.style.border = '1px solid ' + (isError ? 'rgba(229, 57, 53, 0.4)' : 'rgba(67, 160, 71, 0.4)');
+        }
+
+        form.addEventListener('submit', async function (event) {
+          event.preventDefault();
+
+          // Anti-spam: se o honeypot foi preenchido, ignora silenciosamente.
+          const honeypot = form.querySelector('input[name="b_website"]');
+          if (honeypot && honeypot.value) return;
+
+          if (button) {
+            button.disabled = true;
+            button.innerHTML = 'Enviando...';
+          }
+          if (status) status.style.display = 'none';
+
+          try {
+            const response = await fetch(form.action, {
+              method: 'POST',
+              headers: { Accept: 'application/json' },
+              body: new FormData(form),
+            });
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+              showStatus('✅ Mensagem enviada com sucesso! Em breve entraremos em contato.', false);
+              form.reset();
+            } else {
+              showStatus(
+                '❌ Não foi possível enviar agora. Fale com a gente pelo <a href="' +
+                  whatsappUrl +
+                  '" target="_blank" style="color: inherit; text-decoration: underline;">WhatsApp</a>.',
+                true
+              );
+            }
+          } catch (error) {
+            showStatus(
+              '❌ Erro de conexão. Tente novamente ou fale pelo <a href="' +
+                whatsappUrl +
+                '" target="_blank" style="color: inherit; text-decoration: underline;">WhatsApp</a>.',
+              true
+            );
+          } finally {
+            if (button) {
+              button.disabled = false;
+              button.innerHTML = buttonLabel;
+            }
+          }
+        });
+      })();
+    </script>
 </body>
 
 </html>
