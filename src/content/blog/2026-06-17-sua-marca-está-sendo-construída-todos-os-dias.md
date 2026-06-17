@@ -7,11 +7,13 @@ thumbnail: /assets/images/Branding-1024x513.jpg
 description: Investir na construção da marca é um passo que muitas empresas ainda não deram. Se você já está nesse caminho, já saiu na frente.
 ---
 
+**Sua marca está sendo construída todos os dias?**
+
 Investir na construção da marca é um passo que muitas empresas ainda não deram. Se você já está nesse caminho, já saiu na frente.
 
 Mas existe um ponto essencial que precisa ser entendido: marca não é algo que se cria uma vez — é algo que se gere continuamente.
 
-A construção da marca acontece no dia a dia
+**A construção da marca acontece no dia a dia**
 
 Diferente do que muitos imaginam, branding não se resume à identidade visual ou ao posicionamento inicial.
 
@@ -27,7 +29,7 @@ Ele acontece diariamente, em cada ponto de contato com o público:
 
 Cada uma dessas interações comunica algo — de forma intencional ou não.
 
-O impacto da consistência
+**O impacto da consistência**
 
 Quando não há alinhamento, a marca perde força.
 
@@ -55,7 +57,7 @@ Não olhamos apenas para o que é comunicado, mas também para:
 
 ·         E como ela é percebida no mercado
 
-Esse alinhamento é o que transforma esforço em resultado.
+ Esse alinhamento é o que transforma esforço em resultado.
 
 **Conclusão**
 
