@@ -57,7 +57,7 @@ Não olhamos apenas para o que é comunicado, mas também para:
 
 ·         E como ela é percebida no mercado
 
- Esse alinhamento é o que transforma esforço em resultado
+ Esse alinhamento é o que transforma esforço em resultado.
 
 **Conclusão**
 
