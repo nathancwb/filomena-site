@@ -28,7 +28,7 @@ Sem direcionamento claro:
 ·         O público não entende o valor da marca
 
 ·         Os resultados se tornam instáveis
- 
+
 **O que muda quando há estratégia**
 
 Marketing eficiente começa com clareza:
@@ -36,11 +36,11 @@ Marketing eficiente começa com clareza:
 ·         Onde a empresa está
 
 ·         Onde ela quer chegar
- 
+
 Essa definição orienta todas as decisões.
 
 Cada ação passa a ter um papel dentro de um objetivo maior.
- 
+
 **Como a Filomena atua**
 
 Na Filomena, todo o trabalho parte de uma visão estratégica do negócio.
@@ -52,7 +52,7 @@ Isso significa que:
 ·         Campanhas têm objetivo
 
 ·         A comunicação segue uma direção clara
- 
+
 O foco está em gerar:
 
 ·         Crescimento sustentável
@@ -62,13 +62,13 @@ O foco está em gerar:
 ·         Vendas mais qualificadas
 
 ·         Ajuste de rota faz parte
- 
+
 Mesmo com estratégia, o processo é contínuo.
 
 Mercados mudam, empresas evoluem e ajustes são necessários.
 
 Por isso, o alinhamento constante é parte fundamental da gestão de marca.
- 
+
 **Conclusão**
 
 Mais importante do que fazer marketing é saber por que e para onde você está indo.
