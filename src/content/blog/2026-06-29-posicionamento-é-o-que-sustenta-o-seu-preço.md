@@ -28,7 +28,7 @@ Quanto mais forte a marca, menor a dependência de preço para vender.
 ·         Clientes menos qualificados
 
 ·         Margens reduzidas
- 
+
 Isso acontece porque o mercado não percebe diferenciação.
 
 **O que o posicionamento muda**
@@ -44,9 +44,9 @@ E isso transforma a dinâmica de venda:
 ·         A confiança aumenta
 
 ·         O valor percebido cresce
- 
+
 Não se trata de cobrar mais — mas de ser percebido como mais valioso.
- 
+
 **Como a Filomena constrói valor**
 
 O trabalho da Filomena é fortalecer a percepção de valor da marca.
@@ -60,7 +60,7 @@ Isso acontece por meio de:
 ·         Identidade visual estratégica
 
 ·         Presença bem direcionada
- 
+
 Cada elemento contribui para a forma como a empresa é percebida.
 
 Posicionamento como proteção
@@ -68,9 +68,9 @@ Posicionamento como proteção
 Preço é facilmente copiável.
 
 Posicionamento, não.
- 
+
 Ele protege a empresa de concorrência baseada em preço e sustenta crescimento no longo prazo.
- 
+
 **Conclusão**
 
 Empresas fortes não são escolhidas pelo menor preço.
