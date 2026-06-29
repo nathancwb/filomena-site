@@ -3,7 +3,7 @@ title: Sua marca está sendo construída todos os dias?
 author: Equipe Filomena
 date: 2026-06-17T11:49
 category: Branding
-thumbnail: /assets/images/Branding-1024x513.jpg
+thumbnail: /assets/images/Artigo 1.png
 description: Investir na construção da marca é um passo que muitas empresas ainda não deram. Se você já está nesse caminho, já saiu na frente.
 ---
 
