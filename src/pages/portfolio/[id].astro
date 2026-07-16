@@ -2,6 +2,8 @@
 import { getCollection, render } from 'astro:content';
 import Footer from '../../components/Footer.astro';
 import { ClientRouter } from 'astro:transitions';
+import Analytics from '../../components/Analytics.astro';
+import AnalyticsNoscript from '../../components/AnalyticsNoscript.astro';
 
 export async function getStaticPaths() {
   const projects = await getCollection('portfolio');
@@ -23,6 +25,7 @@ const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
 <html lang="pt-BR">
 
 <head>
+    <Analytics />
     <ClientRouter />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta charset="UTF-8">
@@ -336,6 +339,7 @@ const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
 </head>
 
 <body>
+    <AnalyticsNoscript />
     <div class="noise-overlay"></div>
 
     <!-- Header -->

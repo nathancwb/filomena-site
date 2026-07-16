@@ -1,0 +1,32 @@
+---
+// Componente de Rastreamento - Noscript (Google Tag Manager e Meta Pixel fallback para body)
+const gtmId = import.meta.env.PUBLIC_GTM_ID;
+const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
+---
+
+{gtmId && (
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe 
+      src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+      height="0" 
+      width="0" 
+      style="display:none;visibility:hidden"
+    ></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+)}
+
+{pixelId && (
+  <!-- Meta Pixel Code (noscript) -->
+  <noscript>
+    <img 
+      height="1" 
+      width="1" 
+      style="display:none"
+      src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
+      alt=""
+    />
+  </noscript>
+  <!-- End Meta Pixel Code (noscript) -->
+)}

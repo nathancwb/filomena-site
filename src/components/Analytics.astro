@@ -1,0 +1,86 @@
+---
+// Componente de Rastreamento (Google Analytics, GTM, Search Console, Meta Pixel)
+const gaId = import.meta.env.PUBLIC_GA_ID;
+const gtmId = import.meta.env.PUBLIC_GTM_ID;
+const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
+const gscVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+---
+
+{gscVerification && (
+  <meta name="google-site-verification" content={gscVerification} />
+)}
+
+{gtmId && (
+  <!-- Google Tag Manager -->
+  <script is:inline define:vars={{ gtmId }}>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer',gtmId);
+  </script>
+  <!-- End Google Tag Manager -->
+)}
+
+{gaId && (
+  <!-- Google Analytics (gtag.js) -->
+  <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+  <script is:inline define:vars={{ gaId }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', gaId);
+  </script>
+)}
+
+{pixelId && (
+  <!-- Meta Pixel Code -->
+  <script is:inline define:vars={{ pixelId }}>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', pixelId);
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+)}
+
+<!-- Suporte a transições de páginas do Astro (ClientRouter) -->
+{(gaId || pixelId || gtmId) && (
+  <script is:inline define:vars={{ gaId, pixelId, gtmId }}>
+    let isFirstLoad = true;
+    document.addEventListener('astro:page-load', () => {
+      if (isFirstLoad) {
+        isFirstLoad = false;
+        return;
+      }
+      
+      // Envia visualização de página para o Google Analytics
+      if (gaId && window.gtag) {
+        window.gtag('config', gaId, {
+          page_path: window.location.pathname,
+          page_title: document.title,
+        });
+      }
+
+      // Envia visualização de página para o Meta Pixel
+      if (pixelId && window.fbq) {
+        window.fbq('track', 'PageView');
+      }
+
+      // Envia evento de visualização para o GTM
+      if (gtmId && window.dataLayer) {
+        window.dataLayer.push({
+          event: 'pageview',
+          page: window.location.pathname,
+          title: document.title,
+        });
+      }
+    });
+  </script>
+)}

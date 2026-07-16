@@ -2,12 +2,15 @@
 import { getEntry } from 'astro:content';
 import Footer from '../components/Footer.astro';
 import { ClientRouter } from 'astro:transitions';
+import Analytics from '../components/Analytics.astro';
+import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
 const sobrePage = await getEntry('pages', 'sobre');
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+    <Analytics />
     <ClientRouter />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta charset="UTF-8">
@@ -485,6 +488,7 @@ const sobrePage = await getEntry('pages', 'sobre');
 </head>
 
 <body>
+    <AnalyticsNoscript />
     <div class="noise-overlay"></div>
 
     <!-- Header -->

@@ -2,6 +2,8 @@
 import { getCollection, getEntry } from 'astro:content';
 import Footer from '../components/Footer.astro';
 import { ClientRouter } from 'astro:transitions';
+import Analytics from '../components/Analytics.astro';
+import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
 
 const featuredProjects = (await getCollection('portfolio')).filter(p => p.data.featured);
 const homePage = await getEntry('pages', 'home');
@@ -10,6 +12,7 @@ const homePage = await getEntry('pages', 'home');
 <html lang="pt-BR">
 
 <head>
+    <Analytics />
     <ClientRouter />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta charset="UTF-8">
@@ -93,6 +96,7 @@ const homePage = await getEntry('pages', 'home');
 </head>
 
 <body>
+    <AnalyticsNoscript />
     <div class="noise-overlay"></div>
     <!-- Header -->
     <header class="header">
