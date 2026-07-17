@@ -404,6 +404,24 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
             if (response.ok && data.success) {
               showStatus('✅ Mensagem enviada com sucesso! Em breve entraremos em contato.', false);
               form.reset();
+              
+              // Dispara eventos de conversão (Analytics e Facebook Pixel)
+              if (typeof window !== 'undefined') {
+                if (window.gtag) {
+                  window.gtag('event', 'generate_lead', {
+                    event_category: 'Formulário',
+                    event_label: 'Contato',
+                    value: 1
+                  });
+                }
+                if (window.fbq) {
+                  window.fbq('track', 'Lead', {
+                    content_name: 'Contato',
+                    value: 1,
+                    currency: 'BRL'
+                  });
+                }
+              }
             } else {
               showStatus(
                 '❌ Não foi possível enviar agora. Fale com a gente pelo <a href="' +

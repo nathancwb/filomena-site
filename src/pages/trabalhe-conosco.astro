@@ -361,6 +361,24 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                     form.style.display = 'none';
                     document.getElementById('jobs-success').style.display = 'block';
                     document.getElementById('jobs-error').style.display = 'none';
+                    
+                    // Dispara eventos de conversão (Analytics e Facebook Pixel)
+                    if (typeof window !== 'undefined') {
+                        if (window.gtag) {
+                            window.gtag('event', 'generate_lead', {
+                                event_category: 'Formulário',
+                                event_label: 'Trabalhe Conosco',
+                                value: 1
+                            });
+                        }
+                        if (window.fbq) {
+                            window.fbq('track', 'Lead', {
+                                content_name: 'Trabalhe Conosco',
+                                value: 1,
+                                currency: 'BRL'
+                            });
+                        }
+                    }
                 } else {
                     document.getElementById('jobs-error').style.display = 'block';
                     btn.disabled = false;
