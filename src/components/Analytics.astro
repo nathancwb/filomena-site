@@ -84,3 +84,46 @@ const gscVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
     });
   </script>
 )}
+
+<!-- Rastreamento Global de Cliques no WhatsApp -->
+<script is:inline>
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href*="whatsapp.com"], a[href*="wa.me"], .whatsapp-btn');
+    if (!link) return;
+
+    const pagePath = window.location.pathname;
+
+    // Dispara evento de clique no WhatsApp para o Google Analytics
+    if (window.gtag) {
+      window.gtag('event', 'click_whatsapp', {
+        event_category: 'Contato',
+        event_label: pagePath,
+        value: 1
+      });
+      window.gtag('event', 'generate_lead', {
+        event_category: 'WhatsApp',
+        event_label: pagePath,
+        value: 1
+      });
+    }
+
+    // Dispara evento de contato no Meta Pixel
+    if (window.fbq) {
+      window.fbq('track', 'Contact', {
+        content_name: 'WhatsApp',
+        page: pagePath,
+        value: 1,
+        currency: 'BRL'
+      });
+    }
+
+    // Dispara no GTM DataLayer
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'click_whatsapp',
+        page: pagePath
+      });
+    }
+  });
+</script>
+

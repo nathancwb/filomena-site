@@ -83,6 +83,48 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
       }
     }
     </script>
+
+    <!-- FAQ Schema Markup para IA e Buscadores -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quais serviços a agência Filomena Propaganda oferece em São Carlos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Filomena Propaganda oferece serviços completos de Branding, Gestão de Tráfego Pago (Google Ads e Meta Ads), Design Gráfico, Gestão de Redes Sociais, Desenvolvimento de Sites e Marketing de Performance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onde fica a agência Filomena Propaganda e quais regiões ela atende?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Filomena está localizada na Rua Dom Pedro II, 1978 em São Carlos - SP. Atende presencialmente São Carlos, Araraquara, Ribeirão Preto, Campinas e todo o interior de São Paulo, além de atender clientes remotamente em todo o Brasil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como a Filomena ajuda empresas a venderem mais com Tráfego Pago?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Criamos campanhas de mídia otimizadas no Google Ads e Meta Ads (Instagram e Facebook) focadas em atrair leads qualificados, aumentar vendas e otimizar o Custo de Aquisição de Clientes (CAC)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como solicitar um orçamento com a Filomena Propaganda?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Você pode solicitar um orçamento diretamente pelo WhatsApp no telefone (16) 3415-4110 ou enviando uma mensagem no formulário do site na página de contato."
+          }
+        }
+      ]
+    }
+    </script>
     <link rel="preload" href="/assets/fonts/OliviarSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="stylesheet" href="/styles.css">
