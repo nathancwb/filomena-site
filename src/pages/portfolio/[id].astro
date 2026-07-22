@@ -43,6 +43,56 @@ const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
     <meta property="og:locale" content="pt_BR" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={`https://www.filomenapropaganda.com.br${project.data.thumbnail}`} />
+
+    <!-- GEO Meta Tags -->
+    <meta name="geo.region" content="BR-SP" />
+    <meta name="geo.placename" content="São Carlos" />
+    <meta name="geo.position" content="-22.008978;-47.887784" />
+    <meta name="ICBM" content="-22.008978, -47.887784" />
+
+    <!-- Schema.org CreativeWork & BreadcrumbList (SEO/GEO) -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": project.data.title,
+      "description": project.data.description,
+      "image": `https://www.filomenapropaganda.com.br${project.data.thumbnail}`,
+      "creator": {
+        "@type": "Organization",
+        "name": "Filomena Propaganda",
+        "url": "https://www.filomenapropaganda.com.br"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://www.filomenapropaganda.com.br/portfolio/${project.id}/`
+      }
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.filomenapropaganda.com.br"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Portfólio",
+          "item": "https://www.filomenapropaganda.com.br/portfolio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": project.data.title,
+          "item": `https://www.filomenapropaganda.com.br/portfolio/${project.id}/`
+        }
+      ]
+    })} />
+
     <link rel="preload" href="/assets/fonts/OliviarSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/styles.css">
 
