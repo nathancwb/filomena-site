@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 # temporary and cache files
 npm-cache/
+.playwright-mcp/
+

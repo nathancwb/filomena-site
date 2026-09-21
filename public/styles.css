@@ -2305,12 +2305,125 @@ ul {
     color: var(--white);
     border-radius: 50%;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-    z-index: 99;
+    z-index: 999;
     transition: transform var(--transition);
 }
 
 .whatsapp-btn:hover {
     transform: scale(1.1);
+}
+
+/* Oculta botão duplicado de WhatsApp injetado pelo RD Station via GTM */
+[id*="rd-floating_button"],
+[id^="bricks-component"][class*="floating-button"],
+.bricks--floating--button,
+#bricks-component-o7uQqDwEXNI9Ajks_S0Eag-wrapper,
+div[id*="rd-button"],
+.rd-floating-button {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* ===============================================
+   COOKIE BANNER (RD STATION / COOKIECONSENT FIX)
+   =============================================== */
+.cc-window.cc-banner,
+div[aria-label="cookieconsent"],
+.cc-window {
+    position: fixed !important;
+    bottom: 0 !important;
+    top: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: rgba(15, 23, 42, 0.96) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    color: #f8fafc !important;
+    padding: 14px 24px !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+    box-sizing: border-box !important;
+    z-index: 99998 !important;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.25) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    font-family: inherit !important;
+}
+
+.cc-window .cc-message {
+    flex: 1 1 320px !important;
+    font-size: 0.825rem !important;
+    line-height: 1.45 !important;
+    color: #cbd5e1 !important;
+    margin: 0 !important;
+    display: block !important;
+}
+
+.cc-window .cc-compliance {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+}
+
+.cc-window .cc-btn {
+    border-radius: 8px !important;
+    padding: 8px 16px !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.cc-window .cc-allow {
+    background: #59266d !important;
+    color: #ffffff !important;
+    border: 1.5px solid #59266d !important;
+}
+
+.cc-window .cc-allow:hover {
+    background: #45105e !important;
+    border-color: #45105e !important;
+    transform: translateY(-1px) !important;
+}
+
+.cc-window .cc-dismiss {
+    background: transparent !important;
+    color: #94a3b8 !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.cc-window .cc-dismiss:hover {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+@media (max-width: 640px) {
+    .cc-window.cc-banner {
+        padding: 12px 16px !important;
+        gap: 10px !important;
+    }
+    .cc-window .cc-compliance {
+        width: 100% !important;
+        justify-content: flex-end !important;
+    }
+    .cc-window .cc-btn {
+        flex: 1 !important;
+    }
 }
 
 /* ===============================================
