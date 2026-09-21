@@ -1,5 +1,5 @@
 ---
-// Componente Modal de Captação de Lead em Múltiplas Etapas (Wizard / Diagnóstico)
+// Componente Modal de Captação de Lead em Múltiplas Etapas (Wizard / Diagnóstico Estratégico)
 ---
 
 <!-- Modal Overlay -->
@@ -9,7 +9,7 @@
     <div class="lead-modal-container">
         <!-- Botão Fechar -->
         <button type="button" class="lead-modal-close js-lead-modal-close" aria-label="Fechar diagnóstico">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
@@ -18,7 +18,7 @@
         <!-- Header / Badge -->
         <div class="lead-modal-header">
             <span class="lead-modal-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                 </svg>
                 Diagnóstico Estratégico Gratuito
@@ -28,7 +28,7 @@
         <!-- Form Wizard -->
         <form class="lead-modal-form js-lead-form" id="leadWizardForm" novalidate>
             <!-- Barra de Progresso -->
-            <div class="lead-progress-wrapper" aria-label="Progresso do diagnóstico">
+            <div class="lead-progress-wrapper" aria-label="Progresso do formulário">
                 <div class="lead-progress-track">
                     <span class="lead-progress-bar js-step-progress" style="width: 16.66%;"></span>
                 </div>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="lead-input-group">
                     <span class="lead-input-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
@@ -58,9 +58,9 @@
                 </div>
                 <p class="lead-step-error" id="error-step-1" role="alert"></p>
                 <div class="lead-step-actions">
-                    <button type="button" class="btn btn--primary lead-btn-next" data-next-step="2">
+                    <button type="button" class="lead-btn-primary lead-btn-next" data-next-step="2">
                         Continuar
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </button>
                 </div>
             </div>
@@ -71,28 +71,28 @@
                     <span class="lead-step-num">2</span>
                     <div>
                         <span class="lead-step-kicker">Sobre a sua marca</span>
-                        <h3 class="lead-step-title">Qual é a sua empresa ou o @ da marca no Instagram?</h3>
+                        <h3 class="lead-step-title">Qual é a sua empresa ou @ no Instagram?</h3>
                     </div>
                 </div>
                 <div class="lead-input-group">
                     <span class="lead-input-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                         </svg>
                     </span>
-                    <input type="text" id="wizard-empresa" name="empresa" placeholder="Ex: Minha Empresa ou @minhamarca" required />
+                    <input type="text" id="wizard-empresa" name="empresa" placeholder="Ex: Minha Marca ou @minhamarca" required />
                 </div>
                 <p class="lead-step-error" id="error-step-2" role="alert"></p>
                 <div class="lead-step-actions">
                     <button type="button" class="lead-btn-back" data-previous-step="1">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
                         Voltar
                     </button>
-                    <button type="button" class="btn btn--primary lead-btn-next" data-next-step="3">
+                    <button type="button" class="lead-btn-primary lead-btn-next" data-next-step="3">
                         Continuar
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </button>
                 </div>
             </div>
@@ -109,15 +109,15 @@
                 <div class="lead-inputs-dual">
                     <div class="lead-input-group">
                         <span class="lead-input-icon lead-icon-wpp">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
                             </svg>
                         </span>
-                        <input type="tel" id="wizard-whatsapp" name="whatsapp" placeholder="WhatsApp com DDD: (16) 99999-9999" autocomplete="tel" inputmode="tel" required />
+                        <input type="tel" id="wizard-whatsapp" name="whatsapp" placeholder="WhatsApp: (16) 99999-9999" autocomplete="tel" inputmode="tel" required />
                     </div>
                     <div class="lead-input-group">
                         <span class="lead-input-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
@@ -128,12 +128,12 @@
                 <p class="lead-step-error" id="error-step-3" role="alert"></p>
                 <div class="lead-step-actions">
                     <button type="button" class="lead-btn-back" data-previous-step="2">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
                         Voltar
                     </button>
-                    <button type="button" class="btn btn--primary lead-btn-next" data-next-step="4">
+                    <button type="button" class="lead-btn-primary lead-btn-next" data-next-step="4">
                         Continuar
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </button>
                 </div>
             </div>
@@ -144,7 +144,7 @@
                     <span class="lead-step-num">4</span>
                     <div>
                         <span class="lead-step-kicker">Objetivo Estratégico</span>
-                        <h3 class="lead-step-title">Qual é a maior prioridade da sua marca hoje?</h3>
+                        <h3 class="lead-step-title">Qual é a prioridade da sua marca hoje?</h3>
                     </div>
                 </div>
                 <div class="lead-quiz-cards">
@@ -153,10 +153,10 @@
                         <span class="lead-card-key">A</span>
                         <div class="lead-card-body">
                             <strong class="lead-card-title">Branding & Identidade Visual</strong>
-                            <span class="lead-card-desc">Construir ou reformular logotipo, manual de marca e posicionamento premium</span>
+                            <span class="lead-card-desc">Construir ou reformular logotipo, manual de marca e posicionamento</span>
                         </div>
                         <span class="lead-card-check">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </span>
                     </label>
 
@@ -164,11 +164,11 @@
                         <input type="radio" name="servico_prioritario" value="Tráfego Pago e Performance" />
                         <span class="lead-card-key">B</span>
                         <div class="lead-card-body">
-                            <strong class="lead-card-title">Tráfego Pago & Performance</strong>
-                            <span class="lead-card-desc">Anúncios no Google e Meta Ads para gerar leads qualificados e acelerar vendas</span>
+                            <strong class="lead-card-title">Tráfego Pago & Vendas (Google/Meta Ads)</strong>
+                            <span class="lead-card-desc">Anúncios de alta performance para gerar leads e acelerar o faturamento</span>
                         </div>
                         <span class="lead-card-check">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </span>
                     </label>
 
@@ -177,10 +177,10 @@
                         <span class="lead-card-key">C</span>
                         <div class="lead-card-body">
                             <strong class="lead-card-title">Assessoria Completa 360°</strong>
-                            <span class="lead-card-desc">Planejamento, redes sociais, criação de conteúdo e estratégias de crescimento</span>
+                            <span class="lead-card-desc">Planejamento estratégico, redes sociais, criativos e equipe de marketing</span>
                         </div>
                         <span class="lead-card-check">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </span>
                     </label>
 
@@ -189,22 +189,22 @@
                         <span class="lead-card-key">D</span>
                         <div class="lead-card-body">
                             <strong class="lead-card-title">Criação de Site / Landing Page</strong>
-                            <span class="lead-card-desc">Desenvolvimento de site moderno, veloz e estruturado para converter visitantes</span>
+                            <span class="lead-card-desc">Desenvolvimento de site moderno, veloz e otimizado para conversão</span>
                         </div>
                         <span class="lead-card-check">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </span>
                     </label>
                 </div>
                 <p class="lead-step-error" id="error-step-4" role="alert"></p>
                 <div class="lead-step-actions">
                     <button type="button" class="lead-btn-back" data-previous-step="3">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
                         Voltar
                     </button>
-                    <button type="button" class="btn btn--primary lead-btn-next" data-next-step="5">
+                    <button type="button" class="lead-btn-primary lead-btn-next" data-next-step="5">
                         Continuar
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </button>
                 </div>
             </div>
@@ -215,7 +215,7 @@
                     <span class="lead-step-num">5</span>
                     <div>
                         <span class="lead-step-kicker">Maturidade & Investimento</span>
-                        <h3 class="lead-step-title">Quanto sua empresa investe ou planeja investir em mídia/mês?</h3>
+                        <h3 class="lead-step-title">Quanto a sua empresa investe em anúncios por mês?</h3>
                     </div>
                 </div>
                 <div class="lead-quiz-cards">
@@ -227,7 +227,7 @@
                             <span class="lead-card-desc">Quero iniciar do jeito certo com planejamento e metodologia</span>
                         </div>
                         <span class="lead-card-check">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </span>
                     </label>
 
@@ -239,7 +239,7 @@
                             <span class="lead-card-desc">Já faço ações pontuais e busco profissionalizar minha estratégia</span>
                         </div>
                         <span class="lead-card-check">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </span>
                     </label>
 
@@ -248,10 +248,10 @@
                         <span class="lead-card-key">C</span>
                         <div class="lead-card-body">
                             <strong class="lead-card-title">De R$ 3.000 a R$ 10.000 / mês</strong>
-                            <span class="lead-card-desc">Operação ativa buscando escala de vendas e redução do custo por lead</span>
+                            <span class="lead-card-desc">Operação ativa buscando escala de vendas e redução de CAC</span>
                         </div>
                         <span class="lead-card-check">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </span>
                     </label>
 
@@ -260,22 +260,22 @@
                         <span class="lead-card-key">D</span>
                         <div class="lead-card-body">
                             <strong class="lead-card-title">Acima de R$ 10.000 / mês</strong>
-                            <span class="lead-card-desc">Empresa consolidada buscando domínio de mercado e alta performance</span>
+                            <span class="lead-card-desc">Empresa consolidada buscando domínio de mercado e liderança</span>
                         </div>
                         <span class="lead-card-check">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </span>
                     </label>
                 </div>
                 <p class="lead-step-error" id="error-step-5" role="alert"></p>
                 <div class="lead-step-actions">
                     <button type="button" class="lead-btn-back" data-previous-step="4">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
                         Voltar
                     </button>
-                    <button type="button" class="btn btn--primary lead-btn-next" data-next-step="6">
+                    <button type="button" class="lead-btn-primary lead-btn-next" data-next-step="6">
                         Continuar
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </button>
                 </div>
             </div>
@@ -286,8 +286,8 @@
                     <span class="lead-step-num">6</span>
                     <div>
                         <span class="lead-step-kicker">Diagnóstico Final</span>
-                        <h3 class="lead-step-title">Quais desafios você mais enfrenta hoje?</h3>
-                        <p class="lead-step-subtext">Selecione uma ou mais opções que se aplicam ao seu negócio:</p>
+                        <h3 class="lead-step-title">Quais desses desafios você mais enfrenta hoje?</h3>
+                        <p class="lead-step-subtext">Selecione uma ou mais opções aplicáveis:</p>
                     </div>
                 </div>
                 <div class="lead-quiz-cards">
@@ -299,7 +299,7 @@
                             <span class="lead-card-desc">Dificuldade em manter um fluxo previsível de novos clientes</span>
                         </div>
                         <span class="lead-card-check">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </span>
                     </label>
 
@@ -307,11 +307,11 @@
                         <input type="checkbox" name="desafios" value="Marca sem destaque da concorrencia" />
                         <span class="lead-card-key">B</span>
                         <div class="lead-card-body">
-                            <strong class="lead-card-title">Marca pouco valorizada / guerra de preços</strong>
-                            <span class="lead-card-desc">Clientes comparam seu negócio apenas por preço em vez de valor</span>
+                            <strong class="lead-card-title">Marca desvalorizada / guerra de preços</strong>
+                            <span class="lead-card-desc">Clientes comparam seu negócio apenas por preço e não pelo valor</span>
                         </div>
                         <span class="lead-card-check">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </span>
                     </label>
 
@@ -320,10 +320,10 @@
                         <span class="lead-card-key">C</span>
                         <div class="lead-card-body">
                             <strong class="lead-card-title">Anúncios sem retorno / Custo alto</strong>
-                            <span class="lead-card-desc">Investimento em tráfego sem clareza de conversão ou ROAS</span>
+                            <span class="lead-card-desc">Investimento em tráfego pago sem clareza de conversão ou ROAS</span>
                         </div>
                         <span class="lead-card-check">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </span>
                     </label>
 
@@ -335,29 +335,29 @@
                             <span class="lead-card-desc">Redes sociais desatualizadas e sem estratégia de longo prazo</span>
                         </div>
                         <span class="lead-card-check">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </span>
                     </label>
                 </div>
                 <p class="lead-step-error" id="error-step-6" role="alert"></p>
                 <div class="lead-step-actions">
                     <button type="button" class="lead-btn-back" data-previous-step="5">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
                         Voltar
                     </button>
-                    <button type="submit" class="btn btn--primary lead-btn-submit" id="leadWizardSubmitBtn">
+                    <button type="submit" class="lead-btn-submit" id="leadWizardSubmitBtn">
                         <span>Concluir e Enviar Diagnóstico</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </button>
                 </div>
             </div>
 
             <!-- Rodapé de Privacidade -->
             <div class="lead-modal-privacy">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--secondary); flex-shrink: 0;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #59266d; flex-shrink: 0;">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
-                <span>Seus dados estão protegidos pela LGPD. Não enviamos spam.</span>
+                <span>Seus dados estão protegidos pela LGPD. Sem spam.</span>
             </div>
         </form>
     </div>
@@ -365,22 +365,19 @@
 
 <style>
 /* =========================================================
-   ESTILOS DO MODAL DE QUALIFICAÇÃO / DIAGNÓSTICO (WIZARD)
+   MODAL DE DIAGNÓSTICO (ESTILO CLEAN / CLARO ELEGANTE)
    ========================================================= */
 .lead-modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
     z-index: 99999;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-md);
+    padding: 1.25rem;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
 .lead-modal-overlay.active {
@@ -390,13 +387,10 @@
 
 .lead-modal-backdrop {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(10, 10, 10, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     cursor: pointer;
 }
 
@@ -404,24 +398,24 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 640px;
-    max-height: 90vh;
+    max-width: 540px;
+    max-height: calc(100dvh - 2.5rem);
     overflow-y: auto;
-    background: rgba(22, 16, 28, 0.95);
-    border: 1px solid rgba(161, 87, 188, 0.25);
+    background: #ffffff;
     border-radius: 20px;
-    padding: var(--space-xl);
-    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(89, 38, 109, 0.25);
-    transform: scale(0.95) translateY(20px);
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    color: var(--white);
+    padding: 2rem 2.25rem;
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.3), 0 0 1px rgba(15, 23, 42, 0.1);
+    transform: translateY(16px) scale(0.97);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #1e293b;
+    font-family: var(--font-body, system-ui, -apple-system, sans-serif);
 }
 
 .lead-modal-overlay.active .lead-modal-container {
-    transform: scale(1) translateY(0);
+    transform: translateY(0) scale(1);
 }
 
-/* Scrollbar estilizada */
+/* Scrollbar */
 .lead-modal-container::-webkit-scrollbar {
     width: 6px;
 }
@@ -429,17 +423,18 @@
     background: transparent;
 }
 .lead-modal-container::-webkit-scrollbar-thumb {
-    background: rgba(161, 87, 188, 0.3);
+    background: #e2e8f0;
     border-radius: 999px;
 }
 
+/* Botão Fechar */
 .lead-modal-close {
     position: absolute;
-    top: 18px;
-    right: 18px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--gray-300);
+    top: 1.25rem;
+    right: 1.25rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -448,53 +443,53 @@
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s ease;
-    z-index: 10;
 }
 
 .lead-modal-close:hover {
-    background: var(--secondary);
-    color: var(--white);
-    border-color: var(--secondary);
+    background: #59266d;
+    color: #ffffff;
+    border-color: #59266d;
     transform: rotate(90deg);
 }
 
+/* Header & Badge */
 .lead-modal-header {
-    margin-bottom: var(--space-md);
+    margin-bottom: 1rem;
 }
 
 .lead-modal-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: var(--text-xs);
-    font-weight: 600;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--secondary-light);
-    background: rgba(161, 87, 188, 0.15);
-    border: 1px solid rgba(161, 87, 188, 0.3);
-    padding: 6px 12px;
+    color: #59266d;
+    background: #f3e8ff;
+    border: 1px solid #e9d5ff;
+    padding: 0.3rem 0.75rem;
     border-radius: 999px;
 }
 
 /* Barra de Progresso */
 .lead-progress-wrapper {
-    margin-bottom: var(--space-xl);
+    margin-bottom: 1.5rem;
 }
 
 .lead-progress-track {
     width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.08);
+    height: 5px;
+    background: #f1f5f9;
     border-radius: 999px;
     overflow: hidden;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .lead-progress-bar {
     display: block;
     height: 100%;
-    background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
+    background: linear-gradient(90deg, #59266d 0%, #a157bc 100%);
     border-radius: 999px;
     transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -502,20 +497,24 @@
 .lead-progress-meta {
     display: flex;
     justify-content: space-between;
-    font-size: var(--text-xs);
-    color: var(--gray-400);
-    font-weight: 500;
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
 }
 
 /* Steps */
-.lead-step {
+.lead-step[hidden] {
+    display: none;
+}
+
+.lead-step.active {
     animation: fadeInStep 0.3s ease-out;
 }
 
 @keyframes fadeInStep {
     from {
         opacity: 0;
-        transform: translateY(8px);
+        transform: translateY(6px);
     }
     to {
         opacity: 1;
@@ -525,9 +524,9 @@
 
 .lead-step-heading {
     display: flex;
-    gap: var(--space-sm);
+    gap: 0.85rem;
     align-items: flex-start;
-    margin-bottom: var(--space-lg);
+    margin-bottom: 1.25rem;
 }
 
 .lead-step-num {
@@ -537,9 +536,9 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: var(--accent);
-    color: var(--white);
-    font-size: var(--text-xs);
+    background: #59266d;
+    color: #ffffff;
+    font-size: 0.8125rem;
     font-weight: 700;
     flex-shrink: 0;
     margin-top: 2px;
@@ -547,26 +546,26 @@
 
 .lead-step-kicker {
     display: block;
-    font-size: var(--text-xs);
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--secondary);
-    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #59266d;
+    font-weight: 700;
     margin-bottom: 2px;
 }
 
 .lead-step-title {
-    font-family: var(--font-heading);
-    font-size: var(--text-lg);
+    font-family: var(--font-heading, inherit);
+    font-size: 1.125rem;
     font-weight: 700;
-    color: var(--white);
-    line-height: 1.3;
+    color: #0f172a;
+    line-height: 1.35;
     margin: 0;
 }
 
 .lead-step-subtext {
-    font-size: var(--text-xs);
-    color: var(--gray-400);
+    font-size: 0.8rem;
+    color: #64748b;
     margin-top: 4px;
     margin-bottom: 0;
 }
@@ -576,13 +575,13 @@
     position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: var(--space-md);
+    margin-bottom: 0.75rem;
 }
 
 .lead-input-icon {
     position: absolute;
-    left: 16px;
-    color: var(--gray-400);
+    left: 14px;
+    color: #94a3b8;
     display: flex;
     align-items: center;
     pointer-events: none;
@@ -595,58 +594,57 @@
 
 .lead-input-group input {
     width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
     border-radius: 12px;
-    padding: 16px 16px 16px 48px;
-    font-family: var(--font-body);
-    font-size: var(--text-base);
-    color: var(--white);
+    padding: 14px 14px 14px 44px;
+    font-size: 0.95rem;
+    color: #0f172a;
     outline: none;
     transition: all 0.25s ease;
 }
 
 .lead-input-group input:focus {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--secondary);
-    box-shadow: 0 0 0 3px rgba(161, 87, 188, 0.25);
+    background: #ffffff;
+    border-color: #59266d;
+    box-shadow: 0 0 0 3.5px rgba(89, 38, 109, 0.12);
 }
 
 .lead-input-group input::placeholder {
-    color: var(--gray-500);
+    color: #94a3b8;
 }
 
 .lead-inputs-dual {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
+    gap: 0.25rem;
 }
 
-/* Quiz Selection Cards */
+/* Quiz Option Cards (Radio & Checkbox) */
 .lead-quiz-cards {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: var(--space-md);
+    gap: 8px;
+    margin-bottom: 0.75rem;
 }
 
 .lead-quiz-card {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 14px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 14px;
-    padding: 14px 18px;
+    gap: 12px;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px 16px;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     user-select: none;
 }
 
 .lead-quiz-card:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(161, 87, 188, 0.4);
+    background: #faf5ff;
+    border-color: #c084fc;
     transform: translateY(-1px);
 }
 
@@ -661,14 +659,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    font-size: var(--text-xs);
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    font-size: 0.75rem;
     font-weight: 700;
-    color: var(--gray-300);
+    color: #475569;
     flex-shrink: 0;
     transition: all 0.2s ease;
 }
@@ -677,27 +675,27 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 1px;
 }
 
 .lead-card-title {
-    font-size: var(--text-sm);
+    font-size: 0.875rem;
     font-weight: 600;
-    color: var(--white);
+    color: #0f172a;
     line-height: 1.3;
 }
 
 .lead-card-desc {
-    font-size: var(--text-xs);
-    color: var(--gray-400);
+    font-size: 0.75rem;
+    color: #64748b;
     line-height: 1.3;
 }
 
 .lead-card-check {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    border: 1.5px solid #cbd5e1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -708,21 +706,21 @@
 
 /* Card Selecionado */
 .lead-quiz-card.selected {
-    background: rgba(89, 38, 109, 0.25);
-    border-color: var(--secondary);
-    box-shadow: 0 0 20px rgba(161, 87, 188, 0.2);
+    background: #faf5ff;
+    border-color: #59266d;
+    box-shadow: 0 4px 14px rgba(89, 38, 109, 0.1);
 }
 
 .lead-quiz-card.selected .lead-card-key {
-    background: var(--secondary);
-    border-color: var(--secondary);
-    color: var(--white);
+    background: #59266d;
+    border-color: #59266d;
+    color: #ffffff;
 }
 
 .lead-quiz-card.selected .lead-card-check {
-    background: var(--secondary);
-    border-color: var(--secondary);
-    color: var(--white);
+    background: #59266d;
+    border-color: #59266d;
+    color: #ffffff;
 }
 
 /* Ações e Botões */
@@ -730,16 +728,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-md);
-    margin-top: var(--space-lg);
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .lead-btn-back {
     background: transparent;
     border: none;
-    color: var(--gray-400);
-    font-size: var(--text-sm);
-    font-weight: 500;
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -750,43 +748,51 @@
 }
 
 .lead-btn-back:hover {
-    color: var(--white);
-    background: rgba(255, 255, 255, 0.06);
+    color: #0f172a;
+    background: #f1f5f9;
 }
 
-.lead-btn-next,
+.lead-btn-primary,
 .lead-btn-submit {
     margin-left: auto;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    padding: 14px 28px;
-    font-size: var(--text-sm);
+    background: #59266d;
+    color: #ffffff;
+    padding: 12px 24px;
+    font-size: 0.92rem;
     font-weight: 600;
-    cursor: pointer;
+    border: none;
     border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(89, 38, 109, 0.25);
+}
+
+.lead-btn-primary:hover,
+.lead-btn-submit:hover {
+    background: #45105e;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(89, 38, 109, 0.35);
 }
 
 .lead-btn-submit {
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--accent-light) 100%);
-    box-shadow: 0 8px 25px rgba(161, 87, 188, 0.4);
+    background: linear-gradient(135deg, #59266d 0%, #7c3aed 100%);
+    padding: 13px 26px;
 }
 
-.lead-btn-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(161, 87, 188, 0.5);
-}
-
-/* Mensagem de Erro */
+/* Erros */
 .lead-step-error {
     display: none;
-    font-size: var(--text-xs);
-    color: #ff8a80;
-    background: rgba(229, 57, 53, 0.12);
-    border: 1px solid rgba(229, 57, 53, 0.3);
+    font-size: 0.775rem;
+    color: #dc2626;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
     padding: 8px 12px;
     border-radius: 8px;
-    margin-top: 8px;
+    margin-top: 6px;
     margin-bottom: 0;
 }
 
@@ -801,151 +807,157 @@
     40%, 80% { transform: translateX(4px); }
 }
 
-/* Nota de Privacidade */
+/* Privacidade */
 .lead-modal-privacy {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    margin-top: var(--space-lg);
-    padding-top: var(--space-md);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: var(--text-xs);
-    color: var(--gray-500);
+    gap: 6px;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+    font-size: 0.75rem;
+    color: #94a3b8;
     text-align: center;
 }
 
-/* Tela de Sucesso */
+/* =========================================================
+   TELA DE SUCESSO (ESTILO APLIA / CLEAN & VISUALMENTE RICO)
+   ========================================================= */
 .lead-success-screen {
     text-align: center;
-    padding: var(--space-lg) var(--space-xs);
+    padding: 1.25rem 0.5rem;
     animation: fadeInSuccess 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes fadeInSuccess {
-    from { opacity: 0; transform: scale(0.95); }
+    from { opacity: 0; transform: scale(0.96); }
     to { opacity: 1; transform: scale(1); }
 }
 
 .lead-success-icon {
-    width: 68px;
-    height: 68px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background: rgba(34, 197, 94, 0.15);
-    border: 2px solid #22c55e;
-    color: #22c55e;
+    background: #dcfce7;
+    color: #16a34a;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-md);
-    box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 16px rgba(22, 163, 74, 0.15);
 }
 
 .lead-success-title {
-    font-family: var(--font-heading);
-    font-size: var(--text-2xl);
+    font-family: var(--font-heading, inherit);
+    font-size: 1.35rem;
     font-weight: 700;
-    color: var(--white);
-    margin-bottom: var(--space-xs);
+    color: #0f172a;
+    margin-bottom: 0.5rem;
 }
 
 .lead-success-desc {
-    font-size: var(--text-sm);
-    color: var(--gray-300);
-    max-width: 480px;
-    margin: 0 auto var(--space-xl) auto;
+    font-size: 0.92rem;
+    color: #475569;
+    max-width: 440px;
+    margin: 0 auto 1.5rem auto;
     line-height: 1.5;
 }
 
-.lead-success-action-box {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.lead-success-action-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 16px;
-    padding: var(--space-lg);
-    margin-bottom: var(--space-lg);
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
 }
 
-.lead-success-action-title {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--secondary-light);
-    margin-bottom: 6px;
+.lead-success-action-kicker {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #59266d;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
 }
 
 .lead-success-action-text {
-    font-size: var(--text-xs);
-    color: var(--gray-400);
-    margin-bottom: var(--space-md);
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 1rem;
 }
 
-.lead-success-btn-wpp {
+.lead-success-wpp-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     background: #25D366;
     color: #ffffff;
-    font-weight: 600;
-    font-size: var(--text-sm);
-    padding: 14px 24px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px 20px;
     border-radius: 12px;
     text-decoration: none;
     transition: all 0.2s ease;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
     width: 100%;
 }
 
-.lead-success-btn-wpp:hover {
+.lead-success-wpp-btn:hover {
     background: #20BA56;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+    color: #ffffff;
 }
 
 .lead-success-close-btn {
     background: transparent;
     border: none;
-    color: var(--gray-400);
-    font-size: var(--text-xs);
+    color: #94a3b8;
+    font-size: 0.825rem;
+    font-weight: 500;
     cursor: pointer;
-    text-decoration: underline;
     transition: color 0.2s ease;
 }
 
 .lead-success-close-btn:hover {
-    color: var(--white);
+    color: #475569;
+    text-decoration: underline;
 }
 
-/* Responsivo */
+/* Responsivo Mobile */
 @media (max-width: 640px) {
     .lead-modal-container {
-        padding: var(--space-lg) var(--space-md);
+        padding: 1.5rem 1.25rem;
         border-radius: 16px;
     }
 
     .lead-step-title {
-        font-size: var(--text-base);
+        font-size: 1rem;
     }
 
     .lead-quiz-card {
-        padding: 12px 14px;
+        padding: 10px 12px;
         gap: 10px;
     }
 
     .lead-card-title {
-        font-size: var(--text-xs);
+        font-size: 0.8rem;
     }
 
     .lead-card-desc {
-        font-size: 11px;
+        font-size: 0.7rem;
     }
 
     .lead-step-actions {
         flex-direction: column-reverse;
-        gap: var(--space-sm);
+        gap: 0.5rem;
     }
 
     .lead-btn-back,
-    .lead-btn-next,
+    .lead-btn-primary,
     .lead-btn-submit {
         width: 100%;
         justify-content: center;
@@ -975,7 +987,6 @@
             modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
             
-            // Foca no primeiro input
             setTimeout(() => {
                 const activeInput = modal.querySelector('.lead-step.active input:not([type="radio"]):not([type="checkbox"])');
                 if (activeInput) activeInput.focus();
@@ -987,7 +998,6 @@
             modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
             
-            // Limpa hash se era #abrir-formulario ou #diagnostico
             if (window.location.hash === '#abrir-formulario' || window.location.hash === '#abrir-avaliacao' || window.location.hash === '#diagnostico') {
                 history.replaceState(null, null, ' ');
             }
@@ -1049,7 +1059,6 @@
 
             updateProgress(n);
 
-            // Auto-focus no input da etapa atual
             const activeStepEl = form.querySelector(`.lead-step[data-step="${n}"]`);
             if (activeStepEl) {
                 const input = activeStepEl.querySelector('input:not([type="radio"]):not([type="checkbox"])');
@@ -1186,7 +1195,6 @@
 
             card.addEventListener('click', () => {
                 if (input.type === 'radio') {
-                    // Desmarca irmãos
                     card.closest('.lead-quiz-cards')?.querySelectorAll('.lead-quiz-card').forEach(c => c.classList.remove('selected'));
                     card.classList.add('selected');
                     input.checked = true;
@@ -1228,10 +1236,9 @@
             if (!validateStep(TOTAL_STEPS)) return;
 
             const submitBtn = document.getElementById('leadWizardSubmitBtn');
-            const submitLabel = submitBtn ? submitBtn.innerHTML : '';
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = '<span>Processando diagnóstico...</span>';
+                submitBtn.innerHTML = '<span>Enviando diagnóstico...</span>';
             }
 
             // Captura de UTMs da URL
@@ -1246,7 +1253,7 @@
                 data_envio: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
             };
 
-            // Coleta de dados dos steps
+            // Coleta de dados
             const nome = (form.querySelector('#wizard-nome')?.value || '').trim();
             const empresa = (form.querySelector('#wizard-empresa')?.value || '').trim();
             const whatsapp = (form.querySelector('#wizard-whatsapp')?.value || '').trim();
@@ -1272,7 +1279,7 @@
                 ...utms
             };
 
-            // Dispara Evento de Conversão Imediato (GTM / GA4 / Google Ads / Meta Pixel)
+            // Dispara Eventos de Conversão (GTM, GA4, Meta Pixel)
             try {
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({
@@ -1303,7 +1310,7 @@
                 console.warn('Rastreamento de conversão:', trackErr);
             }
 
-            // Envio via Web3Forms (fetch assíncrono com keepalive)
+            // Envio via Web3Forms
             try {
                 await fetch(FORM_ENDPOINT, {
                     method: 'POST',
@@ -1319,34 +1326,36 @@
             }
 
             // ==========================================
-            // TELA DE SUCESSO
+            // TELA DE SUCESSO ELEGANTE E ESTRUTURADA
             // ==========================================
             const cleanFirstName = nome.split(' ')[0] || 'Obrigado';
             const wppMessage = encodeURIComponent(
-                `Olá equipe Filomena! Meu nome é ${nome} (da ${empresa}). Acabei de preencher o diagnóstico no site e gostaria de agilizar minha análise.`
+                `Olá equipe Filomena! Meu nome é *${nome}* (da *${empresa}*). Acabei de preencher o diagnóstico no site e gostaria de agilizar minha análise com os especialistas.`
             );
             const wppDirectLink = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${wppMessage}`;
 
             form.innerHTML = `
                 <div class="lead-success-screen">
                     <div class="lead-success-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
                     </div>
-                    <h3 class="lead-success-title">Obrigado, ${cleanFirstName}!</h3>
+                    
+                    <h3 class="lead-success-title">Diagnóstico Concluído, ${cleanFirstName}!</h3>
                     <p class="lead-success-desc">
-                        Recebemos as informações da <strong>${empresa}</strong>. Nosso time estratégico já está estruturando uma análise personalizada para o seu momento.
+                        Mapeamos as informações da <strong>${empresa}</strong>. Enquanto nosso time prepara a sua proposta personalizada, você já pode falar diretamente conosco:
                     </p>
 
-                    <div class="lead-success-action-box">
-                        <p class="lead-success-action-title">🚀 Quer agilizar seu atendimento?</p>
-                        <p class="lead-success-action-text">Fale agora mesmo com nosso time no WhatsApp para priorizarmos o seu diagnóstico:</p>
-                        <a href="${wppDirectLink}" target="_blank" class="lead-success-btn-wpp">
+                    <div class="lead-success-action-card">
+                        <div class="lead-success-action-kicker">🚀 Prioridade de Atendimento</div>
+                        <p class="lead-success-action-text">Converse agora mesmo com nosso consultor no WhatsApp para acelerar sua análise:</p>
+                        
+                        <a href="${wppDirectLink}" target="_blank" rel="noopener noreferrer" class="lead-success-wpp-btn">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
                             </svg>
-                            Falar no WhatsApp agora →
+                            Falar com consultor no WhatsApp →
                         </a>
                     </div>
 
@@ -1354,12 +1363,10 @@
                 </div>
             `;
 
-            // Re-anexa listener de fechar
             form.querySelectorAll('.js-lead-modal-close').forEach(b => b.addEventListener('click', closeModal));
         });
     }
 
-    // Inicialização segura no carregamento do DOM e transições do Astro
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initLeadWizard);
     } else {
