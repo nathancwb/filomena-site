@@ -428,8 +428,13 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
               showStatus('✅ Mensagem enviada com sucesso! Em breve entraremos em contato.', false);
               form.reset();
               
-              // Dispara eventos de conversão (Analytics e Facebook Pixel)
+              // Dispara eventos de conversão (GTM, Analytics e Facebook Pixel)
               if (typeof window !== 'undefined') {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                  event: 'generate_lead',
+                  form_name: 'pagina_contato'
+                });
                 if (window.gtag) {
                   window.gtag('event', 'generate_lead', {
                     event_category: 'Formulário',

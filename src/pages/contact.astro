@@ -184,10 +184,15 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                     <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem; text-align: center;">Send Us a Message</h2>
                     <p style="color: var(--text-muted); text-align: center; margin-bottom: 2rem;">Fill in the form below and our strategy team will reply within 24 business hours.</p>
 
-                    <form id="contact-form" action="https://formsubmit.co/contato@filomenapropaganda.com.br" method="POST" style="display: flex; flex-direction: column; gap: 1.25rem;">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_subject" value="Novo Contato via Site (English Page)">
+                    <form id="contact-form" class="contact__form" action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 1.25rem;">
+                        <input type="hidden" name="access_key" value="c685ced6-cdf1-4deb-92d6-162a2f110e0e">
+                        <input type="hidden" name="subject" value="Novo Contato via Site (English Page)">
+                        <input type="hidden" name="from_name" value="Site Filomena Propaganda (EN)">
+                        <!-- Honeypot anti-spam field -->
+                        <div class="hp-field" style="display: none;">
+                            <label for="b_website">Website</label>
+                            <input type="text" id="b_website" name="b_website" autocomplete="off" tabindex="-1">
+                        </div>
 
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
                             <div>
