@@ -118,12 +118,11 @@ const gscVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
     }
 
     // Dispara no GTM DataLayer
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'click_whatsapp',
-        page: pagePath
-      });
-    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'click_whatsapp',
+      page: pagePath
+    });
   });
 </script>
 
