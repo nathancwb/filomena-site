@@ -1,5 +1,5 @@
 ---
-// Componente Modal de Captação de Lead em Múltiplas Etapas (Wizard / Diagnóstico Estratégico)
+// Componente Modal de Captação de Lead (Diagnóstico Estratégico - Fluxo Otimizado)
 ---
 
 <!-- Modal Overlay -->
@@ -25,36 +25,76 @@
             </span>
         </div>
 
-        <!-- Form Wizard -->
+        <!-- FORM WIZARD -->
         <form class="lead-modal-form js-lead-form" id="leadWizardForm" novalidate>
             <!-- Barra de Progresso -->
             <div class="lead-progress-wrapper" aria-label="Progresso do formulário">
                 <div class="lead-progress-track">
-                    <span class="lead-progress-bar js-step-progress" style="width: 16.66%;"></span>
+                    <span class="lead-progress-bar js-step-progress" style="width: 25%;"></span>
                 </div>
                 <div class="lead-progress-meta">
-                    <span class="lead-progress-step-text js-step-indicator">Etapa 1 de 6</span>
-                    <span class="lead-progress-pct js-step-pct">16%</span>
+                    <span class="lead-progress-step-text js-step-indicator">Etapa 1 de 4</span>
+                    <span class="lead-progress-pct js-step-pct">25%</span>
                 </div>
             </div>
 
-            <!-- STEP 1: Nome -->
+            <!-- ETAPA 1: Objetivo Principal da Marca -->
             <div class="lead-step active" data-step="1">
                 <div class="lead-step-heading">
                     <span class="lead-step-num">1</span>
                     <div>
-                        <span class="lead-step-kicker">Primeiro contato</span>
-                        <h3 class="lead-step-title" id="leadModalTitle">Como podemos te chamar?</h3>
+                        <span class="lead-step-kicker">Objetivo Estratégico</span>
+                        <h3 class="lead-step-title" id="leadModalTitle">Qual é a maior prioridade da sua marca hoje?</h3>
                     </div>
                 </div>
-                <div class="lead-input-group">
-                    <span class="lead-input-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </span>
-                    <input type="text" id="wizard-nome" name="nome" placeholder="Digite seu nome completo" autocomplete="name" required />
+                <div class="lead-quiz-cards">
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="servico_prioritario" value="Branding e Posicionamento" required />
+                        <span class="lead-card-key">A</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Branding & Identidade Visual</strong>
+                            <span class="lead-card-desc">Construir ou reformular logotipo, manual de marca e posicionamento de valor</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="servico_prioritario" value="Tráfego Pago e Vendas" />
+                        <span class="lead-card-key">B</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Tráfego Pago & Performance (Google/Meta Ads)</strong>
+                            <span class="lead-card-desc">Anúncios focados em gerar leads qualificados e acelerar o faturamento</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="servico_prioritario" value="Assessoria Completa 360" />
+                        <span class="lead-card-key">C</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Assessoria Completa de Marketing (360°)</strong>
+                            <span class="lead-card-desc">Planejamento, redes sociais, criativos, anúncios e time estratégico dedicado</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="servico_prioritario" value="Criacao de Site ou Landing Page" />
+                        <span class="lead-card-key">D</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Criação de Site / Landing Page</strong>
+                            <span class="lead-card-desc">Desenvolvimento de página moderna, veloz e otimizada para alta conversão</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
                 </div>
                 <p class="lead-step-error" id="error-step-1" role="alert"></p>
                 <div class="lead-step-actions">
@@ -65,24 +105,64 @@
                 </div>
             </div>
 
-            <!-- STEP 2: Empresa / Instagram -->
+            <!-- ETAPA 2: Principais Gargalos Atuais (Multi-select) -->
             <div class="lead-step" data-step="2" hidden>
                 <div class="lead-step-heading">
                     <span class="lead-step-num">2</span>
                     <div>
-                        <span class="lead-step-kicker">Sobre a sua marca</span>
-                        <h3 class="lead-step-title">Qual é a sua empresa ou @ no Instagram?</h3>
+                        <span class="lead-step-kicker">Diagnóstico de Desafios</span>
+                        <h3 class="lead-step-title">Quais gargalos você mais precisa resolver hoje?</h3>
+                        <p class="lead-step-subtext">Selecione uma ou mais opções:</p>
                     </div>
                 </div>
-                <div class="lead-input-group">
-                    <span class="lead-input-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </span>
-                    <input type="text" id="wizard-empresa" name="empresa" placeholder="Ex: Minha Marca ou @minhamarca" required />
+                <div class="lead-quiz-cards">
+                    <label class="lead-quiz-card lead-card-checkbox">
+                        <input type="checkbox" name="desafios" value="Poucos leads ou vendas travadas" />
+                        <span class="lead-card-key">A</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Poucos leads qualificados ou vendas estagnadas</strong>
+                            <span class="lead-card-desc">Dificuldade em manter um fluxo previsível e diário de novos clientes</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card lead-card-checkbox">
+                        <input type="checkbox" name="desafios" value="Marca desvalorizada / guerra de precos" />
+                        <span class="lead-card-key">B</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Marca pouco valorizada / Guerra de preços</strong>
+                            <span class="lead-card-desc">Clientes comparam seu negócio apenas por preço em vez de reconhecer valor</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card lead-card-checkbox">
+                        <input type="checkbox" name="desafios" value="Anuncios com pouco retorno ou CAC alto" />
+                        <span class="lead-card-key">C</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Anúncios sem retorno / Custo por lead alto</strong>
+                            <span class="lead-card-desc">Investimento em tráfego sem clareza de retorno sobre o investimento (ROAS)</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card lead-card-checkbox">
+                        <input type="checkbox" name="desafios" value="Falta de equipe e consistencia de marketing" />
+                        <span class="lead-card-key">D</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Falta de equipe e consistência na comunicação</strong>
+                            <span class="lead-card-desc">Redes sociais desatualizadas e falta de braço técnico para executar</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
                 </div>
                 <p class="lead-step-error" id="error-step-2" role="alert"></p>
                 <div class="lead-step-actions">
@@ -97,34 +177,67 @@
                 </div>
             </div>
 
-            <!-- STEP 3: Contatos Diretos (WhatsApp & E-mail) -->
+            <!-- ETAPA 3: Qualificação de Budget (Investimento com Agência + Verba de Mídia) -->
             <div class="lead-step" data-step="3" hidden>
                 <div class="lead-step-heading">
                     <span class="lead-step-num">3</span>
                     <div>
-                        <span class="lead-step-kicker">Para enviarmos a análise</span>
-                        <h3 class="lead-step-title">Onde podemos te enviar o retorno?</h3>
+                        <span class="lead-step-kicker">Capacidade de Investimento</span>
+                        <h3 class="lead-step-title">Expectativa de investimento mensal</h3>
+                        <p class="lead-step-subtext">Para montarmos uma proposta sob medida para sua realidade:</p>
                     </div>
                 </div>
-                <div class="lead-inputs-dual">
-                    <div class="lead-input-group">
-                        <span class="lead-input-icon lead-icon-wpp">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
-                            </svg>
-                        </span>
-                        <input type="tel" id="wizard-whatsapp" name="whatsapp" placeholder="WhatsApp: (16) 99999-9999" autocomplete="tel" inputmode="tel" required />
-                    </div>
-                    <div class="lead-input-group">
-                        <span class="lead-input-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </span>
-                        <input type="email" id="wizard-email" name="email" placeholder="Seu melhor e-mail profissional" autocomplete="email" required />
+
+                <!-- Pergunta 1: Budget Geral com a Agência -->
+                <div class="lead-budget-block">
+                    <label class="lead-budget-label" for="investimento_agencia">
+                        💼 Quanto pretende investir com a gente por mês?
+                    </label>
+                    <div class="lead-budget-options">
+                        <label class="lead-budget-pill">
+                            <input type="radio" name="investimento_agencia" value="Ate R$ 2.500 / mes" required />
+                            <span>Até R$ 2.500</span>
+                        </label>
+                        <label class="lead-budget-pill">
+                            <input type="radio" name="investimento_agencia" value="De R$ 2.500 a R$ 5.000 / mes" />
+                            <span>R$ 2.500 a R$ 5k</span>
+                        </label>
+                        <label class="lead-budget-pill">
+                            <input type="radio" name="investimento_agencia" value="De R$ 5.000 a R$ 10.000 / mes" />
+                            <span>R$ 5k a R$ 10k</span>
+                        </label>
+                        <label class="lead-budget-pill">
+                            <input type="radio" name="investimento_agencia" value="Acima de R$ 10.000 / mes" />
+                            <span>Acima de R$ 10k</span>
+                        </label>
                     </div>
                 </div>
+
+                <!-- Pergunta 2: Verba para Tráfego / Anúncios -->
+                <div class="lead-budget-block" style="margin-top: 1rem;">
+                    <label class="lead-budget-label" for="investimento_anuncios">
+                        📢 Desse total, quanto é pra tráfego pago?
+                    </label>
+                    <div class="lead-budget-options">
+                        <label class="lead-budget-pill">
+                            <input type="radio" name="investimento_anuncios" value="Ainda nao invisto em anuncios" required />
+                            <span>Não invisto em anúncios</span>
+                        </label>
+                        <label class="lead-budget-pill">
+                            <input type="radio" name="investimento_anuncios" value="Ate R$ 3.000 / mes em midia" />
+                            <span>Até R$ 3.000 / mês</span>
+                        </label>
+                        <label class="lead-budget-pill">
+                            <input type="radio" name="investimento_anuncios" value="De R$ 3.000 a R$ 10.000 / mes em midia" />
+                            <span>R$ 3k a R$ 10k / mês</span>
+                        </label>
+                        <label class="lead-budget-pill">
+                            <input type="radio" name="investimento_anuncios" value="Acima de R$ 10.000 / mes em midia" />
+                            <span>Acima de R$ 10k / mês</span>
+                        </label>
+                    </div>
+                </div>
+
                 <p class="lead-step-error" id="error-step-3" role="alert"></p>
                 <div class="lead-step-actions">
                     <button type="button" class="lead-btn-back" data-previous-step="2">
@@ -138,215 +251,66 @@
                 </div>
             </div>
 
-            <!-- STEP 4: Objetivo Principal (Single-Select Radio) -->
+            <!-- ETAPA 4: Dados de Contato (Etapa Final com Envio) -->
             <div class="lead-step" data-step="4" hidden>
                 <div class="lead-step-heading">
                     <span class="lead-step-num">4</span>
                     <div>
-                        <span class="lead-step-kicker">Objetivo Estratégico</span>
-                        <h3 class="lead-step-title">Qual é a prioridade da sua marca hoje?</h3>
+                        <span class="lead-step-kicker">Finalizar Diagnóstico</span>
+                        <h3 class="lead-step-title">Para onde enviamos a sua análise estratégica?</h3>
                     </div>
                 </div>
-                <div class="lead-quiz-cards">
-                    <label class="lead-quiz-card">
-                        <input type="radio" name="servico_prioritario" value="Branding e Identidade Visual" required />
-                        <span class="lead-card-key">A</span>
-                        <div class="lead-card-body">
-                            <strong class="lead-card-title">Branding & Identidade Visual</strong>
-                            <span class="lead-card-desc">Construir ou reformular logotipo, manual de marca e posicionamento</span>
-                        </div>
-                        <span class="lead-card-check">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                    </label>
 
-                    <label class="lead-quiz-card">
-                        <input type="radio" name="servico_prioritario" value="Tráfego Pago e Performance" />
-                        <span class="lead-card-key">B</span>
-                        <div class="lead-card-body">
-                            <strong class="lead-card-title">Tráfego Pago & Vendas (Google/Meta Ads)</strong>
-                            <span class="lead-card-desc">Anúncios de alta performance para gerar leads e acelerar o faturamento</span>
-                        </div>
-                        <span class="lead-card-check">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <div class="lead-inputs-grid">
+                    <div class="lead-input-group">
+                        <span class="lead-input-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
                         </span>
-                    </label>
+                        <input type="text" id="wizard-nome" name="nome" placeholder="Seu nome completo" autocomplete="name" required />
+                    </div>
 
-                    <label class="lead-quiz-card">
-                        <input type="radio" name="servico_prioritario" value="Gestao Completa 360" />
-                        <span class="lead-card-key">C</span>
-                        <div class="lead-card-body">
-                            <strong class="lead-card-title">Assessoria Completa 360°</strong>
-                            <span class="lead-card-desc">Planejamento estratégico, redes sociais, criativos e equipe de marketing</span>
-                        </div>
-                        <span class="lead-card-check">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <div class="lead-input-group">
+                        <span class="lead-input-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
                         </span>
-                    </label>
+                        <input type="text" id="wizard-empresa" name="empresa" placeholder="Empresa ou @ no Instagram" required />
+                    </div>
 
-                    <label class="lead-quiz-card">
-                        <input type="radio" name="servico_prioritario" value="Criacao de Site ou Landing Page" />
-                        <span class="lead-card-key">D</span>
-                        <div class="lead-card-body">
-                            <strong class="lead-card-title">Criação de Site / Landing Page</strong>
-                            <span class="lead-card-desc">Desenvolvimento de site moderno, veloz e otimizado para conversão</span>
-                        </div>
-                        <span class="lead-card-check">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <div class="lead-input-group">
+                        <span class="lead-input-icon lead-icon-wpp">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+                            </svg>
                         </span>
-                    </label>
+                        <input type="tel" id="wizard-whatsapp" name="whatsapp" placeholder="WhatsApp: (16) 99999-9999" autocomplete="tel" inputmode="tel" required />
+                    </div>
+
+                    <div class="lead-input-group">
+                        <span class="lead-input-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </span>
+                        <input type="email" id="wizard-email" name="email" placeholder="Seu e-mail profissional" autocomplete="email" required />
+                    </div>
                 </div>
+
                 <p class="lead-step-error" id="error-step-4" role="alert"></p>
                 <div class="lead-step-actions">
                     <button type="button" class="lead-btn-back" data-previous-step="3">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
                         Voltar
                     </button>
-                    <button type="button" class="lead-btn-primary lead-btn-next" data-next-step="5">
-                        Continuar
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- STEP 5: Investimento em Anúncios (Single-Select Radio) -->
-            <div class="lead-step" data-step="5" hidden>
-                <div class="lead-step-heading">
-                    <span class="lead-step-num">5</span>
-                    <div>
-                        <span class="lead-step-kicker">Maturidade & Investimento</span>
-                        <h3 class="lead-step-title">Quanto a sua empresa investe em anúncios por mês?</h3>
-                    </div>
-                </div>
-                <div class="lead-quiz-cards">
-                    <label class="lead-quiz-card">
-                        <input type="radio" name="investimento_mensal" value="Ainda nao invisto em anuncios" required />
-                        <span class="lead-card-key">A</span>
-                        <div class="lead-card-body">
-                            <strong class="lead-card-title">Ainda não invisto em anúncios</strong>
-                            <span class="lead-card-desc">Quero iniciar do jeito certo com planejamento e metodologia</span>
-                        </div>
-                        <span class="lead-card-check">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                    </label>
-
-                    <label class="lead-quiz-card">
-                        <input type="radio" name="investimento_mensal" value="Ate R$ 3.000 / mes" />
-                        <span class="lead-card-key">B</span>
-                        <div class="lead-card-body">
-                            <strong class="lead-card-title">Até R$ 3.000 / mês</strong>
-                            <span class="lead-card-desc">Já faço ações pontuais e busco profissionalizar minha estratégia</span>
-                        </div>
-                        <span class="lead-card-check">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                    </label>
-
-                    <label class="lead-quiz-card">
-                        <input type="radio" name="investimento_mensal" value="De R$ 3.000 a R$ 10.000 / mes" />
-                        <span class="lead-card-key">C</span>
-                        <div class="lead-card-body">
-                            <strong class="lead-card-title">De R$ 3.000 a R$ 10.000 / mês</strong>
-                            <span class="lead-card-desc">Operação ativa buscando escala de vendas e redução de CAC</span>
-                        </div>
-                        <span class="lead-card-check">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                    </label>
-
-                    <label class="lead-quiz-card">
-                        <input type="radio" name="investimento_mensal" value="Acima de R$ 10.000 / mes" />
-                        <span class="lead-card-key">D</span>
-                        <div class="lead-card-body">
-                            <strong class="lead-card-title">Acima de R$ 10.000 / mês</strong>
-                            <span class="lead-card-desc">Empresa consolidada buscando domínio de mercado e liderança</span>
-                        </div>
-                        <span class="lead-card-check">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                    </label>
-                </div>
-                <p class="lead-step-error" id="error-step-5" role="alert"></p>
-                <div class="lead-step-actions">
-                    <button type="button" class="lead-btn-back" data-previous-step="4">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                        Voltar
-                    </button>
-                    <button type="button" class="lead-btn-primary lead-btn-next" data-next-step="6">
-                        Continuar
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- STEP 6: Principais Dificuldades (Multi-Select Checkbox - SUBMIT FINAL) -->
-            <div class="lead-step" data-step="6" hidden>
-                <div class="lead-step-heading">
-                    <span class="lead-step-num">6</span>
-                    <div>
-                        <span class="lead-step-kicker">Diagnóstico Final</span>
-                        <h3 class="lead-step-title">Quais desses desafios você mais enfrenta hoje?</h3>
-                        <p class="lead-step-subtext">Selecione uma ou mais opções aplicáveis:</p>
-                    </div>
-                </div>
-                <div class="lead-quiz-cards">
-                    <label class="lead-quiz-card lead-card-checkbox">
-                        <input type="checkbox" name="desafios" value="Poucos leads ou vendas estagnadas" />
-                        <span class="lead-card-key">A</span>
-                        <div class="lead-card-body">
-                            <strong class="lead-card-title">Poucos leads qualificados ou vendas travadas</strong>
-                            <span class="lead-card-desc">Dificuldade em manter um fluxo previsível de novos clientes</span>
-                        </div>
-                        <span class="lead-card-check">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                    </label>
-
-                    <label class="lead-quiz-card lead-card-checkbox">
-                        <input type="checkbox" name="desafios" value="Marca sem destaque da concorrencia" />
-                        <span class="lead-card-key">B</span>
-                        <div class="lead-card-body">
-                            <strong class="lead-card-title">Marca desvalorizada / guerra de preços</strong>
-                            <span class="lead-card-desc">Clientes comparam seu negócio apenas por preço e não pelo valor</span>
-                        </div>
-                        <span class="lead-card-check">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                    </label>
-
-                    <label class="lead-quiz-card lead-card-checkbox">
-                        <input type="checkbox" name="desafios" value="Anuncios com pouco retorno ou CAC alto" />
-                        <span class="lead-card-key">C</span>
-                        <div class="lead-card-body">
-                            <strong class="lead-card-title">Anúncios sem retorno / Custo alto</strong>
-                            <span class="lead-card-desc">Investimento em tráfego pago sem clareza de conversão ou ROAS</span>
-                        </div>
-                        <span class="lead-card-check">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                    </label>
-
-                    <label class="lead-quiz-card lead-card-checkbox">
-                        <input type="checkbox" name="desafios" value="Falta de equipe ou consistencia de marketing" />
-                        <span class="lead-card-key">D</span>
-                        <div class="lead-card-body">
-                            <strong class="lead-card-title">Falta de tempo e consistência na equipe</strong>
-                            <span class="lead-card-desc">Redes sociais desatualizadas e sem estratégia de longo prazo</span>
-                        </div>
-                        <span class="lead-card-check">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                    </label>
-                </div>
-                <p class="lead-step-error" id="error-step-6" role="alert"></p>
-                <div class="lead-step-actions">
-                    <button type="button" class="lead-btn-back" data-previous-step="5">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                        Voltar
-                    </button>
                     <button type="submit" class="lead-btn-submit" id="leadWizardSubmitBtn">
-                        <span>Concluir e Enviar Diagnóstico</span>
+                        <span>Concluir e Receber Diagnóstico</span>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </button>
                 </div>
@@ -360,12 +324,40 @@
                 <span>Seus dados estão protegidos pela LGPD. Sem spam.</span>
             </div>
         </form>
+
+        <!-- TELA DE SUCESSO (ESTÁTICA, NUNCA DESCONFIGURA O CSS) -->
+        <div class="lead-success-screen" id="leadSuccessScreen" hidden>
+            <div class="lead-success-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            
+            <h3 class="lead-success-title" id="leadSuccessTitle">Diagnóstico Concluído!</h3>
+            <p class="lead-success-desc" id="leadSuccessDesc">
+                Mapeamos o momento da sua empresa. Enquanto nossa equipe estratégica prepara a sua análise personalizada, você já pode falar diretamente conosco:
+            </p>
+
+            <div class="lead-success-action-card">
+                <div class="lead-success-action-kicker">🚀 Atendimento Prioritário</div>
+                <p class="lead-success-action-text">Fale agora mesmo com nosso consultor no WhatsApp para acelerar o seu diagnóstico:</p>
+                
+                <a href="https://api.whatsapp.com/send?phone=551634154110" target="_blank" rel="noopener noreferrer" class="lead-success-wpp-btn" id="leadSuccessWppBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+                    </svg>
+                    Falar com consultor no WhatsApp →
+                </a>
+            </div>
+
+            <button type="button" class="lead-success-close-btn js-lead-modal-close">Fechar janela</button>
+        </div>
     </div>
 </div>
 
-<style>
+<style is:global>
 /* =========================================================
-   MODAL DE DIAGNÓSTICO (ESTILO CLEAN / CLARO ELEGANTE)
+   ESTILOS GLOBAIS DO MODAL DE DIAGNÓSTICO (CLEAN & LUXURY)
    ========================================================= */
 .lead-modal-overlay {
     position: fixed;
@@ -401,13 +393,13 @@
     max-width: 540px;
     max-height: calc(100dvh - 2.5rem);
     overflow-y: auto;
-    background: #ffffff;
+    background: #ffffff !important;
     border-radius: 20px;
     padding: 2rem 2.25rem;
-    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.3), 0 0 1px rgba(15, 23, 42, 0.1);
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.25), 0 0 1px rgba(15, 23, 42, 0.1);
     transform: translateY(16px) scale(0.97);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    color: #1e293b;
+    color: #1e293b !important;
     font-family: var(--font-body, system-ui, -apple-system, sans-serif);
 }
 
@@ -504,7 +496,7 @@
 
 /* Steps */
 .lead-step[hidden] {
-    display: none;
+    display: none !important;
 }
 
 .lead-step.active {
@@ -512,14 +504,8 @@
 }
 
 @keyframes fadeInStep {
-    from {
-        opacity: 0;
-        transform: translateY(6px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .lead-step-heading {
@@ -558,7 +544,7 @@
     font-family: var(--font-heading, inherit);
     font-size: 1.125rem;
     font-weight: 700;
-    color: #0f172a;
+    color: #0f172a !important;
     line-height: 1.35;
     margin: 0;
 }
@@ -570,12 +556,75 @@
     margin-bottom: 0;
 }
 
-/* Inputs */
+/* Budget Block (Pills) */
+.lead-budget-block {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 1rem 1.15rem;
+}
+
+.lead-budget-label {
+    display: block;
+    font-size: 0.825rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.65rem;
+}
+
+.lead-budget-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.lead-budget-pill {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #334155;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.lead-budget-pill input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.lead-budget-pill:hover {
+    background: #faf5ff;
+    border-color: #c084fc;
+}
+
+.lead-budget-pill.selected {
+    background: #f3e8ff;
+    border-color: #59266d;
+    color: #59266d;
+    box-shadow: 0 2px 8px rgba(89, 38, 109, 0.15);
+}
+
+/* Inputs Grid (Etapa de Contato) */
+.lead-inputs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
 .lead-input-group {
     position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: 0.75rem;
 }
 
 .lead-input-icon {
@@ -585,7 +634,6 @@
     display: flex;
     align-items: center;
     pointer-events: none;
-    transition: color 0.2s ease;
 }
 
 .lead-icon-wpp {
@@ -597,8 +645,8 @@
     background: #f8fafc;
     border: 1.5px solid #e2e8f0;
     border-radius: 12px;
-    padding: 14px 14px 14px 44px;
-    font-size: 0.95rem;
+    padding: 13px 14px 13px 44px;
+    font-size: 0.92rem;
     color: #0f172a;
     outline: none;
     transition: all 0.25s ease;
@@ -614,18 +662,11 @@
     color: #94a3b8;
 }
 
-.lead-inputs-dual {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-/* Quiz Option Cards (Radio & Checkbox) */
+/* Cards de Escolha (Radio & Checkbox) */
 .lead-quiz-cards {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 0.75rem;
 }
 
 .lead-quiz-card {
@@ -636,7 +677,7 @@
     background: #ffffff;
     border: 1.5px solid #e2e8f0;
     border-radius: 12px;
-    padding: 12px 16px;
+    padding: 12px 14px;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     user-select: none;
@@ -704,11 +745,10 @@
     transition: all 0.2s ease;
 }
 
-/* Card Selecionado */
 .lead-quiz-card.selected {
     background: #faf5ff;
     border-color: #59266d;
-    box-shadow: 0 4px 14px rgba(89, 38, 109, 0.1);
+    box-shadow: 0 4px 12px rgba(89, 38, 109, 0.1);
 }
 
 .lead-quiz-card.selected .lead-card-key {
@@ -822,11 +862,11 @@
 }
 
 /* =========================================================
-   TELA DE SUCESSO (ESTILO APLIA / CLEAN & VISUALMENTE RICO)
+   TELA DE SUCESSO (ESTILOS FIXOS E DESTACADOS)
    ========================================================= */
 .lead-success-screen {
     text-align: center;
-    padding: 1.25rem 0.5rem;
+    padding: 1.5rem 0.5rem;
     animation: fadeInSuccess 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -836,56 +876,57 @@
 }
 
 .lead-success-icon {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    background: #dcfce7;
-    color: #16a34a;
+    background: #dcfce7 !important;
+    color: #16a34a !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.25rem;
-    box-shadow: 0 4px 16px rgba(22, 163, 74, 0.15);
+    margin: 0 auto 1.25rem auto;
+    box-shadow: 0 4px 16px rgba(22, 163, 74, 0.2);
 }
 
 .lead-success-title {
     font-family: var(--font-heading, inherit);
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 0.5rem;
+    color: #0f172a !important;
+    margin: 0 0 0.5rem 0;
 }
 
 .lead-success-desc {
     font-size: 0.92rem;
-    color: #475569;
+    color: #475569 !important;
     max-width: 440px;
     margin: 0 auto 1.5rem auto;
     line-height: 1.5;
 }
 
 .lead-success-action-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
+    background: #f8fafc !important;
+    border: 1.5px solid #e2e8f0 !important;
     border-radius: 16px;
-    padding: 1.25rem;
-    margin-bottom: 1.25rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
 .lead-success-action-kicker {
     font-size: 0.8rem;
     font-weight: 700;
-    color: #59266d;
+    color: #59266d !important;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
     margin-bottom: 4px;
 }
 
 .lead-success-action-text {
-    font-size: 0.85rem;
-    color: #64748b;
-    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: #64748b !important;
+    margin: 0 0 1.25rem 0;
+    line-height: 1.4;
 }
 
 .lead-success-wpp-btn {
@@ -893,30 +934,30 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background: #25D366;
-    color: #ffffff;
+    background: #25D366 !important;
+    color: #ffffff !important;
     font-weight: 700;
     font-size: 0.95rem;
-    padding: 14px 20px;
+    padding: 15px 24px;
     border-radius: 12px;
     text-decoration: none;
     transition: all 0.2s ease;
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
     width: 100%;
 }
 
 .lead-success-wpp-btn:hover {
-    background: #20BA56;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
-    color: #ffffff;
+    background: #20BA56 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    color: #ffffff !important;
 }
 
 .lead-success-close-btn {
     background: transparent;
     border: none;
     color: #94a3b8;
-    font-size: 0.825rem;
+    font-size: 0.85rem;
     font-weight: 500;
     cursor: pointer;
     transition: color 0.2s ease;
@@ -936,6 +977,10 @@
 
     .lead-step-title {
         font-size: 1rem;
+    }
+
+    .lead-budget-options {
+        grid-template-columns: 1fr;
     }
 
     .lead-quiz-card {
@@ -967,7 +1012,7 @@
 
 <script is:inline>
 (function () {
-    const TOTAL_STEPS = 6;
+    const TOTAL_STEPS = 4;
     const FORM_ENDPOINT = 'https://api.web3forms.com/submit';
     const WEB3FORMS_KEY = 'c685ced6-cdf1-4deb-92d6-162a2f110e0e';
     const WHATSAPP_NUMBER = '551634154110';
@@ -975,22 +1020,22 @@
     function initLeadWizard() {
         const modal = document.getElementById('leadWizardModal');
         const form = document.getElementById('leadWizardForm');
+        const successScreen = document.getElementById('leadSuccessScreen');
         if (!modal || !form) return;
 
         let currentStep = 1;
 
-        // ==========================================
-        // CONTROLE DE ABERTURA / FECHAMENTO
-        // ==========================================
         function openModal() {
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
             
-            setTimeout(() => {
-                const activeInput = modal.querySelector('.lead-step.active input:not([type="radio"]):not([type="checkbox"])');
-                if (activeInput) activeInput.focus();
-            }, 100);
+            // Reseta para tela de formulário se já tinha enviado
+            if (form.hidden && successScreen) {
+                form.hidden = false;
+                successScreen.hidden = true;
+                goToStep(1);
+            }
         }
 
         function closeModal() {
@@ -1003,7 +1048,6 @@
             }
         }
 
-        // Eventos de clique para abrir
         document.querySelectorAll('.js-open-modal, .js-open-diagnostico, a[href="#abrir-formulario"], a[href="#abrir-avaliacao"], a[href="#diagnostico"]').forEach(trigger => {
             trigger.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -1011,19 +1055,16 @@
             });
         });
 
-        // Eventos de clique para fechar
         modal.querySelectorAll('.js-lead-modal-close').forEach(btn => {
             btn.addEventListener('click', closeModal);
         });
 
-        // Fechar com ESC
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
                 closeModal();
             }
         });
 
-        // Deep-linking automático na URL
         const validHashes = ['#abrir-formulario', '#abrir-avaliacao', '#diagnostico'];
         if (validHashes.includes(window.location.hash)) {
             setTimeout(openModal, 200);
@@ -1034,9 +1075,6 @@
             }
         });
 
-        // ==========================================
-        // MOTOR DE NAVEGAÇÃO ENTRE ETAPAS
-        // ==========================================
         function updateProgress(step) {
             const pct = Math.round((step / TOTAL_STEPS) * 100);
             const progressBar = form.querySelector('.js-step-progress');
@@ -1086,66 +1124,66 @@
             clearError(step);
 
             if (step === 1) {
-                const nomeInput = form.querySelector('#wizard-nome');
-                if (!nomeInput || !nomeInput.value.trim()) {
-                    showError(1, 'Por favor, informe seu nome.');
-                    nomeInput?.focus();
+                const selectedService = form.querySelector('input[name="servico_prioritario"]:checked');
+                if (!selectedService) {
+                    showError(1, 'Por favor, selecione qual é a prioridade da sua marca.');
                     return false;
                 }
                 return true;
             }
 
             if (step === 2) {
-                const empresaInput = form.querySelector('#wizard-empresa');
-                if (!empresaInput || !empresaInput.value.trim()) {
-                    showError(2, 'Por favor, informe o nome da sua empresa ou @ do Instagram.');
-                    empresaInput?.focus();
+                const checkedPains = form.querySelectorAll('input[name="desafios"]:checked');
+                if (checkedPains.length === 0) {
+                    showError(2, 'Por favor, selecione ao menos um gargalo para avançar.');
                     return false;
                 }
                 return true;
             }
 
             if (step === 3) {
-                const wppInput = form.querySelector('#wizard-whatsapp');
-                const emailInput = form.querySelector('#wizard-email');
+                const budgetAgencia = form.querySelector('input[name="investimento_agencia"]:checked');
+                const budgetAds = form.querySelector('input[name="investimento_anuncios"]:checked');
 
-                if (!wppInput || wppInput.value.trim().replace(/\D/g, '').length < 10) {
-                    showError(3, 'Por favor, informe um WhatsApp válido com DDD (mínimo 10 dígitos).');
-                    wppInput?.focus();
+                if (!budgetAgencia) {
+                    showError(3, 'Por favor, selecione a faixa de investimento pretendida com a agência.');
                     return false;
                 }
-
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailInput || !emailRegex.test(emailInput.value.trim())) {
-                    showError(3, 'Por favor, informe um endereço de e-mail válido.');
-                    emailInput?.focus();
+                if (!budgetAds) {
+                    showError(3, 'Por favor, selecione a verba prevista para anúncios/mídia paga.');
                     return false;
                 }
                 return true;
             }
 
             if (step === 4) {
-                const selectedService = form.querySelector('input[name="servico_prioritario"]:checked');
-                if (!selectedService) {
-                    showError(4, 'Por favor, selecione qual é a prioridade da sua marca.');
+                const nomeInput = form.querySelector('#wizard-nome');
+                const empresaInput = form.querySelector('#wizard-empresa');
+                const wppInput = form.querySelector('#wizard-whatsapp');
+                const emailInput = form.querySelector('#wizard-email');
+
+                if (!nomeInput || !nomeInput.value.trim()) {
+                    showError(4, 'Por favor, informe seu nome.');
+                    nomeInput?.focus();
                     return false;
                 }
-                return true;
-            }
 
-            if (step === 5) {
-                const selectedBudget = form.querySelector('input[name="investimento_mensal"]:checked');
-                if (!selectedBudget) {
-                    showError(5, 'Por favor, selecione uma faixa de investimento.');
+                if (!empresaInput || !empresaInput.value.trim()) {
+                    showError(4, 'Por favor, informe o nome da sua empresa ou @ no Instagram.');
+                    empresaInput?.focus();
                     return false;
                 }
-                return true;
-            }
 
-            if (step === 6) {
-                const checkedPains = form.querySelectorAll('input[name="desafios"]:checked');
-                if (checkedPains.length === 0) {
-                    showError(6, 'Por favor, selecione ao menos uma opção para concluir.');
+                if (!wppInput || wppInput.value.trim().replace(/\D/g, '').length < 10) {
+                    showError(4, 'Por favor, informe um WhatsApp válido com DDD.');
+                    wppInput?.focus();
+                    return false;
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailInput || !emailRegex.test(emailInput.value.trim())) {
+                    showError(4, 'Por favor, informe um endereço de e-mail válido.');
+                    emailInput?.focus();
                     return false;
                 }
                 return true;
@@ -1154,7 +1192,6 @@
             return true;
         }
 
-        // Botões Avançar
         form.querySelectorAll('.lead-btn-next').forEach(btn => {
             btn.addEventListener('click', () => {
                 const nextStep = parseInt(btn.dataset.nextStep, 10);
@@ -1165,7 +1202,6 @@
             });
         });
 
-        // Botões Voltar
         form.querySelectorAll('.lead-btn-back').forEach(btn => {
             btn.addEventListener('click', () => {
                 const prevStep = parseInt(btn.dataset.previousStep, 10);
@@ -1173,22 +1209,7 @@
             });
         });
 
-        // Enter no teclado avança etapa
-        form.querySelectorAll('input:not([type="radio"]):not([type="checkbox"])').forEach(input => {
-            input.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    const activeStepEl = input.closest('.lead-step');
-                    if (!activeStepEl) return;
-                    const stepNum = parseInt(activeStepEl.dataset.step, 10);
-                    if (stepNum < TOTAL_STEPS && validateStep(stepNum)) {
-                        goToStep(stepNum + 1);
-                    }
-                }
-            });
-        });
-
-        // Interatividade visual nos Cards de Opções (Radio e Checkbox)
+        // Interatividade visual nos cards
         form.querySelectorAll('.lead-quiz-card').forEach(card => {
             const input = card.querySelector('input');
             if (!input) return;
@@ -1208,7 +1229,20 @@
             });
         });
 
-        // Máscara dinâmica de telefone / WhatsApp
+        // Interatividade nas pílulas de budget
+        form.querySelectorAll('.lead-budget-pill').forEach(pill => {
+            const input = pill.querySelector('input');
+            if (!input) return;
+
+            pill.addEventListener('click', () => {
+                pill.closest('.lead-budget-options')?.querySelectorAll('.lead-budget-pill').forEach(p => p.classList.remove('selected'));
+                pill.classList.add('selected');
+                input.checked = true;
+                clearError(currentStep);
+            });
+        });
+
+        // Máscara WhatsApp
         const wppInput = form.querySelector('#wizard-whatsapp');
         if (wppInput) {
             wppInput.addEventListener('input', (e) => {
@@ -1227,9 +1261,7 @@
             });
         }
 
-        // ==========================================
-        // SUBMISSÃO DO FORMULÁRIO (ENTREGA + CONVERSÃO)
-        // ==========================================
+        // SUBMIT
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -1238,10 +1270,9 @@
             const submitBtn = document.getElementById('leadWizardSubmitBtn');
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = '<span>Enviando diagnóstico...</span>';
+                submitBtn.innerHTML = '<span>Processando envio...</span>';
             }
 
-            // Captura de UTMs da URL
             const urlParams = new URLSearchParams(window.location.search);
             const utms = {
                 utm_source: urlParams.get('utm_source') || 'direto',
@@ -1253,13 +1284,13 @@
                 data_envio: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
             };
 
-            // Coleta de dados
             const nome = (form.querySelector('#wizard-nome')?.value || '').trim();
             const empresa = (form.querySelector('#wizard-empresa')?.value || '').trim();
             const whatsapp = (form.querySelector('#wizard-whatsapp')?.value || '').trim();
             const email = (form.querySelector('#wizard-email')?.value || '').trim();
             const servico = form.querySelector('input[name="servico_prioritario"]:checked')?.value || 'Não informado';
-            const investimento = form.querySelector('input[name="investimento_mensal"]:checked')?.value || 'Não informado';
+            const budgetAgencia = form.querySelector('input[name="investimento_agencia"]:checked')?.value || 'Não informado';
+            const budgetAds = form.querySelector('input[name="investimento_anuncios"]:checked')?.value || 'Não informado';
             
             const desafiosArr = [];
             form.querySelectorAll('input[name="desafios"]:checked').forEach(c => desafiosArr.push(c.value));
@@ -1267,19 +1298,20 @@
 
             const payload = {
                 access_key: WEB3FORMS_KEY,
-                subject: `🎯 Novo Diagnóstico de Marketing: ${nome} (${empresa})`,
+                subject: `🎯 Novo Diagnóstico: ${nome} (${empresa})`,
                 from_name: 'Diagnóstico Filomena Propaganda',
                 nome: nome,
                 empresa_ou_instagram: empresa,
                 whatsapp: whatsapp,
                 email: email,
                 servico_prioritario: servico,
-                investimento_mensal_anuncios: investimento,
-                principais_desafios: desafios,
+                investimento_com_agencia: budgetAgencia,
+                verba_para_anuncios: budgetAds,
+                principais_gargalos: desafios,
                 ...utms
             };
 
-            // Dispara Eventos de Conversão (GTM, GA4, Meta Pixel)
+            // Eventos de Conversão
             try {
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({
@@ -1288,7 +1320,8 @@
                     lead_name: nome,
                     lead_company: empresa,
                     lead_service: servico,
-                    lead_budget: investimento
+                    lead_budget_agency: budgetAgencia,
+                    lead_budget_ads: budgetAds
                 });
 
                 if (typeof window.gtag === 'function') {
@@ -1310,7 +1343,7 @@
                 console.warn('Rastreamento de conversão:', trackErr);
             }
 
-            // Envio via Web3Forms
+            // Envio Web3Forms
             try {
                 await fetch(FORM_ENDPOINT, {
                     method: 'POST',
@@ -1322,48 +1355,28 @@
                     keepalive: true
                 });
             } catch (sendErr) {
-                console.warn('Aviso: envio do formulário falhou:', sendErr);
+                console.warn('Envio do formulário:', sendErr);
             }
 
-            // ==========================================
-            // TELA DE SUCESSO ELEGANTE E ESTRUTURADA
-            // ==========================================
+            // EXIBE TELA DE SUCESSO ESTÁTICA COM CSS TOTALMENTE PRESERVADO
             const cleanFirstName = nome.split(' ')[0] || 'Obrigado';
             const wppMessage = encodeURIComponent(
                 `Olá equipe Filomena! Meu nome é *${nome}* (da *${empresa}*). Acabei de preencher o diagnóstico no site e gostaria de agilizar minha análise com os especialistas.`
             );
             const wppDirectLink = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${wppMessage}`;
 
-            form.innerHTML = `
-                <div class="lead-success-screen">
-                    <div class="lead-success-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </div>
-                    
-                    <h3 class="lead-success-title">Diagnóstico Concluído, ${cleanFirstName}!</h3>
-                    <p class="lead-success-desc">
-                        Mapeamos as informações da <strong>${empresa}</strong>. Enquanto nosso time prepara a sua proposta personalizada, você já pode falar diretamente conosco:
-                    </p>
+            form.hidden = true;
+            if (successScreen) {
+                const titleEl = document.getElementById('leadSuccessTitle');
+                const descEl = document.getElementById('leadSuccessDesc');
+                const wppBtnEl = document.getElementById('leadSuccessWppBtn');
 
-                    <div class="lead-success-action-card">
-                        <div class="lead-success-action-kicker">🚀 Prioridade de Atendimento</div>
-                        <p class="lead-success-action-text">Converse agora mesmo com nosso consultor no WhatsApp para acelerar sua análise:</p>
-                        
-                        <a href="${wppDirectLink}" target="_blank" rel="noopener noreferrer" class="lead-success-wpp-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
-                            </svg>
-                            Falar com consultor no WhatsApp →
-                        </a>
-                    </div>
+                if (titleEl) titleEl.textContent = `Diagnóstico Concluído, ${cleanFirstName}!`;
+                if (descEl) descEl.innerHTML = `Mapeamos o momento da <strong>${empresa}</strong>. Enquanto nossa equipe estratégica prepara a sua análise personalizada, você já pode falar diretamente conosco:`;
+                if (wppBtnEl) wppBtnEl.href = wppDirectLink;
 
-                    <button type="button" class="lead-success-close-btn js-lead-modal-close">Fechar janela</button>
-                </div>
-            `;
-
-            form.querySelectorAll('.js-lead-modal-close').forEach(b => b.addEventListener('click', closeModal));
+                successScreen.hidden = false;
+            }
         });
     }
 
