@@ -2313,10 +2313,14 @@ ul {
     transform: scale(1.1);
 }
 
-/* Oculta botão duplicado de WhatsApp injetado pelo RD Station via GTM */
-[id*="rd-floating_button"],
-[id^="bricks-component"][class*="floating-button"],
+/* Oculta botão duplicado de WhatsApp e popup flutuante injetados pelo RD Station via GTM */
+div[id^="popup-"],
+.rdstation-popup-position-bottom_right,
+.floating-button,
+.floating-button--close,
 .bricks--floating--button,
+[id*="rd-floating_button"],
+[id^="bricks-component"],
 #bricks-component-o7uQqDwEXNI9Ajks_S0Eag-wrapper,
 div[id*="rd-button"],
 .rd-floating-button {
@@ -2324,6 +2328,11 @@ div[id*="rd-button"],
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
 }
 
 /* ===============================================

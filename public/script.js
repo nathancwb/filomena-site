@@ -671,7 +671,34 @@ document.addEventListener('astro:before-preparation', () => {
     }
 });
 
+// ==========================================
+// REMOVE DUPLICATE FLOATING WIDGETS (RD STATION)
+// ==========================================
+(function() {
+    function purgeDuplicateRdWidgets() {
+        const selectors = [
+            'div[id^="popup-"]',
+            '.rdstation-popup-position-bottom_right',
+            '.bricks--floating--button',
+            '[id*="rd-floating_button"]',
+            '#bricks-component-o7uQqDwEXNI9Ajks_S0Eag-wrapper',
+            '.floating-button'
+        ];
+        document.querySelectorAll(selectors.join(', ')).forEach(el => {
+            el.remove();
+        });
+    }
 
-
-
+    if (typeof window !== 'undefined') {
+        purgeDuplicateRdWidgets();
+        if (typeof MutationObserver !== 'undefined') {
+            const obs = new MutationObserver(() => {
+                purgeDuplicateRdWidgets();
+            });
+            obs.observe(document.documentElement, { childList: true, subtree: true });
+        }
+        document.addEventListener('DOMContentLoaded', purgeDuplicateRdWidgets);
+        document.addEventListener('astro:page-load', purgeDuplicateRdWidgets);
+    }
+})();
 
