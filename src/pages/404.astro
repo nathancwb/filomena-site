@@ -11,9 +11,22 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="alternate" type="text/markdown" href="/404.md" />
     <meta name="robots" content="noindex, follow" />
     <title>Página não encontrada | Filomena Propaganda</title>
-    <meta name="description" content="A página que você procura não existe ou foi movida.">
+    <meta name="description" content="A página que você procura não existe ou foi movida. Acesse nosso mapa do site ou as principais seções da Filomena Propaganda.">
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "AdvertisingAgency"],
+      "name": "Filomena Propaganda",
+      "url": "https://www.filomenapropaganda.com.br",
+      "telephone": "+551634154110",
+      "email": "contato@filomenapropaganda.com.br"
+    }
+    </script>
     <link rel="preload" href="/assets/fonts/OliviarSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/styles.css">
     <style>
@@ -41,7 +54,7 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
         }
         .error-page__text {
             color: var(--text-muted);
-            max-width: 480px;
+            max-width: 540px;
             margin: 0 auto 2rem;
             line-height: 1.7;
         }
@@ -50,6 +63,35 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        .error-page__recovery {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+            border-radius: var(--radius-md, 12px);
+            padding: 1.5rem;
+            max-width: 580px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .error-page__recovery h2 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-heading, #fff);
+        }
+        .error-page__recovery-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 0.5rem 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        .error-page__recovery-links a {
+            color: var(--secondary, #8053ff);
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
     </style>
 </head>
@@ -87,12 +129,25 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                 <div class="error-page__code">404</div>
                 <h1 class="error-page__title">Página não encontrada</h1>
                 <p class="error-page__text">
-                    O endereço que você acessou não existe ou foi movido. Mas a gente tem muita
-                    coisa boa para te mostrar.
+                    O endereço que você acessou não existe ou foi movido. Use os links abaixo para navegar pelos recursos oficiais da Filomena Propaganda.
                 </p>
                 <div class="error-page__actions">
                     <a href="/" class="btn btn--primary">Voltar para a Home</a>
                     <a href="/contato/" class="btn btn--outline">Falar com a gente</a>
+                </div>
+                <div class="error-page__recovery">
+                    <h2>Recursos e Mapa de Navegação:</h2>
+                    <ul class="error-page__recovery-links">
+                        <li><a href="/">• Página Inicial</a></li>
+                        <li><a href="/sobre/">• Sobre a Agência</a></li>
+                        <li><a href="/servicos/">• Serviços</a></li>
+                        <li><a href="/portfolio/">• Portfólio de Cases</a></li>
+                        <li><a href="/blog/">• Artigos do Blog</a></li>
+                        <li><a href="/contato/">• Contato & Orçamento</a></li>
+                        <li><a href="/privacidade/">• Política de Privacidade</a></li>
+                        <li><a href="/llms.txt">• LLMs Index (llms.txt)</a></li>
+                        <li><a href="/sitemap-index.xml">• Mapa do Site (XML)</a></li>
+                    </ul>
                 </div>
             </div>
         </section>

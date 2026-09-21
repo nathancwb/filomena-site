@@ -17,6 +17,17 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
 Sitemap: https://www.filomenapropaganda.com.br/sitemap-index.xml
-# Documentação para LLMs
+# Documentação para LLMs e Agentes de IA
 # https://www.filomenapropaganda.com.br/llms.txt
+# https://www.filomenapropaganda.com.br/llms-full.txt
+# https://www.filomenapropaganda.com.br/agent-instructions.md

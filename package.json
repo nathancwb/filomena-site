@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build && node scripts/optimize-dist.mjs",
     "preview": "astro preview",
+    "test": "node scripts/verify-agentic-readiness.mjs",
     "astro": "astro"
   },
   "dependencies": {

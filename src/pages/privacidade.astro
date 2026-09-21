@@ -1,0 +1,282 @@
+---
+import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
+import Analytics from '../components/Analytics.astro';
+import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <Analytics />
+    <ClientRouter />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade | Filomena Propaganda</title>
+    <meta name="description" content="Conheça a Política de Privacidade da Filomena Propaganda. Saiba como tratamos e protegemos seus dados pessoais de acordo com a LGPD (Lei nº 13.709/2018).">
+
+    <link rel="canonical" href="https://www.filomenapropaganda.com.br/privacidade/" />
+    <link rel="alternate" type="text/markdown" href="/privacidade.md" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Política de Privacidade | Filomena Propaganda" />
+    <meta property="og:description" content="Saiba como a Filomena Propaganda protege e respeita a sua privacidade em conformidade com a LGPD." />
+    <meta property="og:url" content="https://www.filomenapropaganda.com.br/privacidade/" />
+    <meta property="og:site_name" content="Filomena Propaganda" />
+    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Política de Privacidade | Filomena Propaganda" />
+    <meta name="twitter:description" content="Diretrizes de privacidade e conformidade LGPD da Filomena Propaganda." />
+    <meta name="twitter:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+
+    <!-- GEO / Local SEO -->
+    <meta name="geo.region" content="BR-SP" />
+    <meta name="geo.placename" content="São Carlos" />
+    <meta name="geo.position" content="-22.008978;-47.887784" />
+    <meta name="ICBM" content="-22.008978, -47.887784" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "AdvertisingAgency", "LocalBusiness"],
+      "name": "Filomena Propaganda",
+      "legalName": "Filomena Propaganda e Marketing Ltda",
+      "image": "https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.webp",
+      "logo": "https://www.filomenapropaganda.com.br/assets/images/logo-main.webp",
+      "@id": "https://www.filomenapropaganda.com.br/#organization",
+      "url": "https://www.filomenapropaganda.com.br",
+      "telephone": "+551634154110",
+      "email": "contato@filomenapropaganda.com.br",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Dom Pedro II, 1978",
+        "addressLocality": "São Carlos",
+        "addressRegion": "SP",
+        "postalCode": "13560-235",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -22.0089776,
+        "longitude": -47.8877838
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/filomenaagencia/",
+        "https://www.facebook.com/filomenaagencia",
+        "https://www.linkedin.com/company/filomenaagencia/",
+        "https://www.behance.net/filomenapropaganda"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+551634154110",
+          "email": "contato@filomenapropaganda.com.br",
+          "contactType": "customer service",
+          "areaServed": "BR",
+          "availableLanguage": ["Portuguese", "pt-BR"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+551634154110",
+          "email": "contato@filomenapropaganda.com.br",
+          "contactType": "sales",
+          "areaServed": "BR",
+          "availableLanguage": ["Portuguese", "pt-BR"]
+        }
+      ]
+    }
+    </script>
+    <link rel="preload" href="/assets/fonts/OliviarSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-body, #e2e8f0);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        .privacy-content h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.5rem;
+        }
+        .privacy-content h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary, #8053ff);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .privacy-content p {
+            margin-bottom: 1.25rem;
+        }
+        .privacy-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .privacy-content li {
+            margin-bottom: 0.5rem;
+        }
+        .privacy-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <AnalyticsNoscript />
+    <div class="noise-overlay"></div>
+    <header class="header">
+        <div class="header__inner container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo-main.webp" alt="Filomena Propaganda & Marketing" class="logo__img" width="220" height="50" loading="eager" />
+            </a>
+            <nav class="nav">
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="/" class="nav__link">Home</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
+                </ul>
+                <div class="nav__actions">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="section" style="padding-top: calc(var(--header-height, 80px) + 3rem); padding-bottom: 5rem;">
+            <div class="container">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                    <span class="badge" style="display: inline-block; margin-bottom: 1rem; padding: 0.35rem 1rem; border-radius: 999px; background: rgba(128,83,255,0.1); border: 1px solid rgba(128,83,255,0.25); color: var(--secondary); font-size: 0.85rem; font-weight: 600;">CONFORMIDADE LGPD</span>
+                    <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.2; margin-bottom: 1rem;">
+                        Política de Privacidade
+                    </h1>
+                    <p style="color: var(--text-muted); font-size: 1.05rem;">
+                        Última atualização: Setembro de 2026. Em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).
+                    </p>
+                </div>
+
+                <div class="privacy-content">
+                    <div class="privacy-card">
+                        <strong style="color: #fff; display: block; margin-bottom: 0.5rem;">Compromisso de Transparência da Filomena Propaganda</strong>
+                        <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">
+                            A Filomena Propaganda e Marketing Ltda preza pela total transparência, integridade e segurança no tratamento dos dados pessoais de seus clientes, parceiros, candidatos e visitantes. Esta política detalha como coletamos, usamos, armazenamos e protegemos suas informações.
+                        </p>
+                    </div>
+
+                    <h2>1. Identificação do Controlador de Dados</h2>
+                    <p>
+                        O controlador dos dados pessoais tratados no âmbito deste website é a <strong>Filomena Propaganda e Marketing Ltda</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Endereço Sede:</strong> Rua Dom Pedro II, 1978, São Carlos - SP, CEP 13560-235, Brasil</li>
+                        <li><strong>Telefone / WhatsApp:</strong> +55 (16) 3415-4110</li>
+                        <li><strong>E-mail Institucional:</strong> contato@filomenapropaganda.com.br</li>
+                        <li><strong>Encarregado pelo Tratamento de Dados (DPO):</strong> dpo@filomenapropaganda.com.br</li>
+                    </ul>
+
+                    <h2>2. Dados Coletados e Finalidades do Tratamento</h2>
+                    <p>
+                        Coletamos e tratamos apenas os dados estritamente necessários para viabilizar o relacionamento comercial, o atendimento ao cliente e o aprimoramento da sua experiência de navegação:
+                    </p>
+                    
+                    <h3>2.1 Dados fornecidos diretamente por você</h3>
+                    <ul>
+                        <li><strong>Formulários de Contato e Orçamento:</strong> Nome completo, e-mail corporativo, número de telefone/WhatsApp, nome da empresa e descrição da demanda. <em>Finalidade:</em> Responder a solicitações comerciais, elaborar propostas de serviços e prestar atendimento pré-contratual.</li>
+                        <li><strong>Formulário de Trabalhe Conosco:</strong> Nome, e-mail, telefone, link de portfólio e currículo profissional. <em>Finalidade:</em> Avaliação de candidatos para processos seletivos e oportunidades de trabalho na agência.</li>
+                    </ul>
+
+                    <h3>2.2 Dados coletados automaticamente (Navegação e Cookies)</h3>
+                    <ul>
+                        <li><strong>Métricas de Acesso:</strong> Endereço IP anonimizado, tipo de navegador, páginas visitadas, tempo de permanência e páginas de referência através do Google Analytics e Google Tag Manager. <em>Finalidade:</em> Análise estatística de desempenho do site e segurança da informação.</li>
+                    </ul>
+
+                    <h2>3. Bases Legais para o Tratamento (Art. 7º da LGPD)</h2>
+                    <p>
+                        Todo tratamento de dados pessoais realizado pela Filomena Propaganda está devidamente respaldado nas hipóteses legais previstas pela LGPD:
+                    </p>
+                    <ul>
+                        <li><strong>Consentimento do Titular:</strong> Fornecido de forma livre e inequívoca ao preencher formulários de contato ou aceitar cookies analíticos.</li>
+                        <li><strong>Execução de Procedimentos Pré-Contratuais:</strong> Para elaboração e envio de orçamentos e propostas comerciais solicitadas pelo titular.</li>
+                        <li><strong>Legítimo Interesse:</strong> Para suporte à segurança da plataforma web e otimização da experiência dos usuários.</li>
+                    </ul>
+
+                    <h2>4. Compartilhamento Seguro de Dados</h2>
+                    <p>
+                        A Filomena Propaganda <strong>não comercializa, não aluga e não transfere</strong> seus dados pessoais para terceiros para fins publicitários não autorizados. Seus dados são processados exclusivamente por colaboradores autorizados e parceiros de infraestrutura tecnológica essenciais à operação (como serviços de hospedagem e servidores de e-mail seguros que adotam padrões rigorosos de criptografia).
+                    </p>
+
+                    <h2>5. Segurança e Retenção dos Dados</h2>
+                    <p>
+                        Adotamos medidas técnicas, administrativas e organizacionais adequadas para proteger suas informações contra perdas acidentais, acessos não autorizados, destruição ou alteração indevida. Todas as transmissões de dados são protegidas por protocolos de criptografia TLS/HTTPS de última geração.
+                    </p>
+                    <p>
+                        Os dados pessoais serão conservados apenas pelo período estritamente necessário para cumprir as finalidades para as quais foram coletados ou para atendimento de obrigações legais e regulatórias.
+                    </p>
+
+                    <h2>6. Direitos do Titular de Dados Pessoais (Art. 18 da LGPD)</h2>
+                    <p>
+                        Você possui o direito de solicitar a qualquer momento, de forma gratuita e simplificada:
+                    </p>
+                    <ul>
+                        <li>Confirmação da existência de tratamento de seus dados pessoais;</li>
+                        <li>Acesso facilitado às suas informações armazenadas;</li>
+                        <li>Correção de dados incompletos, inexatos ou desatualizados;</li>
+                        <li>Anonimização, bloqueio ou eliminação de dados desnecessários ou excessivos;</li>
+                        <li>Revogação do consentimento a qualquer momento.</li>
+                    </ul>
+                    <p>
+                        Para exercer qualquer um dos seus direitos, basta enviar uma mensagem para o e-mail: <a href="mailto:contato@filomenapropaganda.com.br" style="color: var(--secondary); text-decoration: underline;">contato@filomenapropaganda.com.br</a> com o assunto "Solicitação LGPD".
+                    </p>
+
+                    <h2>7. Atualizações e Contato</h2>
+                    <p>
+                        Esta política pode ser revisada periodicamente para acompanhar inovações tecnológicas ou alterações na legislação aplicável. Quaisquer dúvidas adicionais podem ser encaminhadas para a nossa equipe por meio de nossos canais oficiais de atendimento.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+    <script src="/script.js" is:inline></script>
+</body>
+</html>

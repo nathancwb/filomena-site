@@ -1,0 +1,231 @@
+---
+import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
+import Analytics from '../components/Analytics.astro';
+import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <Analytics />
+    <ClientRouter />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Filomena Propaganda & Marketing Agency</title>
+    <meta name="description" content="Get in touch with Filomena Propaganda. Speak with our team for proposals, branding strategy, and high-performance digital marketing campaigns in Brazil.">
+
+    <link rel="canonical" href="https://www.filomenapropaganda.com.br/contact/" />
+    <link rel="alternate" type="text/markdown" href="/contact.md" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact Us | Filomena Propaganda & Marketing Agency" />
+    <meta property="og:description" content="Get in touch directly with our commercial team. We are ready to help your brand grow." />
+    <meta property="og:url" content="https://www.filomenapropaganda.com.br/contact/" />
+    <meta property="og:site_name" content="Filomena Propaganda" />
+    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact Us | Filomena Propaganda" />
+    <meta name="twitter:description" content="Request a proposal or speak with our marketing team in São Carlos - SP, Brazil." />
+    <meta name="twitter:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+
+    <!-- GEO / Local SEO -->
+    <meta name="geo.region" content="BR-SP" />
+    <meta name="geo.placename" content="São Carlos" />
+    <meta name="geo.position" content="-22.008978;-47.887784" />
+    <meta name="ICBM" content="-22.008978, -47.887784" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Organization & ContactPoint Schema -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "AdvertisingAgency", "LocalBusiness"],
+      "name": "Filomena Propaganda",
+      "legalName": "Filomena Propaganda e Marketing Ltda",
+      "image": "https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.webp",
+      "logo": "https://www.filomenapropaganda.com.br/assets/images/logo-main.webp",
+      "@id": "https://www.filomenapropaganda.com.br/#organization",
+      "url": "https://www.filomenapropaganda.com.br",
+      "telephone": "+551634154110",
+      "email": "contato@filomenapropaganda.com.br",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Dom Pedro II, 1978",
+        "addressLocality": "São Carlos",
+        "addressRegion": "SP",
+        "postalCode": "13560-235",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -22.0089776,
+        "longitude": -47.8877838
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/filomenaagencia/",
+        "https://www.facebook.com/filomenaagencia",
+        "https://www.linkedin.com/company/filomenaagencia/",
+        "https://www.behance.net/filomenapropaganda"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+551634154110",
+          "email": "contato@filomenapropaganda.com.br",
+          "contactType": "customer service",
+          "areaServed": "BR",
+          "availableLanguage": ["Portuguese", "English", "pt-BR"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+551634154110",
+          "email": "contato@filomenapropaganda.com.br",
+          "contactType": "sales",
+          "areaServed": "BR",
+          "availableLanguage": ["Portuguese", "English", "pt-BR"]
+        }
+      ]
+    }
+    </script>
+    <link rel="preload" href="/assets/fonts/OliviarSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <AnalyticsNoscript />
+    <div class="noise-overlay"></div>
+    <header class="header">
+        <div class="header__inner container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo-main.webp" alt="Filomena Propaganda & Marketing" class="logo__img" width="220" height="50" loading="eager" />
+            </a>
+            <nav class="nav">
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="/" class="nav__link">Home</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link active">Contato / Contact</a></li>
+                </ul>
+                <div class="nav__actions">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="section" style="padding-top: calc(var(--header-height, 80px) + 3rem); background: radial-gradient(circle at top right, rgba(128,83,255,0.15), transparent 60%);">
+            <div class="container">
+                <div style="max-width: 860px; margin: 0 auto; text-align: center;">
+                    <span class="badge" style="display: inline-block; margin-bottom: 1rem; padding: 0.35rem 1rem; border-radius: 999px; background: rgba(128,83,255,0.1); border: 1px solid rgba(128,83,255,0.25); color: var(--secondary); font-size: 0.85rem; font-weight: 600;">GET IN TOUCH</span>
+                    <h1 style="font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -0.03em;">
+                        Let’s Build Something Remarkable Together
+                    </h1>
+                    <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+                        Reach out directly to our strategy team. We evaluate your market challenges, understand your goals, and deliver customized growth and branding proposals.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Direct Contact Information -->
+        <section class="section" style="padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.06);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem;">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--secondary);">Direct Phone & WhatsApp</h3>
+                        <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">Speak immediately with our business development team.</p>
+                        <a href="tel:+551634154110" style="font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none;">+55 (16) 3415-4110</a>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem;">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--secondary);">Email Inquiries</h3>
+                        <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">Send us your project specifications, briefs, or RFPs.</p>
+                        <a href="mailto:contato@filomenapropaganda.com.br" style="font-size: 1.05rem; font-weight: 700; color: #fff; text-decoration: none; word-break: break-all;">contato@filomenapropaganda.com.br</a>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem;">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--secondary);">Headquarters & Office</h3>
+                        <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 0.5rem;">Rua Dom Pedro II, 1978</p>
+                        <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">São Carlos - SP, 13560-235, Brazil</p>
+                        <span style="font-size: 0.85rem; color: var(--secondary);">Mon - Fri: 08:00 AM - 06:00 PM BRT</span>
+                    </div>
+                </div>
+
+                <!-- Contact Form Section -->
+                <div style="max-width: 720px; margin: 0 auto; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2.5rem;">
+                    <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem; text-align: center;">Send Us a Message</h2>
+                    <p style="color: var(--text-muted); text-align: center; margin-bottom: 2rem;">Fill in the form below and our strategy team will reply within 24 business hours.</p>
+
+                    <form id="contact-form" action="https://formsubmit.co/contato@filomenapropaganda.com.br" method="POST" style="display: flex; flex-direction: column; gap: 1.25rem;">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="Novo Contato via Site (English Page)">
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+                            <div>
+                                <label style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;" for="name">Your Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="Full Name" style="width: 100%; padding: 0.85rem 1rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;" for="email">Corporate Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="name@company.com" style="width: 100%; padding: 0.85rem 1rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff;">
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+                            <div>
+                                <label style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;" for="phone">Phone / WhatsApp *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+55 16 99999-9999" style="width: 100%; padding: 0.85rem 1rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;" for="company">Company Name</label>
+                                <input type="text" id="company" name="company" placeholder="Your Organization" style="width: 100%; padding: 0.85rem 1rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff;">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;" for="message">Project Description / Goals *</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Tell us about your brand goals, target audience, and current marketing challenges..." style="width: 100%; padding: 0.85rem 1rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary" style="width: 100%; padding: 1rem; font-size: 1.05rem; margin-top: 0.5rem;">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+    <script src="/script.js" is:inline></script>
+</body>
+</html>

@@ -1,8 +1,7 @@
 # ==========================================================================
 # Filomena Propaganda — configuracao Apache (HostGator / cPanel)
 # Este arquivo e copiado para a raiz do site (public_html) no build.
-# Substitui os headers que antes vinham do vercel.json e adiciona
-# compressao + cache que a Vercel fornecia automaticamente.
+# Suporta negociacao de conteudo Markdown (acceptmarkdown.com) para IA
 # ==========================================================================
 
 # --------------------------------------------------------------------------
@@ -16,6 +15,21 @@
   RewriteCond %{HTTPS} off [OR]
   RewriteCond %{HTTP_HOST} !^www\. [NC]
   RewriteRule ^ https://www.filomenapropaganda.com.br%{REQUEST_URI} [R=301,L]
+
+  # ------------------------------------------------------------------------
+  # 1.1) Negociacao de conteudo Markdown (acceptmarkdown.com para Agentes IA)
+  # ------------------------------------------------------------------------
+  # Home com Accept: text/markdown -> /index.md
+  RewriteCond %{HTTP:Accept} text/markdown [NC,OR]
+  RewriteCond %{HTTP:Accept} text/x-markdown [NC]
+  RewriteRule ^/?$ /index.md [L]
+
+  # Outras rotas com Accept: text/markdown -> /{rota}.md se o arquivo existir
+  RewriteCond %{HTTP:Accept} text/markdown [NC,OR]
+  RewriteCond %{HTTP:Accept} text/x-markdown [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1.md -f
+  RewriteRule ^(.*)/?$ /$1.md [L]
 </IfModule>
 
 # --------------------------------------------------------------------------
@@ -24,10 +38,10 @@
 ErrorDocument 404 /404.html
 
 # --------------------------------------------------------------------------
-# 3) Compressao (gzip) — reduz HTML/CSS/JS em ~70-80%
+# 3) Compressao (gzip) — reduz HTML/CSS/JS/MD em ~70-80%
 # --------------------------------------------------------------------------
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml text/markdown
   AddOutputFilterByType DEFLATE application/javascript application/x-javascript text/javascript
   AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
   AddOutputFilterByType DEFLATE image/svg+xml application/x-font-ttf application/font-woff2
@@ -39,8 +53,10 @@ ErrorDocument 404 /404.html
 <IfModule mod_expires.c>
   ExpiresActive On
 
-  # HTML: sempre revalida para refletir atualizacoes de conteudo na hora
+  # HTML e Markdown: sempre revalida para refletir atualizacoes de conteudo na hora
   ExpiresByType text/html                 "access plus 0 seconds"
+  ExpiresByType text/markdown             "access plus 0 seconds"
+  ExpiresByType text/plain                "access plus 0 seconds"
 
   # CSS / JS (servidos sem hash) — cache curto para nao travar atualizacoes
   ExpiresByType text/css                  "access plus 1 day"
@@ -64,16 +80,19 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 # --------------------------------------------------------------------------
-# 5) Headers de seguranca (equivalentes ao antigo vercel.json) + cache
+# 5) Headers de seguranca + Vary para CDNs e caches intermediarios
 # --------------------------------------------------------------------------
 <IfModule mod_headers.c>
+  # Vary: Accept, Accept-Encoding garante que CDNs entreguem o formato correto (HTML vs MD)
+  Header append Vary "Accept, Accept-Encoding"
+
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 
-  # HTML nunca em cache (conteudo atualizado pelo CMS aparece na hora)
-  <FilesMatch "\.html$">
+  # HTML e Markdown nunca em cache fixo (conteudo atualizado aparece na hora)
+  <FilesMatch "\.(html|md|txt)$">
     Header set Cache-Control "public, max-age=0, must-revalidate"
   </FilesMatch>
 
@@ -84,9 +103,11 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 # --------------------------------------------------------------------------
-# 6) Tipos MIME (garante webp/fontes corretos em servidores antigos)
+# 6) Tipos MIME (garante markdown/webp/fontes corretos)
 # --------------------------------------------------------------------------
 <IfModule mod_mime.c>
+  AddType text/markdown;charset=utf-8 .md
+  AddCharset utf-8                    .md
   AddType image/webp                  .webp
   AddType image/svg+xml               .svg
   AddType font/woff2                  .woff2
@@ -98,7 +119,5 @@ ErrorDocument 404 /404.html
 
 # --------------------------------------------------------------------------
 # 7) Seguranca: desabilita listagem de diretorios
-#    (NAO bloqueamos .yml/.json: o painel /admin carrega /admin/config.yml
-#     no navegador — bloquea-los quebraria o CMS)
 # --------------------------------------------------------------------------
 Options -Indexes

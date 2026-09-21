@@ -44,16 +44,21 @@ const sobrePage = await getEntry('pages', 'sobre');
     <meta name="ICBM" content="-22.008978, -47.887784" />
     <meta name="robots" content="index, follow" />
 
-    <!-- JSON-LD LocalBusiness Structured Data -->
+    <link rel="alternate" type="text/markdown" href="/sobre.md" />
+
+    <!-- JSON-LD Organization & AdvertisingAgency Structured Data -->
     <script type="application/ld+json" is:inline>
     {
       "@context": "https://schema.org",
-      "@type": "AdvertisingAgency",
+      "@type": ["Organization", "AdvertisingAgency", "LocalBusiness"],
       "name": "Filomena Propaganda",
+      "legalName": "Filomena Propaganda e Marketing Ltda",
       "image": "https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.webp",
-      "@id": "https://www.filomenapropaganda.com.br",
+      "logo": "https://www.filomenapropaganda.com.br/assets/images/logo-main.webp",
+      "@id": "https://www.filomenapropaganda.com.br/#organization",
       "url": "https://www.filomenapropaganda.com.br",
       "telephone": "+551634154110",
+      "email": "contato@filomenapropaganda.com.br",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -85,6 +90,24 @@ const sobrePage = await getEntry('pages', 'sobre');
         "https://www.facebook.com/filomenaagencia",
         "https://www.linkedin.com/company/filomenaagencia/",
         "https://www.behance.net/filomenapropaganda"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+551634154110",
+          "email": "contato@filomenapropaganda.com.br",
+          "contactType": "customer service",
+          "areaServed": "BR",
+          "availableLanguage": ["Portuguese", "pt-BR"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+551634154110",
+          "email": "contato@filomenapropaganda.com.br",
+          "contactType": "sales",
+          "areaServed": "BR",
+          "availableLanguage": ["Portuguese", "pt-BR"]
+        }
       ]
     }
     </script>

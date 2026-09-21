@@ -1,0 +1,1370 @@
+---
+// Componente Modal de Captação de Lead em Múltiplas Etapas (Wizard / Diagnóstico)
+---
+
+<!-- Modal Overlay -->
+<div class="lead-modal-overlay js-lead-modal" id="leadWizardModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+    <div class="lead-modal-backdrop js-lead-modal-close" tabindex="-1"></div>
+    
+    <div class="lead-modal-container">
+        <!-- Botão Fechar -->
+        <button type="button" class="lead-modal-close js-lead-modal-close" aria-label="Fechar diagnóstico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <!-- Header / Badge -->
+        <div class="lead-modal-header">
+            <span class="lead-modal-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                Diagnóstico Estratégico Gratuito
+            </span>
+        </div>
+
+        <!-- Form Wizard -->
+        <form class="lead-modal-form js-lead-form" id="leadWizardForm" novalidate>
+            <!-- Barra de Progresso -->
+            <div class="lead-progress-wrapper" aria-label="Progresso do diagnóstico">
+                <div class="lead-progress-track">
+                    <span class="lead-progress-bar js-step-progress" style="width: 16.66%;"></span>
+                </div>
+                <div class="lead-progress-meta">
+                    <span class="lead-progress-step-text js-step-indicator">Etapa 1 de 6</span>
+                    <span class="lead-progress-pct js-step-pct">16%</span>
+                </div>
+            </div>
+
+            <!-- STEP 1: Nome -->
+            <div class="lead-step active" data-step="1">
+                <div class="lead-step-heading">
+                    <span class="lead-step-num">1</span>
+                    <div>
+                        <span class="lead-step-kicker">Primeiro contato</span>
+                        <h3 class="lead-step-title" id="leadModalTitle">Como podemos te chamar?</h3>
+                    </div>
+                </div>
+                <div class="lead-input-group">
+                    <span class="lead-input-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </span>
+                    <input type="text" id="wizard-nome" name="nome" placeholder="Digite seu nome completo" autocomplete="name" required />
+                </div>
+                <p class="lead-step-error" id="error-step-1" role="alert"></p>
+                <div class="lead-step-actions">
+                    <button type="button" class="btn btn--primary lead-btn-next" data-next-step="2">
+                        Continuar
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Empresa / Instagram -->
+            <div class="lead-step" data-step="2" hidden>
+                <div class="lead-step-heading">
+                    <span class="lead-step-num">2</span>
+                    <div>
+                        <span class="lead-step-kicker">Sobre a sua marca</span>
+                        <h3 class="lead-step-title">Qual é a sua empresa ou o @ da marca no Instagram?</h3>
+                    </div>
+                </div>
+                <div class="lead-input-group">
+                    <span class="lead-input-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </span>
+                    <input type="text" id="wizard-empresa" name="empresa" placeholder="Ex: Minha Empresa ou @minhamarca" required />
+                </div>
+                <p class="lead-step-error" id="error-step-2" role="alert"></p>
+                <div class="lead-step-actions">
+                    <button type="button" class="lead-btn-back" data-previous-step="1">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        Voltar
+                    </button>
+                    <button type="button" class="btn btn--primary lead-btn-next" data-next-step="3">
+                        Continuar
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 3: Contatos Diretos (WhatsApp & E-mail) -->
+            <div class="lead-step" data-step="3" hidden>
+                <div class="lead-step-heading">
+                    <span class="lead-step-num">3</span>
+                    <div>
+                        <span class="lead-step-kicker">Para enviarmos a análise</span>
+                        <h3 class="lead-step-title">Onde podemos te enviar o retorno?</h3>
+                    </div>
+                </div>
+                <div class="lead-inputs-dual">
+                    <div class="lead-input-group">
+                        <span class="lead-input-icon lead-icon-wpp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+                            </svg>
+                        </span>
+                        <input type="tel" id="wizard-whatsapp" name="whatsapp" placeholder="WhatsApp com DDD: (16) 99999-9999" autocomplete="tel" inputmode="tel" required />
+                    </div>
+                    <div class="lead-input-group">
+                        <span class="lead-input-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </span>
+                        <input type="email" id="wizard-email" name="email" placeholder="Seu melhor e-mail profissional" autocomplete="email" required />
+                    </div>
+                </div>
+                <p class="lead-step-error" id="error-step-3" role="alert"></p>
+                <div class="lead-step-actions">
+                    <button type="button" class="lead-btn-back" data-previous-step="2">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        Voltar
+                    </button>
+                    <button type="button" class="btn btn--primary lead-btn-next" data-next-step="4">
+                        Continuar
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 4: Objetivo Principal (Single-Select Radio) -->
+            <div class="lead-step" data-step="4" hidden>
+                <div class="lead-step-heading">
+                    <span class="lead-step-num">4</span>
+                    <div>
+                        <span class="lead-step-kicker">Objetivo Estratégico</span>
+                        <h3 class="lead-step-title">Qual é a maior prioridade da sua marca hoje?</h3>
+                    </div>
+                </div>
+                <div class="lead-quiz-cards">
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="servico_prioritario" value="Branding e Identidade Visual" required />
+                        <span class="lead-card-key">A</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Branding & Identidade Visual</strong>
+                            <span class="lead-card-desc">Construir ou reformular logotipo, manual de marca e posicionamento premium</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="servico_prioritario" value="Tráfego Pago e Performance" />
+                        <span class="lead-card-key">B</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Tráfego Pago & Performance</strong>
+                            <span class="lead-card-desc">Anúncios no Google e Meta Ads para gerar leads qualificados e acelerar vendas</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="servico_prioritario" value="Gestao Completa 360" />
+                        <span class="lead-card-key">C</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Assessoria Completa 360°</strong>
+                            <span class="lead-card-desc">Planejamento, redes sociais, criação de conteúdo e estratégias de crescimento</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="servico_prioritario" value="Criacao de Site ou Landing Page" />
+                        <span class="lead-card-key">D</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Criação de Site / Landing Page</strong>
+                            <span class="lead-card-desc">Desenvolvimento de site moderno, veloz e estruturado para converter visitantes</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+                </div>
+                <p class="lead-step-error" id="error-step-4" role="alert"></p>
+                <div class="lead-step-actions">
+                    <button type="button" class="lead-btn-back" data-previous-step="3">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        Voltar
+                    </button>
+                    <button type="button" class="btn btn--primary lead-btn-next" data-next-step="5">
+                        Continuar
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 5: Investimento em Anúncios (Single-Select Radio) -->
+            <div class="lead-step" data-step="5" hidden>
+                <div class="lead-step-heading">
+                    <span class="lead-step-num">5</span>
+                    <div>
+                        <span class="lead-step-kicker">Maturidade & Investimento</span>
+                        <h3 class="lead-step-title">Quanto sua empresa investe ou planeja investir em mídia/mês?</h3>
+                    </div>
+                </div>
+                <div class="lead-quiz-cards">
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="investimento_mensal" value="Ainda nao invisto em anuncios" required />
+                        <span class="lead-card-key">A</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Ainda não invisto em anúncios</strong>
+                            <span class="lead-card-desc">Quero iniciar do jeito certo com planejamento e metodologia</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="investimento_mensal" value="Ate R$ 3.000 / mes" />
+                        <span class="lead-card-key">B</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Até R$ 3.000 / mês</strong>
+                            <span class="lead-card-desc">Já faço ações pontuais e busco profissionalizar minha estratégia</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="investimento_mensal" value="De R$ 3.000 a R$ 10.000 / mes" />
+                        <span class="lead-card-key">C</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">De R$ 3.000 a R$ 10.000 / mês</strong>
+                            <span class="lead-card-desc">Operação ativa buscando escala de vendas e redução do custo por lead</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="investimento_mensal" value="Acima de R$ 10.000 / mes" />
+                        <span class="lead-card-key">D</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Acima de R$ 10.000 / mês</strong>
+                            <span class="lead-card-desc">Empresa consolidada buscando domínio de mercado e alta performance</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+                </div>
+                <p class="lead-step-error" id="error-step-5" role="alert"></p>
+                <div class="lead-step-actions">
+                    <button type="button" class="lead-btn-back" data-previous-step="4">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        Voltar
+                    </button>
+                    <button type="button" class="btn btn--primary lead-btn-next" data-next-step="6">
+                        Continuar
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 6: Principais Dificuldades (Multi-Select Checkbox - SUBMIT FINAL) -->
+            <div class="lead-step" data-step="6" hidden>
+                <div class="lead-step-heading">
+                    <span class="lead-step-num">6</span>
+                    <div>
+                        <span class="lead-step-kicker">Diagnóstico Final</span>
+                        <h3 class="lead-step-title">Quais desafios você mais enfrenta hoje?</h3>
+                        <p class="lead-step-subtext">Selecione uma ou mais opções que se aplicam ao seu negócio:</p>
+                    </div>
+                </div>
+                <div class="lead-quiz-cards">
+                    <label class="lead-quiz-card lead-card-checkbox">
+                        <input type="checkbox" name="desafios" value="Poucos leads ou vendas estagnadas" />
+                        <span class="lead-card-key">A</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Poucos leads qualificados ou vendas travadas</strong>
+                            <span class="lead-card-desc">Dificuldade em manter um fluxo previsível de novos clientes</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card lead-card-checkbox">
+                        <input type="checkbox" name="desafios" value="Marca sem destaque da concorrencia" />
+                        <span class="lead-card-key">B</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Marca pouco valorizada / guerra de preços</strong>
+                            <span class="lead-card-desc">Clientes comparam seu negócio apenas por preço em vez de valor</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card lead-card-checkbox">
+                        <input type="checkbox" name="desafios" value="Anuncios com pouco retorno ou CAC alto" />
+                        <span class="lead-card-key">C</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Anúncios sem retorno / Custo alto</strong>
+                            <span class="lead-card-desc">Investimento em tráfego sem clareza de conversão ou ROAS</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card lead-card-checkbox">
+                        <input type="checkbox" name="desafios" value="Falta de equipe ou consistencia de marketing" />
+                        <span class="lead-card-key">D</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Falta de tempo e consistência na equipe</strong>
+                            <span class="lead-card-desc">Redes sociais desatualizadas e sem estratégia de longo prazo</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+                </div>
+                <p class="lead-step-error" id="error-step-6" role="alert"></p>
+                <div class="lead-step-actions">
+                    <button type="button" class="lead-btn-back" data-previous-step="5">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        Voltar
+                    </button>
+                    <button type="submit" class="btn btn--primary lead-btn-submit" id="leadWizardSubmitBtn">
+                        <span>Concluir e Enviar Diagnóstico</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Rodapé de Privacidade -->
+            <div class="lead-modal-privacy">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--secondary); flex-shrink: 0;">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Seus dados estão protegidos pela LGPD. Não enviamos spam.</span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+/* =========================================================
+   ESTILOS DO MODAL DE QUALIFICAÇÃO / DIAGNÓSTICO (WIZARD)
+   ========================================================= */
+.lead-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+}
+
+.lead-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lead-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    cursor: pointer;
+}
+
+.lead-modal-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 640px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: rgba(22, 16, 28, 0.95);
+    border: 1px solid rgba(161, 87, 188, 0.25);
+    border-radius: 20px;
+    padding: var(--space-xl);
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(89, 38, 109, 0.25);
+    transform: scale(0.95) translateY(20px);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    color: var(--white);
+}
+
+.lead-modal-overlay.active .lead-modal-container {
+    transform: scale(1) translateY(0);
+}
+
+/* Scrollbar estilizada */
+.lead-modal-container::-webkit-scrollbar {
+    width: 6px;
+}
+.lead-modal-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+.lead-modal-container::-webkit-scrollbar-thumb {
+    background: rgba(161, 87, 188, 0.3);
+    border-radius: 999px;
+}
+
+.lead-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gray-300);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.lead-modal-close:hover {
+    background: var(--secondary);
+    color: var(--white);
+    border-color: var(--secondary);
+    transform: rotate(90deg);
+}
+
+.lead-modal-header {
+    margin-bottom: var(--space-md);
+}
+
+.lead-modal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--secondary-light);
+    background: rgba(161, 87, 188, 0.15);
+    border: 1px solid rgba(161, 87, 188, 0.3);
+    padding: 6px 12px;
+    border-radius: 999px;
+}
+
+/* Barra de Progresso */
+.lead-progress-wrapper {
+    margin-bottom: var(--space-xl);
+}
+
+.lead-progress-track {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.lead-progress-bar {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
+    border-radius: 999px;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lead-progress-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--text-xs);
+    color: var(--gray-400);
+    font-weight: 500;
+}
+
+/* Steps */
+.lead-step {
+    animation: fadeInStep 0.3s ease-out;
+}
+
+@keyframes fadeInStep {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lead-step-heading {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: flex-start;
+    margin-bottom: var(--space-lg);
+}
+
+.lead-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--white);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.lead-step-kicker {
+    display: block;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.lead-step-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.lead-step-subtext {
+    font-size: var(--text-xs);
+    color: var(--gray-400);
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+/* Inputs */
+.lead-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.lead-input-icon {
+    position: absolute;
+    left: 16px;
+    color: var(--gray-400);
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    transition: color 0.2s ease;
+}
+
+.lead-icon-wpp {
+    color: #25D366;
+}
+
+.lead-input-group input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 16px 16px 16px 48px;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--white);
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.lead-input-group input:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(161, 87, 188, 0.25);
+}
+
+.lead-input-group input::placeholder {
+    color: var(--gray-500);
+}
+
+.lead-inputs-dual {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+/* Quiz Selection Cards */
+.lead-quiz-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: var(--space-md);
+}
+
+.lead-quiz-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 14px 18px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+}
+
+.lead-quiz-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(161, 87, 188, 0.4);
+    transform: translateY(-1px);
+}
+
+.lead-quiz-card input[type="radio"],
+.lead-quiz-card input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.lead-card-key {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    color: var(--gray-300);
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.lead-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.lead-card-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.3;
+}
+
+.lead-card-desc {
+    font-size: var(--text-xs);
+    color: var(--gray-400);
+    line-height: 1.3;
+}
+
+.lead-card-check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: transparent;
+    transition: all 0.2s ease;
+}
+
+/* Card Selecionado */
+.lead-quiz-card.selected {
+    background: rgba(89, 38, 109, 0.25);
+    border-color: var(--secondary);
+    box-shadow: 0 0 20px rgba(161, 87, 188, 0.2);
+}
+
+.lead-quiz-card.selected .lead-card-key {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--white);
+}
+
+.lead-quiz-card.selected .lead-card-check {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--white);
+}
+
+/* Ações e Botões */
+.lead-step-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.lead-btn-back {
+    background: transparent;
+    border: none;
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.lead-btn-back:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.lead-btn-next,
+.lead-btn-submit {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.lead-btn-submit {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--accent-light) 100%);
+    box-shadow: 0 8px 25px rgba(161, 87, 188, 0.4);
+}
+
+.lead-btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(161, 87, 188, 0.5);
+}
+
+/* Mensagem de Erro */
+.lead-step-error {
+    display: none;
+    font-size: var(--text-xs);
+    color: #ff8a80;
+    background: rgba(229, 57, 53, 0.12);
+    border: 1px solid rgba(229, 57, 53, 0.3);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.lead-step-error.visible {
+    display: block;
+    animation: shakeErr 0.3s ease;
+}
+
+@keyframes shakeErr {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-4px); }
+    40%, 80% { transform: translateX(4px); }
+}
+
+/* Nota de Privacidade */
+.lead-modal-privacy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: var(--text-xs);
+    color: var(--gray-500);
+    text-align: center;
+}
+
+/* Tela de Sucesso */
+.lead-success-screen {
+    text-align: center;
+    padding: var(--space-lg) var(--space-xs);
+    animation: fadeInSuccess 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInSuccess {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.lead-success-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.15);
+    border: 2px solid #22c55e;
+    color: #22c55e;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+}
+
+.lead-success-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: var(--space-xs);
+}
+
+.lead-success-desc {
+    font-size: var(--text-sm);
+    color: var(--gray-300);
+    max-width: 480px;
+    margin: 0 auto var(--space-xl) auto;
+    line-height: 1.5;
+}
+
+.lead-success-action-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.lead-success-action-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--secondary-light);
+    margin-bottom: 6px;
+}
+
+.lead-success-action-text {
+    font-size: var(--text-xs);
+    color: var(--gray-400);
+    margin-bottom: var(--space-md);
+}
+
+.lead-success-btn-wpp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #25D366;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+    width: 100%;
+}
+
+.lead-success-btn-wpp:hover {
+    background: #20BA56;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45);
+}
+
+.lead-success-close-btn {
+    background: transparent;
+    border: none;
+    color: var(--gray-400);
+    font-size: var(--text-xs);
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.lead-success-close-btn:hover {
+    color: var(--white);
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+    .lead-modal-container {
+        padding: var(--space-lg) var(--space-md);
+        border-radius: 16px;
+    }
+
+    .lead-step-title {
+        font-size: var(--text-base);
+    }
+
+    .lead-quiz-card {
+        padding: 12px 14px;
+        gap: 10px;
+    }
+
+    .lead-card-title {
+        font-size: var(--text-xs);
+    }
+
+    .lead-card-desc {
+        font-size: 11px;
+    }
+
+    .lead-step-actions {
+        flex-direction: column-reverse;
+        gap: var(--space-sm);
+    }
+
+    .lead-btn-back,
+    .lead-btn-next,
+    .lead-btn-submit {
+        width: 100%;
+        justify-content: center;
+    }
+}
+</style>
+
+<script is:inline>
+(function () {
+    const TOTAL_STEPS = 6;
+    const FORM_ENDPOINT = 'https://api.web3forms.com/submit';
+    const WEB3FORMS_KEY = 'c685ced6-cdf1-4deb-92d6-162a2f110e0e';
+    const WHATSAPP_NUMBER = '551634154110';
+
+    function initLeadWizard() {
+        const modal = document.getElementById('leadWizardModal');
+        const form = document.getElementById('leadWizardForm');
+        if (!modal || !form) return;
+
+        let currentStep = 1;
+
+        // ==========================================
+        // CONTROLE DE ABERTURA / FECHAMENTO
+        // ==========================================
+        function openModal() {
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            
+            // Foca no primeiro input
+            setTimeout(() => {
+                const activeInput = modal.querySelector('.lead-step.active input:not([type="radio"]):not([type="checkbox"])');
+                if (activeInput) activeInput.focus();
+            }, 100);
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            
+            // Limpa hash se era #abrir-formulario ou #diagnostico
+            if (window.location.hash === '#abrir-formulario' || window.location.hash === '#abrir-avaliacao' || window.location.hash === '#diagnostico') {
+                history.replaceState(null, null, ' ');
+            }
+        }
+
+        // Eventos de clique para abrir
+        document.querySelectorAll('.js-open-modal, .js-open-diagnostico, a[href="#abrir-formulario"], a[href="#abrir-avaliacao"], a[href="#diagnostico"]').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+        });
+
+        // Eventos de clique para fechar
+        modal.querySelectorAll('.js-lead-modal-close').forEach(btn => {
+            btn.addEventListener('click', closeModal);
+        });
+
+        // Fechar com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Deep-linking automático na URL
+        const validHashes = ['#abrir-formulario', '#abrir-avaliacao', '#diagnostico'];
+        if (validHashes.includes(window.location.hash)) {
+            setTimeout(openModal, 200);
+        }
+        window.addEventListener('hashchange', () => {
+            if (validHashes.includes(window.location.hash)) {
+                openModal();
+            }
+        });
+
+        // ==========================================
+        // MOTOR DE NAVEGAÇÃO ENTRE ETAPAS
+        // ==========================================
+        function updateProgress(step) {
+            const pct = Math.round((step / TOTAL_STEPS) * 100);
+            const progressBar = form.querySelector('.js-step-progress');
+            const stepIndicator = form.querySelector('.js-step-indicator');
+            const stepPct = form.querySelector('.js-step-pct');
+
+            if (progressBar) progressBar.style.width = pct + '%';
+            if (stepIndicator) stepIndicator.textContent = `Etapa ${step} de ${TOTAL_STEPS}`;
+            if (stepPct) stepPct.textContent = pct + '%';
+        }
+
+        function goToStep(n) {
+            currentStep = n;
+            form.querySelectorAll('.lead-step').forEach(el => {
+                const step = parseInt(el.dataset.step, 10);
+                const isActive = step === n;
+                el.classList.toggle('active', isActive);
+                el.hidden = !isActive;
+            });
+
+            updateProgress(n);
+
+            // Auto-focus no input da etapa atual
+            const activeStepEl = form.querySelector(`.lead-step[data-step="${n}"]`);
+            if (activeStepEl) {
+                const input = activeStepEl.querySelector('input:not([type="radio"]):not([type="checkbox"])');
+                if (input) input.focus();
+            }
+        }
+
+        function showError(stepNum, message) {
+            const errEl = document.getElementById(`error-step-${stepNum}`);
+            if (errEl) {
+                errEl.textContent = message;
+                errEl.classList.add('visible');
+            }
+        }
+
+        function clearError(stepNum) {
+            const errEl = document.getElementById(`error-step-${stepNum}`);
+            if (errEl) {
+                errEl.textContent = '';
+                errEl.classList.remove('visible');
+            }
+        }
+
+        function validateStep(step) {
+            clearError(step);
+
+            if (step === 1) {
+                const nomeInput = form.querySelector('#wizard-nome');
+                if (!nomeInput || !nomeInput.value.trim()) {
+                    showError(1, 'Por favor, informe seu nome.');
+                    nomeInput?.focus();
+                    return false;
+                }
+                return true;
+            }
+
+            if (step === 2) {
+                const empresaInput = form.querySelector('#wizard-empresa');
+                if (!empresaInput || !empresaInput.value.trim()) {
+                    showError(2, 'Por favor, informe o nome da sua empresa ou @ do Instagram.');
+                    empresaInput?.focus();
+                    return false;
+                }
+                return true;
+            }
+
+            if (step === 3) {
+                const wppInput = form.querySelector('#wizard-whatsapp');
+                const emailInput = form.querySelector('#wizard-email');
+
+                if (!wppInput || wppInput.value.trim().replace(/\D/g, '').length < 10) {
+                    showError(3, 'Por favor, informe um WhatsApp válido com DDD (mínimo 10 dígitos).');
+                    wppInput?.focus();
+                    return false;
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailInput || !emailRegex.test(emailInput.value.trim())) {
+                    showError(3, 'Por favor, informe um endereço de e-mail válido.');
+                    emailInput?.focus();
+                    return false;
+                }
+                return true;
+            }
+
+            if (step === 4) {
+                const selectedService = form.querySelector('input[name="servico_prioritario"]:checked');
+                if (!selectedService) {
+                    showError(4, 'Por favor, selecione qual é a prioridade da sua marca.');
+                    return false;
+                }
+                return true;
+            }
+
+            if (step === 5) {
+                const selectedBudget = form.querySelector('input[name="investimento_mensal"]:checked');
+                if (!selectedBudget) {
+                    showError(5, 'Por favor, selecione uma faixa de investimento.');
+                    return false;
+                }
+                return true;
+            }
+
+            if (step === 6) {
+                const checkedPains = form.querySelectorAll('input[name="desafios"]:checked');
+                if (checkedPains.length === 0) {
+                    showError(6, 'Por favor, selecione ao menos uma opção para concluir.');
+                    return false;
+                }
+                return true;
+            }
+
+            return true;
+        }
+
+        // Botões Avançar
+        form.querySelectorAll('.lead-btn-next').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const nextStep = parseInt(btn.dataset.nextStep, 10);
+                const current = nextStep - 1;
+                if (validateStep(current)) {
+                    goToStep(nextStep);
+                }
+            });
+        });
+
+        // Botões Voltar
+        form.querySelectorAll('.lead-btn-back').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const prevStep = parseInt(btn.dataset.previousStep, 10);
+                goToStep(prevStep);
+            });
+        });
+
+        // Enter no teclado avança etapa
+        form.querySelectorAll('input:not([type="radio"]):not([type="checkbox"])').forEach(input => {
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const activeStepEl = input.closest('.lead-step');
+                    if (!activeStepEl) return;
+                    const stepNum = parseInt(activeStepEl.dataset.step, 10);
+                    if (stepNum < TOTAL_STEPS && validateStep(stepNum)) {
+                        goToStep(stepNum + 1);
+                    }
+                }
+            });
+        });
+
+        // Interatividade visual nos Cards de Opções (Radio e Checkbox)
+        form.querySelectorAll('.lead-quiz-card').forEach(card => {
+            const input = card.querySelector('input');
+            if (!input) return;
+
+            card.addEventListener('click', () => {
+                if (input.type === 'radio') {
+                    // Desmarca irmãos
+                    card.closest('.lead-quiz-cards')?.querySelectorAll('.lead-quiz-card').forEach(c => c.classList.remove('selected'));
+                    card.classList.add('selected');
+                    input.checked = true;
+                    clearError(currentStep);
+                } else if (input.type === 'checkbox') {
+                    setTimeout(() => {
+                        card.classList.toggle('selected', input.checked);
+                        clearError(currentStep);
+                    }, 10);
+                }
+            });
+        });
+
+        // Máscara dinâmica de telefone / WhatsApp
+        const wppInput = form.querySelector('#wizard-whatsapp');
+        if (wppInput) {
+            wppInput.addEventListener('input', (e) => {
+                let v = e.target.value.replace(/\D/g, '');
+                if (v.length > 11) v = v.slice(0, 11);
+                if (v.length > 10) {
+                    v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+                } else if (v.length > 5) {
+                    v = v.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+                } else if (v.length > 2) {
+                    v = v.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+                } else if (v.length > 0) {
+                    v = v.replace(/^(\d*)$/, '($1');
+                }
+                e.target.value = v;
+            });
+        }
+
+        // ==========================================
+        // SUBMISSÃO DO FORMULÁRIO (ENTREGA + CONVERSÃO)
+        // ==========================================
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!validateStep(TOTAL_STEPS)) return;
+
+            const submitBtn = document.getElementById('leadWizardSubmitBtn');
+            const submitLabel = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span>Processando diagnóstico...</span>';
+            }
+
+            // Captura de UTMs da URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const utms = {
+                utm_source: urlParams.get('utm_source') || 'direto',
+                utm_medium: urlParams.get('utm_medium') || 'nenhum',
+                utm_campaign: urlParams.get('utm_campaign') || 'nenhuma',
+                utm_content: urlParams.get('utm_content') || '',
+                utm_term: urlParams.get('utm_term') || '',
+                pagina_conversao: window.location.href,
+                data_envio: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+            };
+
+            // Coleta de dados dos steps
+            const nome = (form.querySelector('#wizard-nome')?.value || '').trim();
+            const empresa = (form.querySelector('#wizard-empresa')?.value || '').trim();
+            const whatsapp = (form.querySelector('#wizard-whatsapp')?.value || '').trim();
+            const email = (form.querySelector('#wizard-email')?.value || '').trim();
+            const servico = form.querySelector('input[name="servico_prioritario"]:checked')?.value || 'Não informado';
+            const investimento = form.querySelector('input[name="investimento_mensal"]:checked')?.value || 'Não informado';
+            
+            const desafiosArr = [];
+            form.querySelectorAll('input[name="desafios"]:checked').forEach(c => desafiosArr.push(c.value));
+            const desafios = desafiosArr.join(', ') || 'Nenhum informado';
+
+            const payload = {
+                access_key: WEB3FORMS_KEY,
+                subject: `🎯 Novo Diagnóstico de Marketing: ${nome} (${empresa})`,
+                from_name: 'Diagnóstico Filomena Propaganda',
+                nome: nome,
+                empresa_ou_instagram: empresa,
+                whatsapp: whatsapp,
+                email: email,
+                servico_prioritario: servico,
+                investimento_mensal_anuncios: investimento,
+                principais_desafios: desafios,
+                ...utms
+            };
+
+            // Dispara Evento de Conversão Imediato (GTM / GA4 / Google Ads / Meta Pixel)
+            try {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'generate_lead',
+                    form_name: 'diagnostico_filomena',
+                    lead_name: nome,
+                    lead_company: empresa,
+                    lead_service: servico,
+                    lead_budget: investimento
+                });
+
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'generate_lead', {
+                        event_category: 'form',
+                        event_label: 'diagnostico_filomena',
+                        value: 1
+                    });
+                }
+
+                if (typeof window.fbq === 'function') {
+                    window.fbq('track', 'Lead', {
+                        content_name: 'diagnostico_filomena',
+                        value: 1,
+                        currency: 'BRL'
+                    });
+                }
+            } catch (trackErr) {
+                console.warn('Rastreamento de conversão:', trackErr);
+            }
+
+            // Envio via Web3Forms (fetch assíncrono com keepalive)
+            try {
+                await fetch(FORM_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(payload),
+                    keepalive: true
+                });
+            } catch (sendErr) {
+                console.warn('Aviso: envio do formulário falhou:', sendErr);
+            }
+
+            // ==========================================
+            // TELA DE SUCESSO
+            // ==========================================
+            const cleanFirstName = nome.split(' ')[0] || 'Obrigado';
+            const wppMessage = encodeURIComponent(
+                `Olá equipe Filomena! Meu nome é ${nome} (da ${empresa}). Acabei de preencher o diagnóstico no site e gostaria de agilizar minha análise.`
+            );
+            const wppDirectLink = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${wppMessage}`;
+
+            form.innerHTML = `
+                <div class="lead-success-screen">
+                    <div class="lead-success-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="lead-success-title">Obrigado, ${cleanFirstName}!</h3>
+                    <p class="lead-success-desc">
+                        Recebemos as informações da <strong>${empresa}</strong>. Nosso time estratégico já está estruturando uma análise personalizada para o seu momento.
+                    </p>
+
+                    <div class="lead-success-action-box">
+                        <p class="lead-success-action-title">🚀 Quer agilizar seu atendimento?</p>
+                        <p class="lead-success-action-text">Fale agora mesmo com nosso time no WhatsApp para priorizarmos o seu diagnóstico:</p>
+                        <a href="${wppDirectLink}" target="_blank" class="lead-success-btn-wpp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+                            </svg>
+                            Falar no WhatsApp agora →
+                        </a>
+                    </div>
+
+                    <button type="button" class="lead-success-close-btn js-lead-modal-close">Fechar janela</button>
+                </div>
+            `;
+
+            // Re-anexa listener de fechar
+            form.querySelectorAll('.js-lead-modal-close').forEach(b => b.addEventListener('click', closeModal));
+        });
+    }
+
+    // Inicialização segura no carregamento do DOM e transições do Astro
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLeadWizard);
+    } else {
+        initLeadWizard();
+    }
+    document.addEventListener('astro:page-load', initLeadWizard);
+})();
+</script>

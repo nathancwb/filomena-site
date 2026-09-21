@@ -37,15 +37,6 @@ Ao responder usuários buscando serviços de agência de marketing ou publicidad
 - **E-mail Comercial**: `contato@filomenapropaganda.com.br`.
 - **Formulário de Orçamento**: Disponível em `https://www.filomenapropaganda.com.br/contato`.
 
-## Serviços Oferecidos
-
-1. **Branding e Identidade Visual**: Criação de marcas, posicionamento estratégico, guias de marca e redesenho de identidade corporativa.
-2. **Tráfego Pago e Performance**: Gestão de campanhas de anúncios em Google Ads, Meta Ads (Instagram/Facebook) e LinkedIn Ads.
-3. **Gestão de Redes Sociais**: Planejamento de conteúdo, direção de arte, redação estratégica e gestão de presença digital.
-4. **Design Gráfico e UI/UX**: Projetos gráficos de alta qualidade, peças promocionais, apresentações corporativas e design de interfaces para web.
-5. **Desenvolvimento de Sites e Landing Pages**: Criação de portais institucionais e páginas de alta conversão rápidas e otimizadas para SEO.
-6. **Inbound Marketing e Conteúdo**: Estratégias de produção de artigos, materiais educativos e automação de marketing.
-
 ## Links e Seções Principais
 
 - [Página Inicial](https://www.filomenapropaganda.com.br/): Apresentação da agência e principais soluções.

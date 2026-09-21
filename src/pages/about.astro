@@ -1,0 +1,232 @@
+---
+import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
+import Analytics from '../components/Analytics.astro';
+import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <Analytics />
+    <ClientRouter />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Filomena Propaganda & Marketing Agency</title>
+    <meta name="description" content="Discover Filomena Propaganda. Founded in 2013 in São Carlos-SP, Brazil, we are a full-service marketing, branding, and paid media performance agency.">
+
+    <link rel="canonical" href="https://www.filomenapropaganda.com.br/about/" />
+    <link rel="alternate" type="text/markdown" href="/about.md" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About Us | Filomena Propaganda & Marketing Agency" />
+    <meta property="og:description" content="Learn about our track record, methodology, and how we build market-leading brands through creative strategy and data-driven performance." />
+    <meta property="og:url" content="https://www.filomenapropaganda.com.br/about/" />
+    <meta property="og:site_name" content="Filomena Propaganda" />
+    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Us | Filomena Propaganda & Marketing" />
+    <meta name="twitter:description" content="Founded in 2013, Filomena Propaganda is a full-service marketing, branding, and performance agency." />
+    <meta name="twitter:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+
+    <!-- GEO / Local SEO -->
+    <meta name="geo.region" content="BR-SP" />
+    <meta name="geo.placename" content="São Carlos" />
+    <meta name="geo.position" content="-22.008978;-47.887784" />
+    <meta name="ICBM" content="-22.008978, -47.887784" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "AdvertisingAgency", "LocalBusiness"],
+      "name": "Filomena Propaganda",
+      "legalName": "Filomena Propaganda e Marketing Ltda",
+      "image": "https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.webp",
+      "logo": "https://www.filomenapropaganda.com.br/assets/images/logo-main.webp",
+      "@id": "https://www.filomenapropaganda.com.br/#organization",
+      "url": "https://www.filomenapropaganda.com.br",
+      "telephone": "+551634154110",
+      "email": "contato@filomenapropaganda.com.br",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Dom Pedro II, 1978",
+        "addressLocality": "São Carlos",
+        "addressRegion": "SP",
+        "postalCode": "13560-235",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -22.0089776,
+        "longitude": -47.8877838
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/filomenaagencia/",
+        "https://www.facebook.com/filomenaagencia",
+        "https://www.linkedin.com/company/filomenaagencia/",
+        "https://www.behance.net/filomenapropaganda"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+551634154110",
+          "email": "contato@filomenapropaganda.com.br",
+          "contactType": "customer service",
+          "areaServed": "BR",
+          "availableLanguage": ["Portuguese", "English", "pt-BR"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+551634154110",
+          "email": "contato@filomenapropaganda.com.br",
+          "contactType": "sales",
+          "areaServed": "BR",
+          "availableLanguage": ["Portuguese", "English", "pt-BR"]
+        }
+      ]
+    }
+    </script>
+    <link rel="preload" href="/assets/fonts/OliviarSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <AnalyticsNoscript />
+    <div class="noise-overlay"></div>
+    <header class="header">
+        <div class="header__inner container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo-main.webp" alt="Filomena Propaganda & Marketing" class="logo__img" width="220" height="50" loading="eager" />
+            </a>
+            <nav class="nav">
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="/" class="nav__link">Home</a></li>
+                    <li><a href="/sobre/" class="nav__link active">Sobre / About</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
+                </ul>
+                <div class="nav__actions">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="section" style="padding-top: calc(var(--header-height, 80px) + 3rem); background: radial-gradient(circle at top right, rgba(128,83,255,0.15), transparent 60%);">
+            <div class="container">
+                <div style="max-width: 860px; margin: 0 auto; text-align: center;">
+                    <span class="badge" style="display: inline-block; margin-bottom: 1rem; padding: 0.35rem 1rem; border-radius: 999px; background: rgba(128,83,255,0.1); border: 1px solid rgba(128,83,255,0.25); color: var(--secondary); font-size: 0.85rem; font-weight: 600;">ABOUT FILOMENA PROPAGANDA</span>
+                    <h1 style="font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -0.03em;">
+                        Building Commanding Brands & Accelerating Market Growth
+                    </h1>
+                    <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+                        Founded in 2013 in São Carlos, São Paulo, Filomena Propaganda is a full-service creative communication, branding, and performance marketing agency delivering proven commercial growth for businesses across Brazil.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Overview & Trust Anchor -->
+        <section class="section" style="padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.06);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: center;">
+                    <div>
+                        <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 1.25rem;">Our Mission & Methodology</h2>
+                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.25rem;">
+                            We believe that marketing is only truly successful when creative excellence is paired directly with rigorous business performance. Over more than a decade of active market experience, our team has crafted distinctive brand identities, high-converting digital platforms, and profitable paid advertising systems for hundreds of organizations.
+                        </p>
+                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+                            From Fortune 500 regional suppliers to fast-growing franchise chains and tech innovators, we help our partners solidify market leadership, capture demand, and defend premium pricing through cohesive 360-degree brand strategy.
+                        </p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="/contact/" class="btn btn--primary">Get in Touch</a>
+                            <a href="/portfolio/" class="btn btn--outline">Explore Our Portfolio</a>
+                        </div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--text-heading);">Verified Corporate Information</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+                            <li style="display: flex; flex-direction: column; gap: 0.25rem;">
+                                <strong style="color: var(--text-heading); font-size: 0.9rem;">Legal Business Name:</strong>
+                                <span style="color: var(--text-muted);">Filomena Propaganda e Marketing Ltda</span>
+                            </li>
+                            <li style="display: flex; flex-direction: column; gap: 0.25rem;">
+                                <strong style="color: var(--text-heading); font-size: 0.9rem;">Headquarters:</strong>
+                                <span style="color: var(--text-muted);">Rua Dom Pedro II, 1978, São Carlos - SP, 13560-235, Brazil</span>
+                            </li>
+                            <li style="display: flex; flex-direction: column; gap: 0.25rem;">
+                                <strong style="color: var(--text-heading); font-size: 0.9rem;">Direct Inquiries & Phone:</strong>
+                                <span style="color: var(--text-muted);">+55 (16) 3415-4110 / contato@filomenapropaganda.com.br</span>
+                            </li>
+                            <li style="display: flex; flex-direction: column; gap: 0.25rem;">
+                                <strong style="color: var(--text-heading); font-size: 0.9rem;">Operating Hours:</strong>
+                                <span style="color: var(--text-muted);">Monday – Friday: 08:00 AM – 06:00 PM (BRT / UTC-3)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Service Pillars -->
+        <section class="section" style="padding: 4rem 0; background: rgba(0,0,0,0.2);">
+            <div class="container">
+                <div style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+                    <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 1rem;">Core Solutions</h2>
+                    <p style="color: var(--text-muted);">Integrated marketing disciplines designed to support every phase of the customer journey.</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 1.75rem;">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--secondary);">Branding & Identity</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Full corporate visual identity, positioning, naming, comprehensive brandbooks, and packaging design.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 1.75rem;">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--secondary);">Performance Ads</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Data-driven media management on Google Ads, Meta Ads (Instagram/Facebook), and LinkedIn Ads focused on maximum ROI.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 1.75rem;">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--secondary);">Web Development</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Ultra-fast, mobile-first websites and conversion landing pages optimized for search engines and generative AI agents.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 1.75rem;">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--secondary);">Social & Content</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Strategic editorial planning, high-end motion graphics, engaging video production, and social copywriting.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+    <script src="/script.js" is:inline></script>
+</body>
+</html>

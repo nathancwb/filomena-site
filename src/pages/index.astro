@@ -46,16 +46,21 @@ const homePage = await getEntry('pages', 'home');
     <meta name="ICBM" content="-22.008978, -47.887784" />
     <meta name="robots" content="index, follow" />
 
-    <!-- JSON-LD LocalBusiness Structured Data -->
+    <link rel="alternate" type="text/markdown" href="/index.md" />
+
+    <!-- JSON-LD Organization & AdvertisingAgency Structured Data -->
     <script type="application/ld+json" is:inline>
     {
       "@context": "https://schema.org",
-      "@type": "AdvertisingAgency",
+      "@type": ["Organization", "AdvertisingAgency", "LocalBusiness"],
       "name": "Filomena Propaganda",
+      "legalName": "Filomena Propaganda e Marketing Ltda",
       "image": "https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.webp",
-      "@id": "https://www.filomenapropaganda.com.br",
+      "logo": "https://www.filomenapropaganda.com.br/assets/images/logo-main.webp",
+      "@id": "https://www.filomenapropaganda.com.br/#organization",
       "url": "https://www.filomenapropaganda.com.br",
       "telephone": "+551634154110",
+      "email": "contato@filomenapropaganda.com.br",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -127,12 +132,24 @@ const homePage = await getEntry('pages', 'home');
           "name": "Brasil"
         }
       ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+55-16-3415-4110",
-        "contactType": "customer service",
-        "availableLanguage": ["Portuguese"]
-      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+551634154110",
+          "email": "contato@filomenapropaganda.com.br",
+          "contactType": "customer service",
+          "areaServed": "BR",
+          "availableLanguage": ["Portuguese", "pt-BR"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+551634154110",
+          "email": "contato@filomenapropaganda.com.br",
+          "contactType": "sales",
+          "areaServed": "BR",
+          "availableLanguage": ["Portuguese", "pt-BR"]
+        }
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Serviços de Comunicação e Marketing",
@@ -226,7 +243,7 @@ const homePage = await getEntry('pages', 'home');
                             {homePage?.data?.hero_subtitle || "Transformamos ideias em comunicação estratégica. Há mais de 10 anos criando campanhas que geram resultados reais."}
                         </p>
                         <div class="hero__buttons fade-in">
-                            <a href="#contato" class="btn btn--primary">Fale Conosco</a>
+                            <a href="#abrir-formulario" class="btn btn--primary js-open-modal">Fazer Diagnóstico Gratuito →</a>
                             <a href="/portfolio/" class="btn btn--outline">Ver Trabalhos</a>
                         </div>
                     </div>
