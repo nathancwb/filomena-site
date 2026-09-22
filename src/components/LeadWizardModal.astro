@@ -177,65 +177,65 @@
                 </div>
             </div>
 
-            <!-- ETAPA 3: Qualificação de Budget (Investimento com Agência + Verba de Mídia) -->
+            <!-- ETAPA 3: Porte e Momento da Empresa -->
             <div class="lead-step" data-step="3" hidden>
                 <div class="lead-step-heading">
                     <span class="lead-step-num">3</span>
                     <div>
-                        <span class="lead-step-kicker">Capacidade de Investimento</span>
-                        <h3 class="lead-step-title">Expectativa de investimento mensal</h3>
-                        <p class="lead-step-subtext">Para montarmos uma proposta sob medida para sua realidade:</p>
+                        <span class="lead-step-kicker">Momento da Empresa</span>
+                        <h3 class="lead-step-title">Qual é o faturamento médio mensal do negócio?</h3>
+                        <p class="lead-step-subtext">Para calibrarmos o diagnóstico e as estratégias recomendadas:</p>
                     </div>
                 </div>
 
-                <!-- Pergunta 1: Budget Geral com a Agência -->
-                <div class="lead-budget-block">
-                    <label class="lead-budget-label" for="investimento_agencia">
-                        💼 Quanto pretende investir com a gente por mês?
+                <div class="lead-quiz-cards">
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="porte_empresa" value="Ate R$ 30 mil / mes" required />
+                        <span class="lead-card-key">A</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Até R$ 30 mil / mês</strong>
+                            <span class="lead-card-desc">Negócio em fase inicial ou estruturação</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
                     </label>
-                    <div class="lead-budget-options">
-                        <label class="lead-budget-pill">
-                            <input type="radio" name="investimento_agencia" value="Ate R$ 2.500 / mes" required />
-                            <span>Até R$ 2.500</span>
-                        </label>
-                        <label class="lead-budget-pill">
-                            <input type="radio" name="investimento_agencia" value="De R$ 2.500 a R$ 5.000 / mes" />
-                            <span>R$ 2.500 a R$ 5k</span>
-                        </label>
-                        <label class="lead-budget-pill">
-                            <input type="radio" name="investimento_agencia" value="De R$ 5.000 a R$ 10.000 / mes" />
-                            <span>R$ 5k a R$ 10k</span>
-                        </label>
-                        <label class="lead-budget-pill">
-                            <input type="radio" name="investimento_agencia" value="Acima de R$ 10.000 / mes" />
-                            <span>Acima de R$ 10k</span>
-                        </label>
-                    </div>
-                </div>
 
-                <!-- Pergunta 2: Verba para Tráfego / Anúncios -->
-                <div class="lead-budget-block" style="margin-top: 1rem;">
-                    <label class="lead-budget-label" for="investimento_anuncios">
-                        📢 Desse total, quanto é pra tráfego pago?
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="porte_empresa" value="De R$ 30 mil a R$ 100 mil / mes" />
+                        <span class="lead-card-key">B</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">R$ 30 mil a R$ 100 mil / mês</strong>
+                            <span class="lead-card-desc">Empresa em crescimento buscando previsibilidade e escala</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
                     </label>
-                    <div class="lead-budget-options">
-                        <label class="lead-budget-pill">
-                            <input type="radio" name="investimento_anuncios" value="Ainda nao invisto em anuncios" required />
-                            <span>Não invisto em anúncios</span>
-                        </label>
-                        <label class="lead-budget-pill">
-                            <input type="radio" name="investimento_anuncios" value="Ate R$ 3.000 / mes em midia" />
-                            <span>Até R$ 3.000 / mês</span>
-                        </label>
-                        <label class="lead-budget-pill">
-                            <input type="radio" name="investimento_anuncios" value="De R$ 3.000 a R$ 10.000 / mes em midia" />
-                            <span>R$ 3k a R$ 10k / mês</span>
-                        </label>
-                        <label class="lead-budget-pill">
-                            <input type="radio" name="investimento_anuncios" value="Acima de R$ 10.000 / mes em midia" />
-                            <span>Acima de R$ 10k / mês</span>
-                        </label>
-                    </div>
+
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="porte_empresa" value="De R$ 100 mil a R$ 500 mil / mes" />
+                        <span class="lead-card-key">C</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">R$ 100 mil a R$ 500 mil / mês</strong>
+                            <span class="lead-card-desc">Marca consolidada acelerando vendas e presença de mercado</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
+
+                    <label class="lead-quiz-card">
+                        <input type="radio" name="porte_empresa" value="Acima de R$ 500 mil / mes" />
+                        <span class="lead-card-key">D</span>
+                        <div class="lead-card-body">
+                            <strong class="lead-card-title">Acima de R$ 500 mil / mês</strong>
+                            <span class="lead-card-desc">Operação de grande porte com foco em expansão e liderança</span>
+                        </div>
+                        <span class="lead-card-check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                    </label>
                 </div>
 
                 <p class="lead-step-error" id="error-step-3" role="alert"></p>
@@ -1142,15 +1142,9 @@
             }
 
             if (step === 3) {
-                const budgetAgencia = form.querySelector('input[name="investimento_agencia"]:checked');
-                const budgetAds = form.querySelector('input[name="investimento_anuncios"]:checked');
-
-                if (!budgetAgencia) {
-                    showError(3, 'Por favor, selecione a faixa de investimento pretendida com a agência.');
-                    return false;
-                }
-                if (!budgetAds) {
-                    showError(3, 'Por favor, selecione a verba prevista para anúncios/mídia paga.');
+                const porte = form.querySelector('input[name="porte_empresa"]:checked');
+                if (!porte) {
+                    showError(3, 'Por favor, selecione a faixa de faturamento da empresa.');
                     return false;
                 }
                 return true;
@@ -1229,19 +1223,6 @@
             });
         });
 
-        // Interatividade nas pílulas de budget
-        form.querySelectorAll('.lead-budget-pill').forEach(pill => {
-            const input = pill.querySelector('input');
-            if (!input) return;
-
-            pill.addEventListener('click', () => {
-                pill.closest('.lead-budget-options')?.querySelectorAll('.lead-budget-pill').forEach(p => p.classList.remove('selected'));
-                pill.classList.add('selected');
-                input.checked = true;
-                clearError(currentStep);
-            });
-        });
-
         // Máscara WhatsApp
         const wppInput = form.querySelector('#wizard-whatsapp');
         if (wppInput) {
@@ -1289,8 +1270,7 @@
             const whatsapp = (form.querySelector('#wizard-whatsapp')?.value || '').trim();
             const email = (form.querySelector('#wizard-email')?.value || '').trim();
             const servico = form.querySelector('input[name="servico_prioritario"]:checked')?.value || 'Não informado';
-            const budgetAgencia = form.querySelector('input[name="investimento_agencia"]:checked')?.value || 'Não informado';
-            const budgetAds = form.querySelector('input[name="investimento_anuncios"]:checked')?.value || 'Não informado';
+            const porte = form.querySelector('input[name="porte_empresa"]:checked')?.value || 'Não informado';
             
             const desafiosArr = [];
             form.querySelectorAll('input[name="desafios"]:checked').forEach(c => desafiosArr.push(c.value));
@@ -1305,8 +1285,7 @@
                 whatsapp: whatsapp,
                 email: email,
                 servico_prioritario: servico,
-                investimento_com_agencia: budgetAgencia,
-                verba_para_anuncios: budgetAds,
+                porte_ou_faturamento: porte,
                 principais_gargalos: desafios,
                 ...utms
             };
@@ -1320,8 +1299,7 @@
                     lead_name: nome,
                     lead_company: empresa,
                     lead_service: servico,
-                    lead_budget_agency: budgetAgencia,
-                    lead_budget_ads: budgetAds
+                    lead_company_size: porte
                 });
 
                 if (typeof window.gtag === 'function') {
