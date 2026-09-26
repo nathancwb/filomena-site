@@ -160,105 +160,82 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
 
     <main>
         <!-- Hero -->
-        <section class="page-hero">
-            <div class="container" style="position: relative; z-index: 1;">
-                <span class="section__tag fade-in">Marketing de Influência</span>
-                <h1 class="page-hero__title fade-in">Marketing de influência que <span style="color: var(--accent);">vende</span> — não só aparece.</h1>
-                <p class="page-hero__description fade-in">
+        <section class="influencia-hero">
+            <div class="influencia-hero__art" aria-hidden="true">
+                <svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" role="presentation">
+                    <defs>
+                        <linearGradient id="screenGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#d08fff" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#59266d" stop-opacity="0.9" />
+                        </linearGradient>
+                        <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#d08fff" stop-opacity="0.35" />
+                            <stop offset="100%" stop-color="#d08fff" stop-opacity="0" />
+                        </radialGradient>
+                    </defs>
+
+                    <!-- glows -->
+                    <circle cx="470" cy="160" r="220" fill="url(#glowGrad)" />
+                    <circle cx="160" cy="480" r="160" fill="url(#glowGrad)" />
+
+                    <!-- dot grid texture -->
+                    <g fill="#ffffff" opacity="0.12">
+                        <circle cx="60" cy="80" r="3" /><circle cx="100" cy="80" r="3" /><circle cx="140" cy="80" r="3" />
+                        <circle cx="60" cy="120" r="3" /><circle cx="100" cy="120" r="3" /><circle cx="140" cy="120" r="3" />
+                        <circle cx="60" cy="160" r="3" /><circle cx="100" cy="160" r="3" /><circle cx="140" cy="160" r="3" />
+                        <circle cx="500" cy="500" r="3" /><circle cx="540" cy="500" r="3" /><circle cx="580" cy="500" r="3" />
+                        <circle cx="500" cy="540" r="3" /><circle cx="540" cy="540" r="3" /><circle cx="580" cy="540" r="3" />
+                    </g>
+
+                    <!-- back floating card -->
+                    <rect x="70" y="200" width="150" height="260" rx="20" fill="#ffffff" opacity="0.06" transform="rotate(-8 145 330)" />
+
+                    <!-- phone mockup -->
+                    <g transform="rotate(6 400 340)">
+                        <rect x="290" y="140" width="230" height="400" rx="34" fill="#1c0d24" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2" />
+                        <rect x="304" y="168" width="202" height="330" rx="18" fill="url(#screenGrad)" />
+
+                        <!-- story progress bars -->
+                        <rect x="316" y="180" width="56" height="4" rx="2" fill="#ffffff" opacity="0.9" />
+                        <rect x="378" y="180" width="56" height="4" rx="2" fill="#ffffff" opacity="0.5" />
+                        <rect x="440" y="180" width="56" height="4" rx="2" fill="#ffffff" opacity="0.5" />
+
+                        <!-- play button -->
+                        <circle cx="405" cy="330" r="34" fill="#ffffff" opacity="0.9" />
+                        <path d="M395 314 L425 330 L395 346 Z" fill="#59266d" />
+
+                        <!-- caption bars -->
+                        <rect x="316" y="452" width="90" height="8" rx="4" fill="#ffffff" opacity="0.85" />
+                        <rect x="316" y="468" width="130" height="6" rx="3" fill="#ffffff" opacity="0.5" />
+
+                        <!-- side action icons -->
+                        <g fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M478 330c0-9-7-16-16-16-5 0-9 2-12 6-3-4-7-6-12-6-9 0-16 7-16 16 0 13 28 30 28 30s28-17 28-30z" />
+                            <circle cx="450" cy="392" r="14" />
+                            <path d="M444 388h12M444 396h8" />
+                        </g>
+                        <rect x="438" y="345" width="24" height="6" rx="3" fill="#ffffff" opacity="0.7" />
+                    </g>
+
+                    <!-- small floating heart -->
+                    <g transform="translate(120 120) scale(1.4)" fill="#d08fff" opacity="0.5">
+                        <path d="M12 21s-7-4.35-9.5-8.8C.7 8.7 2.3 5 6 5c2 0 3.4 1 4 2.4C10.6 6 12 5 14 5c3.7 0 5.3 3.7 3.5 7.2C19 16.65 12 21 12 21z" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="container influencia-hero__inner">
+                <span class="influencia-hero__tag fade-in">Marketing de Influência</span>
+                <h1 class="influencia-hero__title fade-in">Marketing de influência que <span class="influencia-hero__highlight">vende</span> — não só aparece.</h1>
+                <p class="influencia-hero__description fade-in">
                     Conectamos sua marca aos criadores certos, com estratégia, curadoria humana e relatório de resultado — do briefing à entrega.
                 </p>
                 <div class="fade-in" style="margin-top: var(--space-xl); display: flex; gap: var(--space-md); flex-wrap: wrap;">
                     <a href="#contato" class="btn btn--primary">Quero uma proposta →</a>
-                    <a href="#processo" class="btn btn--outline">Como funciona</a>
+                    <a href="#processo" class="btn btn--outline influencia-hero__btn-outline">Como funciona</a>
                 </div>
             </div>
         </section>
-
-        <!-- Clientes – Faixa de logos -->
-        <div class="clients-strip" aria-label="Nossos clientes">
-            <div class="clients-strip__track">
-                <!-- set 1 -->
-                <div class="clients-strip__item item-bni">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-bni.webp" alt="BNI" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-grampola">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-grampola.webp" alt="Grampola" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-jogoreal">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-jogoreal.webp" alt="Jogo Real" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-masotti">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-masotti.webp" alt="Móveis Masotti" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-lupetec">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-lupetec.webp" alt="Lupetec" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-latina">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-latina.webp" alt="Latina" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-neonova">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-neonova.webp" alt="Neonova" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-iseg">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-iseg.webp" alt="iSeg" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-alternativa">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-alternativa.webp" alt="Alternativa Resgate" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-felipe">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-felipe.webp" alt="Felipe Dellalibera" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-siltomac">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-siltomac.webp" alt="Siltomac" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-center">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-center.webp" alt="Center" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-boali">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-boali.svg" alt="Boali" class="client-logo-img">
-                </div>
-                <!-- set 2 (duplicado para loop infinito) -->
-                <div class="clients-strip__item item-bni" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-bni.webp" alt="" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-grampola" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-grampola.webp" alt="" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-jogoreal" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-jogoreal.webp" alt="" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-masotti" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-masotti.webp" alt="" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-lupetec" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-lupetec.webp" alt="" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-latina" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-latina.webp" alt="" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-neonova" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-neonova.webp" alt="" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-iseg" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-iseg.webp" alt="" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-alternativa" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-alternativa.webp" alt="" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-felipe" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-felipe.webp" alt="" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-siltomac" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-siltomac.webp" alt="" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-center" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-center.webp" alt="" class="client-logo-img">
-                </div>
-                <div class="clients-strip__item item-boali" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-boali.svg" alt="" class="client-logo-img">
-                </div>
-            </div>
-        </div>
 
         <!-- Estatísticas -->
         <section class="section" style="padding-top: var(--space-2xl);">
@@ -549,6 +526,85 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
     </a>
 
     <style>
+        .influencia-hero {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--accent-dark), #2a0f3a);
+            padding: calc(var(--header-height) + var(--space-4xl)) 0 var(--space-4xl);
+        }
+
+        .influencia-hero__art {
+            position: absolute;
+            inset: 0;
+            left: 38%;
+            pointer-events: none;
+            -webkit-mask-image: linear-gradient(to left, black 55%, transparent 100%);
+            mask-image: linear-gradient(to left, black 55%, transparent 100%);
+        }
+
+        .influencia-hero__art svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .influencia-hero__inner {
+            position: relative;
+            z-index: 2;
+            max-width: 620px;
+        }
+
+        .influencia-hero__tag {
+            display: inline-block;
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--secondary-light);
+            margin-bottom: var(--space-md);
+        }
+
+        .influencia-hero__title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5.5vw, 4rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 0.95;
+            letter-spacing: -0.02em;
+            color: var(--white);
+        }
+
+        .influencia-hero__highlight {
+            color: var(--secondary-light);
+        }
+
+        .influencia-hero__description {
+            font-size: var(--text-lg);
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 520px;
+            margin-top: var(--space-lg);
+        }
+
+        .influencia-hero__btn-outline {
+            border-color: rgba(255, 255, 255, 0.4);
+            color: var(--white);
+        }
+
+        .influencia-hero__btn-outline:hover {
+            border-color: var(--white);
+            background: var(--white);
+            color: var(--accent-dark);
+        }
+
+        @media (max-width: 900px) {
+            .influencia-hero__art {
+                display: none;
+            }
+
+            .influencia-hero__inner {
+                max-width: 100%;
+            }
+        }
+
         .influencia-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -637,9 +693,39 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
 
         /* CTA banner intermediário */
         .influencia-cta-banner {
-            background: var(--accent-dark);
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--accent-dark), #2a0f3a);
             padding: var(--space-3xl) 0;
             text-align: center;
+        }
+
+        .influencia-cta-banner::before,
+        .influencia-cta-banner::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(208, 143, 255, 0.35), transparent 70%);
+            pointer-events: none;
+        }
+
+        .influencia-cta-banner::before {
+            width: 360px;
+            height: 360px;
+            top: -180px;
+            left: -100px;
+        }
+
+        .influencia-cta-banner::after {
+            width: 280px;
+            height: 280px;
+            bottom: -160px;
+            right: -80px;
+        }
+
+        .influencia-cta-banner .container {
+            position: relative;
+            z-index: 1;
         }
 
         .influencia-cta-banner__title {
