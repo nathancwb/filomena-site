@@ -3232,3 +3232,152 @@ h1, h2, h3, h4, h5, h6 {
         padding-left: 6px;
     }
 }
+
+/* ===============================================
+   STICKY STACKING CARDS (SCROLL INTERATIVO)
+   =============================================== */
+.sticky-stack-section {
+    position: relative;
+    padding: var(--space-4xl) 0 var(--space-5xl);
+    background: var(--bg);
+}
+
+.sticky-stack-wrapper {
+    position: relative;
+    margin-top: var(--space-3xl);
+}
+
+.sticky-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xl);
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.sticky-card {
+    position: sticky;
+    top: calc(105px + var(--card-index, 1) * 20px);
+    margin-bottom: var(--space-3xl);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, filter 0.35s ease, opacity 0.35s ease;
+    transform-origin: center top;
+    will-change: transform, filter;
+}
+
+.sticky-card__inner {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2.75rem 3rem;
+    border: 1px solid rgba(89, 38, 109, 0.12);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sticky-card__inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--secondary-light) 100%);
+    border-radius: 6px 0 0 6px;
+}
+
+.sticky-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sticky-card__number {
+    font-family: var(--font-heading);
+    font-size: 3.75rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: rgba(89, 38, 109, 0.18);
+    transition: color 0.35s ease, transform 0.35s ease;
+}
+
+.sticky-card__badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--accent);
+    background: rgba(89, 38, 109, 0.07);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    border: 1px solid rgba(89, 38, 109, 0.15);
+}
+
+.sticky-card__title {
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
+
+.sticky-card__text {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: #4b5563;
+    margin: 0;
+}
+
+/* Efeito de sobreposição em pilha (Stacked Depth) */
+.sticky-card.is-stacked .sticky-card__inner {
+    filter: brightness(0.95);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.12);
+}
+
+.sticky-card.is-active .sticky-card__number {
+    color: var(--accent);
+    transform: scale(1.05);
+}
+
+.sticky-card:hover .sticky-card__inner {
+    box-shadow: 0 25px 50px -12px rgba(89, 38, 109, 0.18);
+    border-color: rgba(89, 38, 109, 0.3);
+}
+
+@media (max-width: 768px) {
+    .sticky-stack-section {
+        padding: var(--space-3xl) 0;
+    }
+    .sticky-stack {
+        gap: var(--space-2xl);
+        padding-bottom: 20px;
+    }
+    .sticky-card {
+        top: calc(75px + var(--card-index, 1) * 14px);
+        margin-bottom: var(--space-2xl);
+    }
+    .sticky-card__inner {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+        gap: 1rem;
+    }
+    .sticky-card__number {
+        font-size: 2.75rem;
+    }
+    .sticky-card__title {
+        font-size: 1.35rem;
+    }
+    .sticky-card__text {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+

@@ -27,6 +27,9 @@ document.addEventListener('astro:page-load', () => {
 
     // Smooth Scroll
     initSmoothScroll();
+
+    // Sticky Stacking Cards
+    initStickyStackCards();
 });
 
 // ==========================================
@@ -746,4 +749,58 @@ document.addEventListener('astro:before-preparation', () => {
         document.addEventListener('astro:page-load', purgeDuplicateRdWidgets);
     }
 })();
+
+// ==========================================
+// STICKY STACKING CARDS INTERACTION
+// ==========================================
+function initStickyStackCards() {
+    const cards = document.querySelectorAll('.sticky-card');
+    if (!cards.length) return;
+
+    let ticking = false;
+
+    function updateCards() {
+        const viewportHeight = window.innerHeight;
+
+        cards.forEach((card, i) => {
+            const rect = card.getBoundingClientRect();
+            const topOffset = parseFloat(window.getComputedStyle(card).top) || 105;
+            
+            // Verifica se o card atingiu o topo fixo (sticky)
+            const isPinned = rect.top <= (topOffset + 4);
+            
+            if (isPinned) {
+                card.classList.add('is-active');
+            } else {
+                card.classList.remove('is-active');
+            }
+
+            // Verifica se o próximo card está sobrepondo este (criando a pilha)
+            const nextCard = cards[i + 1];
+            if (nextCard) {
+                const nextRect = nextCard.getBoundingClientRect();
+                const nextTopOffset = parseFloat(window.getComputedStyle(nextCard).top) || (topOffset + 20);
+                if (nextRect.top <= nextTopOffset + 15) {
+                    card.classList.add('is-stacked');
+                } else {
+                    card.classList.remove('is-stacked');
+                }
+            }
+        });
+
+        ticking = false;
+    }
+
+    function onScroll() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateCards);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    updateCards();
+}
+
 
