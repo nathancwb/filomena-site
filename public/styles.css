@@ -3381,3 +3381,166 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* ===============================================
+   3D FLY-IN CARDS (MARKETING DE INFLUÊNCIA)
+   =============================================== */
+.process-3d-section {
+    position: relative;
+    overflow: hidden;
+    perspective: 1200px;
+    padding: var(--space-4xl) 0;
+}
+
+.process-3d-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl);
+    max-width: 1080px;
+    margin: var(--space-3xl) auto 0;
+    perspective: 1200px;
+}
+
+.card-3d {
+    position: relative;
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid rgba(89, 38, 109, 0.12);
+    box-shadow: 0 15px 35px -5px rgba(10, 10, 10, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02);
+    padding: 2.75rem 2.5rem;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    will-change: transform, opacity;
+    opacity: 0;
+}
+
+/* Entrada 3D pela Esquerda */
+.card-3d--left {
+    transform: translate3d(-80px, 50px, -100px) rotateY(20deg) rotateX(10deg) scale(0.9);
+}
+
+/* Entrada 3D pela Direita */
+.card-3d--right {
+    transform: translate3d(80px, 50px, -100px) rotateY(-20deg) rotateX(10deg) scale(0.9);
+}
+
+/* Estado Visível / Revelado no Scroll */
+.card-3d.is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg) scale(1);
+}
+
+/* Efeito Glare / Brilho Radial Interativo */
+.card-3d__glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(208, 143, 255, 0.16), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 24px;
+}
+
+.card-3d:hover {
+    box-shadow: 0 25px 50px -12px rgba(89, 38, 109, 0.2), 0 0 0 1px rgba(89, 38, 109, 0.25);
+    border-color: rgba(89, 38, 109, 0.35);
+}
+
+.card-3d:hover .card-3d__glare {
+    opacity: 1;
+}
+
+.card-3d__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transform: translateZ(20px);
+}
+
+.card-3d__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-3d__number {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: rgba(89, 38, 109, 0.16);
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.card-3d.is-revealed .card-3d__number {
+    color: var(--accent);
+}
+
+.card-3d__badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--accent);
+    background: rgba(89, 38, 109, 0.08);
+    padding: 0.4rem 0.9rem;
+    border-radius: 100px;
+    border: 1px solid rgba(89, 38, 109, 0.16);
+}
+
+.card-3d__title {
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0;
+    line-height: 1.25;
+}
+
+.card-3d__text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin: 0;
+}
+
+.card-3d__indicator {
+    height: 4px;
+    width: 44px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--secondary-light) 100%);
+    border-radius: 4px;
+    margin-top: 0.25rem;
+    transition: width 0.4s ease;
+}
+
+.card-3d:hover .card-3d__indicator {
+    width: 76px;
+}
+
+@media (max-width: 900px) {
+    .process-3d-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .card-3d {
+        padding: 2.25rem 1.75rem;
+    }
+    
+    .card-3d--left,
+    .card-3d--right {
+        transform: translate3d(0, 40px, -50px) rotateX(12deg) scale(0.94);
+    }
+    
+    .card-3d.is-revealed {
+        transform: translate3d(0, 0, 0) rotateX(0deg) scale(1);
+    }
+}
+
+

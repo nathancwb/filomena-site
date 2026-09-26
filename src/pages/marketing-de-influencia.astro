@@ -263,8 +263,8 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
             </div>
         </section>
 
-        <!-- Como trabalhamos (Sticky Stacking Scroll) -->
-        <section class="section section--alt sticky-stack-section" id="processo">
+        <!-- Como trabalhamos (Cards 3D com Entrada Lateral no Scroll) -->
+        <section class="section section--alt process-3d-section" id="processo">
             <div class="container">
                 <div class="section__header section__header--center">
                     <span class="section__tag fade-in">Como trabalhamos</span>
@@ -276,75 +276,73 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                     </p>
                 </div>
 
-                <div class="sticky-stack-wrapper">
-                    <div class="sticky-stack">
-                        <!-- Card 01 -->
-                        <div class="sticky-card" style="--card-index: 1;">
-                            <div class="sticky-card__inner">
-                                <div class="sticky-card__header">
-                                    <span class="sticky-card__number">01</span>
-                                    <div class="sticky-card__badge">Etapa 01</div>
-                                </div>
-                                <div class="sticky-card__body">
-                                    <h3 class="sticky-card__title">Diagnóstico &amp; Estratégia</h3>
-                                    <p class="sticky-card__text">
-                                        Entendimento do público, objetivo da campanha — vendas, awareness ou lançamento — e definição clara de KPIs de performance.
-                                    </p>
-                                </div>
+                <div class="process-3d-grid">
+                    <!-- Card 01 (Entrada pela Esquerda) -->
+                    <div class="card-3d card-3d--left" data-step="1">
+                        <div class="card-3d__glare"></div>
+                        <div class="card-3d__content">
+                            <div class="card-3d__header">
+                                <span class="card-3d__number">01</span>
+                                <span class="card-3d__badge">Etapa 01</span>
                             </div>
+                            <h3 class="card-3d__title">Diagnóstico &amp; Estratégia</h3>
+                            <p class="card-3d__text">
+                                Entendimento do público, objetivo da campanha — vendas, awareness ou lançamento — e definição clara de KPIs de performance.
+                            </p>
+                            <div class="card-3d__indicator"></div>
                         </div>
+                    </div>
 
-                        <!-- Card 02 -->
-                        <div class="sticky-card" style="--card-index: 2;">
-                            <div class="sticky-card__inner">
-                                <div class="sticky-card__header">
-                                    <span class="sticky-card__number">02</span>
-                                    <div class="sticky-card__badge">Etapa 02</div>
-                                </div>
-                                <div class="sticky-card__body">
-                                    <h3 class="sticky-card__title">Curadoria de Criadores</h3>
-                                    <p class="sticky-card__text">
-                                        Seleção por afinidade real com a marca, com negociação e contrato incluídos — condições claras de entrega, prazo e uso de imagem.
-                                    </p>
-                                </div>
+                    <!-- Card 02 (Entrada pela Direita) -->
+                    <div class="card-3d card-3d--right" data-step="2">
+                        <div class="card-3d__glare"></div>
+                        <div class="card-3d__content">
+                            <div class="card-3d__header">
+                                <span class="card-3d__number">02</span>
+                                <span class="card-3d__badge">Etapa 02</span>
                             </div>
+                            <h3 class="card-3d__title">Curadoria de Criadores</h3>
+                            <p class="card-3d__text">
+                                Seleção por afinidade real com a marca, com negociação e contrato incluídos — condições claras de entrega, prazo e uso de imagem.
+                            </p>
+                            <div class="card-3d__indicator"></div>
                         </div>
+                    </div>
 
-                        <!-- Card 03 -->
-                        <div class="sticky-card" style="--card-index: 3;">
-                            <div class="sticky-card__inner">
-                                <div class="sticky-card__header">
-                                    <span class="sticky-card__number">03</span>
-                                    <div class="sticky-card__badge">Etapa 03</div>
-                                </div>
-                                <div class="sticky-card__body">
-                                    <h3 class="sticky-card__title">Gestão de Campanha</h3>
-                                    <p class="sticky-card__text">
-                                        Acompanhamento de produção, aprovação de conteúdo e cronograma de publicação — sem você precisar administrar dezenas de conversas.
-                                    </p>
-                                </div>
+                    <!-- Card 03 (Entrada pela Esquerda) -->
+                    <div class="card-3d card-3d--left" data-step="3">
+                        <div class="card-3d__glare"></div>
+                        <div class="card-3d__content">
+                            <div class="card-3d__header">
+                                <span class="card-3d__number">03</span>
+                                <span class="card-3d__badge">Etapa 03</span>
                             </div>
+                            <h3 class="card-3d__title">Gestão de Campanha</h3>
+                            <p class="card-3d__text">
+                                Acompanhamento de produção, aprovação de conteúdo e cronograma de publicação — sem você precisar administrar dezenas de conversas.
+                            </p>
+                            <div class="card-3d__indicator"></div>
                         </div>
+                    </div>
 
-                        <!-- Card 04 -->
-                        <div class="sticky-card" style="--card-index: 4;">
-                            <div class="sticky-card__inner">
-                                <div class="sticky-card__header">
-                                    <span class="sticky-card__number">04</span>
-                                    <div class="sticky-card__badge">Etapa 04</div>
-                                </div>
-                                <div class="sticky-card__body">
-                                    <h3 class="sticky-card__title">Relatório de Resultados &amp; ROI</h3>
-                                    <p class="sticky-card__text">
-                                        Métricas completas de alcance, engajamento, cliques e conversões entregues ao final de cada campanha — resultado repetível, não sorte.
-                                    </p>
-                                </div>
+                    <!-- Card 04 (Entrada pela Direita) -->
+                    <div class="card-3d card-3d--right" data-step="4">
+                        <div class="card-3d__glare"></div>
+                        <div class="card-3d__content">
+                            <div class="card-3d__header">
+                                <span class="card-3d__number">04</span>
+                                <span class="card-3d__badge">Etapa 04</span>
                             </div>
+                            <h3 class="card-3d__title">Relatório de Resultados &amp; ROI</h3>
+                            <p class="card-3d__text">
+                                Métricas completas de alcance, engajamento, cliques e conversões entregues ao final de cada campanha — resultado repetível, não sorte.
+                            </p>
+                            <div class="card-3d__indicator"></div>
                         </div>
                     </div>
                 </div>
 
-                <p class="fade-in" style="text-align: center; max-width: 640px; margin: var(--space-2xl) auto 0; color: var(--text-muted);">
+                <p class="fade-in" style="text-align: center; max-width: 640px; margin: var(--space-3xl) auto 0; color: var(--text-muted);">
                     Do primeiro contato à primeira publicação, o processo costuma levar poucas semanas — o prazo exato varia com o tamanho da campanha e a disponibilidade dos criadores selecionados.
                 </p>
             </div>
