@@ -159,23 +159,72 @@ const projects = await getCollection('portfolio');
             </div>
         </section>
 
-        <!-- Portfolio Grid -->
-        <section class="section">
+        <!-- Portfolio Filters & Grid -->
+        <section class="section" style="padding-top: var(--space-xl);">
             <div class="container">
-                <div class="portfolio__grid">
-                    {projects.map(project => (
-                        <a href={`/portfolio/${project.id}/`} class="portfolio-card fade-in">
-                            <img loading="lazy" decoding="async" src={project.data.thumbnail} alt={project.data.client} style={project.id === "dubelato" ? "object-fit: contain; background: #ffffff; padding: 8px;" : ""}>
-                            <div class="portfolio-card__overlay">
-                                <span class="portfolio-card__tag">{project.data.category}</span>
-                                <h3 class="portfolio-card__title">{project.data.client}</h3>
-                                <span class="portfolio-card__cta">Clique para ver</span>
-                            </div>
-                        </a>
-                    ))}
+                <!-- Filtros de Categorias -->
+                <div class="portfolio-filters fade-in" style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: var(--space-3xl);">
+                    <button class="filter-btn active" data-filter="all" style="padding: 0.6rem 1.4rem; border-radius: 99px; border: 1px solid var(--border); background: var(--accent); color: #fff; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;">Todos</button>
+                    <button class="filter-btn" data-filter="branding" style="padding: 0.6rem 1.4rem; border-radius: 99px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;">Branding &amp; Identidade</button>
+                    <button class="filter-btn" data-filter="performance" style="padding: 0.6rem 1.4rem; border-radius: 99px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;">Performance &amp; Social</button>
+                    <button class="filter-btn" data-filter="campanhas" style="padding: 0.6rem 1.4rem; border-radius: 99px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;">Campanhas &amp; Mídia</button>
+                    <button class="filter-btn" data-filter="pdv" style="padding: 0.6rem 1.4rem; border-radius: 99px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;">PDV &amp; Sinalização</button>
+                </div>
+
+                <div class="portfolio__grid" id="portfolio-grid">
+                    {projects.map(project => {
+                        const cat = project.data.category.toLowerCase();
+                        let group = 'branding';
+                        if (cat.includes('performance') || cat.includes('social')) group = 'performance';
+                        else if (cat.includes('campanha') || cat.includes('mídia')) group = 'campanhas';
+                        else if (cat.includes('pdv') || cat.includes('ambientação') || cat.includes('sinalização')) group = 'pdv';
+                        
+                        return (
+                            <a href={`/portfolio/${project.id}/`} class="portfolio-card fade-in" data-group={group}>
+                                <img loading="lazy" decoding="async" src={project.data.thumbnail} alt={project.data.client} style={project.id === "dubelato" ? "object-fit: contain; background: #ffffff; padding: 8px;" : ""}>
+                                <div class="portfolio-card__overlay">
+                                    <span class="portfolio-card__tag">{project.data.category}</span>
+                                    <h3 class="portfolio-card__title">{project.data.client}</h3>
+                                    <span class="portfolio-card__cta">Clique para ver</span>
+                                </div>
+                            </a>
+                        );
+                    })}
                 </div>
             </div>
         </section>
+
+        <script is:inline>
+            document.addEventListener('DOMContentLoaded', () => {
+                const buttons = document.querySelectorAll('.filter-btn');
+                const cards = document.querySelectorAll('.portfolio-card');
+
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        buttons.forEach(b => {
+                            b.style.background = 'var(--bg)';
+                            b.style.color = 'var(--text)';
+                            b.classList.remove('active');
+                        });
+                        btn.style.background = 'var(--accent)';
+                        btn.style.color = '#fff';
+                        btn.classList.add('active');
+
+                        const filter = btn.getAttribute('data-filter');
+                        cards.forEach(card => {
+                            const group = card.getAttribute('data-group');
+                            if (filter === 'all' || group === filter) {
+                                card.style.display = 'block';
+                                setTimeout(() => { card.style.opacity = '1'; }, 10);
+                            } else {
+                                card.style.display = 'none';
+                                card.style.opacity = '0';
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
 
         <!-- CTA -->
         <section class="section cases">

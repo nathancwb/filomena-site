@@ -1,0 +1,177 @@
+---
+import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
+import Analytics from '../components/Analytics.astro';
+import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <Analytics />
+    <ClientRouter />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Tráfego Pago em São Carlos e SP | Filomena</title>
+    <meta name="description" content="Gestão profissional de anúncios no Google Ads, Meta Ads (Instagram/Facebook) e LinkedIn Ads. Otimize seu CAC e escale vendas com a Filomena Propaganda.">
+
+    <link rel="canonical" href="https://www.filomenapropaganda.com.br/trafego-pago/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://www.filomenapropaganda.com.br/trafego-pago/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.filomenapropaganda.com.br/trafego-pago/" />
+    <link rel="alternate" type="text/markdown" href="/trafego-pago.md" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gestão de Tráfego Pago em São Carlos e SP | Filomena" />
+    <meta property="og:description" content="Campanhas de Google Ads e Meta Ads com foco em ROI, conversão de leads e inteligência analítica de dados." />
+    <meta property="og:url" content="https://www.filomenapropaganda.com.br/trafego-pago/" />
+    <meta property="og:site_name" content="Filomena Propaganda" />
+    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Gestão de Tráfego Pago e Performance",
+          "serviceType": "Paid Media Management Services",
+          "provider": {
+            "@type": "AdvertisingAgency",
+            "name": "Filomena Propaganda",
+            "url": "https://www.filomenapropaganda.com.br"
+          },
+          "areaServed": "BR",
+          "description": "Gestão estratégica de campanhas de anúncios em Google Ads, Meta Ads (Instagram e Facebook) e LinkedIn Ads, com testes A/B e otimização contínua de CAC."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Qual o valor mínimo recomendado para investir em anúncios?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O valor varia de acordo com o segmento, ticket médio e mercado geográfico. Recomendamos orçamentos de mídia a partir de R$ 1.500 a R$ 3.000/mês para PMEs regionais, permitindo testes estatísticos consistentes e tração real nas conversões."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Em quais canais a Filomena veicula os anúncios?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Operamos nos principais canais de mídia paga: Google Ads (Rede de Pesquisa, Performance Max, Display e YouTube), Meta Ads (Instagram Feed, Stories e Reels, Facebook Ads) e LinkedIn Ads para mercados B2B."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <AnalyticsNoscript />
+    <div class="noise-overlay"></div>
+
+    <header class="header">
+        <div class="header__inner container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo-main.webp" alt="Filomena Propaganda & Marketing" class="logo__img">
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="/" class="nav__link">Home</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
+                </ul>
+                <div class="nav__actions">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <span class="section__tag fade-in">Performance &amp; Mídia</span>
+                <h1 class="page-hero__title fade-in">Gestão de Tráfego Pago</h1>
+                <p class="page-hero__description fade-in">
+                    Anúncios otimizados no Google Ads e Meta Ads com foco implacável em conversão, dados reais e retorno sobre o investimento.
+                </p>
+                <div style="margin-top: var(--space-xl); display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="/contato/" class="btn btn--primary">Analisar Minhas Campanhas</a>
+                    <a href="/portfolio/" class="btn btn--outline">Ver Cases de Sucesso</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Canais -->
+        <section class="section">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">Canais Estratégicos</span>
+                    <h2 class="section__title fade-in">Onde colocamos sua marca em destaque</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-xl); margin-top: var(--space-3xl);">
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Google Ads</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Capture a demanda ativa no exato instante em que o cliente pesquisa pelo seu serviço no Google, no YouTube e no Google Maps.</p>
+                    </div>
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Meta Ads (Instagram &amp; Facebook)</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Criativos em vídeo e carrossel de alto impacto que geram desejo, despertam interesse e direcionam leads qualificados para o WhatsApp.</p>
+                    </div>
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">LinkedIn Ads &amp; B2B</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Segmentação precisa por cargo, setor empresarial e tamanho de empresa para alcançar tomadores de decisão em vendas corporativas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section section--alt">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">Perguntas Frequentes</span>
+                    <h2 class="section__title fade-in">Tudo sobre Tráfego Pago</h2>
+                </div>
+                <div class="faq-grid fade-in">
+                    <details class="faq-item">
+                        <summary class="faq-item__question">Qual o valor mínimo recomendado para investir em anúncios?</summary>
+                        <p class="faq-item__answer">O valor varia de acordo com o segmento, ticket médio e mercado geográfico. Recomendamos orçamentos de mídia a partir de R$ 1.500 a R$ 3.000/mês para PMEs regionais, permitindo testes estatísticos consistentes e tração real nas conversões.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">Em quais canais a Filomena veicula os anúncios?</summary>
+                        <p class="faq-item__answer">Operamos nos principais canais de mídia paga: Google Ads (Rede de Pesquisa, Performance Max, Display e YouTube), Meta Ads (Instagram Feed, Stories e Reels, Facebook Ads) e LinkedIn Ads para mercados B2B.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cases" style="text-align: center;">
+            <div class="container">
+                <h2 class="section__title fade-in" style="color: var(--white);">Pronto para escalar seu faturamento?</h2>
+                <p class="section__description fade-in" style="color: var(--gray-400); margin-bottom: var(--space-2xl);">Converse com nossos gestores de tráfego e estruture campanhas de alta conversão.</p>
+                <a href="/contato/" class="btn btn--primary fade-in">Solicitar Proposta de Tráfego</a>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+    <script src="/script.js" is:inline></script>
+</body>
+</html>

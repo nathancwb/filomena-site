@@ -55,6 +55,33 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/blog/2026-06-17-sua-marca-est:rest*",
+      "destination": "/blog/2026-06-17-sua-marca-esta-sendo-construida-todos-os-dias/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2026-06-29-posicionamento-:rest*",
+      "destination": "/blog/2026-06-29-posicionamento-e-o-que-sustenta-o-seu-preco/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2026-06-29-seu-marketing-:rest*",
+      "destination": "/blog/2026-06-29-seu-marketing-so-funciona-quando-tem-direcao/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2026-08-11-a-pr:rest*",
+      "destination": "/blog/2026-08-11-a-proxima-crise-pode-nao-ser-financeira-pode-ser-tecnologica/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2026-09-14-empresas-que-crescem-mais-n:rest*",
+      "destination": "/blog/2026-09-14-empresas-que-crescem-mais-nao-escolhem-entre-o-presente-e-o-futuro-elas-investem-nos-dois/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/",
@@ -286,6 +313,118 @@
         }
       ],
       "destination": "/trabalhe-conosco.md"
+    },
+    {
+      "source": "/melhores-agencias-de-publicidade-sao-paulo",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/melhores-agencias-de-publicidade-sao-paulo.md"
+    },
+    {
+      "source": "/melhores-agencias-de-publicidade-sao-paulo/",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/melhores-agencias-de-publicidade-sao-paulo.md"
+    },
+    {
+      "source": "/branding",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/branding.md"
+    },
+    {
+      "source": "/branding/",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/branding.md"
+    },
+    {
+      "source": "/marketing-digital",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/marketing-digital.md"
+    },
+    {
+      "source": "/marketing-digital/",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/marketing-digital.md"
+    },
+    {
+      "source": "/trafego-pago",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/trafego-pago.md"
+    },
+    {
+      "source": "/trafego-pago/",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/trafego-pago.md"
+    },
+    {
+      "source": "/redes-sociais",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/redes-sociais.md"
+    },
+    {
+      "source": "/redes-sociais/",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/redes-sociais.md"
+    },
+    {
+      "source": "/metodologia",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/metodologia.md"
+    },
+    {
+      "source": "/metodologia/",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/metodologia.md"
+    },
+    {
+      "source": "/melhores-agencias-de-publicidade-brasil",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/melhores-agencias-de-publicidade-brasil.md"
+    },
+    {
+      "source": "/melhores-agencias-de-publicidade-brasil/",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/melhores-agencias-de-publicidade-brasil.md"
+    },
+    {
+      "source": "/melhores-agencias-de-marketing-digital",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/melhores-agencias-de-marketing-digital.md"
+    },
+    {
+      "source": "/melhores-agencias-de-marketing-digital/",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/melhores-agencias-de-marketing-digital.md"
+    },
+    {
+      "source": "/melhores-agencias-de-branding",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/melhores-agencias-de-branding.md"
+    },
+    {
+      "source": "/melhores-agencias-de-branding/",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/melhores-agencias-de-branding.md"
+    },
+    {
+      "source": "/melhores-agencias-de-comunicacao",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/melhores-agencias-de-comunicacao.md"
+    },
+    {
+      "source": "/melhores-agencias-de-comunicacao/",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/melhores-agencias-de-comunicacao.md"
     }
   ]
 }

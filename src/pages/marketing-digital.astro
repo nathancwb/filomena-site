@@ -1,0 +1,182 @@
+---
+import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
+import Analytics from '../components/Analytics.astro';
+import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <Analytics />
+    <ClientRouter />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência de Marketing Digital em São Paulo | Filomena</title>
+    <meta name="description" content="Estratégia completa de Marketing Digital, Tráfego Pago, Inbound e Conteúdo em São Carlos e São Paulo. Atraia clientes qualificados e multiplique suas vendas.">
+
+    <link rel="canonical" href="https://www.filomenapropaganda.com.br/marketing-digital/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://www.filomenapropaganda.com.br/marketing-digital/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.filomenapropaganda.com.br/marketing-digital/" />
+    <link rel="alternate" type="text/markdown" href="/marketing-digital.md" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Agência de Marketing Digital em São Paulo | Filomena" />
+    <meta property="og:description" content="Marketing digital com estratégia integrada, geração de leads MQL/SQL e foco absoluto no retorno do investimento (ROI)." />
+    <meta property="og:url" content="https://www.filomenapropaganda.com.br/marketing-digital/" />
+    <meta property="og:site_name" content="Filomena Propaganda" />
+    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Marketing Digital e Performance",
+          "serviceType": "Digital Marketing & Performance Services",
+          "provider": {
+            "@type": "AdvertisingAgency",
+            "name": "Filomena Propaganda",
+            "url": "https://www.filomenapropaganda.com.br"
+          },
+          "areaServed": "BR",
+          "description": "Gestão estratégica de marketing digital para PMEs e médias empresas: atração multicanal, tráfego pago, SEO, nutrição de leads e inteligência de vendas."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "O que diferencia o marketing digital da Filomena?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nós não vendemos curtidas ou posts vazios. Unimos o posicionamento estratégico da marca a funis de aquisição mensuráveis (Google Ads, Meta Ads e automações), acompanhando o volume de leads qualificados e a receita gerada."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como a Filomena reporta os resultados de marketing digital?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Disponibilizamos dashboards transparentes em tempo real e reuniões mensais de fechamento executivo, analisando custo por clique (CPC), custo por lead (CPL), custo de aquisição (CAC) e retorno sobre gasto em anúncios (ROAS)."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <AnalyticsNoscript />
+    <div class="noise-overlay"></div>
+
+    <header class="header">
+        <div class="header__inner container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo-main.webp" alt="Filomena Propaganda & Marketing" class="logo__img">
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="/" class="nav__link">Home</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
+                </ul>
+                <div class="nav__actions">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <span class="section__tag fade-in">Aquisição &amp; Conversão</span>
+                <h1 class="page-hero__title fade-in">Marketing Digital com Direção</h1>
+                <p class="page-hero__description fade-in">
+                    Estratégias estruturadas para transformar visitantes anônimos em leads qualificados e clientes recorrentes da sua empresa.
+                </p>
+                <div style="margin-top: var(--space-xl); display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="/contato/" class="btn btn--primary">Falar com Especialista</a>
+                    <a href="/portfolio/" class="btn btn--outline">Conhecer Resultados</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pilares -->
+        <section class="section">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">Nossos Pilares</span>
+                    <h2 class="section__title fade-in">Como estruturamos seu crescimento digital</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-xl); margin-top: var(--space-3xl);">
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Mídia &amp; Performance</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Gestão avançada de Google Ads, Meta Ads e LinkedIn Ads focada em captação contínua e redução de CAC.</p>
+                    </div>
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Inbound &amp; Conteúdo</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Criação de autoridade orgânica, artigos de blog orientados para SEO/IA e materiais ricos para nutrição.</p>
+                    </div>
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Landing Pages de Alta Conversão</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Páginas rápidas, responsivas e construídas para maximizar as taxas de conversão de formulários e WhatsApp.</p>
+                    </div>
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Inteligência de Vendas</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Integração com CRMs (RD Station, HubSpot, Pipefy) e rastreamento completo de eventos via GA4 e GTM.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section section--alt">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">Dúvidas</span>
+                    <h2 class="section__title fade-in">Perguntas sobre Marketing Digital</h2>
+                </div>
+                <div class="faq-grid fade-in">
+                    <details class="faq-item">
+                        <summary class="faq-item__question">O que diferencia o marketing digital da Filomena?</summary>
+                        <p class="faq-item__answer">Nós não vendemos curtidas ou posts vazios. Unimos o posicionamento estratégico da marca a funis de aquisição mensuráveis (Google Ads, Meta Ads e automações), acompanhando o volume de leads qualificados e a receita gerada.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">Como a Filomena reporta os resultados de marketing digital?</summary>
+                        <p class="faq-item__answer">Disponibilizamos dashboards transparentes em tempo real e reuniões mensais de fechamento executivo, analisando custo por clique (CPC), custo por lead (CPL), custo de aquisição (CAC) e retorno sobre gasto em anúncios (ROAS).</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section cases" style="text-align: center;">
+            <div class="container">
+                <h2 class="section__title fade-in" style="color: var(--white);">Quer acelerar suas vendas digitais?</h2>
+                <p class="section__description fade-in" style="color: var(--gray-400); margin-bottom: var(--space-2xl);">Agende uma reunião de alinhamento com nossos estrategistas de marketing digital.</p>
+                <a href="/contato/" class="btn btn--primary fade-in">Solicitar Proposta Comercial</a>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+    <script src="/script.js" is:inline></script>
+</body>
+</html>

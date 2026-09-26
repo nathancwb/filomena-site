@@ -1,0 +1,181 @@
+---
+import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
+import Analytics from '../components/Analytics.astro';
+import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <Analytics />
+    <ClientRouter />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Estratégica de Redes Sociais em SP | Filomena</title>
+    <meta name="description" content="Gestão de Redes Sociais profissional para marcas: planejamento de conteúdo, direção de arte, roteiros de vídeos e posicionamento de autoridade no Instagram e LinkedIn.">
+
+    <link rel="canonical" href="https://www.filomenapropaganda.com.br/redes-sociais/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://www.filomenapropaganda.com.br/redes-sociais/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.filomenapropaganda.com.br/redes-sociais/" />
+    <link rel="alternate" type="text/markdown" href="/redes-sociais.md" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gestão Estratégica de Redes Sociais em SP | Filomena" />
+    <meta property="og:description" content="Conteúdo que constrói presença, autoridade e conexão com a audiência. Muito além de postar: estratégia de posicionamento." />
+    <meta property="og:url" content="https://www.filomenapropaganda.com.br/redes-sociais/" />
+    <meta property="og:site_name" content="Filomena Propaganda" />
+    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Gestão Estratégica de Redes Sociais",
+          "serviceType": "Social Media Management & Content Strategy",
+          "provider": {
+            "@type": "AdvertisingAgency",
+            "name": "Filomena Propaganda",
+            "url": "https://www.filomenapropaganda.com.br"
+          },
+          "areaServed": "BR",
+          "description": "Planejamento editorial, direção de arte, redação publicitária e gestão de conteúdo para marcas no Instagram, LinkedIn, TikTok e Facebook."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Como a Filomena planeja as postagens das redes sociais?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Desenvolvemos um calendário editorial mensal estratégico alinhado aos lançamentos, datas sazonais e objetivos de vendas da empresa. Todas as peças e legendas passam por aprovação prévia em plataforma compartilhada."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "A agência também produz roteiros de vídeo para Reels e TikTok?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim! Criamos roteiros com ganchos atrativos (hooks), direcionamento visual e edição dinâmica para formatos de vídeo curto (Reels, TikTok e Shorts), essenciais para o algoritmo atual."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <AnalyticsNoscript />
+    <div class="noise-overlay"></div>
+
+    <header class="header">
+        <div class="header__inner container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo-main.webp" alt="Filomena Propaganda & Marketing" class="logo__img">
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="/" class="nav__link">Home</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
+                </ul>
+                <div class="nav__actions">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <span class="section__tag fade-in">Presença &amp; Conexão</span>
+                <h1 class="page-hero__title fade-in">Redes Sociais com Estratégia</h1>
+                <p class="page-hero__description fade-in">
+                    Não é apenas postar: é construir autoridade, engajamento autêntico e relacionamento que se converte em negócios.
+                </p>
+                <div style="margin-top: var(--space-xl); display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="/contato/" class="btn btn--primary">Elevar Minhas Redes Sociais</a>
+                    <a href="/portfolio/" class="btn btn--outline">Ver Feed de Cases</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços Sociais -->
+        <section class="section">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">O que fazemos</span>
+                    <h2 class="section__title fade-in">Nossa atuação em Social Media</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-xl); margin-top: var(--space-3xl);">
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Planejamento Editorial</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Linhas editoriais consistentes com os pilares da sua marca, evitando publicações genéricas e repetitivas.</p>
+                    </div>
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Direção de Arte &amp; Design</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Peças gráficas exclusivas com estética premium e alinhadas ao manual de identidade visual corporativo.</p>
+                    </div>
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Vídeos &amp; Reels Dinâmicos</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Criação de roteiros, edição com legendas atrativas e trilhas sonoras adequadas para alcançar novos públicos.</p>
+                    </div>
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Copywriting Persuasivo</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Textos e legendas envolventes com chamadas para ação (CTAs) que geram conversas no direct e WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section section--alt">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">Dúvidas</span>
+                    <h2 class="section__title fade-in">Perguntas sobre Redes Sociais</h2>
+                </div>
+                <div class="faq-grid fade-in">
+                    <details class="faq-item">
+                        <summary class="faq-item__question">Como a Filomena planeja as postagens das redes sociais?</summary>
+                        <p class="faq-item__answer">Desenvolvemos um calendário editorial mensal estratégico alinhado aos lançamentos, datas sazonais e objetivos de vendas da empresa. Todas as peças e legendas passam por aprovação prévia em plataforma compartilhada.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">A agência também produz roteiros de vídeo para Reels e TikTok?</summary>
+                        <p class="faq-item__answer">Sim! Criamos roteiros com ganchos atrativos (hooks), direcionamento visual e edição dinâmica para formatos de vídeo curto (Reels, TikTok e Shorts), essenciais para o algoritmo atual.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cases" style="text-align: center;">
+            <div class="container">
+                <h2 class="section__title fade-in" style="color: var(--white);">Quer profissionalizar a presença digital da sua marca?</h2>
+                <p class="section__description fade-in" style="color: var(--gray-400); margin-bottom: var(--space-2xl);">Fale com a equipe de social media da Filomena.</p>
+                <a href="/contato/" class="btn btn--primary fade-in">Solicitar Proposta</a>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+    <script src="/script.js" is:inline></script>
+</body>
+</html>

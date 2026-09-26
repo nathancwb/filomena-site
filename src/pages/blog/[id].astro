@@ -74,11 +74,20 @@ const share = {
       "description": post.data.description,
       "image": `https://www.filomenapropaganda.com.br${post.data.thumbnail}`,
       "datePublished": post.data.date ? new Date(post.data.date).toISOString() : undefined,
-      "author": {
-        "@type": "Organization",
-        "name": "Filomena Propaganda",
-        "url": "https://www.filomenapropaganda.com.br"
-      },
+      "dateModified": post.data.date ? new Date(post.data.date).toISOString() : undefined,
+      "inLanguage": "pt-BR",
+      "author": [
+        {
+          "@type": "Person",
+          "name": post.data.author || "Equipe Filomena",
+          "url": "https://www.filomenapropaganda.com.br/sobre/"
+        },
+        {
+          "@type": "Organization",
+          "name": "Filomena Propaganda",
+          "url": "https://www.filomenapropaganda.com.br"
+        }
+      ],
       "publisher": {
         "@type": "Organization",
         "name": "Filomena Propaganda",

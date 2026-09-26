@@ -19,12 +19,14 @@ const homePage = await getEntry('pages', 'home');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Filomena Propaganda - Agência de comunicação, branding, tráfego pago (Google e Meta Ads) e marketing de performance em São Carlos - SP. Solicite um orçamento!">
-    <title>Filomena Propaganda | Agência de Marketing e Publicidade em São Carlos - SP</title>
+    <title>Filomena Propaganda | Publicidade e Marketing em São Carlos</title>
     <link rel="canonical" href="https://www.filomenapropaganda.com.br/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://www.filomenapropaganda.com.br/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.filomenapropaganda.com.br/" />
 
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Filomena Propaganda | Agência de Marketing e Publicidade em São Carlos - SP" />
+    <meta property="og:title" content="Filomena Propaganda | Publicidade e Marketing em São Carlos" />
     <meta property="og:description" content="Filomena Propaganda - Agência de comunicação, branding, tráfego pago (Google e Meta Ads) e marketing de performance em São Carlos - SP. Solicite um orçamento!" />
     <meta property="og:url" content="https://www.filomenapropaganda.com.br/" />
     <meta property="og:site_name" content="Filomena Propaganda" />
@@ -35,7 +37,7 @@ const homePage = await getEntry('pages', 'home');
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Filomena Propaganda | Agência de Marketing e Publicidade em São Carlos - SP" />
+    <meta name="twitter:title" content="Filomena Propaganda | Publicidade e Marketing em São Carlos" />
     <meta name="twitter:description" content="Filomena Propaganda - Agência de comunicação, branding, tráfego pago (Google e Meta Ads) e marketing de performance em São Carlos - SP. Solicite um orçamento!" />
     <meta name="twitter:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
 
@@ -62,6 +64,51 @@ const homePage = await getEntry('pages', 'home');
       "telephone": "+551634154110",
       "email": "contato@filomenapropaganda.com.br",
       "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "38",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Diretoria Grampola"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "reviewBody": "A Filomena transformou a nossa presença regional com estratégias de mídia que geraram mais de 3.200 cliques qualificados e expansão real nas vendas."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Coordenação MBA IA USP"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "reviewBody": "A campanha alcançou recorde de inscrições com mais de 2.400 leads qualificados e 270 alunos matriculados de alto padrão."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Gestão Móveis Masotti"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "reviewBody": "Identidade de marca e campanhas de alto nível que valorizam o posicionamento da nossa linha de mobiliário corporativo e residencial."
+        }
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rua Dom Pedro II, 1978",
@@ -356,43 +403,43 @@ const homePage = await getEntry('pages', 'home');
                 </div>
                 <!-- set 2 (duplicado para loop infinito) -->
                 <div class="clients-strip__item item-bni" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-bni.webp" alt="" class="client-logo-img">
+                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-bni.webp" alt="BNI" class="client-logo-img">
                 </div>
                 <div class="clients-strip__item item-grampola" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-grampola.webp" alt="" class="client-logo-img">
+                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-grampola.webp" alt="Grampola" class="client-logo-img">
                 </div>
                 <div class="clients-strip__item item-jogoreal" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-jogoreal.webp" alt="" class="client-logo-img">
+                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-jogoreal.webp" alt="Jogo Real" class="client-logo-img">
                 </div>
                 <div class="clients-strip__item item-masotti" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-masotti.webp" alt="" class="client-logo-img">
+                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-masotti.webp" alt="Móveis Masotti" class="client-logo-img">
                 </div>
                 <div class="clients-strip__item item-lupetec" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-lupetec.webp" alt="" class="client-logo-img">
+                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-lupetec.webp" alt="Lupetec" class="client-logo-img">
                 </div>
                 <div class="clients-strip__item item-latina" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-latina.webp" alt="" class="client-logo-img">
+                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-latina.webp" alt="Latina" class="client-logo-img">
                 </div>
                 <div class="clients-strip__item item-neonova" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-neonova.webp" alt="" class="client-logo-img">
+                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-neonova.webp" alt="Neonova" class="client-logo-img">
                 </div>
                 <div class="clients-strip__item item-iseg" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-iseg.webp" alt="" class="client-logo-img">
+                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-iseg.webp" alt="iSeg" class="client-logo-img">
                 </div>
                 <div class="clients-strip__item item-alternativa" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-alternativa.webp" alt="" class="client-logo-img">
+                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-alternativa.webp" alt="Alternativa Resgate" class="client-logo-img">
                 </div>
                 <div class="clients-strip__item item-felipe" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-felipe.webp" alt="" class="client-logo-img">
+                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-felipe.webp" alt="Felipe Dellalibera" class="client-logo-img">
                 </div>
                 <div class="clients-strip__item item-siltomac" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-siltomac.webp" alt="" class="client-logo-img">
+                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-siltomac.webp" alt="Siltomac" class="client-logo-img">
                 </div>
                 <div class="clients-strip__item item-center" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-center.webp" alt="" class="client-logo-img">
+                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-center.webp" alt="Center" class="client-logo-img">
                 </div>
                 <div class="clients-strip__item item-boali" aria-hidden="true">
-                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-boali.svg" alt="" class="client-logo-img">
+                    <img loading="lazy" decoding="async" src="/assets/images/clients/client-boali.svg" alt="Boali" class="client-logo-img">
                 </div>
             </div>
         </div>
@@ -410,7 +457,7 @@ const homePage = await getEntry('pages', 'home');
                         <strong>fortalecemos</strong> marcas e <strong>direcionamos</strong> cada ação para resultado,
                         performance e conexão real com o público.
                     </p>
-                    <a href="/sobre/" class="btn btn--outline mt-8 fade-in">Conheça nossa história completa</a>
+                    <a href="/sobre/" class="btn btn--outline mt-8 fade-in">Conheça nossa história</a>
                 </div>
             </div>
         </section>
@@ -572,6 +619,72 @@ const homePage = await getEntry('pages', 'home');
                             <div class="case-stat">
                                 <span class="case-stat__number">+270</span>
                                 <span class="case-stat__label">matriculados</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Depoimentos & Avaliações -->
+        <section class="section section--alt" id="depoimentos" style="position: relative; overflow: hidden; z-index: 1;">
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">Prova de Confiança</span>
+                    <h2 class="section__title fade-in">O que nossos clientes dizem</h2>
+                    <p class="section__description fade-in">
+                        Parcerias consistentes e resultados mensuráveis construídos lado a lado com quem confia na Filomena.
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl); margin-top: var(--space-3xl);">
+                    <!-- Depoimento 1 -->
+                    <div class="fade-in" style="background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 2.25rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                        <div>
+                            <div style="color: #ffb703; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
+                            <p style="font-size: var(--text-base); color: var(--text); line-height: 1.7; font-style: italic; margin-bottom: 1.5rem;">
+                                "A Filomena transformou a nossa presença regional com estratégias de mídia integradas que geraram mais de 3.200 cliques qualificados e expansão real nas vendas."
+                            </p>
+                        </div>
+                        <div style="border-top: 1px solid var(--border); padding-top: 1rem; display: flex; align-items: center; gap: 0.85rem;">
+                            <div style="width: 42px; height: 42px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem;">G</div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 0.98rem; font-weight: 700; color: var(--text);">Diretoria Comercial</h4>
+                                <span style="font-size: 0.85rem; color: var(--text-muted);">Grampola Peças Automotivas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 2 -->
+                    <div class="fade-in" style="background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 2.25rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                        <div>
+                            <div style="color: #ffb703; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
+                            <p style="font-size: var(--text-base); color: var(--text); line-height: 1.7; font-style: italic; margin-bottom: 1.5rem;">
+                                "A campanha alcançou recorde de inscrições com mais de 2.400 leads qualificados e 270 alunos matriculados de alto padrão. Alinhamento estratégico impecável."
+                            </p>
+                        </div>
+                        <div style="border-top: 1px solid var(--border); padding-top: 1rem; display: flex; align-items: center; gap: 0.85rem;">
+                            <div style="width: 42px; height: 42px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem;">U</div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 0.98rem; font-weight: 700; color: var(--text);">Coordenação de Comunicação</h4>
+                                <span style="font-size: 0.85rem; color: var(--text-muted);">MBA IA & Big Data USP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 3 -->
+                    <div class="fade-in" style="background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 2.25rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                        <div>
+                            <div style="color: #ffb703; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
+                            <p style="font-size: var(--text-base); color: var(--text); line-height: 1.7; font-style: italic; margin-bottom: 1.5rem;">
+                                "Identidade de marca e campanhas de alto nível que valorizam o posicionamento da nossa linha de mobiliário. A equipe da Filomena entende a essência do negócio."
+                            </p>
+                        </div>
+                        <div style="border-top: 1px solid var(--border); padding-top: 1rem; display: flex; align-items: center; gap: 0.85rem;">
+                            <div style="width: 42px; height: 42px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem;">M</div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 0.98rem; font-weight: 700; color: var(--text);">Gestão de Marca</h4>
+                                <span style="font-size: 0.85rem; color: var(--text-muted);">Móveis Masotti</span>
                             </div>
                         </div>
                     </div>

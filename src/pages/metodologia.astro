@@ -1,0 +1,158 @@
+---
+import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
+import Analytics from '../components/Analytics.astro';
+import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <Analytics />
+    <ClientRouter />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodologia Filomena: Método + Estratégia + Criatividade</title>
+    <meta name="description" content="Conheça a metodologia proprietária da Filomena Propaganda. Como unimos pesquisa, posicionamento de marca, criação e mídia de performance para gerar crescimento.">
+
+    <link rel="canonical" href="https://www.filomenapropaganda.com.br/metodologia/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://www.filomenapropaganda.com.br/metodologia/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.filomenapropaganda.com.br/metodologia/" />
+    <link rel="alternate" type="text/markdown" href="/metodologia.md" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Metodologia Filomena: Método + Estratégia + Criatividade" />
+    <meta property="og:description" content="A Filomena não cria campanhas soltas. Nós construímos posicionamento, fortalecemos marcas e direcionamos cada ação para resultado e performance." />
+    <meta property="og:url" content="https://www.filomenapropaganda.com.br/metodologia/" />
+    <meta property="og:site_name" content="Filomena Propaganda" />
+    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Metodologia Proprietária da Filomena Propaganda",
+      "description": "Explicação detalhada sobre o método integrado de 4 etapas da Filomena Propaganda para construção de marcas e aceleração de vendas.",
+      "author": {
+        "@type": "Organization",
+        "name": "Filomena Propaganda"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Filomena Propaganda",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.filomenapropaganda.com.br/assets/images/logo-main.webp"
+        }
+      },
+      "inLanguage": "pt-BR"
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <AnalyticsNoscript />
+    <div class="noise-overlay"></div>
+
+    <header class="header">
+        <div class="header__inner container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo-main.webp" alt="Filomena Propaganda & Marketing" class="logo__img">
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="/" class="nav__link">Home</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
+                </ul>
+                <div class="nav__actions">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <span class="section__tag fade-in">Nosso DNA</span>
+                <h1 class="page-hero__title fade-in">Método + Estratégia + Criatividade</h1>
+                <p class="page-hero__description fade-in">
+                    A Filomena não cria campanhas soltas. Nós construímos posicionamento, fortalecemos marcas e direcionamos cada ação para resultado, performance e conexão real com o público.
+                </p>
+            </div>
+        </section>
+
+        <!-- Etapas do Método -->
+        <section class="section">
+            <div class="container" style="max-width: 900px;">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">Como Trabalhamos</span>
+                    <h2 class="section__title fade-in">O Ciclo Estratégico em 4 Etapas</h2>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: var(--space-2xl); margin-top: var(--space-3xl);">
+                    <!-- Etapa 1 -->
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2.5rem; border-radius: 16px; border-left: 5px solid var(--accent); border: 1px solid var(--border); border-left-width: 5px; border-left-color: var(--accent);">
+                        <span style="font-weight: 800; font-size: 0.9rem; text-transform: uppercase; color: var(--accent); letter-spacing: 1px;">Etapa 01</span>
+                        <h3 style="font-size: 1.5rem; margin: 0.5rem 0 1rem;">Imersão &amp; Fundamento</h3>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7;">
+                            Nenhum projeto começa pela estética. Mergulhamos no modelo de negócio do cliente, analisamos o mercado concorrencial, identificamos o comportamento do consumidor e mapeamos as dores reais do processo comercial.
+                        </p>
+                    </div>
+
+                    <!-- Etapa 2 -->
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2.5rem; border-radius: 16px; border-left: 5px solid var(--accent); border: 1px solid var(--border); border-left-width: 5px; border-left-color: var(--accent);">
+                        <span style="font-weight: 800; font-size: 0.9rem; text-transform: uppercase; color: var(--accent); letter-spacing: 1px;">Etapa 02</span>
+                        <h3 style="font-size: 1.5rem; margin: 0.5rem 0 1rem;">Posicionamento Estratégico</h3>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7;">
+                            Definimos a proposta única de valor da sua marca. Estabelecemos as mensagens-chave, a personalidade corporativa e as diretrizes de diferenciação para que sua empresa nunca precise disputar clientes por menor preço.
+                        </p>
+                    </div>
+
+                    <!-- Etapa 3 -->
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2.5rem; border-radius: 16px; border-left: 5px solid var(--accent); border: 1px solid var(--border); border-left-width: 5px; border-left-color: var(--accent);">
+                        <span style="font-weight: 800; font-size: 0.9rem; text-transform: uppercase; color: var(--accent); letter-spacing: 1px;">Etapa 03</span>
+                        <h3 style="font-size: 1.5rem; margin: 0.5rem 0 1rem;">Criação &amp; Conexão Omnichannel</h3>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7;">
+                            Traduzimos a estratégia em ativos de alto impacto: design de marca, peças publicitárias, mídias exteriores (OOH), vídeos dinâmicos, landing pages de alta conversão e campanhas integradas de tráfego pago.
+                        </p>
+                    </div>
+
+                    <!-- Etapa 4 -->
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2.5rem; border-radius: 16px; border-left: 5px solid var(--accent); border: 1px solid var(--border); border-left-width: 5px; border-left-color: var(--accent);">
+                        <span style="font-weight: 800; font-size: 0.9rem; text-transform: uppercase; color: var(--accent); letter-spacing: 1px;">Etapa 04</span>
+                        <h3 style="font-size: 1.5rem; margin: 0.5rem 0 1rem;">Performance, Análise &amp; Escala</h3>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7;">
+                            Acompanhamento diário de métricas de aquisição (CAC, CPL, ROAS), testes A/B de criativos e páginas, relatórios executivos transparentes e iterações contínuas para amplificar a geração de receita.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section cases" style="text-align: center;">
+            <div class="container">
+                <h2 class="section__title fade-in" style="color: var(--white);">Quer aplicar esse método ao seu negócio?</h2>
+                <p class="section__description fade-in" style="color: var(--gray-400); margin-bottom: var(--space-2xl);">Agende uma reunião de diagnóstico com os diretores da Filomena.</p>
+                <a href="/contato/" class="btn btn--primary fade-in">Agendar Diagnóstico Gratuito</a>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+    <script src="/script.js" is:inline></script>
+</body>
+</html>

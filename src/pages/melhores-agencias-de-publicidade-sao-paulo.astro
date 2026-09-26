@@ -1,0 +1,759 @@
+---
+import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
+import Analytics from '../components/Analytics.astro';
+import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <Analytics />
+    <ClientRouter />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhores Agências de Publicidade em São Paulo: Como Escolher em 2026 | Filomena</title>
+    <meta name="description" content="Guia completo para escolher entre as melhores agências de publicidade em São Paulo em 2026. Critérios técnicos, tabela comparativa de modelos, métricas e FAQ.">
+
+    <link rel="canonical" href="https://www.filomenapropaganda.com.br/melhores-agencias-de-publicidade-sao-paulo/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://www.filomenapropaganda.com.br/melhores-agencias-de-publicidade-sao-paulo/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.filomenapropaganda.com.br/melhores-agencias-de-publicidade-sao-paulo/" />
+    <link rel="alternate" type="text/markdown" href="/melhores-agencias-de-publicidade-sao-paulo.md" />
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Melhores Agências de Publicidade em São Paulo: Como Escolher em 2026 | Filomena" />
+    <meta property="og:description" content="Guia técnico e imparcial sobre os critérios para avaliar e contratar agências de publicidade e marketing no estado de São Paulo em 2026." />
+    <meta property="og:url" content="https://www.filomenapropaganda.com.br/melhores-agencias-de-publicidade-sao-paulo/" />
+    <meta property="og:site_name" content="Filomena Propaganda" />
+    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Melhores Agências de Publicidade em São Paulo: Como Escolher em 2026" />
+    <meta name="twitter:description" content="Critérios de seleção, modelos de contratação, tabela comparativa e dados de retorno para escolher sua agência de publicidade em SP." />
+    <meta name="twitter:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+
+    <!-- GEO Geotagging / Local SEO -->
+    <meta name="geo.region" content="BR-SP" />
+    <meta name="geo.placename" content="São Paulo" />
+    <meta name="geo.position" content="-22.008978;-47.887784" />
+    <meta name="ICBM" content="-22.008978, -47.887784" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- JSON-LD Article, FAQPage, BreadcrumbList, Organization -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://www.filomenapropaganda.com.br/melhores-agencias-de-publicidade-sao-paulo/#article",
+          "isPartOf": {
+            "@type": "WebPage",
+            "@id": "https://www.filomenapropaganda.com.br/melhores-agencias-de-publicidade-sao-paulo/"
+          },
+          "headline": "Melhores agências de publicidade em São Paulo: critérios para escolher em 2026",
+          "description": "Guia técnico sobre como selecionar agências de publicidade no estado de São Paulo, comparando modelos de contratação, senioridade de time, métricas de ROI e governança.",
+          "inLanguage": "pt-BR",
+          "mainEntityOfPage": "https://www.filomenapropaganda.com.br/melhores-agencias-de-publicidade-sao-paulo/",
+          "datePublished": "2026-09-25T08:00:00-03:00",
+          "dateModified": "2026-09-25T08:00:00-03:00",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Equipe Estratégica Filomena",
+              "url": "https://www.filomenapropaganda.com.br/sobre/",
+              "jobTitle": "Estratégia de Marca e Performance",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Filomena Propaganda"
+              }
+            }
+          ],
+          "publisher": {
+            "@type": "Organization",
+            "name": "Filomena Propaganda",
+            "url": "https://www.filomenapropaganda.com.br",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.filomenapropaganda.com.br/assets/images/logo-main.webp"
+            }
+          },
+          "image": "https://www.filomenapropaganda.com.br/assets/images/og-preview.png"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.filomenapropaganda.com.br/melhores-agencias-de-publicidade-sao-paulo/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Início",
+              "item": "https://www.filomenapropaganda.com.br/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Melhores Agências de Publicidade SP",
+              "item": "https://www.filomenapropaganda.com.br/melhores-agencias-de-publicidade-sao-paulo/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.filomenapropaganda.com.br/melhores-agencias-de-publicidade-sao-paulo/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Quanto custa contratar uma agência de publicidade em São Paulo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O valor varia conforme o modelo de contratação. Agências de porte regional e consultorias estratégicas costumam operar com retainers mensais entre R$ 4.000 e R$ 18.000 para PMEs e médias empresas. Grandes redes multinacionais da capital exigem contratos a partir de R$ 35.000 a R$ 100.000+ por mês. Projetos pontuais de branding variam de R$ 10.000 a R$ 60.000."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Qual a diferença entre agências da capital paulista e agências do interior de SP?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Agências da capital costumam ter overheads mais altos e foco prioritário em corporações globais, o que pode dispersar a atenção a contas médias. Agências estabelecidas em polos estratégicos do interior (como São Carlos, Campinas e Ribeirão Preto) combinam rigor técnico, proximidade direta dos sócios na operação diária e excelente eficiência de custos para médias empresas e marcas em expansão."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como saber se minha empresa precisa de branding ou de tráfego pago primeiro?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Se sua empresa tem problema de conversão, posicionamento fraco ou concorrência acirrada por preço, o tráfego pago sozinho apenas queimará verba. O caminho ideal é integrar: construir a proposta de valor e a identidade (Branding) para que cada real investido em anúncios (Tráfego Pago) converta com o menor Custo por Aquisição (CAC) possível."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O que avaliar no portfólio de uma agência antes de fechar contrato?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Avalie se os cases apresentam desafios reais de negócio e métricas mensuráveis (como cliques, vendas, leads e retenção), e não apenas estética visual. Verifique também a longevidade das marcas atendidas e a diversidade de frentes executadas (identidade, campanhas on/off e canais digitais)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como medir o retorno sobre o investimento (ROI) de uma agência de publicidade?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O ROI deve ser mensurado por métricas diretas de crescimento: aumento de receita gerada por canais de aquisição, redução no Custo de Aquisição de Clientes (CAC), crescimento no volume de leads qualificados para o time comercial (MQL/SQL) e valorização da percepção de preço da marca."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como a Filomena Propaganda atua no estado de São Paulo e no Brasil?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Fundada em 2013 em São Carlos-SP, a Filomena Propaganda atende marcas presencialmente no interior paulista e remotamente em todo o território nacional. Com mais de 250 marcas atendidas, combina estratégia de posicionamento, criação publicitária e performance digital orientada a resultados."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preload" href="/assets/fonts/OliviarSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles.css">
+
+    <style>
+        .guide-header {
+            padding: 8rem 0 3.5rem;
+            background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+            border-bottom: 1px solid var(--border);
+        }
+        .guide-tag {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .guide-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3.25rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--text);
+            max-width: 950px;
+            margin-bottom: 1.5rem;
+        }
+        .guide-subtitle {
+            font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 820px;
+            margin-bottom: 2rem;
+        }
+        .guide-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        .guide-meta__author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .guide-meta__badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .guide-body {
+            padding: 4rem 0 6rem;
+        }
+        .guide-content {
+            max-width: 860px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+        .guide-content p {
+            margin-bottom: 1.75rem;
+            color: #4a4a4a;
+        }
+        .guide-content h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+            font-weight: 700;
+            color: var(--text);
+            margin: 3.5rem 0 1.5rem;
+            line-height: 1.25;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+        .guide-content h3 {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 2rem 0 1rem;
+        }
+
+        .criteria-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.25rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+        .criteria-card__header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .criteria-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .criteria-card h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        .criteria-block {
+            margin-top: 1.25rem;
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+        .criteria-block--alert {
+            background: rgba(220, 53, 69, 0.08);
+            border-left: 3px solid #dc3545;
+            color: #842029;
+        }
+        .criteria-block--question {
+            background: rgba(89, 38, 109, 0.08);
+            border-left: 3px solid var(--accent);
+            color: var(--accent);
+        }
+        .criteria-block strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Comparison Table */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 2.5rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: #ffffff;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+        }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        .compare-table th {
+            background: var(--bg-alt);
+            padding: 1.25rem 1rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--text);
+            border-bottom: 2px solid var(--border);
+        }
+        .compare-table td {
+            padding: 1.25rem 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .compare-table tr:last-child td {
+            border-bottom: none;
+        }
+        .compare-table tr.highlight {
+            background: rgba(89, 38, 109, 0.04);
+        }
+        .compare-table tr.highlight td:first-child {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* Proof Box */
+        .proof-box {
+            background: linear-gradient(135deg, #2b1233 0%, #17071c 100%);
+            color: #ffffff;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+        .proof-box h3 {
+            color: #ffffff;
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        .proof-box p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .proof-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+        .proof-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffb703;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-heading);
+        }
+        .proof-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        .cta-banner {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .cta-banner h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .cta-banner p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: var(--text-muted);
+        }
+        .cta-banner__actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <AnalyticsNoscript />
+    <div class="noise-overlay"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo-main.webp" alt="Filomena Propaganda & Marketing" class="logo__img">
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="/" class="nav__link">Home</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
+                </ul>
+
+                <div class="nav__actions">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO / HEADER DO GUIA -->
+        <article class="guide-header">
+            <div class="container">
+                <span class="guide-tag">Guia Técnico &amp; Mercado 2026</span>
+                <h1 class="guide-title">Melhores agências de publicidade em São Paulo: critérios para escolher</h1>
+                <p class="guide-subtitle">
+                    Entenda como avaliar fornecedores de comunicação, branding e marketing digital no estado de São Paulo com base em maturidade técnica, alinhamento comercial e retorno comprovado.
+                </p>
+
+                <div class="guide-meta">
+                    <div class="guide-meta__author">
+                        <div class="guide-meta__badge">F</div>
+                        <span>Equipe Estratégica Filomena</span>
+                    </div>
+                    <span>•</span>
+                    <span>Atualizado em: 25 de Setembro de 2026</span>
+                    <span>•</span>
+                    <span>Leitura analítica: 8 min</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- CORPO DO GUIA -->
+        <section class="guide-body">
+            <div class="container">
+                <div class="guide-content">
+
+                    <p>
+                        O mercado paulista concentra o maior polo de agências de publicidade e propaganda da América Latina. No entanto, o processo de contratação é frequentemente marcado por assimetria de informações: propostas repletas de jargões, foco excessivo em prêmios criativos desconectados de vendas ou promessas irreais de retorno em tráfego pago.
+                    </p>
+                    <p>
+                        Seja para marcas estabelecidas que buscam reposicionamento de mercado, ou para PMEs em franca expansão no interior e capital, escolher o parceiro certo exige método. Neste guia, sintetizamos <strong>os 6 critérios fundamentais de seleção</strong>, comparamos os principais <strong>modelos de agência em SP</strong> e apresentamos dados de validação de negócios reais.
+                    </p>
+
+                    <!-- SEÇÃO 1: OS 6 CRITÉRIOS -->
+                    <h2>1. Os 6 critérios essenciais para avaliar uma agência</h2>
+                    <p>
+                        Para evitar investimentos improdutivos, analise os fornecedores sob a ótica de engenharia de negócios, e não apenas de estética visual.
+                    </p>
+
+                    <!-- Critério 1 -->
+                    <div class="criteria-card">
+                        <div class="criteria-card__header">
+                            <span class="criteria-number">1</span>
+                            <h3>Conexão real entre Branding e Performance de Vendas</h3>
+                        </div>
+                        <p>
+                            Uma campanha visualmente impecável sem inteligência de conversão gera apenas vaidade. Por outro lado, tráfego pago sem proposta de valor sólida torna o Custo de Aquisição de Clientes (CAC) insustentável. A agência ideal precisa dominar a integração de ambas as frentes.
+                        </p>
+                        <div class="criteria-block criteria-block--alert">
+                            <strong>Sinal de alerta (Red Flag):</strong> Agências que vendem "posts em redes sociais" ou "gestão de tráfego" de forma isolada, sem questionar o modelo de vendas, a proposta de valor ou a margem do cliente.
+                        </div>
+                        <div class="criteria-block criteria-block--question">
+                            <strong>Pergunta a fazer:</strong> <em>"Como a estratégia criativa proposta vai impactar diretamente nosso ciclo de vendas e taxa de conversão nos próximos 6 meses?"</em>
+                        </div>
+                    </div>
+
+                    <!-- Critério 2 -->
+                    <div class="criteria-card">
+                        <div class="criteria-card__header">
+                            <span class="criteria-number">2</span>
+                            <h3>Transparência em Métricas e Dados Reais de Campanha</h3>
+                        </div>
+                        <p>
+                            O marketing de 2026 não tolera relatórios maquiados baseados apenas em "alcance estimado" ou "curtidas". A agência deve demonstrar clareza sobre métricas de funil: cliques qualificados, taxas de conversão de landing page, leads MQL/SQL gerados e ROI real.
+                        </p>
+                        <div class="criteria-block criteria-block--alert">
+                            <strong>Sinal de alerta:</strong> Falta de relatórios com metas prévias e dashboards em tempo real, ou resistência em conceder acesso total às contas de mídia (Google Ads / Meta Ads).
+                        </div>
+                        <div class="criteria-block criteria-block--question">
+                            <strong>Pergunta a fazer:</strong> <em>"As contas de anúncios e propriedades de dados pertencerão à nossa empresa ou à agência? Quais relatórios mensais teremos acesso?"</em>
+                        </div>
+                    </div>
+
+                    <!-- Critério 3 -->
+                    <div class="criteria-card">
+                        <div class="criteria-card__header">
+                            <span class="criteria-number">3</span>
+                            <h3>Senioridade do Time e Proximidade de Atendimento</h3>
+                        </div>
+                        <p>
+                            Em muitas agências de grande porte, a venda é realizada por diretores executivos, mas a execução diária é delegada a estagiários e assistentes em sobrecarga. Verifique quem estará no comando do seu planejamento e criação.
+                        </p>
+                        <div class="criteria-block criteria-block--alert">
+                            <strong>Sinal de alerta:</strong> Prazos sistematicamente estourados, trocas constantes de interlocutor (rotatividade de equipe) e falta de visão estratégica no atendimento.
+                        </div>
+                        <div class="criteria-block criteria-block--question">
+                            <strong>Pergunta a fazer:</strong> <em>"Quem são os profissionais seniores dedicados ao nosso dia a dia e com que frequência haverá alinhamento estratégico com a liderança?"</em>
+                        </div>
+                    </div>
+
+                    <!-- Critério 4 -->
+                    <div class="criteria-card">
+                        <div class="criteria-card__header">
+                            <span class="criteria-number">4</span>
+                            <h3>Domínio de Estratégias Omnichannel (On e Off)</h3>
+                        </div>
+                        <p>
+                            O consumidor não divide a vida entre "online" e "offline". Ele transita entre outdoors, pontos de venda, buscas no Google, Reels no Instagram e conversas de WhatsApp. A agência deve criar narrativas consistentes que funcionem em qualquer ponto de contato.
+                        </p>
+                        <div class="criteria-block criteria-block--alert">
+                            <strong>Sinal de alerta:</strong> Agências puramente digitais que não sabem planejar mídia exterior ou materiais físicos, ou agências tradicionais que terceirizam o tráfego sem entender métricas digitais.
+                        </div>
+                        <div class="criteria-block criteria-block--question">
+                            <strong>Pergunta a fazer:</strong> <em>"Vocês têm capacidade técnica comprovada para integrar materiais institucionais, mídia OOH (outdoor) e campanhas digitais hipersegmentadas?"</em>
+                        </div>
+                    </div>
+
+                    <!-- Critério 5 -->
+                    <div class="criteria-card">
+                        <div class="criteria-card__header">
+                            <span class="criteria-number">5</span>
+                            <h3>Cases Reais com Resultados Comprováveis no Mercado</h3>
+                        </div>
+                        <p>
+                            Imagens bonitas no Behance são apenas o ponto de partida. O critério determinante é a capacidade de gerar negócios comprovados em mercados competitivos (B2B, serviços especializados, saúde, educação e varejo).
+                        </p>
+                        <div class="criteria-block criteria-block--alert">
+                            <strong>Sinal de alerta:</strong> Portfólios compostos exclusivamente por "projetos-fantasma" (mockups conceituais sem cliente real) ou ausência de números de impacto.
+                        </div>
+                        <div class="criteria-block criteria-block--question">
+                            <strong>Pergunta a fazer:</strong> <em>"Podem nos apresentar dois cases de clientes reais com desafios similares ao nosso e os resultados percentuais obtidos?"</em>
+                        </div>
+                    </div>
+
+                    <!-- Critério 6 -->
+                    <div class="criteria-card">
+                        <div class="criteria-card__header">
+                            <span class="criteria-number">6</span>
+                            <h3>Contratos Transparentes e Estrutura de Retainer Justa</h3>
+                        </div>
+                        <p>
+                            Contratos de longo prazo com cláusulas de fidelidade draconianas e falta de clareza sobre entregáveis geram frustração. O modelo moderno privilegia contratos baseados em escopo transparente, reuniões de fechamento mensais e alinhamento de expectativas.
+                        </p>
+                        <div class="criteria-block criteria-block--alert">
+                            <strong>Sinal de alerta:</strong> Taxas ocultas de veiculação ("overprice" não declarado em mídia), custos surpresa para pequenas alterações e contratos sem SLA definido.
+                        </div>
+                        <div class="criteria-block criteria-block--question">
+                            <strong>Pergunta a fazer:</strong> <em>"Qual é a política de revisão de peças, prazos de entrega e como é cobrado qualquer escopo adicional?"</em>
+                        </div>
+                    </div>
+
+                    <!-- SEÇÃO 2: TABELA COMPARATIVA -->
+                    <h2>2. Comparativo de modelos de agências em São Paulo</h2>
+                    <p>
+                        Entenda as vantagens e desvantagens de cada modelo de operação disponível no mercado paulista para escolher o formato aderente ao seu momento empresarial:
+                    </p>
+
+                    <div class="table-wrapper">
+                        <table class="compare-table">
+                            <thead>
+                                <tr>
+                                    <th>Modelo de Agência</th>
+                                    <th>Foco Principal</th>
+                                    <th>Investimento Médio</th>
+                                    <th>Senioridade / Atendimento</th>
+                                    <th>Recomendado Para</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Grandes Redes (Capital)</strong></td>
+                                    <td>Mídia de massa, TV e grandes orçamentos</td>
+                                    <td>R$ 35k a R$ 100k+/mês</td>
+                                    <td>Atendimento diluído em contas de menor porte</td>
+                                    <td>Multinacionais e empresas de capital aberto</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Boutique de Design</strong></td>
+                                    <td>Identidade visual pura e design gráfico</td>
+                                    <td>R$ 15k a R$ 50k (por projeto)</td>
+                                    <td>Alta especialização estética, sem tráfego</td>
+                                    <td>Startups em fase inicial de branding</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Performance Pura</strong></td>
+                                    <td>Gestão de Google Ads e Meta Ads direta</td>
+                                    <td>R$ 3k a R$ 10k/mês + % mídia</td>
+                                    <td>Foco técnico analítico, sem criação de marca</td>
+                                    <td>E-commerces com branding já maduro</td>
+                                </tr>
+                                <tr class="highlight">
+                                    <td><strong>Estratégica &amp; Regional (Filomena)</strong></td>
+                                    <td>Método 360°: Branding + Publicidade + Tráfego</td>
+                                    <td>R$ 4k a R$ 18k/mês</td>
+                                    <td>Sócios e especialistas seniores na linha de frente</td>
+                                    <td>PMEs, médias empresas e marcas em expansão</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- SEÇÃO 3: PROVA DE EXPERIÊNCIA DA FILOMENA -->
+                    <h2>3. Transparência e Prova de Experiência: O Caso da Filomena</h2>
+                    <p>
+                        Com sede em São Carlos-SP e atuação em âmbito nacional desde 2013, a <a href="/sobre/">Filomena Propaganda</a> atende mais de 250 marcas conectando planejamento estratégico, identidade visual e campanhas de alta performance.
+                    </p>
+                    <p>
+                        Acreditamos que critérios de qualidade devem ser verificáveis na prática. Abaixo compartilhamos dois exemplos de dados reais obtidos em nossas campanhas:
+                    </p>
+
+                    <div class="proof-box">
+                        <h3>Resultados Reais Validados em Operação</h3>
+                        <p>Ações conduzidas com método integrado de posicionamento, mídia e conversão:</p>
+
+                        <div class="proof-grid">
+                            <div class="proof-item">
+                                <div class="proof-number">+3.200</div>
+                                <div class="proof-label"><strong>Grampola Peças Automotivas:</strong> Cliques qualificados e 378 mil impressões em campanha de expansão regional.</div>
+                            </div>
+                            <div class="proof-item">
+                                <div class="proof-number">+2.400</div>
+                                <div class="proof-label"><strong>MBA IA &amp; Big Data USP:</strong> Leads gerados com +270 alunos matriculados de alta qualificação.</div>
+                            </div>
+                            <div class="proof-item">
+                                <div class="proof-number">+250</div>
+                                <div class="proof-label"><strong>Marcas Atendidas:</strong> 13 anos de consistência em projetos de B2B, indústria, tecnologia e serviços.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>
+                        Conheça outros trabalhos em nosso <a href="/portfolio/">portfólio completo</a> e veja como construímos soluções integradas nas páginas de <a href="/servicos/">nossos serviços</a>.
+                    </p>
+
+                    <!-- SEÇÃO 4: FAQ COMPLETO -->
+                    <h2>4. Perguntas Frequentes sobre Agências de Publicidade em SP</h2>
+                    <p>
+                        Respostas diretas para as dúvidas mais comuns de diretores, gerentes de marketing e empresários:
+                    </p>
+
+                    <div class="faq-grid">
+                        <details class="faq-item">
+                            <summary class="faq-item__question">Quanto custa contratar uma agência de publicidade em São Paulo?</summary>
+                            <p class="faq-item__answer">
+                                O valor varia conforme o porte da agência e o escopo contratado. Para agências estratégicas de médio porte e consultorias com atendimento próximo, o retainer mensal situa-se tipicamente entre R$ 4.000 e R$ 18.000 para PMEs e médias empresas. Grandes redes multinacionais da capital costumam trabalhar com contratos mínimos a partir de R$ 35.000 a R$ 100.000/mês. Projetos pontuais de branding variam entre R$ 10.000 e R$ 60.000.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-item__question">Qual a diferença entre agências da capital paulista e agências do interior de SP?</summary>
+                            <p class="faq-item__answer">
+                                Agências da capital costumam ter custos de estrutura muito elevados, o que encarece o valor final do fee mensal e frequentemente relega clientes de porte médio a equipes juniores. Agências estabelecidas em polos tecnológicos e econômicos do interior de São Paulo (como São Carlos, Ribeirão Preto e Campinas) oferecem capacidade criativa de nível nacional com envolvimento direto de sócios seniores e melhor eficiência financeira.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-item__question">Como saber se minha empresa precisa de branding ou tráfego pago primeiro?</summary>
+                            <p class="faq-item__answer">
+                                Se a sua empresa enfrenta altas taxas de rejeição, briga constante por preço ou falta de clareza na proposta comercial, investir em tráfego pago isolado apenas aumentará o custo de aquisição. O caminho mais eficiente é estruturar o branding e o posicionamento primeiro, criando as bases para que o tráfego pago traga leads altamente qualificados e com maior taxa de fechamento.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-item__question">O que avaliar no portfólio de uma agência antes de fechar contrato?</summary>
+                            <p class="faq-item__answer">
+                                Vá além da beleza visual: analise se os projetos apresentados foram desenvolvidos para clientes reais com desafios de mercado concretos. Pergunte sobre as métricas atingidas (volume de vendas, leads gerados, retorno sobre investimento) e verifique a longevidade dos relacionamentos da agência com seus clientes.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-item__question">Como medir o retorno sobre o investimento (ROI) de uma agência de publicidade?</summary>
+                            <p class="faq-item__answer">
+                                O retorno deve ser mensurado por indicadores claros: taxa de conversão do funil de vendas, redução no Custo de Aquisição de Clientes (CAC), geração de oportunidades comerciais qualificadas (MQL e SQL) e fortalecimento da percepção de valor da marca perante os concorrentes.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-item__question">Como a Filomena Propaganda atua no estado de São Paulo e no Brasil?</summary>
+                            <p class="faq-item__answer">
+                                Fundada em 2013 em São Carlos-SP, a Filomena Propaganda atua de forma híbrida: com presença física no interior paulista e atendimento ágil e estruturado para clientes de todo o Brasil. Unimos estratégia de marca, criação publicitária e marketing digital de performance para transformar negócios.
+                            </p>
+                        </details>
+                    </div>
+
+                    <!-- BANNER CTA -->
+                    <div class="cta-banner">
+                        <h3>Quer avaliar o posicionamento da sua marca?</h3>
+                        <p>Converse com os especialistas da Filomena e receba um diagnóstico objetivo sobre como acelerar a comunicação e as vendas da sua empresa.</p>
+                        <div class="cta-banner__actions">
+                            <a href="/contato/" class="btn btn--primary">Solicitar Proposta Comercial</a>
+                            <a href="https://api.whatsapp.com/send?l=pt_BR&phone=551634154110&text=Ol%C3%A1!%20Li%20o%20guia%20de%20ag%C3%AAncias%20e%20gostaria%20de%20um%20diagn%C3%B3stico%20para%20minha%20empresa." target="_blank" class="btn btn--outline">Falar no WhatsApp</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+
+    <a href="https://api.whatsapp.com/send?l=pt_BR&phone=551634154110&text=Ol%C3%A1!%20Estou%20visitando%20o%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script src="/script.js" is:inline></script>
+</body>
+
+</html>

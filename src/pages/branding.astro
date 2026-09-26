@@ -1,0 +1,205 @@
+---
+import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
+import Analytics from '../components/Analytics.astro';
+import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <Analytics />
+    <ClientRouter />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência de Branding e Identidade Visual em SP | Filomena</title>
+    <meta name="description" content="Especialistas em Branding, Naming, Identidade Visual e Posicionamento de Marca em São Carlos e São Paulo. Conheça nossos cases e construa uma marca de alto valor.">
+
+    <link rel="canonical" href="https://www.filomenapropaganda.com.br/branding/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://www.filomenapropaganda.com.br/branding/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.filomenapropaganda.com.br/branding/" />
+    <link rel="alternate" type="text/markdown" href="/branding.md" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Agência de Branding e Identidade Visual em SP | Filomena" />
+    <meta property="og:description" content="Posicionamento estratégico, design de marca e manuais de identidade visual que transformam empresas em referências no mercado." />
+    <meta property="og:url" content="https://www.filomenapropaganda.com.br/branding/" />
+    <meta property="og:site_name" content="Filomena Propaganda" />
+    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Schema.org Service & FAQPage -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Branding e Identidade Visual",
+          "serviceType": "Branding & Brand Identity Services",
+          "provider": {
+            "@type": "AdvertisingAgency",
+            "name": "Filomena Propaganda",
+            "url": "https://www.filomenapropaganda.com.br"
+          },
+          "areaServed": "BR",
+          "description": "Consultoria e desenvolvimento completo de branding: diagnóstico de marca, posicionamento, naming, identidade visual e manual de marca para empresas em expansão."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "O que está incluso em um projeto de branding da Filomena?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O projeto inclui diagnóstico de mercado e concorrência, definição de posicionamento e proposta de valor, criação de logotipo e sistema de identidade visual, tipografia institucional, paleta cromática, manual de marca (brandbook) e aplicações práticas em pontos de contato físicos e digitais."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Qual a diferença entre logotipo e branding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O logotipo é apenas o símbolo gráfico que representa o negócio. O branding é a gestão estratégica da percepção da marca: como ela fala, como se posiciona, quais valores transmite e como se diferencia para sustentar preços mais altos e fidelizar clientes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quanto tempo leva para desenvolver uma nova identidade visual?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Em média, um projeto completo de branding e identidade visual leva de 4 a 8 semanas, passando pelas etapas de imersão/briefing, pesquisa estratégica, criação conceitual, validação e entrega dos arquivos finais em alta resolução."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <AnalyticsNoscript />
+    <div class="noise-overlay"></div>
+
+    <header class="header">
+        <div class="header__inner container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo-main.webp" alt="Filomena Propaganda & Marketing" class="logo__img">
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="/" class="nav__link">Home</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
+                </ul>
+                <div class="nav__actions">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <span class="section__tag fade-in">Estratégia &amp; Design</span>
+                <h1 class="page-hero__title fade-in">Branding &amp; Identidade Visual</h1>
+                <p class="page-hero__description fade-in">
+                    Marcas fortes não competem por preço. Elas constroem valor, autoridade e conexão emocional em cada ponto de contato.
+                </p>
+                <div style="margin-top: var(--space-xl); display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="/contato/" class="btn btn--primary">Solicitar Diagnóstico de Marca</a>
+                    <a href="/portfolio/" class="btn btn--outline">Ver Cases de Branding</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detalhes do Serviço -->
+        <section class="section">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">O que entregamos</span>
+                    <h2 class="section__title fade-in">Etapas do nosso processo de Branding</h2>
+                    <p class="section__description fade-in">Da pesquisa de mercado até a aplicação completa no mundo real.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-xl); margin-top: var(--space-3xl);">
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent); margin-bottom: 0.75rem;">01</div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Diagnóstico e Imersão</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Entrevistas com stakeholders, benchmarking de concorrentes e mapeamento do público-alvo para encontrar o território único da sua marca.</p>
+                    </div>
+
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent); margin-bottom: 0.75rem;">02</div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Posicionamento &amp; Tom de Voz</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Definição da proposta de valor, manifesto de marca, pilares de personalidade e diretrizes de comunicação textual.</p>
+                    </div>
+
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent); margin-bottom: 0.75rem;">03</div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Identidade Visual</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Criação do logotipo, paleta cromática com contrastes acessíveis, tipografia corporativa e elementos gráficos proprietários.</p>
+                    </div>
+
+                    <div class="fade-in" style="background: var(--bg-alt); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent); margin-bottom: 0.75rem;">04</div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Brandbook &amp; Aplicações</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Manual de uso da marca completo e aplicações práticas em papelaria, fachadas, uniformes, redes sociais e embalagens.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Branding -->
+        <section class="section section--alt">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">Dúvidas Frequentes</span>
+                    <h2 class="section__title fade-in">Perguntas sobre Branding</h2>
+                </div>
+                <div class="faq-grid fade-in">
+                    <details class="faq-item">
+                        <summary class="faq-item__question">O que está incluso em um projeto de branding da Filomena?</summary>
+                        <p class="faq-item__answer">O projeto inclui diagnóstico de mercado e concorrência, definição de posicionamento e proposta de valor, criação de logotipo e sistema de identidade visual, tipografia institucional, paleta cromática, manual de marca (brandbook) e aplicações práticas em pontos de contato físicos e digitais.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">Qual a diferença entre logotipo e branding?</summary>
+                        <p class="faq-item__answer">O logotipo é apenas o símbolo gráfico que representa o negócio. O branding é a gestão estratégica da percepção da marca: como ela fala, como se posiciona, quais valores transmite e como se diferencia para sustentar preços mais altos e fidelizar clientes.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">Quanto tempo leva para desenvolver uma nova identidade visual?</summary>
+                        <p class="faq-item__answer">Em média, um projeto completo de branding e identidade visual leva de 4 a 8 semanas, passando pelas etapas de imersão/briefing, pesquisa estratégica, criação conceitual, validação e entrega dos arquivos finais em alta resolução.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section cases" style="text-align: center;">
+            <div class="container">
+                <h2 class="section__title fade-in" style="color: var(--white);">Pronto para posicionar sua marca no topo?</h2>
+                <p class="section__description fade-in" style="color: var(--gray-400); margin-bottom: var(--space-2xl);">Fale com a equipe de branding da Filomena e comece a transformação da sua empresa.</p>
+                <a href="/contato/" class="btn btn--primary fade-in">Iniciar Projeto de Branding</a>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+    <script src="/script.js" is:inline></script>
+</body>
+</html>
