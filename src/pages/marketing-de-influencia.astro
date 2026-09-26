@@ -1,0 +1,963 @@
+---
+import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
+import Analytics from '../components/Analytics.astro';
+import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <Analytics />
+    <ClientRouter />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Marketing de Influência que Vende | Filomena Propaganda</title>
+    <meta name="description" content="Conectamos sua marca aos criadores certos, com estratégia, curadoria humana e relatório de resultado — do briefing à entrega. Peça uma proposta.">
+
+    <link rel="canonical" href="https://www.filomenapropaganda.com.br/marketing-de-influencia/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://www.filomenapropaganda.com.br/marketing-de-influencia/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.filomenapropaganda.com.br/marketing-de-influencia/" />
+    <link rel="alternate" type="text/markdown" href="/marketing-de-influencia.md" />
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Marketing de Influência que Vende | Filomena Propaganda" />
+    <meta property="og:description" content="Conectamos sua marca aos criadores certos, com estratégia, curadoria humana e relatório de resultado — do briefing à entrega." />
+    <meta property="og:url" content="https://www.filomenapropaganda.com.br/marketing-de-influencia/" />
+    <meta property="og:site_name" content="Filomena Propaganda" />
+    <meta property="og:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Marketing de Influência que Vende | Filomena Propaganda" />
+    <meta name="twitter:description" content="Conectamos sua marca aos criadores certos, com estratégia, curadoria humana e relatório de resultado — do briefing à entrega." />
+    <meta name="twitter:image" content="https://www.filomenapropaganda.com.br/assets/images/og-preview.png" />
+
+    <!-- GEO Geotagging / Local SEO -->
+    <meta name="geo.region" content="BR-SP" />
+    <meta name="geo.placename" content="São Carlos" />
+    <meta name="geo.position" content="-22.008978;-47.887784" />
+    <meta name="ICBM" content="-22.008978, -47.887784" />
+
+    <!-- Service Schema -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Influencer Marketing",
+      "name": "Marketing de Influência",
+      "provider": {
+        "@type": ["Organization", "AdvertisingAgency", "LocalBusiness"],
+        "name": "Filomena Propaganda",
+        "legalName": "Filomena Propaganda e Marketing Ltda",
+        "url": "https://www.filomenapropaganda.com.br",
+        "telephone": "+551634154110",
+        "email": "contato@filomenapropaganda.com.br",
+        "logo": "https://www.filomenapropaganda.com.br/assets/images/logo-main.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Dom Pedro II, 1978",
+          "addressLocality": "São Carlos",
+          "addressRegion": "SP",
+          "postalCode": "13560-235",
+          "addressCountry": "BR"
+        }
+      },
+      "areaServed": "BR",
+      "description": "Serviço ponta a ponta de marketing de influência: diagnóstico, curadoria de criadores, negociação, gestão de campanha e relatório de resultados."
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quanto custa uma campanha de influência?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O investimento varia conforme o número de criadores, formato de conteúdo e alcance desejado. Na proposta, apresentamos opções para diferentes orçamentos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Em quanto tempo vejo resultado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As primeiras publicações costumam sair poucas semanas após o início do projeto; os primeiros dados de engajamento e conversão chegam logo depois, e ficam disponíveis no relatório de acompanhamento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como vocês escolhem os influenciadores?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Com curadoria por afinidade de público, histórico de entrega e engajamento real — nunca só pelo número de seguidores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funciona para qualquer segmento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Adaptamos a estratégia e o perfil de criadores ao setor e ao público da marca, de moda e beleza a alimentos e tecnologia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso ter uma verba mínima?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não existe uma verba fixa, o formato da campanha se adapta ao objetivo e orçamento disponível."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preload" href="/assets/fonts/OliviarSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <AnalyticsNoscript />
+    <div class="noise-overlay"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo-main.webp" alt="Filomena Propaganda & Marketing" class="logo__img">
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__list" id="nav-menu">
+                    <li><a href="/" class="nav__link">Home</a></li>
+                    <li><a href="/sobre/" class="nav__link">Sobre</a></li>
+                    <li><a href="/servicos/" class="nav__link">Serviços</a></li>
+                    <li><a href="/portfolio/" class="nav__link">Portfólio</a></li>
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
+                    <li><a href="/trabalhe-conosco/" class="nav__link">Trabalhe Conosco</a></li>
+                    <li><a href="/contato/" class="nav__link">Contato</a></li>
+                </ul>
+
+                <div class="nav__actions">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="influencia-hero">
+            <div class="influencia-hero__art" aria-hidden="true">
+                <svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" role="presentation">
+                    <defs>
+                        <linearGradient id="screenGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#d08fff" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#59266d" stop-opacity="0.9" />
+                        </linearGradient>
+                        <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#d08fff" stop-opacity="0.35" />
+                            <stop offset="100%" stop-color="#d08fff" stop-opacity="0" />
+                        </radialGradient>
+                    </defs>
+
+                    <!-- glows -->
+                    <circle cx="470" cy="160" r="220" fill="url(#glowGrad)" />
+                    <circle cx="160" cy="480" r="160" fill="url(#glowGrad)" />
+
+                    <!-- dot grid texture -->
+                    <g fill="#ffffff" opacity="0.12">
+                        <circle cx="60" cy="80" r="3" /><circle cx="100" cy="80" r="3" /><circle cx="140" cy="80" r="3" />
+                        <circle cx="60" cy="120" r="3" /><circle cx="100" cy="120" r="3" /><circle cx="140" cy="120" r="3" />
+                        <circle cx="60" cy="160" r="3" /><circle cx="100" cy="160" r="3" /><circle cx="140" cy="160" r="3" />
+                        <circle cx="500" cy="500" r="3" /><circle cx="540" cy="500" r="3" /><circle cx="580" cy="500" r="3" />
+                        <circle cx="500" cy="540" r="3" /><circle cx="540" cy="540" r="3" /><circle cx="580" cy="540" r="3" />
+                    </g>
+
+                    <!-- back floating card -->
+                    <rect x="70" y="200" width="150" height="260" rx="20" fill="#ffffff" opacity="0.06" transform="rotate(-8 145 330)" />
+
+                    <!-- phone mockup -->
+                    <g transform="rotate(6 400 340)">
+                        <rect x="290" y="140" width="230" height="400" rx="34" fill="#1c0d24" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2" />
+                        <rect x="304" y="168" width="202" height="330" rx="18" fill="url(#screenGrad)" />
+
+                        <!-- story progress bars -->
+                        <rect x="316" y="180" width="56" height="4" rx="2" fill="#ffffff" opacity="0.9" />
+                        <rect x="378" y="180" width="56" height="4" rx="2" fill="#ffffff" opacity="0.5" />
+                        <rect x="440" y="180" width="56" height="4" rx="2" fill="#ffffff" opacity="0.5" />
+
+                        <!-- play button -->
+                        <circle cx="405" cy="330" r="34" fill="#ffffff" opacity="0.9" />
+                        <path d="M395 314 L425 330 L395 346 Z" fill="#59266d" />
+
+                        <!-- caption bars -->
+                        <rect x="316" y="452" width="90" height="8" rx="4" fill="#ffffff" opacity="0.85" />
+                        <rect x="316" y="468" width="130" height="6" rx="3" fill="#ffffff" opacity="0.5" />
+
+                        <!-- side action icons -->
+                        <g fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M478 330c0-9-7-16-16-16-5 0-9 2-12 6-3-4-7-6-12-6-9 0-16 7-16 16 0 13 28 30 28 30s28-17 28-30z" />
+                            <circle cx="450" cy="392" r="14" />
+                            <path d="M444 388h12M444 396h8" />
+                        </g>
+                        <rect x="438" y="345" width="24" height="6" rx="3" fill="#ffffff" opacity="0.7" />
+                    </g>
+
+                    <!-- small floating heart -->
+                    <g transform="translate(120 120) scale(1.4)" fill="#d08fff" opacity="0.5">
+                        <path d="M12 21s-7-4.35-9.5-8.8C.7 8.7 2.3 5 6 5c2 0 3.4 1 4 2.4C10.6 6 12 5 14 5c3.7 0 5.3 3.7 3.5 7.2C19 16.65 12 21 12 21z" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="container influencia-hero__inner">
+                <span class="influencia-hero__tag fade-in">Marketing de Influência</span>
+                <h1 class="influencia-hero__title fade-in">Marketing de influência que <span class="influencia-hero__highlight">vende</span> — não só aparece.</h1>
+                <p class="influencia-hero__description fade-in">
+                    Conectamos sua marca aos criadores certos, com estratégia, curadoria humana e relatório de resultado — do briefing à entrega.
+                </p>
+                <div class="fade-in" style="margin-top: var(--space-xl); display: flex; gap: var(--space-md); flex-wrap: wrap;">
+                    <a href="#contato" class="btn btn--primary">Quero uma proposta →</a>
+                    <a href="#processo" class="btn btn--outline influencia-hero__btn-outline">Como funciona</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estatísticas -->
+        <section class="section" style="padding-top: var(--space-2xl);">
+            <div class="container">
+                <div class="influencia-stats fade-in">
+                    <div class="influencia-stat">
+                        <span class="influencia-stat__number">65%</span>
+                        <span class="influencia-stat__label">já compraram por recomendação de um influenciador</span>
+                    </div>
+                    <div class="influencia-stat">
+                        <span class="influencia-stat__number">5,2x</span>
+                        <span class="influencia-stat__label">retorno médio sobre o investimento no Brasil</span>
+                    </div>
+                    <div class="influencia-stat">
+                        <span class="influencia-stat__number">87%</span>
+                        <span class="influencia-stat__label">ficaram satisfeitos com a compra indicada</span>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: var(--space-lg); font-size: var(--text-xs); color: var(--gray-400);">
+                    Fontes: Opinion Box + Influency.me 2025 · Sprout Social 2025 · Empreender.com.br
+                </p>
+            </div>
+        </section>
+
+        <!-- Como trabalhamos (Sticky Stacking Scroll) -->
+        <section class="section section--alt sticky-stack-section" id="processo">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">Como trabalhamos</span>
+                    <h2 class="section__title fade-in" style="max-width: 850px; margin: 0 auto; line-height: 1.15;">
+                        Um serviço ponta a ponta,<br>não uma lista de indicações
+                    </h2>
+                    <p class="section__description fade-in" style="max-width: 680px; margin: 1.25rem auto 0; color: var(--text-muted);">
+                        Do primeiro contato à entrega do relatório: cuidamos de cada detalhe para transformar criadores e campanhas em autoridade e vendas reais.
+                    </p>
+                </div>
+
+                <div class="sticky-stack-wrapper">
+                    <div class="sticky-stack">
+                        <!-- Card 01 -->
+                        <div class="sticky-card" style="--card-index: 1;">
+                            <div class="sticky-card__inner">
+                                <div class="sticky-card__header">
+                                    <span class="sticky-card__number">01</span>
+                                    <div class="sticky-card__badge">Etapa 01</div>
+                                </div>
+                                <div class="sticky-card__body">
+                                    <h3 class="sticky-card__title">Diagnóstico &amp; Estratégia</h3>
+                                    <p class="sticky-card__text">
+                                        Entendimento do público, objetivo da campanha — vendas, awareness ou lançamento — e definição clara de KPIs de performance.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 02 -->
+                        <div class="sticky-card" style="--card-index: 2;">
+                            <div class="sticky-card__inner">
+                                <div class="sticky-card__header">
+                                    <span class="sticky-card__number">02</span>
+                                    <div class="sticky-card__badge">Etapa 02</div>
+                                </div>
+                                <div class="sticky-card__body">
+                                    <h3 class="sticky-card__title">Curadoria de Criadores</h3>
+                                    <p class="sticky-card__text">
+                                        Seleção por afinidade real com a marca, com negociação e contrato incluídos — condições claras de entrega, prazo e uso de imagem.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 03 -->
+                        <div class="sticky-card" style="--card-index: 3;">
+                            <div class="sticky-card__inner">
+                                <div class="sticky-card__header">
+                                    <span class="sticky-card__number">03</span>
+                                    <div class="sticky-card__badge">Etapa 03</div>
+                                </div>
+                                <div class="sticky-card__body">
+                                    <h3 class="sticky-card__title">Gestão de Campanha</h3>
+                                    <p class="sticky-card__text">
+                                        Acompanhamento de produção, aprovação de conteúdo e cronograma de publicação — sem você precisar administrar dezenas de conversas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 04 -->
+                        <div class="sticky-card" style="--card-index: 4;">
+                            <div class="sticky-card__inner">
+                                <div class="sticky-card__header">
+                                    <span class="sticky-card__number">04</span>
+                                    <div class="sticky-card__badge">Etapa 04</div>
+                                </div>
+                                <div class="sticky-card__body">
+                                    <h3 class="sticky-card__title">Relatório de Resultados &amp; ROI</h3>
+                                    <p class="sticky-card__text">
+                                        Métricas completas de alcance, engajamento, cliques e conversões entregues ao final de cada campanha — resultado repetível, não sorte.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="fade-in" style="text-align: center; max-width: 640px; margin: var(--space-2xl) auto 0; color: var(--text-muted);">
+                    Do primeiro contato à primeira publicação, o processo costuma levar poucas semanas — o prazo exato varia com o tamanho da campanha e a disponibilidade dos criadores selecionados.
+                </p>
+            </div>
+        </section>
+
+        <!-- Diferenciais -->
+        <section class="section" id="diferenciais">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">Por que trabalhar com a gente</span>
+                    <h2 class="section__title fade-in">Critério, método e transparência</h2>
+                    <p class="section__description fade-in" style="margin-left: auto; margin-right: auto;">
+                        Banco de criadores já mapeado por nicho, engajamento e histórico de entrega — o que reduz o tempo entre a decisão e a primeira publicação.
+                    </p>
+                </div>
+
+                <div class="services__grid">
+                    <article class="service fade-in">
+                        <div class="service__number">01</div>
+                        <h3 class="service__title">Curadoria com critério</h3>
+                        <p class="service__text">Selecionamos criadores pela afinidade real com o público da marca — engajamento importa mais que alcance bruto.</p>
+                    </article>
+
+                    <article class="service fade-in">
+                        <div class="service__number">02</div>
+                        <h3 class="service__title">Metodologia própria</h3>
+                        <p class="service__text">Cada campanha segue um processo estruturado, do briefing ao relatório, para que o resultado seja repetível — não sorte.</p>
+                    </article>
+
+                    <article class="service fade-in">
+                        <div class="service__number">03</div>
+                        <h3 class="service__title">Transparência de ponta a ponta</h3>
+                        <p class="service__text">Você acompanha custos, entregas e métricas durante toda a campanha, não só no relatório final.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA intermediário -->
+        <section class="influencia-cta-banner">
+            <div class="container">
+                <h2 class="influencia-cta-banner__title fade-in">Vamos estruturar a campanha da sua marca?</h2>
+                <a href="#contato" class="btn btn--primary fade-in">Quero uma proposta →</a>
+            </div>
+        </section>
+
+        <!-- Pacotes / Investimento -->
+        <section class="section" id="investimento">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">Investimento</span>
+                    <h2 class="section__title fade-in">Uma faixa para cada momento da marca</h2>
+                    <p class="section__description fade-in" style="margin-left: auto; margin-right: auto;">
+                        Não existe verba fixa — o formato se adapta ao seu objetivo e orçamento. Estas faixas são só uma referência de ponto de partida.
+                    </p>
+                </div>
+
+                <div class="pricing-grid fade-in">
+                    <div class="pricing-card glass-premium">
+                        <p class="pricing-card__name">Starter</p>
+                        <p class="pricing-card__desc">Campanha pontual, para testar o canal com foco em um objetivo específico.</p>
+                        <ul class="pricing-card__list">
+                            <li>3 a 5 criadores</li>
+                            <li>Um objetivo: lançamento, sazonalidade ou awareness</li>
+                            <li>Relatório ao final da campanha</li>
+                        </ul>
+                        <a href="#contato" class="btn btn--outline btn--full">Solicitar proposta</a>
+                    </div>
+
+                    <div class="pricing-card pricing-card--highlight glass-premium">
+                        <span class="pricing-card__badge">Mais escolhido</span>
+                        <p class="pricing-card__name">Growth</p>
+                        <p class="pricing-card__desc">Gestão recorrente, para marcas que querem manter o canal ativo mês a mês.</p>
+                        <ul class="pricing-card__list">
+                            <li>6 a 10 criadores</li>
+                            <li>Gestão mensal contínua</li>
+                            <li>Relatório mensal de performance</li>
+                        </ul>
+                        <a href="#contato" class="btn btn--primary btn--full">Solicitar proposta</a>
+                    </div>
+
+                    <div class="pricing-card glass-premium">
+                        <p class="pricing-card__name">Scale</p>
+                        <p class="pricing-card__desc">Operação contínua e multi-canal, para marcas com maturidade no canal.</p>
+                        <ul class="pricing-card__list">
+                            <li>10+ criadores</li>
+                            <li>Múltiplas campanhas simultâneas</li>
+                            <li>Banco de criadores dedicado à marca</li>
+                        </ul>
+                        <a href="#contato" class="btn btn--outline btn--full">Solicitar proposta</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Depoimentos & Case -->
+        <section class="section section--alt" id="cases">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">O que dizem sobre a gente</span>
+                    <h2 class="section__title fade-in">Resultado real, contado por quem viveu</h2>
+                </div>
+
+                <div class="influencia-testimonials fade-in">
+                    <div class="influencia-testimonial glass-premium">
+                        <p class="influencia-testimonial__quote">"A curadoria fez toda a diferença — os criadores selecionados realmente conversavam com o nosso público, e isso apareceu direto nas vendas."</p>
+                        <p class="influencia-testimonial__author">Victor · Proprietário, Boali Alimentação Saudável</p>
+                    </div>
+                    <div class="influencia-testimonial glass-premium">
+                        <p class="influencia-testimonial__quote">"Ter transparência sobre cada etapa da campanha, sem precisar administrar conversas soltas com criadores, mudou o jeito que a gente enxerga esse canal."</p>
+                        <p class="influencia-testimonial__author">Maurício · Gerente Comercial, Latina Eletrodomésticos</p>
+                    </div>
+                </div>
+
+                <div class="influencia-case glass-premium fade-in">
+                    <div class="influencia-case__image">
+                        <img src="/assets/images/portfolio/boali-outdoor1.webp" alt="Campanha Boali" loading="lazy" decoding="async">
+                    </div>
+                    <div class="influencia-case__content">
+                        <span class="section__tag" style="margin-bottom: var(--space-sm);">Case</span>
+                        <h3 style="font-family: var(--font-heading); font-size: var(--text-2xl); margin-bottom: var(--space-sm);">Boali × Colégio Ábaco</h3>
+                        <p style="color: var(--text-muted);">Conteúdo a substituir pelo desafio, estratégia e resultado reais da campanha, com números específicos de alcance, engajamento e conversão.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA intermediário -->
+        <section class="influencia-cta-banner">
+            <div class="container">
+                <h2 class="influencia-cta-banner__title fade-in">Ainda com dúvidas? Vamos conversar.</h2>
+                <a href="#contato" class="btn btn--primary fade-in">Quero uma proposta →</a>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section class="section" id="contato">
+            <div class="container" style="max-width: 720px; text-align: center;">
+                <span class="section__tag fade-in">Pronto para começar</span>
+                <h2 class="section__title fade-in">Conte pra gente o objetivo da sua marca e receba uma proposta personalizada</h2>
+
+                <form id="influencia-form" class="contact__form fade-in glass-premium" action="https://api.web3forms.com/submit" method="POST" style="padding: var(--space-2xl); margin-top: var(--space-xl); text-align: left;">
+                    <input type="hidden" name="access_key" value="c685ced6-cdf1-4deb-92d6-162a2f110e0e">
+                    <input type="hidden" name="subject" value="Novo lead — LP Marketing de Influência">
+                    <input type="hidden" name="from_name" value="LP Marketing de Influência - Filomena">
+                    <!-- Honeypot anti-spam field -->
+                    <div class="hp-field">
+                        <label for="b_website">Website</label>
+                        <input type="text" id="b_website" name="b_website" autocomplete="off" tabindex="-1">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: var(--space-md);">
+                        <label for="nome" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: var(--space-md);">
+                        <label for="email" style="font-family: var(--font-heading); letter-spacing: -0.02em;">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="voce@marca.com" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: var(--space-md);">
+                        <label for="marca" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Marca / empresa</label>
+                        <input type="text" id="marca" name="marca" placeholder="Nome da marca" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: var(--space-md);">
+                        <label for="objetivo" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Objetivo da campanha</label>
+                        <select id="objetivo" name="objetivo" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="Vendas">Vendas</option>
+                            <option value="Lançamento">Lançamento</option>
+                            <option value="Awareness">Awareness</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom: var(--space-md);">
+                        <label for="orcamento" style="font-family: var(--font-heading); letter-spacing: -0.02em;">Orçamento estimado (opcional)</label>
+                        <input type="text" id="orcamento" name="orcamento" placeholder="Ex: R$ 5.000">
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--full" style="margin-top: var(--space-lg); font-family: var(--font-heading);">Quero uma proposta →</button>
+                    <p id="influencia-form-status" role="status" aria-live="polite" style="display: none; margin-top: var(--space-md); padding: var(--space-sm) var(--space-md); border-radius: 8px; font-size: var(--text-sm); text-align: center;"></p>
+                </form>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <span class="section__tag fade-in">Dúvidas Frequentes</span>
+                    <h2 class="section__title fade-in">Antes de começar</h2>
+                </div>
+
+                <div class="faq-grid fade-in">
+                    <details class="faq-item">
+                        <summary class="faq-item__question">Quanto custa uma campanha de influência?</summary>
+                        <p class="faq-item__answer">O investimento varia conforme o número de criadores, formato de conteúdo e alcance desejado. Na proposta, apresentamos opções para diferentes orçamentos.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">Em quanto tempo vejo resultado?</summary>
+                        <p class="faq-item__answer">As primeiras publicações costumam sair poucas semanas após o início do projeto; os primeiros dados de engajamento e conversão chegam logo depois, e ficam disponíveis no relatório de acompanhamento.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">Como vocês escolhem os influenciadores?</summary>
+                        <p class="faq-item__answer">Com curadoria por afinidade de público, histórico de entrega e engajamento real — nunca só pelo número de seguidores.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">Funciona para qualquer segmento?</summary>
+                        <p class="faq-item__answer">Sim. Adaptamos a estratégia e o perfil de criadores ao setor e ao público da marca, de moda e beleza a alimentos e tecnologia.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">Preciso ter uma verba mínima?</summary>
+                        <p class="faq-item__answer">Não existe uma verba fixa, o formato da campanha se adapta ao objetivo e orçamento disponível.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+
+    <!-- WhatsApp -->
+    <a href="https://api.whatsapp.com/send?l=pt_BR&phone=551634154110&text=Ol%C3%A1!%20Vim%20da%20p%C3%A1gina%20de%20Marketing%20de%20Influ%C3%AAncia%20e%20quero%20uma%20proposta." class="whatsapp-btn" target="_blank"
+        aria-label="WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <style>
+        .influencia-hero {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--accent-dark), #2a0f3a);
+            padding: calc(var(--header-height) + var(--space-4xl)) 0 var(--space-4xl);
+        }
+
+        .influencia-hero__art {
+            position: absolute;
+            inset: 0;
+            left: 38%;
+            pointer-events: none;
+            -webkit-mask-image: linear-gradient(to left, black 55%, transparent 100%);
+            mask-image: linear-gradient(to left, black 55%, transparent 100%);
+        }
+
+        .influencia-hero__art svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .influencia-hero__inner {
+            position: relative;
+            z-index: 2;
+            max-width: 620px;
+        }
+
+        .influencia-hero__tag {
+            display: inline-block;
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--secondary-light);
+            margin-bottom: var(--space-md);
+        }
+
+        .influencia-hero__title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5.5vw, 4rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 0.95;
+            letter-spacing: -0.02em;
+            color: var(--white);
+        }
+
+        .influencia-hero__highlight {
+            color: var(--secondary-light);
+        }
+
+        .influencia-hero__description {
+            font-size: var(--text-lg);
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 520px;
+            margin-top: var(--space-lg);
+        }
+
+        .influencia-hero__btn-outline {
+            border-color: rgba(255, 255, 255, 0.4);
+            color: var(--white);
+        }
+
+        .influencia-hero__btn-outline:hover {
+            border-color: var(--white);
+            background: var(--white);
+            color: var(--accent-dark);
+        }
+
+        @media (max-width: 900px) {
+            .influencia-hero__art {
+                display: none;
+            }
+
+            .influencia-hero__inner {
+                max-width: 100%;
+            }
+        }
+
+        .influencia-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+            text-align: center;
+        }
+
+        .influencia-stat__number {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .influencia-stat__label {
+            display: block;
+            margin-top: var(--space-xs);
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .influencia-stats {
+                grid-template-columns: 1fr;
+                gap: var(--space-2xl);
+            }
+        }
+
+        .influencia-testimonials {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+
+        .influencia-testimonial {
+            padding: var(--space-xl);
+        }
+
+        .influencia-testimonial__quote {
+            font-size: var(--text-lg);
+            line-height: 1.5;
+        }
+
+        .influencia-testimonial__author {
+            margin-top: var(--space-md);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .influencia-case {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+            padding: var(--space-lg);
+        }
+
+        .influencia-case__image {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .influencia-case__image img {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .influencia-testimonials {
+                grid-template-columns: 1fr;
+            }
+
+            .influencia-case {
+                grid-template-columns: 1fr;
+            }
+
+            .influencia-case__image img {
+                height: 180px;
+            }
+        }
+
+        /* CTA banner intermediário */
+        .influencia-cta-banner {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--accent-dark), #2a0f3a);
+            padding: var(--space-3xl) 0;
+            text-align: center;
+        }
+
+        .influencia-cta-banner::before,
+        .influencia-cta-banner::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(208, 143, 255, 0.35), transparent 70%);
+            pointer-events: none;
+        }
+
+        .influencia-cta-banner::before {
+            width: 360px;
+            height: 360px;
+            top: -180px;
+            left: -100px;
+        }
+
+        .influencia-cta-banner::after {
+            width: 280px;
+            height: 280px;
+            bottom: -160px;
+            right: -80px;
+        }
+
+        .influencia-cta-banner .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .influencia-cta-banner__title {
+            font-family: var(--font-heading);
+            font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl));
+            color: var(--white);
+            margin-bottom: var(--space-lg);
+        }
+
+        /* Pacotes / investimento */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            position: relative;
+            padding: var(--space-xl);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(89, 38, 109, 0.1);
+        }
+
+        .pricing-card--highlight {
+            border: 2px solid var(--accent);
+            transform: scale(1.03);
+        }
+
+        .pricing-card__badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--white);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 14px;
+            border-radius: 100px;
+        }
+
+        .pricing-card__name {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 700;
+        }
+
+        .pricing-card__desc {
+            margin-top: var(--space-xs);
+            color: var(--text-muted);
+            font-size: var(--text-sm);
+        }
+
+        .pricing-card__list {
+            list-style: none;
+            margin: var(--space-lg) 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            flex-grow: 1;
+        }
+
+        .pricing-card__list li {
+            font-size: var(--text-sm);
+            padding-left: var(--space-lg);
+            position: relative;
+        }
+
+        .pricing-card__list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        @media (max-width: 900px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card--highlight {
+                transform: none;
+            }
+        }
+    </style>
+
+    <script src="/script.js" is:inline></script>
+
+    <!-- Envio do formulário via Web3Forms (AJAX, sem recarregar a página) -->
+    <script is:inline>
+      (function () {
+        const form = document.getElementById('influencia-form');
+        if (!form) return;
+        const status = document.getElementById('influencia-form-status');
+        const button = form.querySelector('button[type="submit"]');
+        const buttonLabel = button ? button.innerHTML : '';
+        const whatsappUrl = 'https://api.whatsapp.com/send?l=pt_BR&phone=551634154110&text=Ol%C3%A1!%20Vim%20da%20p%C3%A1gina%20de%20Marketing%20de%20Influ%C3%AAncia%20e%20quero%20uma%20proposta.';
+
+        function showStatus(message, isError) {
+          if (!status) return;
+          status.innerHTML = message;
+          status.style.display = 'block';
+          status.style.background = isError ? 'rgba(229, 57, 53, 0.12)' : 'rgba(67, 160, 71, 0.12)';
+          status.style.color = isError ? '#c62828' : '#2e7d32';
+          status.style.border = '1px solid ' + (isError ? 'rgba(229, 57, 53, 0.4)' : 'rgba(67, 160, 71, 0.4)');
+        }
+
+        form.addEventListener('submit', async function (event) {
+          event.preventDefault();
+
+          const honeypot = form.querySelector('input[name="b_website"]');
+          if (honeypot && honeypot.value) return;
+
+          if (button) {
+            button.disabled = true;
+            button.innerHTML = 'Enviando...';
+          }
+          if (status) status.style.display = 'none';
+
+          try {
+            const response = await fetch(form.action, {
+              method: 'POST',
+              headers: { Accept: 'application/json' },
+              body: new FormData(form),
+            });
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+              showStatus('✅ Proposta solicitada! Em breve entraremos em contato.', false);
+              form.reset();
+
+              if (typeof window !== 'undefined') {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                  event: 'generate_lead',
+                  form_name: 'lp_marketing_influencia'
+                });
+                if (window.gtag) {
+                  window.gtag('event', 'generate_lead', {
+                    event_category: 'Formulário',
+                    event_label: 'LP Marketing de Influência',
+                    value: 1
+                  });
+                }
+                if (window.fbq) {
+                  window.fbq('track', 'Lead', {
+                    content_name: 'LP Marketing de Influência',
+                    value: 1,
+                    currency: 'BRL'
+                  });
+                }
+              }
+            } else {
+              showStatus(
+                '❌ Não foi possível enviar agora. Fale com a gente pelo <a href="' +
+                  whatsappUrl +
+                  '" target="_blank" style="color: inherit; text-decoration: underline;">WhatsApp</a>.',
+                true
+              );
+            }
+          } catch (error) {
+            showStatus(
+              '❌ Erro de conexão. Tente novamente ou fale pelo <a href="' +
+                whatsappUrl +
+                '" target="_blank" style="color: inherit; text-decoration: underline;">WhatsApp</a>.',
+              true
+            );
+          } finally {
+            if (button) {
+              button.disabled = false;
+              button.innerHTML = buttonLabel;
+            }
+          }
+        });
+      })();
+    </script>
+</body>
+
+</html>

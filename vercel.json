@@ -425,6 +425,16 @@
       "source": "/melhores-agencias-de-comunicacao/",
       "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
       "destination": "/melhores-agencias-de-comunicacao.md"
+    },
+    {
+      "source": "/marketing-de-influencia",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/marketing-de-influencia.md"
+    },
+    {
+      "source": "/marketing-de-influencia/",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "destination": "/marketing-de-influencia.md"
     }
   ]
 }
