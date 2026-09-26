@@ -136,9 +136,14 @@ function animateCounter(element) {
 // FORM HANDLER
 // ==========================================
 function initForm() {
-    const forms = document.querySelectorAll('.contact__form');
+    const forms = document.querySelectorAll('.contact__form:not([data-form-init="true"])');
 
     forms.forEach(form => {
+        form.setAttribute('data-form-init', 'true');
+
+        // Se o formulário tiver seu próprio handler inline específico (ex: contato.astro), não duplica o envio
+        if (form.getAttribute('data-custom-handler') === 'true') return;
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -146,7 +151,6 @@ function initForm() {
             const honeypot = form.querySelector('input[name="b_website"]');
             if (honeypot && honeypot.value) {
                 console.warn('Spam detected via honeypot field.');
-                // Simulate success to spam bots to prevent repeated attempts
                 const btn = form.querySelector('button[type="submit"]');
                 const originalText = btn.textContent;
                 btn.textContent = 'Enviando...';
@@ -165,13 +169,15 @@ function initForm() {
             }
 
             const btn = form.querySelector('button[type="submit"]');
-            const originalText = btn.textContent;
+            const originalText = btn ? btn.textContent : 'Enviar';
 
-            btn.textContent = 'Enviando...';
-            btn.disabled = true;
+            if (btn) {
+                btn.textContent = 'Enviando...';
+                btn.disabled = true;
+            }
 
-            // Envio via Web3Forms (funciona em qualquer hospedagem)
-            fetch('https://api.web3forms.com/submit', {
+            // Envio via Web3Forms
+            fetch(form.action || 'https://api.web3forms.com/submit', {
                 method: 'POST',
                 body: new FormData(form),
                 headers: { 'Accept': 'application/json' }
@@ -179,23 +185,62 @@ function initForm() {
                 .then(res => res.json().catch(() => ({ success: res.ok })))
                 .then(data => {
                     if (!(data.success || data.ok)) throw new Error('falha');
-                    btn.textContent = 'Enviado com sucesso!';
-                    btn.style.background = '#22c55e';
+
+                    if (btn) {
+                        btn.textContent = 'Enviado com sucesso!';
+                        btn.style.background = '#22c55e';
+                    }
                     form.reset();
+
+                    // Dispara eventos de conversão para GA4, GTM e Meta Pixel
+                    try {
+                        const formId = form.getAttribute('id') || form.getAttribute('name') || 'formulario_contato';
+                        
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                            event: 'generate_lead',
+                            form_name: formId,
+                            page: window.location.pathname
+                        });
+
+                        if (window.gtag) {
+                            window.gtag('event', 'generate_lead', {
+                                event_category: 'Formulário',
+                                event_label: window.location.pathname,
+                                value: 1
+                            });
+                        }
+
+                        if (window.fbq) {
+                            window.fbq('track', 'Lead', {
+                                content_name: formId,
+                                page: window.location.pathname,
+                                value: 1,
+                                currency: 'BRL'
+                            });
+                        }
+                    } catch (trackErr) {
+                        console.error('Erro ao disparar evento de conversão:', trackErr);
+                    }
+
                     setTimeout(() => {
-                        btn.textContent = originalText;
-                        btn.style.background = '';
-                        btn.disabled = false;
+                        if (btn) {
+                            btn.textContent = originalText;
+                            btn.style.background = '';
+                            btn.disabled = false;
+                        }
                     }, 3000);
                 })
                 .catch(() => {
-                    btn.textContent = 'Erro ao enviar — tente o WhatsApp';
-                    btn.style.background = '#ef4444';
-                    setTimeout(() => {
-                        btn.textContent = originalText;
-                        btn.style.background = '';
-                        btn.disabled = false;
-                    }, 4000);
+                    if (btn) {
+                        btn.textContent = 'Erro ao enviar — tente o WhatsApp';
+                        btn.style.background = '#ef4444';
+                        setTimeout(() => {
+                            btn.textContent = originalText;
+                            btn.style.background = '';
+                            btn.disabled = false;
+                        }, 4000);
+                    }
                 });
         });
     });
