@@ -13,10 +13,7 @@ document.addEventListener('astro:page-load', () => {
     // Parallax Effects
     initParallax();
 
-    // Hero Showcase Parallax
-    initHeroShowcaseParallax();
-
-    // Hero Showcase Cycle Animation
+    // Hero Showcase Cycle Animation (com pausa inteligente no hover)
     initHeroShowcaseCycle();
 
     // Counter Animation
@@ -619,41 +616,8 @@ document.addEventListener('astro:page-load', () => {
 });
 
 // ==========================================
-// MOUSE PARALLAX ON HERO SHOWCASE
+// HERO PORTFOLIO SHOWCASE (CYCLE COM PAUSA INTELIGENTE)
 // ==========================================
-function initHeroShowcaseParallax() {
-    const showcase = document.getElementById('hero-showcase');
-    if (!showcase) return;
-
-    const cards = showcase.querySelectorAll('.showcase-card');
-    if (!cards.length) return;
-
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            // Calculate mouse position relative to the center of the hovered card
-            const x = (e.clientX - rect.left) / rect.width - 0.5;
-            const y = (e.clientY - rect.top) / rect.height - 0.5;
-
-            window.requestAnimationFrame(() => {
-                const depth = parseFloat(card.getAttribute('data-depth')) || 0.2;
-                const moveX = x * depth * 40; 
-                const moveY = y * depth * 25; 
-                const rotateX = -y * depth * 20; 
-                const rotateY = x * depth * 20; 
-
-                card.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-            });
-        });
-
-        card.addEventListener('mouseleave', () => {
-            window.requestAnimationFrame(() => {
-                card.style.transform = 'translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) scale(1)';
-            });
-        });
-    });
-}
-
 function initHeroShowcaseCycle() {
     const showcase = document.getElementById('hero-showcase');
     if (!showcase) return;
@@ -661,12 +625,24 @@ function initHeroShowcaseCycle() {
     const cards = Array.from(showcase.querySelectorAll('.showcase-card'));
     if (cards.length < 3) return;
 
-    // Clear any existing interval to prevent duplicates
+    // Limpa intervalo anterior
     if (window.showcaseCycleInterval) {
         clearInterval(window.showcaseCycleInterval);
+        window.showcaseCycleInterval = null;
     }
 
-    // Set initial position classes
+    let isHovered = false;
+
+    // Pausa a rotação automática quando o usuário está com o mouse sobre os cards
+    showcase.addEventListener('mouseenter', () => {
+        isHovered = true;
+    });
+
+    showcase.addEventListener('mouseleave', () => {
+        isHovered = false;
+    });
+
+    // Estado inicial dos cards
     cards.forEach((card, idx) => {
         card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-hidden', 'pos-swapping-out');
         if (idx === 0) card.classList.add('pos-1');
@@ -675,25 +651,24 @@ function initHeroShowcaseCycle() {
         else card.classList.add('pos-hidden');
     });
 
-    // Create dynamic positions list
+    // Lista dinâmica de posições
     let positions = ['pos-1', 'pos-2', 'pos-3'];
     while (positions.length < cards.length) {
         positions.push('pos-hidden');
     }
 
     const intervalId = setInterval(() => {
-        // Find the card currently at pos-3 (the frontmost card)
+        // NÃO avança se o usuário estiver com o mouse em cima inspecionando o case!
+        if (isHovered) return;
+
         const cardPos3 = cards.find(card => card.classList.contains('pos-3'));
         
         if (cardPos3) {
-            // Add swapping-out class to drop it behind and move it outward
             cardPos3.classList.add('pos-swapping-out');
             
-            // Wait for swap out animation stage to complete (400ms)
             setTimeout(() => {
                 cardPos3.classList.remove('pos-swapping-out');
                 
-                // Shift positions left by 1
                 positions.push(positions.shift());
 
                 cards.forEach((card, idx) => {
@@ -702,14 +677,13 @@ function initHeroShowcaseCycle() {
                 });
             }, 400);
         } else {
-            // Fallback if class state gets out of sync
             positions.push(positions.shift());
             cards.forEach((card, idx) => {
                 card.classList.remove('pos-1', 'pos-2', 'pos-3', 'pos-hidden');
                 card.classList.add(positions[idx]);
             });
         }
-    }, 4500); // Shift every 4.5 seconds
+    }, 4500);
 
     window.showcaseCycleInterval = intervalId;
 }

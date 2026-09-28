@@ -3022,10 +3022,12 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--bg-alt);
     border: 1px solid var(--border);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease, border-color 0.3s ease, top 1.2s cubic-bezier(0.4, 0, 0.2, 1), left 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease, top 0.8s cubic-bezier(0.16, 1, 0.3, 1), left 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, filter 0.4s ease;
     cursor: pointer;
     will-change: transform, top, left, opacity;
     aspect-ratio: 1.5;
+    text-decoration: none;
+    display: block;
 }
 
 .showcase-card__inner {
@@ -3033,7 +3035,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     position: relative;
     will-change: transform;
-    transition: transform 0.15s ease-out;
+    transition: transform 0.3s ease;
 }
 
 .showcase-card img {
@@ -3041,17 +3043,35 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     display: block;
     object-fit: cover;
-    transition: transform 0.6s ease;
+    transition: transform 0.5s ease;
 }
 
+/* Quando passa o mouse no card específico: ele vem para o topo e se expande com destaque */
 .showcase-card:hover {
     border-color: var(--accent);
-    box-shadow: 0 20px 45px rgba(106, 34, 99, 0.25);
-    z-index: 10 !important;
+    box-shadow: 0 25px 60px rgba(89, 38, 109, 0.35), 0 0 0 2px rgba(89, 38, 109, 0.4);
+    z-index: 50 !important;
+    opacity: 1 !important;
+    transform: scale(1.08) translateY(-10px) !important;
+}
+
+.showcase-card:hover .showcase-card__inner {
+    animation-play-state: paused !important;
 }
 
 .showcase-card:hover img {
-    transform: scale(1.04);
+    transform: scale(1.05);
+}
+
+/* Efeito de foco: quando o usuário interage com o showcase, os outros cards recuam suavemente */
+.hero__showcase:hover .showcase-card:not(:hover) {
+    opacity: 0.55;
+    filter: grayscale(20%) brightness(0.95);
+    transform: scale(0.96);
+}
+
+.hero__showcase:hover .showcase-card:not(:hover) .showcase-card__inner {
+    animation-play-state: paused !important;
 }
 
 /* Card Positioning */
@@ -3104,10 +3124,10 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     bottom: 12px;
     left: 12px;
-    background: rgba(15, 7, 20, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(15, 7, 20, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 6px 12px;
     border-radius: 8px;
     display: flex;
@@ -3117,13 +3137,14 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transform: translateY(0);
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 .showcase-card:hover .showcase-card__badge {
-    background: rgba(89, 38, 109, 0.9);
-    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(89, 38, 109, 0.95);
+    border-color: rgba(255, 255, 255, 0.35);
     transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(89, 38, 109, 0.4);
 }
 
 .showcase-card__badge .client {
@@ -3140,6 +3161,24 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.06em;
     border-left: 1px solid rgba(255, 255, 255, 0.3);
     padding-left: 8px;
+}
+
+.showcase-card__badge .action {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #ffb703;
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, max-width 0.3s ease, padding 0.3s ease;
+}
+
+.showcase-card:hover .showcase-card__badge .action {
+    opacity: 1;
+    max-width: 90px;
+    padding-left: 8px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* CSS Floating Animations */
