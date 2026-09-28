@@ -37,7 +37,17 @@ Estratégias de atração e nutrição de leads qualificados.
 - Criação de Materiais Ricos (E-books, Guias e Infográficos)
 - Automação de E-mails e Nutrição de Leads
 
+## 6. Marketing de Influência & Creators
+Conexão estratégica entre marcas e criadores de conteúdo para gerar autoridade, alcance qualificado e vendas.
+- Curadoria e Mapeamento de Influenciadores por Nicho e Afinidade
+- Gestão Contratual, Jurídica e Negociação de Cachês
+- Elaboração de Briefings Criativos e Alinhamento de Mensagem
+- Acompanhamento de Publicações e Gestão de Entregas
+- Relatórios de Métricas, Engajamento, Alcance e ROI
+- Página dedicada: https://www.filomenapropaganda.com.br/marketing-de-influencia
+
 ## Como Contratar
 - Acesse nosso formulário: https://www.filomenapropaganda.com.br/contato
 - WhatsApp: +55 (16) 3415-4110
 - E-mail: contato@filomenapropaganda.com.br
+
