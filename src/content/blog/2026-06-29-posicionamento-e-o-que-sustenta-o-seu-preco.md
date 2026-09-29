@@ -45,7 +45,7 @@ E isso transforma a dinâmica de venda:
 
 ·         O valor percebido cresce
 
-Não se trata de cobrar mais — mas de ser percebido como mais valioso.
+Não se trata de cobrar mais, mas de ser percebido como mais valioso.
 
 **Como a Filomena constrói valor**
 

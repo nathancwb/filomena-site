@@ -1,6 +1,6 @@
 # Sobre a Filomena Propaganda
 
-> Conheça a história, o time e a metodologia da Filomena Propaganda — agência fundada em 2013 em São Carlos - SP.
+> Conheça a história, o time e a metodologia da Filomena Propaganda, agência fundada em 2013 em São Carlos - SP.
 
 ## Nossa História
 Fundada em 2013 em São Carlos - SP, a Filomena Propaganda nasceu com a convicção de que comunicação estratégica transforma negócios. Ao longo de mais de uma década, desenvolvemos marcas memoráveis, campanhas de alto impacto e plataformas digitais para clientes regionais, nacionais e internacionais.

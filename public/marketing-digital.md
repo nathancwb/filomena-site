@@ -1,4 +1,4 @@
-# Marketing Digital — Filomena Propaganda
+# Marketing Digital | Filomena Propaganda
 
 > Gestão integrada de marketing digital, geração de leads qualificados (MQL/SQL) e foco absoluto no retorno do investimento (ROI).
 

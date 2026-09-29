@@ -1,4 +1,4 @@
-# Gestão de Redes Sociais — Filomena Propaganda
+# Gestão de Redes Sociais | Filomena Propaganda
 
 > Estratégia de conteúdo, direção de arte, roteiros de vídeos dinâmicos e construção de autoridade nas redes sociais.
 

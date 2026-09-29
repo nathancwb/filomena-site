@@ -1,4 +1,4 @@
-# Gestão de Tráfego Pago — Filomena Propaganda
+# Gestão de Tráfego Pago | Filomena Propaganda
 
 > Campanhas de anúncios em Google Ads, Meta Ads (Instagram/Facebook) e LinkedIn Ads com foco em redução de CAC e escala de vendas.
 

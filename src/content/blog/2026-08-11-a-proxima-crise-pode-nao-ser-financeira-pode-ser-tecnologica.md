@@ -35,7 +35,7 @@ Na Filomena, acreditamos que inovação só faz sentido quando gera crescimento 
 
 Por isso, nosso trabalho vai muito além da criação de campanhas. Atuamos de forma estratégica para ajudar empresas a fortalecerem sua presença de mercado, estruturarem sua comunicação e utilizarem a tecnologia como uma aliada para ganhar eficiência e melhores resultados.
 
-Estamos constantemente incorporando inteligência artificial aos nossos processos para otimizar análises, acelerar entregas, ampliar a capacidade criativa e tornar as estratégias de marketing ainda mais inteligentes. Mas fazemos isso sem abrir mão do olhar humano, da criatividade e do pensamento estratégico — fatores que continuam sendo insubstituíveis.
+Estamos constantemente incorporando inteligência artificial aos nossos processos para otimizar análises, acelerar entregas, ampliar a capacidade criativa e tornar as estratégias de marketing ainda mais inteligentes. Mas fazemos isso sem abrir mão do olhar humano, da criatividade e do pensamento estratégico, fatores que continuam sendo insubstituíveis.
 
 A tecnologia é um meio. A estratégia continua sendo o diferencial.
 

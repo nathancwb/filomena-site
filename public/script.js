@@ -236,7 +236,7 @@ function initForm() {
                 })
                 .catch(() => {
                     if (btn) {
-                        btn.textContent = 'Erro ao enviar — tente o WhatsApp';
+                        btn.textContent = 'Erro ao enviar. Tente o WhatsApp';
                         btn.style.background = '#ef4444';
                         setTimeout(() => {
                             btn.textContent = originalText;

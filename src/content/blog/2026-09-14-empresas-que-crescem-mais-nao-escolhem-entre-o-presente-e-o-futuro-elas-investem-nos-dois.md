@@ -55,7 +55,7 @@ Quem desenvolve essa capacidade deixa de apenas reagir às mudanças e passa a a
 
 Na Filomena, acreditamos que comunicação e marketing também precisam ser ambidestros.
 
-Por isso, construímos estratégias que equilibram performance e posicionamento de marca. Enquanto desenvolvemos ações que geram resultados no curto prazo — como campanhas, geração de leads e fortalecimento das vendas — também trabalhamos a construção de uma marca sólida, preparada para crescer de forma consistente ao longo do tempo.
+Por isso, construímos estratégias que equilibram performance e posicionamento de marca. Enquanto desenvolvemos ações que geram resultados no curto prazo (como campanhas, geração de leads e fortalecimento das vendas), também trabalhamos a construção de uma marca sólida, preparada para crescer de forma consistente ao longo do tempo.
 
 Além disso, incorporamos novas tecnologias, inteligência artificial e análise de dados aos nossos processos para tornar as estratégias mais eficientes, sem abrir mão da criatividade, da visão humana e do planejamento estratégico.
 
@@ -69,4 +69,4 @@ Serão aquelas que conseguirem equilibrar eficiência operacional com capacidade
 
 Cuidar do presente garante resultados. Construir o futuro garante continuidade.
  
-É exatamente nesse equilíbrio que nasce o crescimento sustentável — e é nele que acreditamos ao desenvolver estratégias para nossos clientes. Afinal, marcas fortes não são construídas apenas para responder ao mercado de hoje, mas para liderar as transformações de amanhã.
+É exatamente nesse equilíbrio que nasce o crescimento sustentável, e é nele que acreditamos ao desenvolver estratégias para nossos clientes. Afinal, marcas fortes não são construídas apenas para responder ao mercado de hoje, mas para liderar as transformações de amanhã.

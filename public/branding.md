@@ -1,4 +1,4 @@
-# Branding e Identidade Visual — Filomena Propaganda
+# Branding e Identidade Visual | Filomena Propaganda
 
 > Estratégia de posicionamento de marca, design de logotipos, manuais de identidade visual e brandbooks completos.
 

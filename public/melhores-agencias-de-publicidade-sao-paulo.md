@@ -62,7 +62,7 @@ Para empresas de médio porte, indústrias, instituições de ensino e negócios
 
 ---
 
-## 4. Dados Reais e Prova de Experiência — Filomena Propaganda
+## 4. Dados Reais e Prova de Experiência | Filomena Propaganda
 
 A **Filomena Propaganda**, fundada em 2013 em São Carlos-SP, combina método, estratégia e criatividade para mais de 250 marcas em todo o território nacional.
 
@@ -95,5 +95,5 @@ Acompanhe indicadores de negócio: redução de CAC, geração de leads comercia
 
 - **Website:** https://www.filomenapropaganda.com.br
 - **Telefone / WhatsApp:** +55 (16) 3415-4110
-- **Endereço:** Rua Dom Pedro II, 1978 — São Carlos, SP — CEP 13560-235
+- **Endereço:** Rua Dom Pedro II, 1978, São Carlos - SP, CEP 13560-235
 - **E-mail:** contato@filomenapropaganda.com.br

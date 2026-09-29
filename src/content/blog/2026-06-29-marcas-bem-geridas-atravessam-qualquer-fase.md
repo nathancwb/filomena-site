@@ -16,7 +16,7 @@ Mas nem todas respondem da mesma forma.
 
 A diferença está na força da marca.
 
-Empresas que trabalham sua marca estrategicamente não dependem apenas do cenário — elas constroem consistência.
+Empresas que trabalham sua marca estrategicamente não dependem apenas do cenário: elas constroem consistência.
 
 Os pilares de uma marca forte
 

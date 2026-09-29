@@ -15,7 +15,7 @@ O que faz o marketing funcionar de verdade é a estratégia por trás das açõe
 
 O problema das ações sem direção
 
-Muitas empresas produzem conteúdo, investem em mídia e mantêm frequência — mas não conseguem evoluir em autoridade ou conversão.
+Muitas empresas produzem conteúdo, investem em mídia e mantêm frequência, mas não conseguem evoluir em autoridade ou conversão.
 
 Isso acontece porque confundem atividade com estratégia.
 
