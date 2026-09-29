@@ -241,24 +241,25 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
             </div>
         </section>
 
-        <!-- Estatísticas -->
-        <section class="section" style="padding-top: var(--space-2xl);">
+        <!-- Estatísticas (Seção Roxa com Números Flutuantes) -->
+        <section class="section influencia-stats-section">
+            <div class="influencia-stats-section__glow" aria-hidden="true"></div>
             <div class="container">
                 <div class="influencia-stats fade-in">
-                    <div class="influencia-stat">
+                    <div class="influencia-stat influencia-stat--1">
                         <span class="influencia-stat__number">65%</span>
                         <span class="influencia-stat__label">já compraram por recomendação de um influenciador</span>
                     </div>
-                    <div class="influencia-stat">
+                    <div class="influencia-stat influencia-stat--2">
                         <span class="influencia-stat__number">5,2x</span>
                         <span class="influencia-stat__label">retorno médio sobre o investimento no Brasil</span>
                     </div>
-                    <div class="influencia-stat">
+                    <div class="influencia-stat influencia-stat--3">
                         <span class="influencia-stat__number">87%</span>
                         <span class="influencia-stat__label">ficaram satisfeitos com a compra indicada</span>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: var(--space-lg); font-size: var(--text-xs); color: var(--gray-400);">
+                <p class="influencia-stats__sources">
                     Fontes: Opinion Box e Influency.me (2025), Sprout Social (2025) e Empreender.com.br
                 </p>
             </div>
@@ -780,32 +781,138 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
             }
         }
 
+        /* Seção Roxa com Números Flutuantes */
+        .influencia-stats-section {
+            position: relative;
+            background: linear-gradient(180deg, #2a0f3a 0%, #1c0828 50%, #150520 100%);
+            padding: var(--space-4xl) 0;
+            overflow: hidden;
+            border-top: 1px solid rgba(208, 143, 255, 0.12);
+            border-bottom: 1px solid rgba(208, 143, 255, 0.12);
+        }
+
+        .influencia-stats-section__glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 350px;
+            background: radial-gradient(ellipse at center, rgba(208, 143, 255, 0.18) 0%, rgba(89, 38, 109, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
         .influencia-stats {
+            position: relative;
+            z-index: 1;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: var(--space-xl);
             text-align: center;
         }
 
+        .influencia-stat {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(208, 143, 255, 0.22);
+            border-radius: 22px;
+            padding: var(--space-2xl) var(--space-xl);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s ease, 
+                        box-shadow 0.4s ease;
+            will-change: transform;
+        }
+
+        /* Efeito de Flutuação Suave e Contínua */
+        .influencia-stat--1 {
+            animation: float-stat-1 4.8s ease-in-out infinite;
+        }
+
+        .influencia-stat--2 {
+            animation: float-stat-2 5.4s ease-in-out infinite 0.7s;
+        }
+
+        .influencia-stat--3 {
+            animation: float-stat-3 4.6s ease-in-out infinite 1.4s;
+        }
+
+        @keyframes float-stat-1 {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-12px) rotate(0.6deg);
+            }
+        }
+
+        @keyframes float-stat-2 {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(-0.6deg);
+            }
+        }
+
+        @keyframes float-stat-3 {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(0.4deg);
+            }
+        }
+
+        .influencia-stat:hover {
+            transform: translateY(-18px) scale(1.03) !important;
+            border-color: rgba(208, 143, 255, 0.6);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45), 0 0 28px rgba(208, 143, 255, 0.3);
+        }
+
         .influencia-stat__number {
             display: block;
             font-family: var(--font-heading);
-            font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+            font-size: clamp(var(--text-4xl), 4.5vw, var(--text-5xl));
             font-weight: 700;
-            color: var(--accent);
+            background: linear-gradient(135deg, #ffffff 40%, #d08fff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 14px rgba(208, 143, 255, 0.35));
+            line-height: 1;
+            letter-spacing: -0.03em;
         }
 
         .influencia-stat__label {
             display: block;
-            margin-top: var(--space-xs);
+            margin-top: var(--space-md);
             font-size: var(--text-sm);
-            color: var(--text-muted);
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.88);
+            font-weight: 500;
+        }
+
+        .influencia-stats__sources {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            margin-top: var(--space-2xl);
+            font-size: var(--text-xs);
+            color: rgba(208, 143, 255, 0.65);
         }
 
         @media (max-width: 768px) {
             .influencia-stats {
                 grid-template-columns: 1fr;
-                gap: var(--space-2xl);
+                gap: var(--space-xl);
+            }
+
+            .influencia-stat--1,
+            .influencia-stat--2,
+            .influencia-stat--3 {
+                animation: none;
             }
         }
 
