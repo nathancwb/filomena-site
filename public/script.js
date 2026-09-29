@@ -826,5 +826,21 @@ function init3dProcessCards() {
     });
 }
 
+// ==========================================
+// COOKIE BANNER DISMISSAL
+// ==========================================
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.cc-btn, .cc-dismiss, .cc-allow, .cc-ALLOW, .cc-DENY');
+    if (btn) {
+        const banner = btn.closest('.cc-window');
+        if (banner) {
+            banner.classList.add('cc-dismissed');
+            setTimeout(() => {
+                banner.style.display = 'none';
+            }, 350);
+        }
+    }
+});
+
 
 

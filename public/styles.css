@@ -2336,57 +2336,70 @@ div[id*="rd-button"],
 }
 
 /* ===============================================
-   COOKIE BANNER (RD STATION / COOKIECONSENT FIX)
+   COOKIE BANNER (MINIMAL FLOATING TOAST & FIXES)
    =============================================== */
 .cc-window.cc-banner,
 div[aria-label="cookieconsent"],
 .cc-window {
     position: fixed !important;
-    bottom: 0 !important;
+    bottom: 24px !important;
     top: auto !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    background: rgba(15, 23, 42, 0.96) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    color: #f8fafc !important;
-    padding: 14px 24px !important;
+    left: auto !important;
+    right: 24px !important;
+    width: min(400px, calc(100vw - 32px)) !important;
+    max-width: 400px !important;
+    background: rgba(26, 9, 36, 0.95) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    color: #ffffff !important;
+    padding: 16px 18px !important;
     margin: 0 !important;
     display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 16px !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    border-radius: 16px !important;
     box-sizing: border-box !important;
     z-index: 99998 !important;
-    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.25) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(208, 143, 255, 0.12) !important;
+    border: 1px solid rgba(208, 143, 255, 0.25) !important;
     font-family: inherit !important;
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease !important;
+    animation: slideUpCookieToast 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+@keyframes slideUpCookieToast {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .cc-window .cc-message {
-    flex: 1 1 320px !important;
-    font-size: 0.825rem !important;
+    font-size: 0.76rem !important;
     line-height: 1.45 !important;
-    color: #cbd5e1 !important;
+    color: rgba(255, 255, 255, 0.88) !important;
     margin: 0 !important;
     display: block !important;
+    text-align: left !important;
 }
 
 .cc-window .cc-compliance {
     display: flex !important;
     align-items: center !important;
-    gap: 10px !important;
-    flex-shrink: 0 !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
+    width: 100% !important;
     margin: 0 !important;
 }
 
 .cc-window .cc-btn {
     border-radius: 8px !important;
-    padding: 8px 16px !important;
-    font-size: 0.8rem !important;
+    padding: 6px 12px !important;
+    font-size: 0.72rem !important;
     font-weight: 600 !important;
     cursor: pointer !important;
     text-decoration: none !important;
@@ -2395,43 +2408,59 @@ div[aria-label="cookieconsent"],
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+    line-height: 1.2 !important;
 }
 
-.cc-window .cc-allow {
+.cc-window .cc-btn.cc-ALLOW,
+.cc-window .cc-btn.cc-allow {
     background: #59266d !important;
     color: #ffffff !important;
-    border: 1.5px solid #59266d !important;
+    border: 1px solid rgba(208, 143, 255, 0.6) !important;
+    box-shadow: 0 2px 8px rgba(89, 38, 109, 0.3) !important;
 }
 
-.cc-window .cc-allow:hover {
-    background: #45105e !important;
-    border-color: #45105e !important;
+.cc-window .cc-btn.cc-ALLOW:hover,
+.cc-window .cc-btn.cc-allow:hover {
+    background: #732a8f !important;
+    border-color: #d08fff !important;
+    transform: translateY(-1px) !important;
+    color: #ffffff !important;
+}
+
+.cc-window .cc-btn.cc-DENY,
+.cc-window .cc-btn.cc-deny,
+.cc-window .cc-btn.cc-dismiss {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.cc-window .cc-btn.cc-DENY:hover,
+.cc-window .cc-btn.cc-deny:hover,
+.cc-window .cc-btn.cc-dismiss:hover {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.16) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
     transform: translateY(-1px) !important;
 }
 
-.cc-window .cc-dismiss {
-    background: transparent !important;
-    color: #94a3b8 !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
-}
-
-.cc-window .cc-dismiss:hover {
-    color: #ffffff !important;
-    border-color: rgba(255, 255, 255, 0.4) !important;
-    background: rgba(255, 255, 255, 0.05) !important;
+.cc-window.cc-dismissed {
+    opacity: 0 !important;
+    transform: translateY(20px) scale(0.95) !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
 }
 
 @media (max-width: 640px) {
-    .cc-window.cc-banner {
-        padding: 12px 16px !important;
-        gap: 10px !important;
-    }
-    .cc-window .cc-compliance {
-        width: 100% !important;
-        justify-content: flex-end !important;
-    }
-    .cc-window .cc-btn {
-        flex: 1 !important;
+    .cc-window.cc-banner,
+    div[aria-label="cookieconsent"],
+    .cc-window {
+        bottom: 12px !important;
+        right: 12px !important;
+        left: 12px !important;
+        width: calc(100% - 24px) !important;
+        max-width: calc(100% - 24px) !important;
+        padding: 12px 14px !important;
     }
 }
 
