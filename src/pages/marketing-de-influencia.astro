@@ -164,38 +164,39 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
     <main>
         <!-- Hero -->
         <section class="influencia-hero">
-            <div class="influencia-hero__art" aria-hidden="true">
-                <!-- Background Ambient Glows -->
-                <div class="influencia-phone-glow"></div>
-                
-                <!-- Realistic Smartphone Device Frame with Steady Remotion Video -->
-                <div class="influencia-phone">
-                    <div class="influencia-phone__notch"></div>
-                    <div class="influencia-phone__screen">
-                        <video
-                            class="influencia-phone__video"
-                            src="/videos/influencer-post.mp4"
-                            autoplay
-                            loop
-                            muted
-                            playsinline
-                            preload="auto"
-                            aria-label="Demonstração animada de post e vendas de influenciador"
-                        ></video>
-                    </div>
-                    <div class="influencia-phone__bar"></div>
-                </div>
-            </div>
-
             <div class="container">
-                <div class="influencia-hero__content">
-                    <h1 class="influencia-hero__title fade-in">Marketing de influência que <span class="influencia-hero__highlight">vende</span>, não só aparece.</h1>
-                    <p class="influencia-hero__description fade-in">
-                        Conectamos sua marca aos criadores certos, com estratégia, curadoria humana e relatório de resultado, do briefing à entrega.
-                    </p>
-                    <div class="fade-in influencia-hero__actions">
-                        <a href="#contato" class="btn btn--primary">Quero uma proposta →</a>
-                        <a href="#processo" class="btn btn--outline influencia-hero__btn-outline">Como funciona</a>
+                <div class="influencia-hero__grid">
+                    <div class="influencia-hero__content">
+                        <span class="influencia-hero__tag">Marketing de Influência Estratégico</span>
+                        <h1 class="influencia-hero__title fade-in">Marketing de influência que <span class="influencia-hero__highlight">vende</span>, não só aparece.</h1>
+                        <p class="influencia-hero__description fade-in">
+                            Conectamos sua marca aos criadores certos, com estratégia, curadoria humana e relatório de resultado, do briefing à entrega.
+                        </p>
+                        <div class="fade-in influencia-hero__actions">
+                            <a href="#contato" class="btn btn--primary">Quero uma proposta →</a>
+                            <a href="#processo" class="btn btn--outline influencia-hero__btn-outline">Como funciona</a>
+                        </div>
+                    </div>
+
+                    <!-- Realistic Smartphone Device Frame with Steady Remotion Video -->
+                    <div class="influencia-hero__art" aria-hidden="true">
+                        <div class="influencia-phone-glow"></div>
+                        <div class="influencia-phone">
+                            <div class="influencia-phone__notch"></div>
+                            <div class="influencia-phone__screen">
+                                <video
+                                    class="influencia-phone__video"
+                                    src="/videos/influencer-post.mp4"
+                                    autoplay
+                                    loop
+                                    muted
+                                    playsinline
+                                    preload="auto"
+                                    aria-label="Demonstração animada de post e vendas de influenciador"
+                                ></video>
+                            </div>
+                            <div class="influencia-phone__bar"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -803,24 +804,54 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
 
         @media (max-width: 1100px) {
             .influencia-hero__art {
-                opacity: 0.22;
-                right: -40px;
-                width: 360px;
+                opacity: 0.85;
+                right: 20px;
+                width: 240px;
             }
 
             .influencia-hero__content {
-                max-width: 100%;
+                max-width: calc(100% - 280px);
             }
         }
 
         @media (max-width: 768px) {
             .influencia-hero {
                 min-height: auto;
-                padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-2xl);
+                padding: calc(var(--header-height) + var(--space-xl)) 0 var(--space-2xl);
+            }
+
+            .influencia-hero__content {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .influencia-hero__description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .influencia-hero__actions {
+                justify-content: center;
             }
 
             .influencia-hero__art {
-                display: none;
+                position: relative;
+                top: auto;
+                right: auto;
+                transform: none;
+                width: 220px;
+                margin: var(--space-xl) auto var(--space-md);
+                display: flex;
+            }
+
+            .influencia-phone {
+                max-width: 220px;
+                transform: none;
+            }
+
+            .influencia-phone-glow {
+                width: 260px;
+                height: 260px;
             }
         }
 
@@ -918,18 +949,21 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
         @media (max-width: 768px) {
             .influencia-stats {
                 grid-template-columns: 1fr;
-                gap: var(--space-2xl);
+                gap: var(--space-xl);
+            }
+
+            .influencia-stat__number {
+                font-size: 2.5rem;
             }
 
             .influencia-stats-wrap {
-                margin-top: var(--space-3xl);
-                padding-top: var(--space-2xl);
+                margin-top: var(--space-xl);
+                padding-top: var(--space-xl);
+                padding-bottom: var(--space-lg);
             }
 
-            .influencia-stat--1 .influencia-stat__number,
-            .influencia-stat--2 .influencia-stat__number,
-            .influencia-stat--3 .influencia-stat__number {
-                animation: none;
+            .influencia-stats__sources {
+                margin-top: var(--space-lg);
             }
         }
 
