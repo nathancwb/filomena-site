@@ -593,20 +593,13 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
         <section class="section contact-creators-section" id="contato" style="padding-top: var(--space-xl); padding-bottom: 0;">
             <div class="container">
                 <div class="section__header section__header--center" style="margin-bottom: var(--space-xl);">
-                    <span class="section__tag fade-in">Pronto para começar</span>
-                    <h2 class="section__title fade-in" style="font-size: clamp(2rem, 3.2vw, 2.8rem); line-height: 1.15;">Conte pra gente o objetivo da sua marca e receba uma proposta personalizada</h2>
+                    <h2 class="section__title fade-in" style="font-size: clamp(2rem, 3.2vw, 2.8rem); line-height: 1.15; max-width: 800px; margin: 0 auto;">Conte pra gente o objetivo da sua marca e receba uma proposta personalizada</h2>
                 </div>
 
-                <div class="contact-creators-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; max-width: 1200px; margin: 0 auto;">
+                <div class="contact-creators-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; max-width: 1140px; margin: 0 auto;">
                     <!-- Coluna 1 (Esquerda): Formulário para Marcas -->
-                    <div class="contact-card-col fade-in" style="background: #FFFFFF; border-radius: 28px; padding: 40px 36px; box-shadow: 0 16px 44px rgba(0, 0, 0, 0.06); border: 1px solid rgba(0, 0, 0, 0.07); display: flex; flex-direction: column; justify-content: space-between;">
-                        <div>
-                            <span class="card-eyebrow-badge" style="display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: rgba(85, 27, 107, 0.08); border: 1px solid rgba(85, 27, 107, 0.15); padding: 4px 12px; border-radius: 999px; margin-bottom: 12px;">Para Marcas &amp; Empresas</span>
-                            <h3 class="contact-card__title" style="font-family: var(--font-heading); font-size: clamp(1.2rem, 1.5vw, 1.45rem); font-weight: 700; color: var(--text-color); margin: 0 0 8px 0; line-height: 1.25;">Solicite sua curadoria estratégica</h3>
-                            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0 0 24px 0; line-height: 1.45;">Preencha os campos abaixo e nosso time desenhará o plano ideal de criadores para sua marca.</p>
-                        </div>
-
-                        <form id="influencia-form" class="influencia-form-clean" action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 14px; background: transparent; padding: 0;">
+                    <div class="contact-card-col fade-in" style="background: #FFFFFF; border-radius: 28px; padding: 40px 36px; box-shadow: 0 16px 44px rgba(0, 0, 0, 0.05); border: 1px solid rgba(0, 0, 0, 0.06); display: flex; flex-direction: column; justify-content: center;">
+                        <form id="influencia-form" class="influencia-form-clean" action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 16px; background: transparent; padding: 0;">
                             <input type="hidden" name="access_key" value="c685ced6-cdf1-4deb-92d6-162a2f110e0e">
                             <input type="hidden" name="subject" value="Novo lead | LP Marketing de Influência">
                             <input type="hidden" name="from_name" value="LP Marketing de Influência Filomena">
@@ -617,20 +610,20 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                             </div>
 
                             <div style="display: flex; flex-direction: column; gap: 6px; text-align: left;">
-                                <label for="nome" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; color: #1e1e24;">Nome</label>
-                                <input type="text" id="nome" name="nome" placeholder="Seu nome" required style="width: 100%; box-sizing: border-box; padding: 12px 16px; font-size: 0.92rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none; transition: border-color 0.2s;">
+                                <label for="nome" style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600; color: #1e1e24;">Nome</label>
+                                <input type="text" id="nome" name="nome" placeholder="Seu nome" required style="width: 100%; box-sizing: border-box; padding: 13px 16px; font-size: 0.95rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none; transition: border-color 0.2s;">
                             </div>
                             <div style="display: flex; flex-direction: column; gap: 6px; text-align: left;">
-                                <label for="email" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; color: #1e1e24;">E-mail</label>
-                                <input type="email" id="email" name="email" placeholder="voce@marca.com" required style="width: 100%; box-sizing: border-box; padding: 12px 16px; font-size: 0.92rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none; transition: border-color 0.2s;">
+                                <label for="email" style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600; color: #1e1e24;">E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="voce@marca.com" required style="width: 100%; box-sizing: border-box; padding: 13px 16px; font-size: 0.95rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none; transition: border-color 0.2s;">
                             </div>
                             <div style="display: flex; flex-direction: column; gap: 6px; text-align: left;">
-                                <label for="marca" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; color: #1e1e24;">Marca / empresa</label>
-                                <input type="text" id="marca" name="marca" placeholder="Nome da marca" required style="width: 100%; box-sizing: border-box; padding: 12px 16px; font-size: 0.92rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none; transition: border-color 0.2s;">
+                                <label for="marca" style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600; color: #1e1e24;">Marca / empresa</label>
+                                <input type="text" id="marca" name="marca" placeholder="Nome da marca" required style="width: 100%; box-sizing: border-box; padding: 13px 16px; font-size: 0.95rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none; transition: border-color 0.2s;">
                             </div>
                             <div style="display: flex; flex-direction: column; gap: 6px; text-align: left;">
-                                <label for="objetivo" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; color: #1e1e24;">Objetivo da campanha</label>
-                                <select id="objetivo" name="objetivo" required style="width: 100%; box-sizing: border-box; padding: 12px 16px; font-size: 0.92rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none;">
+                                <label for="objetivo" style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600; color: #1e1e24;">Objetivo da campanha</label>
+                                <select id="objetivo" name="objetivo" required style="width: 100%; box-sizing: border-box; padding: 13px 16px; font-size: 0.95rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none;">
                                     <option value="" disabled selected>Selecione</option>
                                     <option value="Vendas diretas / E-commerce">Vendas diretas / E-commerce</option>
                                     <option value="Lançamento de produto / Unidade">Lançamento de produto / Unidade</option>
@@ -640,53 +633,24 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                                 </select>
                             </div>
                             <div style="display: flex; flex-direction: column; gap: 6px; text-align: left;">
-                                <label for="orcamento" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; color: #1e1e24;">Orçamento estimado (opcional)</label>
-                                <input type="text" id="orcamento" name="orcamento" placeholder="Ex: R$ 5.000" style="width: 100%; box-sizing: border-box; padding: 12px 16px; font-size: 0.92rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none;">
+                                <label for="orcamento" style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600; color: #1e1e24;">Orçamento estimado (opcional)</label>
+                                <input type="text" id="orcamento" name="orcamento" placeholder="Ex: R$ 5.000" style="width: 100%; box-sizing: border-box; padding: 13px 16px; font-size: 0.95rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none;">
                             </div>
 
-                            <button type="submit" class="btn btn--primary btn--full btn--submit-brand" style="margin-top: 8px; padding: 14px 24px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; background: var(--accent); color: var(--white); border-radius: 12px; border: none; cursor: pointer; transition: all 0.25s ease; width: 100%;">Quero uma proposta →</button>
+                            <button type="submit" class="btn btn--primary btn--full btn--submit-brand" style="margin-top: 6px; padding: 15px 24px; font-family: var(--font-heading); font-size: 1rem; font-weight: 700; background: var(--accent); color: var(--white); border-radius: 12px; border: none; cursor: pointer; transition: all 0.25s ease; width: 100%;">Quero uma proposta →</button>
                             <p id="influencia-form-status" role="status" aria-live="polite" style="display: none; margin-top: var(--space-sm); padding: var(--space-xs) var(--space-sm); border-radius: 8px; font-size: var(--text-sm); text-align: center;"></p>
                         </form>
                     </div>
 
                     <!-- Coluna 2 (Direita): Card para Creators & Influenciadores -->
-                    <div class="creators-card-col fade-in" style="background: linear-gradient(145deg, #321042 0%, #170522 100%); border-radius: 28px; padding: 40px 36px; box-shadow: 0 20px 48px rgba(25, 6, 36, 0.35); border: 1px solid rgba(208, 143, 255, 0.25); color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; text-align: left;">
-                        <div>
-                            <div style="margin-bottom: 12px;">
-                                <span class="card-eyebrow-badge card-eyebrow-badge--creator" style="display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--secondary-light); background: rgba(208, 143, 255, 0.15); border: 1px solid rgba(208, 143, 255, 0.3); padding: 4px 12px; border-radius: 999px;">Para Creators &amp; Influenciadores</span>
-                            </div>
-                            <h3 class="creators-card__title" style="font-family: var(--font-heading); font-size: clamp(1.35rem, 1.8vw, 1.7rem); font-weight: 700; color: #FFFFFF; margin: 0 0 12px 0; line-height: 1.25;">É influenciador/creator e quer fazer parte desse projeto?</h3>
-                            <p class="creators-card__text" style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.88); line-height: 1.6; margin-bottom: 24px;">
+                    <div class="creators-card-col fade-in" style="background: linear-gradient(145deg, #321042 0%, #170522 100%); border-radius: 28px; padding: 48px 40px; box-shadow: 0 20px 48px rgba(25, 6, 36, 0.35); border: 1px solid rgba(208, 143, 255, 0.25); color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                        <div style="margin: auto 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <h3 class="creators-card__title" style="font-family: var(--font-heading); font-size: clamp(1.5rem, 2.2vw, 2rem); font-weight: 700; color: #FFFFFF; margin: 0 0 16px 0; line-height: 1.25; text-align: center;">É influenciador/creator e quer fazer parte desse projeto?</h3>
+                            <p class="creators-card__text" style="font-size: 1rem; color: rgba(255, 255, 255, 0.88); line-height: 1.65; margin: 0 0 32px 0; max-width: 440px; text-align: center;">
                                 Conectamos criadores com afinidade e engajamento autêntico a grandes marcas e campanhas de impacto. Envie seu perfil ou mídia kit para o nosso time de curadoria.
                             </p>
 
-                            <div class="creators-card__perks" style="display: flex; flex-direction: column; gap: 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 18px 20px; margin-bottom: 32px;">
-                                <div class="creators-perk-item" style="display: flex; gap: 10px; font-size: 0.86rem; line-height: 1.4; color: rgba(255, 255, 255, 0.92);">
-                                    <span class="creators-perk-item__icon" style="color: var(--secondary-light); font-size: 0.9rem; margin-top: 1px;">✦</span>
-                                    <div>
-                                        <strong style="display: block; color: #FFFFFF; font-weight: 700; font-size: 0.88rem;">Parcerias com grandes marcas</strong>
-                                        <p style="margin: 2px 0 0 0; font-size: 0.80rem; color: rgba(255, 255, 255, 0.72);">Campanhas estruturadas com briefing claro e sem atritos.</p>
-                                    </div>
-                                </div>
-                                <div class="creators-perk-item" style="display: flex; gap: 10px; font-size: 0.86rem; line-height: 1.4; color: rgba(255, 255, 255, 0.92);">
-                                    <span class="creators-perk-item__icon" style="color: var(--secondary-light); font-size: 0.9rem; margin-top: 1px;">✦</span>
-                                    <div>
-                                        <strong style="display: block; color: #FFFFFF; font-weight: 700; font-size: 0.88rem;">Pagamentos e processos seguros</strong>
-                                        <p style="margin: 2px 0 0 0; font-size: 0.80rem; color: rgba(255, 255, 255, 0.72);">Relacionamento transparente e acompanhamento de ponta a ponta.</p>
-                                    </div>
-                                </div>
-                                <div class="creators-perk-item" style="display: flex; gap: 10px; font-size: 0.86rem; line-height: 1.4; color: rgba(255, 255, 255, 0.92);">
-                                    <span class="creators-perk-item__icon" style="color: var(--secondary-light); font-size: 0.9rem; margin-top: 1px;">✦</span>
-                                    <div>
-                                        <strong style="display: block; color: #FFFFFF; font-weight: 700; font-size: 0.88rem;">Base de curadoria contínua</strong>
-                                        <p style="margin: 2px 0 0 0; font-size: 0.80rem; color: rgba(255, 255, 255, 0.72);">Seu perfil ativo para oportunidades recorrentes em todo o país.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="creators-card__action" style="margin-top: auto;">
-                            <a href="mailto:digital@filomenapropaganda.com.br?subject=Cadastro%20de%20Creator%20Marketing%20de%20Influencia" class="btn--creator-cta" style="display: block; width: 100%; box-sizing: border-box; padding: 14px 20px; background: linear-gradient(135deg, #6c2a86, #48185c); color: #FFFFFF; border: 1px solid rgba(208, 143, 255, 0.4); border-radius: 999px; font-family: var(--font-heading); font-size: 0.92rem; font-weight: 700; text-align: center; text-decoration: none; transition: all 0.25s ease;">
+                            <a href="mailto:digital@filomenapropaganda.com.br?subject=Cadastro%20de%20Creator%20Marketing%20de%20Influencia" class="btn--creator-cta" style="display: inline-block; width: 100%; max-width: 440px; box-sizing: border-box; padding: 15px 24px; background: linear-gradient(135deg, #6c2a86, #48185c); color: #FFFFFF; border: 1px solid rgba(208, 143, 255, 0.4); border-radius: 999px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; text-align: center; text-decoration: none; transition: all 0.25s ease;">
                                 Envie um e-mail para digital@filomenapropaganda.com.br →
                             </a>
                         </div>
