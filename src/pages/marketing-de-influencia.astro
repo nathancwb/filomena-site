@@ -432,11 +432,13 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                             </div>
                         </div>
                         <div class="influencia-case-item__content">
-                            <div class="influencia-case-item__client-header">
-                                <img src="/assets/images/clients/client-boali.svg" alt="Boali" class="influencia-case-item__logo">
+                            <div class="influencia-case-item__tag-row">
                                 <span class="case-item__tag">Alimentação Saudável</span>
                             </div>
-                            <h3 class="influencia-case-item__title">Boali</h3>
+                            <div class="influencia-case-brand-heading">
+                                <img src="/assets/images/clients/client-boali.svg" alt="Boali" class="influencia-case-item__logo">
+                                <h3 class="sr-only">Boali</h3>
+                            </div>
                             <p class="influencia-case-item__subtitle">Líder nacional em alimentação saudável e franquias.</p>
                             
                             <div class="influencia-case-meta">
@@ -487,11 +489,13 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                             </div>
                         </div>
                         <div class="influencia-case-item__content">
-                            <div class="influencia-case-item__client-header">
-                                <img src="/assets/images/clients/client-latina.webp" alt="Latina Eletrodomésticos" class="influencia-case-item__logo">
+                            <div class="influencia-case-item__tag-row">
                                 <span class="case-item__tag">Eletro &amp; E-commerce</span>
                             </div>
-                            <h3 class="influencia-case-item__title">Latina Eletrodomésticos</h3>
+                            <div class="influencia-case-brand-heading">
+                                <img src="/assets/images/clients/client-latina.webp" alt="Latina Eletrodomésticos" class="influencia-case-item__logo">
+                                <h3 class="sr-only">Latina Eletrodomésticos</h3>
+                            </div>
                             <p class="influencia-case-item__subtitle">Mais de 30 anos e forte presença na América do Sul.</p>
                             
                             <div class="influencia-case-meta">
@@ -537,10 +541,12 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                             </div>
                         </div>
                         <div class="influencia-case-item__content">
-                            <div class="influencia-case-item__client-header">
+                            <div class="influencia-case-item__tag-row">
                                 <span class="case-item__tag">Educação &amp; Lançamento</span>
                             </div>
-                            <h3 class="influencia-case-item__title">Colégio Ábaco</h3>
+                            <div class="influencia-case-brand-heading">
+                                <h3 class="influencia-case-item__title">Colégio Ábaco</h3>
+                            </div>
                             <p class="influencia-case-item__subtitle">Grupo Salta Educação, referência no setor há mais de 50 anos.</p>
                             
                             <div class="influencia-case-meta">
@@ -1290,16 +1296,37 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
             gap: var(--space-sm);
         }
 
-        .influencia-case-item__client-header {
+        .influencia-case-item__tag-row {
             display: flex;
             align-items: center;
-            gap: var(--space-md);
-            margin-bottom: var(--space-2xs);
+            margin-bottom: -2px;
+        }
+
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .influencia-case-brand-heading {
+            display: flex;
+            align-items: center;
+            min-height: 46px;
+            margin-bottom: 2px;
         }
 
         .influencia-case-item__logo {
-            height: 48px;
-            max-width: 170px;
+            height: 46px;
+            max-height: 52px;
+            max-width: 190px;
+            width: auto;
             object-fit: contain;
             object-position: left center;
             filter: none;
@@ -1631,13 +1658,31 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                 display: none;
             }
 
-            .influencia-case-item__client-header {
-                gap: 8px;
+            .influencia-case-item__tag-row {
+                margin-bottom: -2px;
+            }
+
+            
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .influencia-case-brand-heading {
+                min-height: 38px;
             }
 
             .influencia-case-item__logo {
-                height: 38px;
-                max-width: 140px;
+                height: 36px;
+                max-height: 40px;
+                max-width: 150px;
                 object-fit: contain;
                 object-position: left center;
             }
