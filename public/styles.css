@@ -2344,24 +2344,24 @@ div[aria-label="cookieconsent"],
     position: fixed !important;
     bottom: 24px !important;
     top: auto !important;
-    left: auto !important;
-    right: 24px !important;
-    width: min(400px, calc(100vw - 32px)) !important;
-    max-width: 400px !important;
-    background: rgba(26, 9, 36, 0.95) !important;
+    left: 24px !important;
+    right: auto !important;
+    width: min(380px, calc(100vw - 32px)) !important;
+    max-width: 380px !important;
+    background: rgba(15, 23, 42, 0.96) !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     color: #ffffff !important;
-    padding: 16px 18px !important;
+    padding: 14px 16px !important;
     margin: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 12px !important;
-    border-radius: 16px !important;
+    gap: 10px !important;
+    border-radius: 14px !important;
     box-sizing: border-box !important;
     z-index: 99998 !important;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(208, 143, 255, 0.12) !important;
-    border: 1px solid rgba(208, 143, 255, 0.25) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
     font-family: inherit !important;
     transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease !important;
     animation: slideUpCookieToast 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -2379,7 +2379,7 @@ div[aria-label="cookieconsent"],
 }
 
 .cc-window .cc-message {
-    font-size: 0.76rem !important;
+    font-size: 0.74rem !important;
     line-height: 1.45 !important;
     color: rgba(255, 255, 255, 0.88) !important;
     margin: 0 !important;
@@ -2398,7 +2398,7 @@ div[aria-label="cookieconsent"],
 
 .cc-window .cc-btn {
     border-radius: 8px !important;
-    padding: 6px 12px !important;
+    padding: 6px 14px !important;
     font-size: 0.72rem !important;
     font-weight: 600 !important;
     cursor: pointer !important;
@@ -2413,18 +2413,19 @@ div[aria-label="cookieconsent"],
 
 .cc-window .cc-btn.cc-ALLOW,
 .cc-window .cc-btn.cc-allow {
-    background: #59266d !important;
-    color: #ffffff !important;
-    border: 1px solid rgba(208, 143, 255, 0.6) !important;
-    box-shadow: 0 2px 8px rgba(89, 38, 109, 0.3) !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-weight: 700 !important;
+    border: 1px solid #ffffff !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
 }
 
 .cc-window .cc-btn.cc-ALLOW:hover,
 .cc-window .cc-btn.cc-allow:hover {
-    background: #732a8f !important;
-    border-color: #d08fff !important;
+    background: #f1f5f9 !important;
+    border-color: #ffffff !important;
     transform: translateY(-1px) !important;
-    color: #ffffff !important;
+    color: #000000 !important;
 }
 
 .cc-window .cc-btn.cc-DENY,
