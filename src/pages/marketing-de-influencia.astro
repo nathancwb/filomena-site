@@ -1982,9 +1982,9 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
           });
 
           if (window.innerWidth <= 900) {
-            const casesSection = document.getElementById('cases');
-            if (casesSection) {
-              casesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const activeCard = document.querySelector('.influencia-case-item[data-case-index="' + idx + '"]');
+            if (activeCard) {
+              activeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
           }
         }
