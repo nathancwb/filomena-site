@@ -590,16 +590,16 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
         </section>
 
         <!-- Contato & Creators (Lado a Lado) -->
-        <section class="section contact-creators-section" id="contato" style="padding-top: var(--space-xl); padding-bottom: 0;">
+        <section class="section contact-creators-section" id="contato">
             <div class="container">
-                <div class="section__header section__header--center" style="margin-bottom: var(--space-xl);">
-                    <h2 class="section__title fade-in" style="font-size: clamp(2rem, 3.2vw, 2.8rem); line-height: 1.15; max-width: 800px; margin: 0 auto;">Conte pra gente o objetivo da sua marca e receba uma proposta personalizada</h2>
+                <div class="section__header section__header--center contact-creators-header">
+                    <h2 class="section__title fade-in" style="font-size: clamp(1.8rem, 3.2vw, 2.8rem); line-height: 1.15; max-width: 800px; margin: 0 auto;">Conte pra gente o objetivo da sua marca e receba uma proposta personalizada</h2>
                 </div>
 
-                <div class="contact-creators-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; max-width: 1140px; margin: 0 auto;">
+                <div class="contact-creators-grid">
                     <!-- Coluna 1 (Esquerda): Formulário para Marcas -->
-                    <div class="contact-card-col fade-in" style="background: #FFFFFF; border-radius: 28px; padding: 40px 36px; box-shadow: 0 16px 44px rgba(0, 0, 0, 0.05); border: 1px solid rgba(0, 0, 0, 0.06); display: flex; flex-direction: column; justify-content: center;">
-                        <form id="influencia-form" class="influencia-form-clean" action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 16px; background: transparent; padding: 0;">
+                    <div class="contact-card-col fade-in">
+                        <form id="influencia-form" class="influencia-form-clean" action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="c685ced6-cdf1-4deb-92d6-162a2f110e0e">
                             <input type="hidden" name="subject" value="Novo lead | LP Marketing de Influência">
                             <input type="hidden" name="from_name" value="LP Marketing de Influência Filomena">
@@ -609,21 +609,21 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                                 <input type="text" id="b_website" name="b_website" autocomplete="off" tabindex="-1">
                             </div>
 
-                            <div style="display: flex; flex-direction: column; gap: 6px; text-align: left;">
-                                <label for="nome" style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600; color: #1e1e24;">Nome</label>
-                                <input type="text" id="nome" name="nome" placeholder="Seu nome" required style="width: 100%; box-sizing: border-box; padding: 13px 16px; font-size: 0.95rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none; transition: border-color 0.2s;">
+                            <div class="form-group-clean">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
                             </div>
-                            <div style="display: flex; flex-direction: column; gap: 6px; text-align: left;">
-                                <label for="email" style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600; color: #1e1e24;">E-mail</label>
-                                <input type="email" id="email" name="email" placeholder="voce@marca.com" required style="width: 100%; box-sizing: border-box; padding: 13px 16px; font-size: 0.95rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none; transition: border-color 0.2s;">
+                            <div class="form-group-clean">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="voce@marca.com" required>
                             </div>
-                            <div style="display: flex; flex-direction: column; gap: 6px; text-align: left;">
-                                <label for="marca" style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600; color: #1e1e24;">Marca / empresa</label>
-                                <input type="text" id="marca" name="marca" placeholder="Nome da marca" required style="width: 100%; box-sizing: border-box; padding: 13px 16px; font-size: 0.95rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none; transition: border-color 0.2s;">
+                            <div class="form-group-clean">
+                                <label for="marca">Marca / empresa</label>
+                                <input type="text" id="marca" name="marca" placeholder="Nome da marca" required>
                             </div>
-                            <div style="display: flex; flex-direction: column; gap: 6px; text-align: left;">
-                                <label for="objetivo" style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600; color: #1e1e24;">Objetivo da campanha</label>
-                                <select id="objetivo" name="objetivo" required style="width: 100%; box-sizing: border-box; padding: 13px 16px; font-size: 0.95rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none;">
+                            <div class="form-group-clean">
+                                <label for="objetivo">Objetivo da campanha</label>
+                                <select id="objetivo" name="objetivo" required>
                                     <option value="" disabled selected>Selecione</option>
                                     <option value="Vendas diretas / E-commerce">Vendas diretas / E-commerce</option>
                                     <option value="Lançamento de produto / Unidade">Lançamento de produto / Unidade</option>
@@ -632,25 +632,25 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                                     <option value="Outro objetivo">Outro objetivo</option>
                                 </select>
                             </div>
-                            <div style="display: flex; flex-direction: column; gap: 6px; text-align: left;">
-                                <label for="orcamento" style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600; color: #1e1e24;">Orçamento estimado (opcional)</label>
-                                <input type="text" id="orcamento" name="orcamento" placeholder="Ex: R$ 5.000" style="width: 100%; box-sizing: border-box; padding: 13px 16px; font-size: 0.95rem; background: #FAFAFB; border: 1px solid #E2E8F0; border-radius: 12px; color: #1e1e24; outline: none;">
+                            <div class="form-group-clean">
+                                <label for="orcamento">Orçamento estimado (opcional)</label>
+                                <input type="text" id="orcamento" name="orcamento" placeholder="Ex: R$ 5.000">
                             </div>
 
-                            <button type="submit" class="btn btn--primary btn--full btn--submit-brand" style="margin-top: 6px; padding: 15px 24px; font-family: var(--font-heading); font-size: 1rem; font-weight: 700; background: var(--accent); color: var(--white); border-radius: 12px; border: none; cursor: pointer; transition: all 0.25s ease; width: 100%;">Quero uma proposta →</button>
+                            <button type="submit" class="btn btn--primary btn--full btn--submit-brand">Quero uma proposta →</button>
                             <p id="influencia-form-status" role="status" aria-live="polite" style="display: none; margin-top: var(--space-sm); padding: var(--space-xs) var(--space-sm); border-radius: 8px; font-size: var(--text-sm); text-align: center;"></p>
                         </form>
                     </div>
 
                     <!-- Coluna 2 (Direita): Card para Creators & Influenciadores -->
-                    <div class="creators-card-col fade-in" style="background: linear-gradient(145deg, #321042 0%, #170522 100%); border-radius: 28px; padding: 48px 40px; box-shadow: 0 20px 48px rgba(25, 6, 36, 0.35); border: 1px solid rgba(208, 143, 255, 0.25); color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; text-align: center;">
-                        <div style="margin: auto 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                            <h3 class="creators-card__title" style="font-family: var(--font-heading); font-size: clamp(1.5rem, 2.2vw, 2rem); font-weight: 700; color: #FFFFFF; margin: 0 0 16px 0; line-height: 1.25; text-align: center;">É influenciador/creator e quer fazer parte desse projeto?</h3>
-                            <p class="creators-card__text" style="font-size: 1rem; color: rgba(255, 255, 255, 0.88); line-height: 1.65; margin: 0 0 32px 0; max-width: 440px; text-align: center;">
+                    <div class="creators-card-col fade-in">
+                        <div class="creators-card-inner">
+                            <h3 class="creators-card__title">É influenciador/creator e quer fazer parte desse projeto?</h3>
+                            <p class="creators-card__text">
                                 Conectamos criadores com afinidade e engajamento autêntico a grandes marcas e campanhas de impacto. Envie seu perfil ou mídia kit para o nosso time de curadoria.
                             </p>
 
-                            <a href="mailto:digital@filomenapropaganda.com.br?subject=Cadastro%20de%20Creator%20Marketing%20de%20Influencia" class="btn--creator-cta" style="display: inline-block; width: 100%; max-width: 440px; box-sizing: border-box; padding: 15px 24px; background: linear-gradient(135deg, #6c2a86, #48185c); color: #FFFFFF; border: 1px solid rgba(208, 143, 255, 0.4); border-radius: 999px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; text-align: center; text-decoration: none; transition: all 0.25s ease;">
+                            <a href="mailto:digital@filomenapropaganda.com.br?subject=Cadastro%20de%20Creator%20Marketing%20de%20Influencia" class="btn--creator-cta">
                                 Envie um e-mail para digital@filomenapropaganda.com.br →
                             </a>
                         </div>
@@ -1439,69 +1439,38 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
         /* Contato & Creators 2 Colunas Lado a Lado */
         .contact-creators-section {
             padding-top: var(--space-xl) !important;
-            padding-bottom: var(--space-xs) !important;
+            padding-bottom: 0 !important;
         }
 
         .contact-creators-header {
-            margin-bottom: var(--space-lg) !important;
+            margin-bottom: var(--space-xl) !important;
         }
 
         .contact-creators-grid {
             display: grid !important;
             grid-template-columns: 1fr 1fr !important;
-            gap: 28px !important;
+            gap: 32px !important;
             align-items: stretch !important;
-            max-width: 1200px;
+            max-width: 1140px;
             margin: 0 auto;
         }
 
         .contact-card-col {
             background: #FFFFFF !important;
-            border-radius: 24px !important;
-            padding: 36px 32px !important;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05) !important;
+            border-radius: 28px !important;
+            padding: 40px 36px !important;
+            box-shadow: 0 16px 44px rgba(0, 0, 0, 0.05) !important;
             border: 1px solid rgba(0, 0, 0, 0.06) !important;
             display: flex !important;
             flex-direction: column !important;
-            text-align: left !important;
+            justify-content: center !important;
             box-sizing: border-box !important;
-        }
-
-        .contact-card__title {
-            font-family: var(--font-heading);
-            font-size: clamp(1.15rem, 1.4vw, 1.35rem);
-            font-weight: 700;
-            color: var(--text-color);
-            margin: var(--space-xs) 0 var(--space-sm);
-            line-height: 1.25;
-        }
-
-        .card-eyebrow-badge {
-            display: inline-block;
-            align-self: flex-start;
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--accent);
-            background: rgba(85, 27, 107, 0.08);
-            border: 1px solid rgba(85, 27, 107, 0.15);
-            padding: 3px 10px;
-            border-radius: 999px;
-            margin-bottom: 2px;
-        }
-
-        .card-eyebrow-badge--creator {
-            color: var(--secondary-light);
-            background: rgba(208, 143, 255, 0.15);
-            border: 1px solid rgba(208, 143, 255, 0.3);
         }
 
         .influencia-form-clean {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 4px;
+            gap: 16px;
             background: transparent !important;
             padding: 0 !important;
         }
@@ -1509,48 +1478,48 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
         .form-group-clean {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 6px;
+            text-align: left;
         }
 
         .form-group-clean label {
             font-family: var(--font-heading);
-            font-size: 0.82rem;
+            font-size: 0.88rem;
             font-weight: 600;
-            color: var(--text-color);
+            color: #1e1e24;
             letter-spacing: -0.01em;
         }
 
         .form-group-clean input,
         .form-group-clean select {
             width: 100%;
-            padding: 10px 14px;
-            font-family: inherit;
-            font-size: 0.88rem;
-            color: var(--text);
-            background: #FAFAFB;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            transition: all 0.2s ease;
             box-sizing: border-box;
+            padding: 13px 16px;
+            font-size: 0.95rem;
+            background: #FAFAFB;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            color: #1e1e24;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
         .form-group-clean input:focus,
         .form-group-clean select:focus {
             background: #FFFFFF;
             border-color: var(--accent);
-            outline: none;
             box-shadow: 0 0 0 3px rgba(85, 27, 107, 0.12);
         }
 
         .btn--submit-brand {
             margin-top: 6px;
-            padding: 12px 20px;
+            padding: 15px 24px;
             font-family: var(--font-heading);
-            font-size: 0.92rem;
+            font-size: 1rem;
             font-weight: 700;
             background: var(--accent);
             color: var(--white);
-            border-radius: 10px;
+            border-radius: 12px;
             border: none;
             cursor: pointer;
             transition: all 0.25s ease;
@@ -1566,105 +1535,69 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
         /* Coluna Direita (Creators) */
         .creators-card-col {
             background: linear-gradient(145deg, #321042 0%, #170522 100%) !important;
-            border-radius: 24px !important;
-            padding: 36px 32px !important;
+            border-radius: 28px !important;
+            padding: 48px 40px !important;
             box-shadow: 0 20px 48px rgba(25, 6, 36, 0.35) !important;
             border: 1px solid rgba(208, 143, 255, 0.25) !important;
-            color: var(--white) !important;
+            color: #FFFFFF !important;
             display: flex !important;
             flex-direction: column !important;
-            justify-content: space-between !important;
-            text-align: left !important;
+            justify-content: center !important;
+            text-align: center !important;
             box-sizing: border-box !important;
         }
 
-        .creators-card-content {
+        .creators-card-inner {
+            margin: auto 0;
             display: flex;
             flex-direction: column;
-            height: 100%;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
         }
 
         .creators-card__title {
             font-family: var(--font-heading);
-            font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+            font-size: clamp(1.5rem, 2.2vw, 2rem);
             font-weight: 700;
-            color: var(--white);
-            margin: var(--space-xs) 0 var(--space-xs);
+            color: #FFFFFF;
+            margin: 0 0 16px 0;
             line-height: 1.25;
-        }
-
-        .creators-card__text {
-            font-size: 0.86rem;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.5;
-            margin-bottom: var(--space-xs);
-        }
-
-        .creators-card__perks {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin: var(--space-xs) 0 var(--space-md);
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 12px 14px;
-        }
-
-        .creators-perk-item {
-            display: flex;
-            gap: 8px;
-            font-size: 0.80rem;
-            line-height: 1.35;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .creators-perk-item__icon {
-            color: var(--secondary-light);
-            font-size: 0.85rem;
-            margin-top: 1px;
-            flex-shrink: 0;
-        }
-
-        .creators-perk-item strong {
-            display: block;
-            color: var(--white);
-            font-weight: 600;
-            font-size: 0.82rem;
-        }
-
-        .creators-perk-item p {
-            margin: 0;
-            font-size: 0.74rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .btn--creator-cta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 12px 18px;
-            background: linear-gradient(135deg, #59266d, #48185c);
-            color: #ffffff;
-            border: 1px solid rgba(208, 143, 255, 0.35);
-            border-radius: 10px;
-            font-family: var(--font-heading);
-            font-size: 0.88rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            box-sizing: border-box;
             text-align: center;
         }
 
+        .creators-card__text {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.88);
+            line-height: 1.65;
+            margin: 0 0 32px 0;
+            max-width: 440px;
+            text-align: center;
+        }
+
+        .btn--creator-cta {
+            display: inline-block;
+            width: 100%;
+            max-width: 440px;
+            box-sizing: border-box;
+            padding: 15px 24px;
+            background: linear-gradient(135deg, #6c2a86, #48185c);
+            color: #FFFFFF;
+            border: 1px solid rgba(208, 143, 255, 0.4);
+            border-radius: 999px;
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
         .btn--creator-cta:hover {
-            background: linear-gradient(135deg, #6c2f84, #59266d);
+            background: linear-gradient(135deg, #7e329c, #59266d);
             border-color: rgba(208, 143, 255, 0.6);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(89, 38, 109, 0.4);
-            color: #ffffff;
+            color: #FFFFFF;
         }
 
         /* Espaçamento Reduzido do FAQ */
@@ -1684,7 +1617,11 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
             }
             .contact-card-col,
             .creators-card-col {
-                padding: 24px 18px !important;
+                padding: 32px 20px !important;
+                border-radius: 20px !important;
+            }
+            .creators-card__text {
+                margin-bottom: 24px !important;
             }
         }
 
