@@ -382,7 +382,7 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
             </div>
         </section>
 
-        <!-- Cases & Resultados (Layout Wide com Todos os Cases e Vídeos Visíveis) -->
+        <!-- Cases & Resultados (Layout Wide no Desktop, Navegação Completa e Compacta no Mobile) -->
         <section class="section section--alt" id="cases">
             <div class="container cases-container">
                 <div class="section__header section__header--center cases-header">
@@ -393,9 +393,25 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                     </p>
                 </div>
 
+                <!-- Seletor de Cases no Mobile (Aparece tudo na mesma tela sem corte) -->
+                <div class="influencia-cases-tabs fade-in" role="tablist" aria-label="Navegar por Cases">
+                    <button class="influencia-case-tab is-active" data-case-target="0" role="tab" aria-selected="true" aria-controls="case-item-0">
+                        <span class="influencia-case-tab__name">Boali</span>
+                        <span class="influencia-case-tab__sub">Alimentação</span>
+                    </button>
+                    <button class="influencia-case-tab" data-case-target="1" role="tab" aria-selected="false" aria-controls="case-item-1">
+                        <span class="influencia-case-tab__name">Latina</span>
+                        <span class="influencia-case-tab__sub">Eletrodomésticos</span>
+                    </button>
+                    <button class="influencia-case-tab" data-case-target="2" role="tab" aria-selected="false" aria-controls="case-item-2">
+                        <span class="influencia-case-tab__name">Colégio Ábaco</span>
+                        <span class="influencia-case-tab__sub">Educação</span>
+                    </button>
+                </div>
+
                 <div class="influencia-cases-list">
                     <!-- Case 1: Boali -->
-                    <article class="influencia-case-item fade-in">
+                    <article class="influencia-case-item is-active fade-in" id="case-item-0" data-case-index="0">
                         <div class="influencia-case-item__media">
                             <div class="video-card" data-video-card>
                                 <div class="video-card__media">
@@ -430,7 +446,7 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                                 </div>
                                 <div class="influencia-case-point">
                                     <span class="influencia-case-point__label">Estratégia</span>
-                                    <p class="influencia-case-point__text">Curadoria de creators locais de saúde e lifestyle com envio de press kits e almoço inaugural exclusivo.</p>
+                                    <p class="influencia-case-point__text">Curadoria de creators de saúde/lifestyle com press kits e almoço inaugural exclusivo.</p>
                                 </div>
                             </div>
 
@@ -438,11 +454,19 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                                 <p class="influencia-case-quote__text">"A curadoria fez toda a diferença: os criadores realmente conversavam com o nosso público, e isso apareceu direto nas vendas."</p>
                                 <cite class="influencia-case-quote__author">— Victor, Franqueado Boali São Carlos</cite>
                             </blockquote>
+
+                            <!-- Controles de Navegação no Mobile -->
+                            <div class="influencia-case-mobile-nav">
+                                <button type="button" class="influencia-case-nav-btn is-next" data-next-case="1">
+                                    <span>Próximo Case: Latina</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </button>
+                            </div>
                         </div>
                     </article>
 
                     <!-- Case 2: Latina Eletrodomésticos -->
-                    <article class="influencia-case-item influencia-case-item--reverse fade-in">
+                    <article class="influencia-case-item influencia-case-item--reverse fade-in" id="case-item-1" data-case-index="1">
                         <div class="influencia-case-item__media">
                             <div class="video-card" data-video-card>
                                 <div class="video-card__media">
@@ -477,7 +501,7 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                                 </div>
                                 <div class="influencia-case-point">
                                     <span class="influencia-case-point__label">Estratégia</span>
-                                    <p class="influencia-case-point__text">Ações semanais contínuas com criadores de conteúdo do segmento casa, rotina e culinária em todo o país.</p>
+                                    <p class="influencia-case-point__text">Ações semanais com creators do segmento casa, rotina e culinária em todo o país.</p>
                                 </div>
                             </div>
 
@@ -485,11 +509,23 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                                 <p class="influencia-case-quote__text">"Ter transparência sobre cada etapa da campanha, sem precisar administrar conversas soltas, mudou o jeito que a gente enxerga esse canal."</p>
                                 <cite class="influencia-case-quote__author">— Maurício, Gerente Comercial Latina</cite>
                             </blockquote>
+
+                            <!-- Controles de Navegação no Mobile -->
+                            <div class="influencia-case-mobile-nav">
+                                <button type="button" class="influencia-case-nav-btn is-prev" data-next-case="0">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                    <span>Boali</span>
+                                </button>
+                                <button type="button" class="influencia-case-nav-btn is-next" data-next-case="2">
+                                    <span>Colégio Ábaco</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </button>
+                            </div>
                         </div>
                     </article>
 
                     <!-- Case 3: Colégio Ábaco -->
-                    <article class="influencia-case-item fade-in">
+                    <article class="influencia-case-item fade-in" id="case-item-2" data-case-index="2">
                         <div class="influencia-case-item__media">
                             <div class="influencia-case-item__img-wrapper">
                                 <img src="/assets/images/portfolio/abaco-evento-1.webp" alt="Case Colégio Ábaco Evento de Lançamento" loading="lazy" decoding="async">
@@ -522,6 +558,18 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
                                 <p class="influencia-case-quote__text">"Impacto direto na percepção da marca e aceleração na lista de espera para o ano letivo inaugural."</p>
                                 <cite class="influencia-case-quote__author">— Equipe de Comunicação Salta Educação</cite>
                             </blockquote>
+
+                            <!-- Controles de Navegação no Mobile -->
+                            <div class="influencia-case-mobile-nav">
+                                <button type="button" class="influencia-case-nav-btn is-prev" data-next-case="1">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                    <span>Latina</span>
+                                </button>
+                                <button type="button" class="influencia-case-nav-btn is-next" data-next-case="0">
+                                    <span>Voltar para Boali</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </button>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -1388,12 +1436,125 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
             line-height: 1.6;
         }
 
+        /* Seletor de Cases (Pills / Tabs no Mobile) */
+        .influencia-cases-tabs {
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: var(--space-lg);
+            width: 100%;
+        }
+
+        .influencia-case-tab {
+            background: #ffffff;
+            border: 1.5px solid rgba(89, 38, 109, 0.12);
+            border-radius: 14px;
+            padding: 10px 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .influencia-case-tab__name {
+            font-family: var(--font-heading);
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-color);
+            line-height: 1.1;
+        }
+
+        .influencia-case-tab__sub {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .influencia-case-tab.is-active {
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 6px 18px rgba(89, 38, 109, 0.28);
+        }
+
+        .influencia-case-tab.is-active .influencia-case-tab__name {
+            color: #ffffff;
+        }
+
+        .influencia-case-tab.is-active .influencia-case-tab__sub {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .influencia-case-mobile-nav {
+            display: none;
+            margin-top: var(--space-xs);
+            padding-top: var(--space-xs);
+            border-top: 1px solid rgba(89, 38, 109, 0.08);
+            gap: 8px;
+        }
+
+        .influencia-case-nav-btn {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: rgba(89, 38, 109, 0.06);
+            border: 1px solid rgba(89, 38, 109, 0.12);
+            color: var(--accent);
+            font-family: var(--font-heading);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 9px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .influencia-case-nav-btn:hover {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        @keyframes fadeInCase {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @media (max-width: 900px) {
-            .influencia-case-item,
-            .influencia-case-item--reverse {
+            .influencia-cases-tabs {
+                display: grid;
+            }
+
+            .influencia-cases-list {
+                gap: 0;
+            }
+
+            .influencia-case-item {
+                display: none;
+                animation: fadeInCase 0.35s ease forwards;
                 grid-template-columns: 1fr;
-                gap: var(--space-lg);
+                gap: var(--space-md);
                 padding: var(--space-lg);
+            }
+
+            .influencia-case-item.is-active {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .influencia-case-mobile-nav {
+                display: flex;
             }
 
             .influencia-case-item--reverse .influencia-case-item__media {
@@ -1405,26 +1566,83 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
             }
 
             .influencia-case-item__img-wrapper > img {
-                height: 200px;
+                height: 180px;
             }
         }
 
         @media (max-width: 640px) {
+            .influencia-cases-tabs {
+                gap: 6px;
+                margin-bottom: var(--space-md);
+            }
+
+            .influencia-case-tab {
+                padding: 8px 6px;
+                border-radius: 10px;
+            }
+
+            .influencia-case-tab__name {
+                font-size: 0.80rem;
+            }
+
+            .influencia-case-tab__sub {
+                font-size: 0.62rem;
+            }
+
             .influencia-case-item,
             .influencia-case-item--reverse {
-                padding: var(--space-md);
-                border-radius: 16px;
-                gap: var(--space-md);
+                padding: 12px;
+                border-radius: 14px;
+                gap: 8px;
+            }
+
+            .video-card:not(.is-playing) .video-card__media {
+                height: 140px;
+                aspect-ratio: 16/9;
+                border-radius: 10px;
+            }
+
+            .video-card__play-btn {
+                width: 44px;
+                height: 44px;
+            }
+
+            .influencia-case-item__img-wrapper > img {
+                height: 140px;
+                border-radius: 10px;
+            }
+
+            .influencia-case-item__gallery {
+                display: none;
+            }
+
+            .influencia-case-item__client-header {
+                gap: 8px;
+            }
+
+            .influencia-case-item__logo {
+                height: 22px;
+                max-width: 100px;
+            }
+
+            .influencia-case-item__title {
+                font-size: 1.15rem;
+                margin: 0;
+            }
+
+            .influencia-case-item__subtitle {
+                font-size: 0.78rem;
+                margin-top: -3px;
             }
 
             .influencia-case-grid {
                 display: flex;
                 flex-direction: column;
-                gap: 8px;
+                gap: 6px;
                 background: rgba(89, 38, 109, 0.03);
                 border: 1px solid rgba(89, 38, 109, 0.08);
-                border-radius: 12px;
-                padding: 12px 14px;
+                border-radius: 10px;
+                padding: 8px 10px;
             }
 
             .influencia-case-point {
@@ -1434,37 +1652,45 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
             }
 
             .influencia-case-point + .influencia-case-point {
-                padding-top: 8px;
-                border-top: 1px solid rgba(89, 38, 109, 0.08);
+                padding-top: 6px;
+                border-top: 1px solid rgba(89, 38, 109, 0.06);
             }
 
             .influencia-case-point__label {
-                font-size: 0.68rem;
+                font-size: 0.65rem;
                 margin-bottom: 2px;
             }
 
             .influencia-case-point__text {
-                font-size: 0.84rem;
-                line-height: 1.4;
+                font-size: 0.80rem;
+                line-height: 1.35;
             }
 
             .influencia-case-quote {
-                padding: 10px 12px;
-                border-radius: 0 10px 10px 0;
+                padding: 8px 10px;
+                border-radius: 0 8px 8px 0;
+                margin-top: 2px;
             }
 
             .influencia-case-quote__text {
-                font-size: 0.82rem;
-                line-height: 1.4;
+                font-size: 0.78rem;
+                line-height: 1.35;
             }
 
             .influencia-case-quote__author {
-                font-size: 0.72rem;
-                margin-top: 4px;
+                font-size: 0.68rem;
+                margin-top: 3px;
             }
 
-            .influencia-case-item__gallery img {
-                height: 60px;
+            .influencia-case-mobile-nav {
+                margin-top: 4px;
+                padding-top: 6px;
+                gap: 6px;
+            }
+
+            .influencia-case-nav-btn {
+                padding: 7px 10px;
+                font-size: 0.72rem;
             }
         }
 
@@ -1671,6 +1897,46 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
 
           video.addEventListener('ended', () => {
             closeVerticalVideo();
+          });
+        });
+
+        // Case tabs switcher para mobile e tablet
+        const caseTabs = document.querySelectorAll('.influencia-case-tab');
+        const caseItems = document.querySelectorAll('.influencia-case-item');
+        const navBtns = document.querySelectorAll('.influencia-case-nav-btn');
+
+        function activateCase(index) {
+          const idx = Number(index);
+          caseTabs.forEach((tab) => {
+            const isActive = Number(tab.dataset.caseTarget) === idx;
+            tab.classList.toggle('is-active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+
+          caseItems.forEach((item) => {
+            const isActive = Number(item.dataset.caseIndex) === idx;
+            item.classList.toggle('is-active', isActive);
+          });
+
+          if (window.innerWidth <= 900) {
+            const casesSection = document.getElementById('cases');
+            if (casesSection) {
+              casesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        }
+
+        caseTabs.forEach((tab) => {
+          tab.addEventListener('click', () => {
+            activateCase(tab.dataset.caseTarget);
+          });
+        });
+
+        navBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            if (btn.dataset.nextCase !== undefined) {
+              activateCase(btn.dataset.nextCase);
+            }
           });
         });
       })();
