@@ -561,7 +561,7 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
 
                             <blockquote class="influencia-case-quote">
                                 <p class="influencia-case-quote__text">"Impacto direto na percepção da marca e aceleração na lista de espera para o ano letivo inaugural."</p>
-                                <cite class="influencia-case-quote__author">— Equipe de Comunicação Salta Educação</cite>
+                                <cite class="influencia-case-quote__author">— Rodrigo, Gerente de Marketing do Colégio Ábaco</cite>
                             </blockquote>
 
                             <!-- Controles de Navegação no Mobile -->
@@ -1438,19 +1438,20 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
         
         /* Contato & Creators 2 Colunas Lado a Lado */
         .contact-creators-section {
-            padding-top: var(--space-xl) !important;
-            padding-bottom: 0 !important;
+            padding-top: var(--space-2xl) !important;
+            padding-bottom: var(--space-3xl) !important;
+            position: relative;
         }
 
         .contact-creators-header {
-            margin-bottom: var(--space-xl) !important;
+            margin-bottom: var(--space-2xl) !important;
         }
 
         .contact-creators-grid {
             display: grid !important;
             grid-template-columns: 1fr 1fr !important;
-            gap: 32px !important;
-            align-items: stretch !important;
+            gap: 36px !important;
+            align-items: center !important;
             max-width: 1140px;
             margin: 0 auto;
         }
@@ -1458,13 +1459,19 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
         .contact-card-col {
             background: #FFFFFF !important;
             border-radius: 28px !important;
-            padding: 40px 36px !important;
-            box-shadow: 0 16px 44px rgba(0, 0, 0, 0.05) !important;
+            padding: 44px 38px !important;
+            box-shadow: 0 16px 44px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.03) !important;
             border: 1px solid rgba(0, 0, 0, 0.06) !important;
             display: flex !important;
             flex-direction: column !important;
             justify-content: center !important;
             box-sizing: border-box !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card-col:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08) !important;
         }
 
         .influencia-form-clean {
@@ -1532,37 +1539,61 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
             box-shadow: 0 6px 18px rgba(85, 27, 107, 0.25);
         }
 
-        /* Coluna Direita (Creators) */
+        /* Coluna Direita (Creators - Visual Moderno, Efeito Glow & Espaçamento) */
         .creators-card-col {
-            background: linear-gradient(145deg, #321042 0%, #170522 100%) !important;
+            background: radial-gradient(ellipse 90% 70% at 85% 15%, rgba(192, 132, 252, 0.16) 0%, transparent 65%),
+                        linear-gradient(145deg, #2d0c3c 0%, #15031f 100%) !important;
             border-radius: 28px !important;
-            padding: 48px 40px !important;
-            box-shadow: 0 20px 48px rgba(25, 6, 36, 0.35) !important;
-            border: 1px solid rgba(208, 143, 255, 0.25) !important;
+            padding: 52px 42px !important;
+            box-shadow: 0 20px 50px rgba(22, 4, 32, 0.35), 0 0 35px rgba(168, 85, 247, 0.08) !important;
+            border: 1px solid rgba(216, 160, 255, 0.22) !important;
             color: #FFFFFF !important;
             display: flex !important;
             flex-direction: column !important;
             justify-content: center !important;
-            text-align: center !important;
             box-sizing: border-box !important;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .creators-card-col:hover {
+            transform: translateY(-3px);
+            border-color: rgba(216, 160, 255, 0.45) !important;
+            box-shadow: 0 26px 60px rgba(22, 4, 32, 0.45), 0 0 45px rgba(168, 85, 247, 0.18) !important;
+        }
+
+        .creators-card-col::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(208, 143, 255, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(25px);
         }
 
         .creators-card-inner {
-            margin: auto 0;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            position: relative;
+            z-index: 2;
         }
 
         .creators-card__title {
             font-family: var(--font-heading);
-            font-size: clamp(1.5rem, 2.2vw, 2rem);
+            font-size: clamp(1.45rem, 2.1vw, 1.85rem);
             font-weight: 700;
             color: #FFFFFF;
             margin: 0 0 16px 0;
             line-height: 1.25;
-            text-align: center;
+            text-align: left;
+            letter-spacing: -0.01em;
         }
 
         .creators-card__text {
@@ -1570,58 +1601,61 @@ import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
             color: rgba(255, 255, 255, 0.88);
             line-height: 1.65;
             margin: 0 0 32px 0;
-            max-width: 440px;
-            text-align: center;
+            text-align: left;
         }
 
         .btn--creator-cta {
             display: inline-block;
             width: 100%;
-            max-width: 440px;
             box-sizing: border-box;
-            padding: 15px 24px;
-            background: linear-gradient(135deg, #6c2a86, #48185c);
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #74278d 0%, #4a155c 100%);
             color: #FFFFFF;
-            border: 1px solid rgba(208, 143, 255, 0.4);
-            border-radius: 999px;
+            border: 1px solid rgba(216, 160, 255, 0.35);
+            border-radius: 12px;
             font-family: var(--font-heading);
             font-size: 0.95rem;
             font-weight: 700;
             text-align: center;
             text-decoration: none;
             transition: all 0.25s ease;
+            box-shadow: 0 6px 20px rgba(74, 21, 92, 0.3);
         }
 
         .btn--creator-cta:hover {
-            background: linear-gradient(135deg, #7e329c, #59266d);
-            border-color: rgba(208, 143, 255, 0.6);
+            background: linear-gradient(135deg, #882fa5 0%, #5b1b71 100%);
+            border-color: rgba(233, 213, 255, 0.65);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(89, 38, 109, 0.4);
+            box-shadow: 0 10px 25px rgba(116, 39, 141, 0.45);
             color: #FFFFFF;
         }
 
-        /* Espaçamento Reduzido do FAQ */
+        /* Espaçamento do FAQ */
         #faq.section {
-            padding-top: var(--space-xs) !important;
-            padding-bottom: var(--space-2xl) !important;
+            padding-top: var(--space-3xl) !important;
+            padding-bottom: var(--space-3xl) !important;
         }
 
         #faq .section__header {
-            margin-bottom: var(--space-lg) !important;
+            margin-bottom: var(--space-xl) !important;
         }
 
         @media (max-width: 900px) {
             .contact-creators-grid {
                 grid-template-columns: 1fr !important;
-                gap: 20px !important;
+                gap: 24px !important;
             }
             .contact-card-col,
             .creators-card-col {
-                padding: 32px 20px !important;
-                border-radius: 20px !important;
+                padding: 36px 24px !important;
+                border-radius: 22px !important;
             }
             .creators-card__text {
                 margin-bottom: 24px !important;
+            }
+            .btn--creator-cta {
+                font-size: 0.9rem;
+                padding: 14px 20px;
             }
         }
 
