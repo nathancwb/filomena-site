@@ -2927,6 +2927,83 @@ div[aria-label="cookieconsent"],
     transform: scale(1.58);
 }
 
+/* Responsividade Mobile – Faixa de clientes (exatamente 2 logos visíveis simultaneamente) */
+@media (max-width: 768px) {
+    .clients-strip::before,
+    .clients-strip::after {
+        width: 18px;
+    }
+
+    .clients-strip__item {
+        width: 50vw;
+        min-width: 50vw;
+        max-width: 50vw;
+        height: 86px;
+        padding: 8px 14px;
+        box-sizing: border-box;
+    }
+
+    .clients-strip__item .client-logo-img {
+        max-height: 42px;
+        max-width: 82%;
+        filter: grayscale(100%) opacity(0.85);
+    }
+
+    .item-bni .client-logo-img {
+        max-height: 36px;
+        max-width: 95px;
+    }
+    .item-grampola .client-logo-img {
+        max-height: 38px;
+        max-width: 125px;
+        transform: scale(1.4);
+    }
+    .item-jogoreal .client-logo-img {
+        max-height: 36px;
+        max-width: 100px;
+    }
+    .item-masotti .client-logo-img {
+        max-height: 36px;
+        transform: scale(1.2);
+    }
+    .item-lupetec .client-logo-img {
+        max-height: 36px;
+        transform: scale(1.15);
+    }
+    .item-latina .client-logo-img {
+        max-height: 30px;
+        transform: scale(1.05);
+    }
+    .item-boali .client-logo-img {
+        max-height: 32px;
+        transform: scale(1.15);
+    }
+    .item-neonova .client-logo-img {
+        max-height: 36px;
+        transform: scale(1.2);
+    }
+    .item-iseg .client-logo-img {
+        max-height: 36px;
+        transform: scale(1.15);
+    }
+    .item-alternativa .client-logo-img {
+        max-height: 36px;
+        transform: scale(1.15);
+    }
+    .item-felipe .client-logo-img {
+        max-height: 36px;
+        transform: scale(1.15);
+    }
+    .item-siltomac .client-logo-img {
+        max-height: 36px;
+        transform: scale(1.15);
+    }
+    .item-center .client-logo-img {
+        max-height: 36px;
+        transform: scale(1.15);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .clients-strip__track {
         animation: none;
@@ -3128,6 +3205,22 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 480px;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero__showcase-container {
+        display: none !important;
+    }
+    .hero {
+        padding-top: calc(var(--header-height) + 1.5rem);
+        padding-bottom: var(--space-2xl);
+    }
+    .hero__content {
+        gap: var(--space-xl);
+    }
+    .hero__buttons {
+        margin-bottom: var(--space-sm);
     }
 }
 

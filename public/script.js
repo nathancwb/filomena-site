@@ -639,7 +639,7 @@ document.addEventListener('astro:page-load', () => {
 // ==========================================
 function initHeroShowcaseCycle() {
     const showcase = document.getElementById('hero-showcase');
-    if (!showcase) return;
+    if (!showcase || window.innerWidth <= 768) return;
 
     const cards = Array.from(showcase.querySelectorAll('.showcase-card'));
     if (cards.length < 3) return;
