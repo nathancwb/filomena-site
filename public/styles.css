@@ -171,126 +171,80 @@ ul {
    HEADER
    =============================================== */
 
-/* ===============================================
-   HEADER - FLOATING SLIME / LIQUID GLASS CAPSULE
-   =============================================== */
-
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    height: var(--header-height);
     z-index: 9999;
-    padding: 16px 20px 0;
-    background: transparent;
-    pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    background: var(--accent);
+    border-bottom: 1px solid var(--accent-dark);
+    transition: background var(--transition), border-color var(--transition);
 }
 
 .header__inner {
-    pointer-events: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 24px;
-    border-radius: 9999px;
-    background: rgba(72, 22, 92, 0.76);
-    backdrop-filter: blur(24px) saturate(190%);
-    -webkit-backdrop-filter: blur(24px) saturate(190%);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    box-shadow: 
-        0 16px 40px -10px rgba(22, 3, 30, 0.5),
-        0 0 24px rgba(168, 85, 247, 0.16),
-        inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.42),
-        inset 0 -1.5px 2px rgba(0, 0, 0, 0.25);
-    position: relative;
-    overflow: visible;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Efeito de brilho líquido / slime sheen no topo */
-.header__inner::before {
-    content: '';
-    position: absolute;
-    top: 1px;
-    left: 24px;
-    right: 24px;
-    height: 48%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 100%);
-    border-radius: 9999px 9999px 0 0;
-    pointer-events: none;
-}
-
-.header__inner:hover {
-    background: rgba(78, 25, 100, 0.82);
-    border-color: rgba(255, 255, 255, 0.32);
-    box-shadow: 
-        0 20px 48px -8px rgba(22, 3, 30, 0.58),
-        0 0 32px rgba(192, 132, 252, 0.25),
-        inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.55),
-        inset 0 -1.5px 2px rgba(0, 0, 0, 0.2);
+    height: 100%;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    position: relative;
-    z-index: 2;
 }
 
 .logo__img {
-    height: 40px;
+    height: 55px;
     width: auto;
-    transition: transform var(--transition);
+    /* Filtro para tornar a logo branca em roxa no header */
+    /* filter removido */
+    transition: filter var(--transition);
 }
 
 .logo:hover .logo__img {
-    transform: scale(1.03);
+    /* filter removido */
 }
 
 .nav {
     display: flex;
     align-items: center;
-    gap: var(--space-md);
-    position: relative;
-    z-index: 2;
+    gap: var(--space-3xl);
 }
 
 .nav__list {
     display: flex;
-    align-items: center;
-    gap: 4px;
+    gap: var(--space-xl);
 }
 
 .nav__link {
     font-size: var(--text-sm);
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.88);
-    padding: 8px 14px;
-    border-radius: 9999px;
-    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    color: rgba(255, 255, 255, 0.8);
+    transition: color var(--transition);
     position: relative;
-    display: inline-block;
-    text-decoration: none;
 }
 
-.nav__link:hover {
-    color: var(--white);
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-}
-
+.nav__link:hover,
 .nav__link.active {
     color: var(--white);
-    background: rgba(255, 255, 255, 0.24);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .nav__link::after {
-    display: none;
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--white);
+    transition: width var(--transition);
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+    width: 100%;
 }
 
 .nav__actions {
@@ -299,64 +253,24 @@ ul {
     gap: var(--space-md);
 }
 
-/* Mobile Menu Toggle */
+/* Mobile Menu */
 .menu-toggle {
     display: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 32px;
+    height: 24px;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 5px;
+    gap: 6px;
     cursor: pointer;
-    transition: all 0.25s ease;
-    padding: 0;
-}
-
-.menu-toggle:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
 }
 
 .menu-toggle span {
-    width: 18px;
     height: 2px;
     background: var(--white);
-    border-radius: 2px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: var(--transition);
 }
 
-.menu-toggle.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}
-
-@media (max-width: 960px) {
-    .header {
-        padding: 12px 14px 0;
-    }
-
-    .header__inner {
-        height: 56px;
-        padding: 0 16px 0 18px;
-        border-radius: 9999px;
-    }
-
-    .logo__img {
-        height: 34px;
-    }
-
+@media (max-width: 768px) {
     .nav__list {
         display: none;
     }
@@ -369,46 +283,18 @@ ul {
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: 76px;
-        left: 14px;
-        right: 14px;
-        bottom: auto;
-        max-height: calc(100vh - 96px);
-        overflow-y: auto;
-        background: rgba(45, 12, 60, 0.94);
-        backdrop-filter: blur(28px) saturate(190%);
-        -webkit-backdrop-filter: blur(28px) saturate(190%);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 28px;
-        padding: 20px 16px;
-        gap: 6px;
-        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 0 30px rgba(168, 85, 247, 0.2);
-        z-index: 9998;
-        pointer-events: auto;
-        animation: navSlideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    @keyframes navSlideDown {
-        from {
-            opacity: 0;
-            transform: translateY(-12px) scale(0.98);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--accent);
+        padding: var(--space-2xl);
+        gap: var(--space-xl);
     }
 
     .nav__list.show .nav__link {
-        font-size: 1.05rem;
-        padding: 12px 18px;
-        border-radius: 14px;
+        font-size: var(--text-2xl);
         color: var(--white);
-        display: block;
-    }
-
-    .nav__list.show .nav__link:hover {
-        background: rgba(255, 255, 255, 0.12);
     }
 }
 
