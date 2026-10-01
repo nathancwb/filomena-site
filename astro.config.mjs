@@ -6,6 +6,7 @@ import remarkFixWordPaste from './src/plugins/remark-fix-word-paste.mjs';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.filomenapropaganda.com.br',
+  trailingSlash: 'always',
   integrations: [sitemap()],
   prefetch: true,
   markdown: {

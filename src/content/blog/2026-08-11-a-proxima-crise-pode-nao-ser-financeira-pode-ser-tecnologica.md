@@ -1,6 +1,6 @@
 ---
 title: A próxima crise pode não ser financeira. Pode ser tecnológica.
-author: Equipe Filomena
+author: Filomena Propaganda
 date: 2026-08-11T11:25
 category: Marketing
 thumbnail: /assets/images/09-Setembro.png

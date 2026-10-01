@@ -1,6 +1,6 @@
 ---
 title: Seu marketing só funciona quando tem direção
-author: Equipe Filomena
+author: Filomena Propaganda
 date: 2026-06-29T11:57
 category: Branding
 thumbnail: /assets/images/Artigo 2.png

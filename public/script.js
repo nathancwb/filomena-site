@@ -3,7 +3,7 @@
  * JavaScript Interatividade
  */
 
-document.addEventListener('astro:page-load', () => {
+function initAll() {
     // Mobile Menu
     initMobileMenu();
 
@@ -30,7 +30,14 @@ document.addEventListener('astro:page-load', () => {
 
     // 3D Process Cards
     init3dProcessCards();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+} else {
+    initAll();
+}
+document.addEventListener('astro:page-load', initAll);
 
 // ==========================================
 // MOBILE MENU
@@ -39,7 +46,11 @@ function initMobileMenu() {
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('nav-menu');
 
-    toggle?.addEventListener('click', () => {
+    if (!toggle || toggle.dataset.initialized === 'true') return;
+    toggle.dataset.initialized = 'true';
+
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
         menu?.classList.toggle('show');
         toggle.classList.toggle('active');
     });
@@ -48,8 +59,16 @@ function initMobileMenu() {
     menu?.querySelectorAll('.nav__link').forEach(link => {
         link.addEventListener('click', () => {
             menu.classList.remove('show');
-            toggle?.classList.remove('active');
+            toggle.classList.remove('active');
         });
+    });
+
+    // Close menu on click outside
+    document.addEventListener('click', (e) => {
+        if (menu?.classList.contains('show') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+            menu.classList.remove('show');
+            toggle.classList.remove('active');
+        }
     });
 }
 

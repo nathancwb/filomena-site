@@ -4,6 +4,7 @@ import Footer from '../../components/Footer.astro';
 import { ClientRouter } from 'astro:transitions';
 import Analytics from '../../components/Analytics.astro';
 import AnalyticsNoscript from '../../components/AnalyticsNoscript.astro';
+import { getAuthorInfo } from '../../data/authors';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -15,6 +16,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const author = getAuthorInfo(post.data.author, post.data.author_linkedin, post.data.author_role);
 
 // Posts relacionados reais (exclui o atual, mais recentes primeiro)
 const allPosts = await getCollection('blog');
@@ -77,20 +79,28 @@ const share = {
       "dateModified": post.data.date ? new Date(post.data.date).toISOString() : undefined,
       "inLanguage": "pt-BR",
       "author": [
-        {
+        author.type === "Person" ? {
           "@type": "Person",
-          "name": post.data.author || "Equipe Filomena",
-          "url": "https://www.filomenapropaganda.com.br/sobre/"
-        },
-        {
+          "name": author.name,
+          "jobTitle": author.role,
+          "url": author.url,
+          "sameAs": author.sameAs,
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Filomena Propaganda",
+            "url": "https://www.filomenapropaganda.com.br/"
+          }
+        } : {
           "@type": "Organization",
-          "name": "Filomena Propaganda",
-          "url": "https://www.filomenapropaganda.com.br"
+          "name": author.name,
+          "url": author.url,
+          "sameAs": author.sameAs
         }
       ],
       "publisher": {
         "@type": "Organization",
         "name": "Filomena Propaganda",
+        "url": "https://www.filomenapropaganda.com.br/",
         "logo": {
           "@type": "ImageObject",
           "url": "https://www.filomenapropaganda.com.br/assets/images/og-preview.png"
@@ -110,13 +120,13 @@ const share = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.filomenapropaganda.com.br"
+          "item": "https://www.filomenapropaganda.com.br/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://www.filomenapropaganda.com.br/blog"
+          "item": "https://www.filomenapropaganda.com.br/blog/"
         },
         {
           "@type": "ListItem",
@@ -182,8 +192,8 @@ const share = {
         }
 
         .post-author__avatar {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             background: var(--primary);
             display: flex;
@@ -191,6 +201,44 @@ const share = {
             justify-content: center;
             color: white;
             font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .post-author__details {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            line-height: 1.25;
+        }
+
+        .post-author__name-row {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .post-author__name {
+            font-weight: 700;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .post-author__role {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .post-author__linkedin {
+            display: inline-flex;
+            align-items: center;
+            color: #0A66C2;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .post-author__linkedin:hover {
+            transform: scale(1.15);
+            opacity: 0.85;
         }
 
         /* Hero Image */
@@ -536,8 +584,18 @@ const share = {
                 <h1 class="post-title fade-in">{post.data.title}</h1>
                 <div class="post-meta fade-in">
                     <div class="post-author">
-                        <div class="post-author__avatar">{post.data.author.charAt(0)}</div>
-                        <span>{post.data.author}</span>
+                        <div class="post-author__avatar">{author.name.charAt(0)}</div>
+                        <div class="post-author__details">
+                            <div class="post-author__name-row">
+                                <span class="post-author__name">{author.name}</span>
+                                {author.linkedin && (
+                                    <a href={author.linkedin} target="_blank" rel="noopener noreferrer" class="post-author__linkedin" aria-label={`LinkedIn de ${author.name}`}>
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.92 0 1.66-.74 1.66-1.66 0-.91-.74-1.66-1.66-1.66-.92 0-1.67.75-1.67 1.66 0 .92.75 1.66 1.67 1.66m1.39 9.97v-8.37H5.07v8.37h2.78z"/></svg>
+                                    </a>
+                                )}
+                            </div>
+                            <span class="post-author__role">{author.role}</span>
+                        </div>
                     </div>
                     <span class="post-meta__divider">•</span>
                     <span>{new Date(post.data.date).toLocaleDateString('pt-BR')}</span>

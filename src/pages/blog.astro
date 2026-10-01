@@ -4,7 +4,10 @@ import Footer from '../components/Footer.astro';
 import { ClientRouter } from 'astro:transitions';
 import Analytics from '../components/Analytics.astro';
 import AnalyticsNoscript from '../components/AnalyticsNoscript.astro';
-const posts = await getCollection('blog');
+import { getAuthorInfo } from '../data/authors';
+
+const rawPosts = await getCollection('blog');
+const posts = rawPosts.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -56,7 +59,7 @@ const posts = await getCollection('blog');
       "image": "https://www.filomenapropaganda.com.br/assets/images/fachada-filomena.webp",
       "logo": "https://www.filomenapropaganda.com.br/assets/images/logo-main.webp",
       "@id": "https://www.filomenapropaganda.com.br/#organization",
-      "url": "https://www.filomenapropaganda.com.br",
+      "url": "https://www.filomenapropaganda.com.br/",
       "telephone": "+551634154110",
       "email": "contato@filomenapropaganda.com.br",
       "priceRange": "$$",
@@ -111,6 +114,72 @@ const posts = await getCollection('blog');
       ]
     }
     </script>
+
+    <!-- Schema.org Blog with BlogPosting + Person Items & BreadcrumbList -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Blog de Marketing, Publicidade e Branding | Filomena Propaganda",
+      "description": "Insights, tendências, dicas e estratégias de marketing digital, branding, tráfego pago e publicidade para fazer o seu negócio crescer.",
+      "url": "https://www.filomenapropaganda.com.br/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Filomena Propaganda",
+        "url": "https://www.filomenapropaganda.com.br/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.filomenapropaganda.com.br/assets/images/og-preview.png"
+        }
+      },
+      "blogPost": posts.map(post => {
+        const author = getAuthorInfo(post.data.author, post.data.author_linkedin, post.data.author_role);
+        return {
+          "@type": "BlogPosting",
+          "headline": post.data.title,
+          "description": post.data.description,
+          "url": `https://www.filomenapropaganda.com.br/blog/${post.id}/`,
+          "image": `https://www.filomenapropaganda.com.br${post.data.thumbnail || "/assets/images/fachada-filomena.webp"}`,
+          "datePublished": post.data.date ? new Date(post.data.date).toISOString() : undefined,
+          "dateModified": post.data.date ? new Date(post.data.date).toISOString() : undefined,
+          "inLanguage": "pt-BR",
+          "author": author.type === "Person" ? {
+            "@type": "Person",
+            "name": author.name,
+            "jobTitle": author.role,
+            "url": author.url,
+            "sameAs": author.sameAs,
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Filomena Propaganda"
+            }
+          } : {
+            "@type": "Organization",
+            "name": author.name,
+            "url": author.url,
+            "sameAs": author.sameAs
+          }
+        };
+      })
+    })} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.filomenapropaganda.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.filomenapropaganda.com.br/blog/"
+        }
+      ]
+    })} />
     <link rel="preload" href="/assets/fonts/OliviarSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="stylesheet" href="/styles.css">
@@ -164,6 +233,51 @@ const posts = await getCollection('blog');
             color: var(--text-muted);
             margin-bottom: var(--space-lg);
             line-height: 1.6;
+        }
+        .blog-card__title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        .blog-card__title a:hover {
+            color: var(--accent);
+        }
+        .blog-card__meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-sm);
+            padding: var(--space-md) 0;
+            margin-bottom: var(--space-md);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            font-size: var(--text-xs);
+        }
+        .blog-card__author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .blog-card__avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            font-size: 0.72rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .blog-card__author-name {
+            font-weight: 600;
+            color: var(--text);
+        }
+        .blog-card__date {
+            color: var(--text-muted);
+            white-space: nowrap;
         }
         .blog-card__link {
             display: inline-flex;
@@ -222,20 +336,34 @@ const posts = await getCollection('blog');
         <section class="section">
             <div class="container">
                 <div class="blog-grid">
-                    {posts.map(post => (
-                        <article class="blog-card fade-in">
-                            <img loading="lazy" decoding="async" src={post.data.thumbnail || "/assets/images/fachada-filomena.webp"} alt={post.data.category} class="blog-card__img" style="object-fit: cover;">
-                            <div class="blog-card__body">
-                                <span class="blog-card__tag">{post.data.category}</span>
-                                <h2 class="blog-card__title">{post.data.title}</h2>
-                                <p class="blog-card__excerpt">{post.data.description}</p>
-                                <a href={`/blog/${post.id}/`} class="blog-card__link">
-                                    Ler artigo
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                    {posts.map(post => {
+                        const author = getAuthorInfo(post.data.author, post.data.author_linkedin, post.data.author_role);
+                        return (
+                            <article class="blog-card fade-in">
+                                <a href={`/blog/${post.id}/`} aria-label={post.data.title}>
+                                    <img loading="lazy" decoding="async" src={post.data.thumbnail || "/assets/images/fachada-filomena.webp"} alt={post.data.title} class="blog-card__img" style="object-fit: cover;">
                                 </a>
-                            </div>
-                        </article>
-                    ))}
+                                <div class="blog-card__body">
+                                    <span class="blog-card__tag">{post.data.category}</span>
+                                    <h2 class="blog-card__title">
+                                        <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+                                    </h2>
+                                    <p class="blog-card__excerpt">{post.data.description}</p>
+                                    <div class="blog-card__meta">
+                                        <div class="blog-card__author">
+                                            <div class="blog-card__avatar">{author.name.charAt(0)}</div>
+                                            <span class="blog-card__author-name">{author.name}</span>
+                                        </div>
+                                        <span class="blog-card__date">{new Date(post.data.date).toLocaleDateString('pt-BR')}</span>
+                                    </div>
+                                    <a href={`/blog/${post.id}/`} class="blog-card__link">
+                                        Ler artigo
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                                    </a>
+                                </div>
+                            </article>
+                        );
+                    })}
                 </div>
             </div>
         </section>

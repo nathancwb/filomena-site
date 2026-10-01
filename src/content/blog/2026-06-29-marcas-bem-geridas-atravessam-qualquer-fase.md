@@ -1,6 +1,6 @@
 ---
 title: Marcas bem geridas atravessam qualquer fase
-author: Equipe Filomena
+author: Filomena Propaganda
 date: 2026-06-29T12:04
 category: Branding
 thumbnail: /assets/images/Artigo 4.png

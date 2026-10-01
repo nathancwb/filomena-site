@@ -1,6 +1,6 @@
 ---
 title: Empresas que crescem mais não escolhem entre o presente e o futuro. Elas investem nos dois.
-author: Equipe Filomena
+author: Filomena Propaganda
 date: 2026-09-14T10:18:00
 category: Branding
 thumbnail: /assets/images/08-Agosto.png

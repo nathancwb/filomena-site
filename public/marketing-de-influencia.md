@@ -60,6 +60,7 @@ A Filomena atua com soluções sob medida para as metas e orçamento de cada cli
 
 ## Contato e Solicitação de Proposta
 
-- **WhatsApp / Telefone:** +55 (16) 3415-4110
+- **WhatsApp (Marketing de Influência):** +55 (16) 99255-8698
+- **Telefone da Agência:** +55 (16) 3415-4110
 - **E-mail:** contato@filomenapropaganda.com.br / digital@filomenapropaganda.com.br
 - **Endereço:** Rua Dom Pedro II, 1978, São Carlos, SP

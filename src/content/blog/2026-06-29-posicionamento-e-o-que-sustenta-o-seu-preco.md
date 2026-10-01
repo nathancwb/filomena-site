@@ -1,6 +1,6 @@
 ---
 title: Posicionamento é o que sustenta o seu preço
-author: Equipe Filomena
+author: Filomena Propaganda
 date: 2026-06-29T12:01
 category: Branding
 thumbnail: /assets/images/Artigo 3.png

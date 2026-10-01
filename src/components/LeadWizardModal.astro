@@ -1015,7 +1015,8 @@
     const TOTAL_STEPS = 4;
     const FORM_ENDPOINT = 'https://api.web3forms.com/submit';
     const WEB3FORMS_KEY = 'c685ced6-cdf1-4deb-92d6-162a2f110e0e';
-    const WHATSAPP_NUMBER = '551634154110';
+    const isInfluenciaPage = typeof window !== 'undefined' && window.location.pathname.includes('marketing-de-influencia');
+    const WHATSAPP_NUMBER = isInfluenciaPage ? '5516992558698' : '551634154110';
 
     function initLeadWizard() {
         const modal = document.getElementById('leadWizardModal');
@@ -1024,6 +1025,13 @@
         if (!modal || !form) return;
 
         let currentStep = 1;
+
+        if (isInfluenciaPage) {
+            const defaultWppBtn = document.getElementById('leadSuccessWppBtn');
+            if (defaultWppBtn) {
+                defaultWppBtn.href = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent('Olá! Vim da página de Marketing de Influência e gostaria de uma proposta.')}`;
+            }
+        }
 
         function openModal() {
             modal.classList.add('active');
@@ -1339,7 +1347,9 @@
             // EXIBE TELA DE SUCESSO ESTÁTICA COM CSS TOTALMENTE PRESERVADO
             const cleanFirstName = nome.split(' ')[0] || 'Obrigado';
             const wppMessage = encodeURIComponent(
-                `Olá equipe Filomena! Meu nome é *${nome}* (da *${empresa}*). Acabei de preencher o diagnóstico no site e gostaria de agilizar minha análise com os especialistas.`
+                isInfluenciaPage
+                    ? `Olá equipe Filomena! Meu nome é *${nome}* (da *${empresa}*). Preenchi o formulário na página de Marketing de Influência e gostaria de acelerar minha proposta.`
+                    : `Olá equipe Filomena! Meu nome é *${nome}* (da *${empresa}*). Acabei de preencher o diagnóstico no site e gostaria de agilizar minha análise com os especialistas.`
             );
             const wppDirectLink = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${wppMessage}`;
 
