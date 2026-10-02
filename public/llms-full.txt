@@ -78,6 +78,14 @@ Presença consistente e engajadora nas redes sociais.
 - Criação de artes visuais, vídeos curtos (Reels/TikTok) e copywriting persuasivo.
 - Monitoramento de comunidade e SAC 2.0.
 
+### Marketing de Influência
+Conexão estratégica entre marcas e criadores de conteúdo com foco em vendas e autoridade.
+- Diagnóstico e estratégia de campanha alinhada a KPIs de conversão e branding.
+- Curadoria criteriosa de creators por afinidade de nicho e engajamento real.
+- Gestão operacional, jurídica (cessão de direitos de imagem) e acompanhamento de entregas.
+- Relatórios transparentes de ROI, alcance e aprendizados pós-campanha.
+- URL dedicada: https://www.filomenapropaganda.com.br/marketing-de-influencia/
+
 ### Desenvolvimento Web (Sites & Landing Pages)
 Criação de experiências digitais ultrarrápidas, modernas e focadas em conversão.
 - Desenvolvido em tecnologias modernas de alta velocidade (Astro / Vanilla CSS).
